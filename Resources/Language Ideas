@@ -1,0 +1,26 @@
+####Example 1: 
+
+* Take Aspirin 81 mg once daily
+
+`ACTION MEDICATION DOSE TIMING`
+
+####Example 2: 
+
+* Take Aspirin 81 mg twice daily for 5 days then Aspirin 81 mg once daily for 10 days 
+
+`ACTION MEDICATION DOSE_1 TIMING_1 THEN MEDICATION DOSE_2 TIMING_2`
+
+	Medication m 	: Aspirin
+	Dose d1 		: 81 mg
+	Timing t1 		: twice daily FOR 5 days
+	Timing t2 		: once daily FOR 5 days
+	Action a		: take
+	
+	Prescription p	: a m d1 t1 THEN a m d1 t2
+		 
+	Prescription p1 : a m (d1 t1 THEN d1 t2) 
+	
+	Prescription p2 : a m d1 (t1 THEN t2) 
+	
+
+expr: ACTION MEDICATION DOSE TIMING

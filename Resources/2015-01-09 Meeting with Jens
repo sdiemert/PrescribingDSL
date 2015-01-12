@@ -1,0 +1,17 @@
+Lit Review Notes:
+----------------
+- language processing and programming language (apple script?) (ACM, IEEE, Engineering Village)
+- Health side (PubMed) 
+
+- 30 to 40 papers
+
+- control terminolgoies
+
+Other Notes: 
+--------
+- Grammars should be confluent, complete, etc... need to look up properities (handbook?)
+- Will likely need to prove properties of my grammars
+- Need to check grammar type for ANTLR4 and make an argument that it is suitable for this use
+- Programming language properties of Syntax, Semanitics, Pragmatics.
+- Need to make sure that every possible input to the DSL has a semantic meaning in the petrinet. 
+- might consider adding route to core APMA model. 
