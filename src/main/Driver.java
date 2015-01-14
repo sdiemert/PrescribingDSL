@@ -19,6 +19,10 @@ public class Driver {
 		ParseTree tree = parser.script();
 		System.out.println(tree.toStringTree(parser));
 		
+		ParseTreeWalker walker = new ParseTreeWalker();
+		PrescriptionTreeListener list = new PrescriptionTreeListener(parser);
+		walker.walk(list, tree);
+		
 		System.out.println("COMPLETED");
 	}
 }

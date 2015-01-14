@@ -45,9 +45,10 @@ action :
 
 medication : s=STRING;
 
-dose: 
-    INT u=('mg' | 'g' | 'kg' | 'mcg' | 'ng')
-;
+dose: dose_amount u=dose_unit;
+
+dose_amount: INT; 
+dose_unit:	UNIT;
 
 timing : 
         interval  'FOR'  duration 
@@ -55,13 +56,14 @@ timing :
 ;
 
 interval:
-        (INTERVAL_FREQ|INT|NUMBER)  (TIMEUNIT|INTERVAL_LENGTH|TIMEUNIT_PLURAL) //once daily, twice weekly etc...
-    |   (INTERVAL_FREQ|INT|NUMBER)  INTERVAL_MODIFIER  (TIMEUNIT|TIMEUNIT_PLURAL|INTERVAL_LENGTH) //5 per day, 5 times per day, 5xdaily, 
-   | 	(INTERVAL_FREQ|INT|NUMBER) //once, twice etc....
+        frequency interval_length
+    |   frequency  INTERVAL_MODIFIER  interval_length //5 per day, 5 times per day, 5xdaily, 
+    | 	frequency //once, twice etc....
 ;
 
-duration: 
-        n=(NUMBER|INT) tu=TIMEUNIT_PLURAL
-    |   n=(NUMBER|INT) tu=TIMEUNIT
-;
+frequency: (INTERVAL_FREQ|INT|NUMBER) ;
+interval_length:  (TIMEUNIT|INTERVAL_LENGTH|TIMEUNIT_PLURAL); //once daily, twice weekly etc...
+duration: n=duration_amount tu=duration_unit;
+duration_amount: (NUMBER|INT);
+duration_unit: (TIMEUNIT_PLURAL | TIMEUNIT);
 

@@ -19,25 +19,15 @@ public interface PrescriptionListener extends ParseTreeListener {
 	 */
 	void exitMedication(@NotNull PrescriptionParser.MedicationContext ctx);
 	/**
-	 * Enter a parse tree produced by {@link PrescriptionParser#duration}.
+	 * Enter a parse tree produced by {@link PrescriptionParser#duration_amount}.
 	 * @param ctx the parse tree
 	 */
-	void enterDuration(@NotNull PrescriptionParser.DurationContext ctx);
+	void enterDuration_amount(@NotNull PrescriptionParser.Duration_amountContext ctx);
 	/**
-	 * Exit a parse tree produced by {@link PrescriptionParser#duration}.
+	 * Exit a parse tree produced by {@link PrescriptionParser#duration_amount}.
 	 * @param ctx the parse tree
 	 */
-	void exitDuration(@NotNull PrescriptionParser.DurationContext ctx);
-	/**
-	 * Enter a parse tree produced by {@link PrescriptionParser#assignment}.
-	 * @param ctx the parse tree
-	 */
-	void enterAssignment(@NotNull PrescriptionParser.AssignmentContext ctx);
-	/**
-	 * Exit a parse tree produced by {@link PrescriptionParser#assignment}.
-	 * @param ctx the parse tree
-	 */
-	void exitAssignment(@NotNull PrescriptionParser.AssignmentContext ctx);
+	void exitDuration_amount(@NotNull PrescriptionParser.Duration_amountContext ctx);
 	/**
 	 * Enter a parse tree produced by {@link PrescriptionParser#interval}.
 	 * @param ctx the parse tree
@@ -49,16 +39,6 @@ public interface PrescriptionListener extends ParseTreeListener {
 	 */
 	void exitInterval(@NotNull PrescriptionParser.IntervalContext ctx);
 	/**
-	 * Enter a parse tree produced by {@link PrescriptionParser#action}.
-	 * @param ctx the parse tree
-	 */
-	void enterAction(@NotNull PrescriptionParser.ActionContext ctx);
-	/**
-	 * Exit a parse tree produced by {@link PrescriptionParser#action}.
-	 * @param ctx the parse tree
-	 */
-	void exitAction(@NotNull PrescriptionParser.ActionContext ctx);
-	/**
 	 * Enter a parse tree produced by {@link PrescriptionParser#expr}.
 	 * @param ctx the parse tree
 	 */
@@ -69,15 +49,15 @@ public interface PrescriptionListener extends ParseTreeListener {
 	 */
 	void exitExpr(@NotNull PrescriptionParser.ExprContext ctx);
 	/**
-	 * Enter a parse tree produced by {@link PrescriptionParser#timing}.
+	 * Enter a parse tree produced by {@link PrescriptionParser#frequency}.
 	 * @param ctx the parse tree
 	 */
-	void enterTiming(@NotNull PrescriptionParser.TimingContext ctx);
+	void enterFrequency(@NotNull PrescriptionParser.FrequencyContext ctx);
 	/**
-	 * Exit a parse tree produced by {@link PrescriptionParser#timing}.
+	 * Exit a parse tree produced by {@link PrescriptionParser#frequency}.
 	 * @param ctx the parse tree
 	 */
-	void exitTiming(@NotNull PrescriptionParser.TimingContext ctx);
+	void exitFrequency(@NotNull PrescriptionParser.FrequencyContext ctx);
 	/**
 	 * Enter a parse tree produced by {@link PrescriptionParser#script}.
 	 * @param ctx the parse tree
@@ -98,4 +78,84 @@ public interface PrescriptionListener extends ParseTreeListener {
 	 * @param ctx the parse tree
 	 */
 	void exitDose(@NotNull PrescriptionParser.DoseContext ctx);
+	/**
+	 * Enter a parse tree produced by {@link PrescriptionParser#dose_unit}.
+	 * @param ctx the parse tree
+	 */
+	void enterDose_unit(@NotNull PrescriptionParser.Dose_unitContext ctx);
+	/**
+	 * Exit a parse tree produced by {@link PrescriptionParser#dose_unit}.
+	 * @param ctx the parse tree
+	 */
+	void exitDose_unit(@NotNull PrescriptionParser.Dose_unitContext ctx);
+	/**
+	 * Enter a parse tree produced by {@link PrescriptionParser#duration_unit}.
+	 * @param ctx the parse tree
+	 */
+	void enterDuration_unit(@NotNull PrescriptionParser.Duration_unitContext ctx);
+	/**
+	 * Exit a parse tree produced by {@link PrescriptionParser#duration_unit}.
+	 * @param ctx the parse tree
+	 */
+	void exitDuration_unit(@NotNull PrescriptionParser.Duration_unitContext ctx);
+	/**
+	 * Enter a parse tree produced by {@link PrescriptionParser#duration}.
+	 * @param ctx the parse tree
+	 */
+	void enterDuration(@NotNull PrescriptionParser.DurationContext ctx);
+	/**
+	 * Exit a parse tree produced by {@link PrescriptionParser#duration}.
+	 * @param ctx the parse tree
+	 */
+	void exitDuration(@NotNull PrescriptionParser.DurationContext ctx);
+	/**
+	 * Enter a parse tree produced by {@link PrescriptionParser#assignment}.
+	 * @param ctx the parse tree
+	 */
+	void enterAssignment(@NotNull PrescriptionParser.AssignmentContext ctx);
+	/**
+	 * Exit a parse tree produced by {@link PrescriptionParser#assignment}.
+	 * @param ctx the parse tree
+	 */
+	void exitAssignment(@NotNull PrescriptionParser.AssignmentContext ctx);
+	/**
+	 * Enter a parse tree produced by {@link PrescriptionParser#interval_length}.
+	 * @param ctx the parse tree
+	 */
+	void enterInterval_length(@NotNull PrescriptionParser.Interval_lengthContext ctx);
+	/**
+	 * Exit a parse tree produced by {@link PrescriptionParser#interval_length}.
+	 * @param ctx the parse tree
+	 */
+	void exitInterval_length(@NotNull PrescriptionParser.Interval_lengthContext ctx);
+	/**
+	 * Enter a parse tree produced by {@link PrescriptionParser#action}.
+	 * @param ctx the parse tree
+	 */
+	void enterAction(@NotNull PrescriptionParser.ActionContext ctx);
+	/**
+	 * Exit a parse tree produced by {@link PrescriptionParser#action}.
+	 * @param ctx the parse tree
+	 */
+	void exitAction(@NotNull PrescriptionParser.ActionContext ctx);
+	/**
+	 * Enter a parse tree produced by {@link PrescriptionParser#timing}.
+	 * @param ctx the parse tree
+	 */
+	void enterTiming(@NotNull PrescriptionParser.TimingContext ctx);
+	/**
+	 * Exit a parse tree produced by {@link PrescriptionParser#timing}.
+	 * @param ctx the parse tree
+	 */
+	void exitTiming(@NotNull PrescriptionParser.TimingContext ctx);
+	/**
+	 * Enter a parse tree produced by {@link PrescriptionParser#dose_amount}.
+	 * @param ctx the parse tree
+	 */
+	void enterDose_amount(@NotNull PrescriptionParser.Dose_amountContext ctx);
+	/**
+	 * Exit a parse tree produced by {@link PrescriptionParser#dose_amount}.
+	 * @param ctx the parse tree
+	 */
+	void exitDose_amount(@NotNull PrescriptionParser.Dose_amountContext ctx);
 }

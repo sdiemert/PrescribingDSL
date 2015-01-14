@@ -4,18 +4,29 @@ public class PrescriptionTiming {
 	
 	private int frequency;
 	private int length;
+	private int duration; 
 	private TimeUnit unit;
 	
-	public PrescriptionTiming(int freqency, int length, TimeUnit unit){
+	/**
+	 * @param frequency
+	 * @param length
+	 * @param duration
+	 * @param unit
+	 */
+	public PrescriptionTiming(int frequency, int length, int duration,
+			TimeUnit unit) {
+		super();
 		this.frequency = frequency;
 		this.length = length;
-		this.unit = unit; 
+		this.duration = duration;
+		this.unit = unit;
 	}
-	
+
 	public PrescriptionTiming(){
 		this.frequency = 0;
 		this.length = 0;
 		this.unit = null;
+		this.duration = 0; 
 	}
 	
 	public int getFrequency() {
@@ -37,11 +48,22 @@ public class PrescriptionTiming {
 		this.unit = unit;
 	}
 
+	public int getDuration() {
+		return duration;
+	}
+
+	public void setDuration(int duration) {
+		this.duration = duration;
+	}
+
 	@Override
 	public String toString() {
 		return "PrescriptionTiming [frequency=" + frequency + ", length="
-				+ length + ", unit=" + unit + "]";
+				+ length + ", duration=" + duration + ", unit=" + unit + "]";
 	}
+
+
+	
 	
 	
 
