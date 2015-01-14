@@ -1,12 +1,18 @@
 package main;
 
 public enum DoseUnit {
-	mg,
-	g,
-	ng,
-	mcg,
-	mL,
-	L,
-	mcL,
-	nL
+	mg("mg"),
+	g("g"),
+	ng("ng"),
+	mcg("mcg"),
+	mL("mL"),
+	L("L"),
+	mcL("mcL"),
+	nL("nL");
+	
+	private String name = null;
+	
+	private DoseUnit(String s){
+		this.name = s;
+	}
 }

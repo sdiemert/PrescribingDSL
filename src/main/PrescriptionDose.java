@@ -13,6 +13,12 @@ public class PrescriptionDose {
 		this.amount = amount;
 		this.unit = unit;
 	}
+	
+	public PrescriptionDose(){
+		super(); 
+		this.amount = 0; 
+		this.unit = null;
+	}
 	public int getAmount() {
 		return amount;
 	}
