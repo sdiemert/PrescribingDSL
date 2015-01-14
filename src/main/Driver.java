@@ -3,6 +3,7 @@ package main;
 import antlr.prescription.*;
 
 import org.antlr.v4.runtime.*;
+import org.antlr.v4.runtime.tree.*;
 
 public class Driver {
 
@@ -14,9 +15,11 @@ public class Driver {
 		
 		System.out.println(lexer);
 		PrescriptionParser parser = new PrescriptionParser(new CommonTokenStream(lexer));
-		parser.script();
+		
+		ParseTree tree = parser.script();
+		System.out.println(tree.toStringTree(parser));
 		
 		System.out.println("COMPLETED");
 	}
-
 }
+ 

@@ -25,7 +25,7 @@ script : expr+;
 
 expr :
           expr 'THEN' expr
-	| assignment NEWLINE
+		| assignment NEWLINE
         | a=action m=medication d=dose t=timing
         | expr NEWLINE
         | NEWLINE
@@ -50,13 +50,14 @@ dose:
 ;
 
 timing : 
-        interval 'FOR' duration 
+        interval  'FOR'  duration 
     |   interval
 ;
 
 interval:
-        (INTERVAL_FREQ|INT|NUMBER) (TIMEUNIT|INTERVAL_LENGTH|TIMEUNIT_PLURAL) //once daily, twice weekly etc...
-    |   (INTERVAL_FREQ|INT|NUMBER) INTERVAL_MODIFIER (TIMEUNIT|TIMEUNIT_PLURAL|INTERVAL_LENGTH) //5 per day, 5 times per day, 5xdaily, 
+        (INTERVAL_FREQ|INT|NUMBER)  (TIMEUNIT|INTERVAL_LENGTH|TIMEUNIT_PLURAL) //once daily, twice weekly etc...
+    |   (INTERVAL_FREQ|INT|NUMBER)  INTERVAL_MODIFIER  (TIMEUNIT|TIMEUNIT_PLURAL|INTERVAL_LENGTH) //5 per day, 5 times per day, 5xdaily, 
+   | 	(INTERVAL_FREQ|INT|NUMBER) //once, twice etc....
 ;
 
 duration: 

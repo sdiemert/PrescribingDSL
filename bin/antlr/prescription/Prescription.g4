@@ -1,49 +1,67 @@
 grammar Prescription;
 
-@header{
-	import java.util.HashMap;
-}
-@members{
-	HashMap memory = new HashMap();
-}
-
 // START:tokens
-STRING	: 	('a'..'z'|'A'..'Z')+ ;
-ID  	:   ('a'..'z'|'A'..'Z')+ ;
-UNIT 	: 	('mg' | 'g' | 'kg' | 'mcg' | 'ng') ;
 INT 	:   '0'..'9'+ ;
-NEWLINE	:	'\r'? '\n' ;
+
+NUMBER  :   ('zero' | 'one' | 'two' |'three'|'four'|'five'|'six'|'seven'|'eight'|'nine'|'ten')+;
+TIMEUNIT:   ('hour'| 'day'| 'week'|'month'|'year')+;
+TIMEUNIT_PLURAL : TIMEUNIT's'+;
+
+UNIT 	:   ('mg' | 'g' | 'kg' | 'mcg' | 'ng') ;
+
+INTERVAL_FREQ : ('once'|'twice'|'thrice');
+INTERVAL_MODIFIER : ('per' | 'times per' |'x' | 'times');
+INTERVAL_LENGTH : ('daily'|'weekly'|'monthly'|'yearly'|'annually');
+
+STRING	:   ('a'..'z'|'A'..'Z')+ ;
+ID  	:   ('a'..'z'|'A'..'Z')+ ;
+
+
+
+NEWLINE	:   '\r'? '\n' ;
 WS  	:   (' '|'\t'|'\n'|'\r')+ {skip();} ;
 	
 script : expr+; 
 
 expr :
-	a=action m=medication d=dose t=timing NEWLINE {System.out.println("a="+$a.val+" m="+$m.val+" d="+$d.text+" t="+$t.text);}
-	| expr 'THEN' expr NEWLINE
-	| assignment NEWLINE
-	| NEWLINE
+          expr 'THEN' expr
+		| assignment NEWLINE
+        | a=action m=medication d=dose t=timing
+        | expr NEWLINE
+        | NEWLINE
 ;
 
 assignment: 
-	  'ACTION' ID '=' a=action {memory.put($ID.text, $a.text);}
-	| 'DOSE' ID '=' d=dose {memory.put($ID.text, $d.text);}
-	| 'MEDICATION' ID '=' m=medication {memory.put($ID.text, $m.text);}
-	| 'TIMING' ID '=' t=timing {memory.put($ID.text, $t.text);}
+	  'ACTION' ID '=' a=action
+	| 'DOSE' ID '=' d=dose
+	| 'MEDICATION' ID '=' m=medication
+	| 'TIMING' ID '=' t=timing
 ;
 
-action returns [String val]: 		
- 	ID 		{ 
-				String s = (String)memory.get($ID.text);
-				if(s != null){
-					$val = s;
-				}
-			}	
-	| s=STRING {$val = $s.text; System.out.println("action: "+$val);} 
+action : 		
+        ID 	
+    |   s=STRING 
 ;
 
-medication returns [String val]: s=STRING{$val = $s.text; System.out.println("med: "+$val);};
+medication : s=STRING;
 
-dose returns [String val]: INT u=('mg' | 'g' | 'kg' | 'mcg' | 'ng') {$val = $INT.text + $u.text; System.out.println("dose: "+$val);};
+dose: 
+    INT u=('mg' | 'g' | 'kg' | 'mcg' | 'ng')
+;
 
-timing returns [String val] : x=STRING+? {$val = $x.text; System.out.println("timing: "+$x.text);}; 
+timing : 
+        interval  'FOR'  duration 
+    |   interval
+;
+
+interval:
+        (INTERVAL_FREQ|INT|NUMBER)  (TIMEUNIT|INTERVAL_LENGTH|TIMEUNIT_PLURAL) //once daily, twice weekly etc...
+    |   (INTERVAL_FREQ|INT|NUMBER)  INTERVAL_MODIFIER  (TIMEUNIT|TIMEUNIT_PLURAL|INTERVAL_LENGTH) //5 per day, 5 times per day, 5xdaily, 
+   | 	(INTERVAL_FREQ|INT|NUMBER) //once, twice etc....
+;
+
+duration: 
+        n=(NUMBER|INT) tu=TIMEUNIT_PLURAL
+    |   n=(NUMBER|INT) tu=TIMEUNIT
+;
 
