@@ -160,7 +160,6 @@ public class PrescriptionTreeListener extends PrescriptionBaseListener{
 		//object in the list of prescriptions for reference later.
 		
 		this.currentTiming = ListenerHelper.reconileTimingUnits(this.currentTiming); 
-		
 		this.scriptList.add(this.currentScript); 
 		this.currentDose = null; 
 		this.currentTiming = null;
@@ -205,13 +204,7 @@ public class PrescriptionTreeListener extends PrescriptionBaseListener{
 			timeUnitMap.put("yearly", TimeUnit.YEAR); 
 		}
 		
-		private final static String removePlural(String s){
-			if(s.endsWith("S")||s.endsWith("s")){
-				return s.substring(0, s.length()-1); 
-			}else{
-				return s; 
-			}
-		}
+
 		
 		/*			HOUR   DAY	  WEEK  MONTH   YEAR
 		 * HOUR	    1 
@@ -252,20 +245,33 @@ public class PrescriptionTreeListener extends PrescriptionBaseListener{
 			//Maybe add more, but not sure it is worth it....this is a temp fix.
 		}
 
-		public static int lookUpIntegerFromString(String s) throws Exception{
+		public static int lookUpIntegerFromString(String s) throws NullPointerException{
+			int x = 0; 
+
 			if(s == null){
-				throw new Exception("null is not a valid string"); 
+				throw new NullPointerException("null is not a valid string"); 
 			}
-			//TODO: possibly add more error handling here.
-			return numberMap.get(s); 
+
+			//attempt to parse the string to an int directly ("1" -> 1)
+			try{
+				x = Integer.parseInt(s); 
+			}catch(NumberFormatException e){
+				//if parsing the int directly fails, do a look up. 
+                x = numberMap.get(s);  //if this fails it will throw an exception
+			}
+			return x; 
 		}
 
-		public static TimeUnit normalizeTimeUnit(String s) throws Exception{
+		public static TimeUnit normalizeTimeUnit(String s) throws NullPointerException, IndexOutOfBoundsException{
+			TimeUnit x = null; 
 			if(s == null){
-				throw new Exception("null is not a valid string"); 
+				throw new NullPointerException("null is not a valid string"); 
 			}
-			//TODO: possibly add more error handling here.
-			return timeUnitMap.get(s); 
+			x = timeUnitMap.get(s.toLowerCase()); 
+			if(x == null){
+				throw new IndexOutOfBoundsException(s+" is an invalid TimeUnit string."); 
+			}
+			return x; 
 		}
 		
 		public static PrescriptionTiming reconileTimingUnits(PrescriptionTiming t){
@@ -290,6 +296,14 @@ public class PrescriptionTreeListener extends PrescriptionBaseListener{
 				t.setUnit(t.getFreqUnit()); 
 			}
 			return t; 
+		}
+		
+		public final static String removePlural(String s){
+			if(s.endsWith("S")||s.endsWith("s")){
+				return s.substring(0, s.length()-1); 
+			}else{
+				return s; 
+			}
 		}
 	}
 }
