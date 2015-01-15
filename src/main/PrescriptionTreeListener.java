@@ -3,12 +3,9 @@ package main;
 import antlr.prescription.PrescriptionBaseListener;
 import antlr.prescription.PrescriptionParser;
 
-import java.util.GregorianCalendar;
 import java.util.HashMap;
 import java.util.Map;
 import java.util.LinkedList;
-import java.util.Calendar;
-import java.util.Date; 
 
 public class PrescriptionTreeListener extends PrescriptionBaseListener{
 
@@ -162,7 +159,7 @@ public class PrescriptionTreeListener extends PrescriptionBaseListener{
 		//now that we are exiting the node we can store the Prescription 
 		//object in the list of prescriptions for reference later.
 		
-		ListenerHelper.reconileTimingUnits(this.currentTiming); 
+		this.currentTiming = ListenerHelper.reconileTimingUnits(this.currentTiming); 
 		
 		this.scriptList.add(this.currentScript); 
 		this.currentDose = null; 
@@ -170,6 +167,15 @@ public class PrescriptionTreeListener extends PrescriptionBaseListener{
 		this.currentScript = null; 
 	}
 	
+	/**
+	 * Helper class for the PrescriptionTreeListener.
+	 * 
+	 * Contains methods for converting between different unit types 
+	 * and operations for managing conversions.
+	 * 
+	 * @author sdiemert
+	 *
+	 */
 	public static class ListenerHelper{
 
 		private final static Map<String, Integer> numberMap = new HashMap<String, Integer>(); 
@@ -215,16 +221,35 @@ public class PrescriptionTreeListener extends PrescriptionBaseListener{
 		 * YEAR		8064   365	   52	  12    1	
 		 */
 		
+		//This solution with mapping between time units is not ideal and does not account for major calendar things like 30 months etc....
+		//it shoudl be fine for any prescription that is under a year in length. 
 		private final static Map<TimeUnit, Map<TimeUnit, Integer>> timeUnitConversionMap = new HashMap<TimeUnit, Map<TimeUnit, Integer>>(); 
-		private static Map<TimeUnit, Integer> tempMap = new HashMap<TimeUnit, Integer>(); 
+		private static Map<TimeUnit, Integer> hourMap = new HashMap<TimeUnit, Integer>(); 
+		private static Map<TimeUnit, Integer> dayMap = new HashMap<TimeUnit, Integer>(); 
+		private static Map<TimeUnit, Integer> weekMap = new HashMap<TimeUnit, Integer>(); 
 		static{
-			/*
-			tempMap.put("HOUR", 1);
-			tempMap.put("DAY", 24);
-			tempMap.put("WEEK", 24);
-			tempMap.put("", 24);
-			tempMap.put("DAY", 24);
-			*/
+			//hours -> ? 
+			hourMap.put(TimeUnit.HOUR, 1); 
+			hourMap.put(TimeUnit.DAY, 24);
+			hourMap.put(TimeUnit.WEEK, 168);
+			hourMap.put(TimeUnit.MONTH, 672); //month is 28 days here....fix this to be better later.
+			hourMap.put(TimeUnit.YEAR, 8736);
+			timeUnitConversionMap.put(TimeUnit.HOUR, hourMap); 
+
+			//days -> ?
+			dayMap.put(TimeUnit.DAY, 1);
+			dayMap.put(TimeUnit.WEEK, 7);
+			dayMap.put(TimeUnit.MONTH, 28); //month is 28 days here....fix this to be better later.
+			dayMap.put(TimeUnit.YEAR, 365);
+			timeUnitConversionMap.put(TimeUnit.DAY, dayMap); 
+	
+			//weeks -> ?
+			weekMap.put(TimeUnit.WEEK, 1);
+			weekMap.put(TimeUnit.MONTH, 4); //month is 28 days here....fix this to be better later.
+			weekMap.put(TimeUnit.YEAR, 52);
+			timeUnitConversionMap.put(TimeUnit.WEEK, weekMap); 
+
+			//Maybe add more, but not sure it is worth it....this is a temp fix.
 		}
 
 		public static int lookUpIntegerFromString(String s) throws Exception{
@@ -245,6 +270,7 @@ public class PrescriptionTreeListener extends PrescriptionBaseListener{
 		
 		public static PrescriptionTiming reconileTimingUnits(PrescriptionTiming t){
 			
+			int x = 0; 
 			//need to make sure that the duration and interval units agree. 
 			//t.freqUnit and t.durationUnit need to be reconciled, the number of 
 			//units of the duration or freq will have to be adjusted. 
@@ -254,17 +280,14 @@ public class PrescriptionTreeListener extends PrescriptionBaseListener{
 				t.setUnit(t.getFreqUnit());
 				System.out.println(t.getUnit()); 
 			}else{
-				//based on start date (today) calculate the end date
-				//calculate the number of time units in between the dates
-				//adjust duration and frequency to match
-				
-				Date currentDate = new Date();  //defaults to current time...FIXME
-				GregorianCalendar cal = new GregorianCalendar(); 
-				
-				cal.setTime(currentDate);
-				cal.add(Calendar.WEEK_OF_YEAR, 1);
-				
-				
+				//based on the interval unit we need to figure out hte duration in 
+				//the same units.
+			
+				//there are x freqUnits in one durationUnit
+				x = timeUnitConversionMap.get(t.getFreqUnit()).get(t.getDurationUnit());
+				t.setDuration(x*t.getDuration());
+				t.setDurationUnit(t.getFreqUnit()); 
+				t.setUnit(t.getFreqUnit()); 
 			}
 			return t; 
 		}
