@@ -29,6 +29,16 @@ public interface PrescriptionListener extends ParseTreeListener {
 	 */
 	void exitDuration_amount(@NotNull PrescriptionParser.Duration_amountContext ctx);
 	/**
+	 * Enter a parse tree produced by {@link PrescriptionParser#atom}.
+	 * @param ctx the parse tree
+	 */
+	void enterAtom(@NotNull PrescriptionParser.AtomContext ctx);
+	/**
+	 * Exit a parse tree produced by {@link PrescriptionParser#atom}.
+	 * @param ctx the parse tree
+	 */
+	void exitAtom(@NotNull PrescriptionParser.AtomContext ctx);
+	/**
 	 * Enter a parse tree produced by {@link PrescriptionParser#interval}.
 	 * @param ctx the parse tree
 	 */

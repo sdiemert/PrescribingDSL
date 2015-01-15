@@ -25,11 +25,13 @@ script : expr+;
 
 expr :
           expr 'THEN' expr
+        | atom
 		| assignment NEWLINE
-        | a=action m=medication d=dose t=timing
         | expr NEWLINE
         | NEWLINE
 ;
+
+atom : a=action m=medication d=dose t=timing;
 
 assignment: 
 	  'ACTION' ID '=' a=action

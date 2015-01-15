@@ -1,5 +1,7 @@
 package main;
 
+import java.util.LinkedList;
+
 import antlr.prescription.*;
 
 import org.antlr.v4.runtime.*;
@@ -22,6 +24,9 @@ public class Driver {
 		ParseTreeWalker walker = new ParseTreeWalker();
 		PrescriptionTreeListener list = new PrescriptionTreeListener(parser);
 		walker.walk(list, tree);
+		
+		LinkedList<Prescription> p = list.getPrescription();
+		System.out.println("Prescription: "+p); 
 		
 		System.out.println("COMPLETED");
 	}

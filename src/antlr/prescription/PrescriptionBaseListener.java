@@ -41,6 +41,18 @@ public class PrescriptionBaseListener implements PrescriptionListener {
 	 *
 	 * <p>The default implementation does nothing.</p>
 	 */
+	@Override public void enterAtom(@NotNull PrescriptionParser.AtomContext ctx) { }
+	/**
+	 * {@inheritDoc}
+	 *
+	 * <p>The default implementation does nothing.</p>
+	 */
+	@Override public void exitAtom(@NotNull PrescriptionParser.AtomContext ctx) { }
+	/**
+	 * {@inheritDoc}
+	 *
+	 * <p>The default implementation does nothing.</p>
+	 */
 	@Override public void enterInterval(@NotNull PrescriptionParser.IntervalContext ctx) { }
 	/**
 	 * {@inheritDoc}
