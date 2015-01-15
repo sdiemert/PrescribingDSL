@@ -161,18 +161,6 @@ public class PrescriptionBaseListener implements PrescriptionListener {
 	 *
 	 * <p>The default implementation does nothing.</p>
 	 */
-	@Override public void enterInterval_length(@NotNull PrescriptionParser.Interval_lengthContext ctx) { }
-	/**
-	 * {@inheritDoc}
-	 *
-	 * <p>The default implementation does nothing.</p>
-	 */
-	@Override public void exitInterval_length(@NotNull PrescriptionParser.Interval_lengthContext ctx) { }
-	/**
-	 * {@inheritDoc}
-	 *
-	 * <p>The default implementation does nothing.</p>
-	 */
 	@Override public void enterAction(@NotNull PrescriptionParser.ActionContext ctx) { }
 	/**
 	 * {@inheritDoc}
@@ -180,6 +168,18 @@ public class PrescriptionBaseListener implements PrescriptionListener {
 	 * <p>The default implementation does nothing.</p>
 	 */
 	@Override public void exitAction(@NotNull PrescriptionParser.ActionContext ctx) { }
+	/**
+	 * {@inheritDoc}
+	 *
+	 * <p>The default implementation does nothing.</p>
+	 */
+	@Override public void enterIntervalLength(@NotNull PrescriptionParser.IntervalLengthContext ctx) { }
+	/**
+	 * {@inheritDoc}
+	 *
+	 * <p>The default implementation does nothing.</p>
+	 */
+	@Override public void exitIntervalLength(@NotNull PrescriptionParser.IntervalLengthContext ctx) { }
 	/**
 	 * {@inheritDoc}
 	 *

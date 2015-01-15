@@ -4,7 +4,9 @@ public class PrescriptionTiming {
 	
 	private int frequency;
 	private int duration; 
-	private TimeUnit unit;
+	private TimeUnit unit; //this unit is the one we ideally use.
+	private TimeUnit freqUnit;
+	private TimeUnit durationUnit;
 	
 	/**
 	 * @param frequency
@@ -25,6 +27,22 @@ public class PrescriptionTiming {
 		this.duration = 0; 
 	}
 	
+	public TimeUnit getFreqUnit() {
+		return freqUnit;
+	}
+
+	public void setFreqUnit(TimeUnit freqUnit) {
+		this.freqUnit = freqUnit;
+	}
+
+	public TimeUnit getDurationUnit() {
+		return durationUnit;
+	}
+
+	public void setDurationUnit(TimeUnit durationUnit) {
+		this.durationUnit = durationUnit;
+	}
+
 	public int getFrequency() {
 		return frequency;
 	}

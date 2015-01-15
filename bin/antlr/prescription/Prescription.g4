@@ -58,13 +58,13 @@ timing :
 ;
 
 interval:
-        frequency interval_length
-    |   frequency  INTERVAL_MODIFIER  interval_length //5 per day, 5 times per day, 5xdaily, 
+        frequency intervalLength
+    |   frequency  INTERVAL_MODIFIER  intervalLength //5 per day, 5 times per day, 5xdaily, 
     | 	frequency //once, twice etc....
 ;
 
 frequency: (INTERVAL_FREQ|INT|NUMBER) ;
-interval_length:  (TIMEUNIT|INTERVAL_LENGTH|TIMEUNIT_PLURAL); //once daily, twice weekly etc...
+intervalLength:  (TIMEUNIT|INTERVAL_LENGTH|TIMEUNIT_PLURAL); //once daily, twice weekly etc...
 duration: n=duration_amount tu=duration_unit;
 duration_amount: (NUMBER|INT);
 duration_unit: (TIMEUNIT_PLURAL | TIMEUNIT);

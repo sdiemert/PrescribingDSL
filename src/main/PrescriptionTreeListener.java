@@ -3,18 +3,19 @@ package main;
 import antlr.prescription.PrescriptionBaseListener;
 import antlr.prescription.PrescriptionParser;
 
+import java.util.GregorianCalendar;
 import java.util.HashMap;
 import java.util.Map;
 import java.util.LinkedList;
+import java.util.Calendar;
+import java.util.Date; 
 
 public class PrescriptionTreeListener extends PrescriptionBaseListener{
 
-	private Translator translator = null; 
-	private PrescriptionParser parser = null;
 	private LinkedList<Prescription> scriptList = null; 
-	private Prescription current_script = null;
-	private PrescriptionDose current_dose = null;
-	private PrescriptionTiming current_timing = null;
+	private Prescription currentScript = null;
+	private PrescriptionDose currentDose = null;
+	private PrescriptionTiming currentTiming = null;
 	
 	
 	/**
@@ -23,13 +24,11 @@ public class PrescriptionTreeListener extends PrescriptionBaseListener{
 	 * 
 	 * @param parser
 	 */
-	public PrescriptionTreeListener(PrescriptionParser parser){
-		this.parser = parser; 
-		this.current_script =  null; 
-		this.current_dose = null;
-		this.current_timing = null; 
+	public PrescriptionTreeListener(){
+		this.currentScript =  null;
+		this.currentDose = null;
+		this.currentTiming = null; 
 		this.scriptList = new LinkedList<Prescription>(); 
-		this.translator = new Translator();
 	}
 	
 	/**
@@ -46,7 +45,7 @@ public class PrescriptionTreeListener extends PrescriptionBaseListener{
 		
 		//do checking here for medicationt types etc....
 		
-		this.current_script.setMedication(ctx.getText());
+		this.currentScript.setMedication(ctx.getText());
 	}
 	
 	@Override
@@ -54,27 +53,27 @@ public class PrescriptionTreeListener extends PrescriptionBaseListener{
 		System.out.println("enterAction() -> "+ ctx.getText());
 		PrescriptionAction a = PrescriptionAction.valueOf(ctx.getText().toUpperCase()); 
 		System.out.println("Action: "+a); 
-		this.current_script.setAction(a);
+		this.currentScript.setAction(a);
 	}
 	
 	@Override
 	public void enterDose_unit(PrescriptionParser.Dose_unitContext ctx){
 		System.out.println("enterDose_unit() -> "+ ctx.getText());
-		this.current_dose.setUnit(DoseUnit.valueOf(ctx.getText()));
+		this.currentDose.setUnit(DoseUnit.valueOf(ctx.getText().toUpperCase()));
 	}
 
 	@Override 
 	public void enterDose_amount(PrescriptionParser.Dose_amountContext ctx){
 		System.out.println("enterDose_amount() -> "+ Integer.parseInt(ctx.getText()));
-		this.current_dose.setAmount(Integer.parseInt(ctx.getText()));
+		this.currentDose.setAmount(Integer.parseInt(ctx.getText()));
 	}
 	
 	@Override 
 	public void exitDose(PrescriptionParser.DoseContext ctx){
-		System.out.println("exitDose() -> "+this.current_dose); 
+		System.out.println("exitDose() -> "+this.currentDose); 
 		//perhaps add in handling for if the dose in not actually completed?
 		
-        this.current_script.setDose(this.current_dose); 
+        this.currentScript.setDose(this.currentDose); 
 	}
 
 	@Override
@@ -85,12 +84,12 @@ public class PrescriptionTreeListener extends PrescriptionBaseListener{
 		//that represent numbers (once == 1, twice == 2) to actual integers.
 
 		try{
-			this.current_timing.setFrequency(Integer.parseInt(ctx.getText()));
+			this.currentTiming.setFrequency(Integer.parseInt(ctx.getText()));
 		}catch(NumberFormatException e){
 			//if we get to this point the frequency was a word like "once" or "three"
 			//need to match these against lookup table. 
 			try{
-                this.current_timing.setFrequency(Translator.lookUpIntegerFromString(ctx.getText().toLowerCase())); 
+                this.currentTiming.setFrequency(ListenerHelper.lookUpIntegerFromString(ctx.getText().toLowerCase())); 
 			}catch(Exception ee){
 				
 			}
@@ -98,11 +97,11 @@ public class PrescriptionTreeListener extends PrescriptionBaseListener{
 	}
 
 	@Override
-	public void enterInterval_length(PrescriptionParser.Interval_lengthContext ctx){
-		System.out.println("enterInterval_length() -> "+ ctx.getText());
+	public void enterIntervalLength(PrescriptionParser.IntervalLengthContext ctx){
+		System.out.println("enterIntervalLength() -> "+ ctx.getText());
 		//interval is a TimeUnit like (day, month, hour etc...)
 		try {
-			this.current_timing.setUnit(Translator.normalizeTimeUnit(ctx.getText().toLowerCase()));
+			this.currentTiming.setFreqUnit(ListenerHelper.normalizeTimeUnit(ctx.getText().toLowerCase()));
 		} catch (Exception e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
@@ -113,12 +112,12 @@ public class PrescriptionTreeListener extends PrescriptionBaseListener{
 	public void enterDuration_amount(PrescriptionParser.Duration_amountContext ctx){
 		System.out.println("enterDuration_amount() -> "+ ctx.getText());
         try{
-			this.current_timing.setDuration(Integer.parseInt(ctx.getText()));
+			this.currentTiming.setDuration(Integer.parseInt(ctx.getText()));
 		}catch(NumberFormatException e){
 			//if we get to this point the frequency was a word like "once" or "three"
 			//need to match these against lookup table. 
 			try{
-                this.current_timing.setDuration(Translator.lookUpIntegerFromString(ctx.getText().toLowerCase())); 
+                this.currentTiming.setDuration(ListenerHelper.lookUpIntegerFromString(ctx.getText().toLowerCase())); 
 			}catch(Exception ee){
 				
 			}
@@ -128,7 +127,8 @@ public class PrescriptionTreeListener extends PrescriptionBaseListener{
 	@Override 
 	public void enterDuration_unit(PrescriptionParser.Duration_unitContext ctx){
 		System.out.println("enterDuration_unit() -> "+ ctx.getText());
-		//TODO: Need to update this method to reconcil between the tow time units. 
+		
+		this.currentTiming.setDurationUnit(TimeUnit.valueOf(ListenerHelper.removePlural(ctx.getText().toUpperCase()))); 
 	}
 	
 	@Override
@@ -140,7 +140,7 @@ public class PrescriptionTreeListener extends PrescriptionBaseListener{
 		//at this point we assume that the entire timing object has been built. 
 		//commit the timing object to the prescription.
 
-		this.current_script.setTiming(this.current_timing);
+		this.currentScript.setTiming(this.currentTiming);
 		
 	}
 	
@@ -150,9 +150,9 @@ public class PrescriptionTreeListener extends PrescriptionBaseListener{
 		
 		//when we enter a new atomic prescription context create the 
 		//supporting objects required to make them work.
-		this.current_script = new Prescription(); 
-        this.current_dose = new PrescriptionDose(); 
-		this.current_timing = new PrescriptionTiming(); 
+		this.currentScript = new Prescription(); 
+        this.currentDose = new PrescriptionDose(); 
+		this.currentTiming = new PrescriptionTiming(); 
 	}
 	
 	@Override
@@ -162,13 +162,15 @@ public class PrescriptionTreeListener extends PrescriptionBaseListener{
 		//now that we are exiting the node we can store the Prescription 
 		//object in the list of prescriptions for reference later.
 		
-		this.scriptList.add(this.current_script); 
-		this.current_dose = null; 
-		this.current_timing = null;
-		this.current_script = null; 
+		ListenerHelper.reconileTimingUnits(this.currentTiming); 
+		
+		this.scriptList.add(this.currentScript); 
+		this.currentDose = null; 
+		this.currentTiming = null;
+		this.currentScript = null; 
 	}
 	
-	public static class Translator{
+	public static class ListenerHelper{
 
 		private final static Map<String, Integer> numberMap = new HashMap<String, Integer>(); 
 		static{
@@ -196,6 +198,34 @@ public class PrescriptionTreeListener extends PrescriptionBaseListener{
 			timeUnitMap.put("monthly", TimeUnit.MONTH); 
 			timeUnitMap.put("yearly", TimeUnit.YEAR); 
 		}
+		
+		private final static String removePlural(String s){
+			if(s.endsWith("S")||s.endsWith("s")){
+				return s.substring(0, s.length()-1); 
+			}else{
+				return s; 
+			}
+		}
+		
+		/*			HOUR   DAY	  WEEK  MONTH   YEAR
+		 * HOUR	    1 
+		 * DAY		24	   1      
+		 * WEEK		168	   7	   1
+		 * MONTH	672	   30	   4	  1
+		 * YEAR		8064   365	   52	  12    1	
+		 */
+		
+		private final static Map<TimeUnit, Map<TimeUnit, Integer>> timeUnitConversionMap = new HashMap<TimeUnit, Map<TimeUnit, Integer>>(); 
+		private static Map<TimeUnit, Integer> tempMap = new HashMap<TimeUnit, Integer>(); 
+		static{
+			/*
+			tempMap.put("HOUR", 1);
+			tempMap.put("DAY", 24);
+			tempMap.put("WEEK", 24);
+			tempMap.put("", 24);
+			tempMap.put("DAY", 24);
+			*/
+		}
 
 		public static int lookUpIntegerFromString(String s) throws Exception{
 			if(s == null){
@@ -211,6 +241,32 @@ public class PrescriptionTreeListener extends PrescriptionBaseListener{
 			}
 			//TODO: possibly add more error handling here.
 			return timeUnitMap.get(s); 
+		}
+		
+		public static PrescriptionTiming reconileTimingUnits(PrescriptionTiming t){
+			
+			//need to make sure that the duration and interval units agree. 
+			//t.freqUnit and t.durationUnit need to be reconciled, the number of 
+			//units of the duration or freq will have to be adjusted. 
+
+			if(t.getFreqUnit() == t.getDurationUnit()){
+				//if they are the same we agree already, return.
+				t.setUnit(t.getFreqUnit());
+				System.out.println(t.getUnit()); 
+			}else{
+				//based on start date (today) calculate the end date
+				//calculate the number of time units in between the dates
+				//adjust duration and frequency to match
+				
+				Date currentDate = new Date();  //defaults to current time...FIXME
+				GregorianCalendar cal = new GregorianCalendar(); 
+				
+				cal.setTime(currentDate);
+				cal.add(Calendar.WEEK_OF_YEAR, 1);
+				
+				
+			}
+			return t; 
 		}
 	}
 }

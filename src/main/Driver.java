@@ -22,12 +22,13 @@ public class Driver {
 		System.out.println(tree.toStringTree(parser));
 		
 		ParseTreeWalker walker = new ParseTreeWalker();
-		PrescriptionTreeListener list = new PrescriptionTreeListener(parser);
+		PrescriptionTreeListener list = new PrescriptionTreeListener();
 		walker.walk(list, tree);
 		
 		LinkedList<Prescription> p = list.getPrescription();
 		System.out.println("Prescription: "+p); 
 		
+		System.out.println("================");
 		System.out.println("COMPLETED");
 	}
 }

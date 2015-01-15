@@ -129,16 +129,6 @@ public interface PrescriptionListener extends ParseTreeListener {
 	 */
 	void exitAssignment(@NotNull PrescriptionParser.AssignmentContext ctx);
 	/**
-	 * Enter a parse tree produced by {@link PrescriptionParser#interval_length}.
-	 * @param ctx the parse tree
-	 */
-	void enterInterval_length(@NotNull PrescriptionParser.Interval_lengthContext ctx);
-	/**
-	 * Exit a parse tree produced by {@link PrescriptionParser#interval_length}.
-	 * @param ctx the parse tree
-	 */
-	void exitInterval_length(@NotNull PrescriptionParser.Interval_lengthContext ctx);
-	/**
 	 * Enter a parse tree produced by {@link PrescriptionParser#action}.
 	 * @param ctx the parse tree
 	 */
@@ -148,6 +138,16 @@ public interface PrescriptionListener extends ParseTreeListener {
 	 * @param ctx the parse tree
 	 */
 	void exitAction(@NotNull PrescriptionParser.ActionContext ctx);
+	/**
+	 * Enter a parse tree produced by {@link PrescriptionParser#intervalLength}.
+	 * @param ctx the parse tree
+	 */
+	void enterIntervalLength(@NotNull PrescriptionParser.IntervalLengthContext ctx);
+	/**
+	 * Exit a parse tree produced by {@link PrescriptionParser#intervalLength}.
+	 * @param ctx the parse tree
+	 */
+	void exitIntervalLength(@NotNull PrescriptionParser.IntervalLengthContext ctx);
 	/**
 	 * Enter a parse tree produced by {@link PrescriptionParser#timing}.
 	 * @param ctx the parse tree

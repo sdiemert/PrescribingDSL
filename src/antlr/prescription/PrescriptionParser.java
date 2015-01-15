@@ -28,11 +28,11 @@ public class PrescriptionParser extends Parser {
 	public static final int
 		RULE_script = 0, RULE_expr = 1, RULE_atom = 2, RULE_assignment = 3, RULE_action = 4, 
 		RULE_medication = 5, RULE_dose = 6, RULE_dose_amount = 7, RULE_dose_unit = 8, 
-		RULE_timing = 9, RULE_interval = 10, RULE_frequency = 11, RULE_interval_length = 12, 
+		RULE_timing = 9, RULE_interval = 10, RULE_frequency = 11, RULE_intervalLength = 12, 
 		RULE_duration = 13, RULE_duration_amount = 14, RULE_duration_unit = 15;
 	public static final String[] ruleNames = {
 		"script", "expr", "atom", "assignment", "action", "medication", "dose", 
-		"dose_amount", "dose_unit", "timing", "interval", "frequency", "interval_length", 
+		"dose_amount", "dose_unit", "timing", "interval", "frequency", "intervalLength", 
 		"duration", "duration_amount", "duration_unit"
 	};
 
@@ -629,11 +629,11 @@ public class PrescriptionParser extends Parser {
 
 	public static class IntervalContext extends ParserRuleContext {
 		public TerminalNode INTERVAL_MODIFIER() { return getToken(PrescriptionParser.INTERVAL_MODIFIER, 0); }
+		public IntervalLengthContext intervalLength() {
+			return getRuleContext(IntervalLengthContext.class,0);
+		}
 		public FrequencyContext frequency() {
 			return getRuleContext(FrequencyContext.class,0);
-		}
-		public Interval_lengthContext interval_length() {
-			return getRuleContext(Interval_lengthContext.class,0);
 		}
 		public IntervalContext(ParserRuleContext parent, int invokingState) {
 			super(parent, invokingState);
@@ -659,7 +659,7 @@ public class PrescriptionParser extends Parser {
 				enterOuterAlt(_localctx, 1);
 				{
 				setState(98); frequency();
-				setState(99); interval_length();
+				setState(99); intervalLength();
 				}
 				break;
 			case 2:
@@ -667,7 +667,7 @@ public class PrescriptionParser extends Parser {
 				{
 				setState(101); frequency();
 				setState(102); match(INTERVAL_MODIFIER);
-				setState(103); interval_length();
+				setState(103); intervalLength();
 				}
 				break;
 			case 3:
@@ -733,27 +733,27 @@ public class PrescriptionParser extends Parser {
 		return _localctx;
 	}
 
-	public static class Interval_lengthContext extends ParserRuleContext {
+	public static class IntervalLengthContext extends ParserRuleContext {
 		public TerminalNode INTERVAL_LENGTH() { return getToken(PrescriptionParser.INTERVAL_LENGTH, 0); }
 		public TerminalNode TIMEUNIT() { return getToken(PrescriptionParser.TIMEUNIT, 0); }
 		public TerminalNode TIMEUNIT_PLURAL() { return getToken(PrescriptionParser.TIMEUNIT_PLURAL, 0); }
-		public Interval_lengthContext(ParserRuleContext parent, int invokingState) {
+		public IntervalLengthContext(ParserRuleContext parent, int invokingState) {
 			super(parent, invokingState);
 		}
-		@Override public int getRuleIndex() { return RULE_interval_length; }
+		@Override public int getRuleIndex() { return RULE_intervalLength; }
 		@Override
 		public void enterRule(ParseTreeListener listener) {
-			if ( listener instanceof PrescriptionListener ) ((PrescriptionListener)listener).enterInterval_length(this);
+			if ( listener instanceof PrescriptionListener ) ((PrescriptionListener)listener).enterIntervalLength(this);
 		}
 		@Override
 		public void exitRule(ParseTreeListener listener) {
-			if ( listener instanceof PrescriptionListener ) ((PrescriptionListener)listener).exitInterval_length(this);
+			if ( listener instanceof PrescriptionListener ) ((PrescriptionListener)listener).exitIntervalLength(this);
 		}
 	}
 
-	public final Interval_lengthContext interval_length() throws RecognitionException {
-		Interval_lengthContext _localctx = new Interval_lengthContext(_ctx, getState());
-		enterRule(_localctx, 24, RULE_interval_length);
+	public final IntervalLengthContext intervalLength() throws RecognitionException {
+		IntervalLengthContext _localctx = new IntervalLengthContext(_ctx, getState());
+		enterRule(_localctx, 24, RULE_intervalLength);
 		int _la;
 		try {
 			enterOuterAlt(_localctx, 1);
