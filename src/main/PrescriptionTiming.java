@@ -13,7 +13,7 @@ public class PrescriptionTiming {
 	 * @param duration
 	 * @param unit
 	 */
-	public PrescriptionTiming(int frequency, int length, int duration,
+	public PrescriptionTiming(int frequency, int duration,
 			TimeUnit unit) {
 		super();
 		this.frequency = frequency;

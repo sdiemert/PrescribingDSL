@@ -4,6 +4,7 @@ import javax.xml.*;
 import org.w3c.dom.Element;
 import org.w3c.dom.Attr;
 import org.w3c.dom.Document;
+import org.w3c.dom.Node;
 
 public class Prescription {
 	
@@ -94,24 +95,28 @@ public class Prescription {
 	 * See http://www.mkyong.com/java/how-to-create-xml-file-in-java-dom/ 
 	 * for a good example of building XML DOM trees using the w3c interface.
 	 */
-	public Element toGrooveXMLTree(Document doc, int rxNumber){
+	public Element toGrooveXMLTree(Document doc, Element rootNode, int rxNumber){
 	
 		//create new nodes for each attribute
 		//create edges between these nodes
 		//add attributes to each node as needed. 
 		//layout is irrelevant at this point.
+
+		Element prescription = (Element)GrooveXMLGenerator.GrooveXMLGeneratorUtils.addNode(doc, rootNode, "prescription"+rxNumber);		
+
+		Element prescriptionTiming = (Element)GrooveXMLGenerator.GrooveXMLGeneratorUtils.addNode(doc, rootNode, "prescriptionTiming"+rxNumber); 
+		GrooveXMLGenerator.GrooveXMLGeneratorUtils.addValueToNode(doc,  rootNode, prescriptionTiming, "let:duration=\""+this.timing.getDuration()+"\"");
+		GrooveXMLGenerator.GrooveXMLGeneratorUtils.addValueToNode(doc,  rootNode, prescriptionTiming, "let:unit=\""+this.timing.getUnit()+"\"");
+		GrooveXMLGenerator.GrooveXMLGeneratorUtils.addValueToNode(doc,  rootNode, prescriptionTiming, "let:frequency=\""+this.timing.getFrequency()+"\"");
+		GrooveXMLGenerator.GrooveXMLGeneratorUtils.addEdgeNode(doc, rootNode, prescription.getAttribute("id"), prescriptionTiming.getAttribute("id"), "timing");
+
+		Element prescriptionDose = (Element)GrooveXMLGenerator.GrooveXMLGeneratorUtils.addNode(doc, rootNode, "prescriptionDose"+rxNumber);
+		GrooveXMLGenerator.GrooveXMLGeneratorUtils.addValueToNode(doc,  rootNode, prescriptionDose, "let:amount=\""+this.dose.getAmount()+"\"");
+		GrooveXMLGenerator.GrooveXMLGeneratorUtils.addValueToNode(doc,  rootNode, prescriptionDose, "let:unit=\""+this.dose.getUnit()+"\"");
+		GrooveXMLGenerator.GrooveXMLGeneratorUtils.addEdgeNode(doc, rootNode, prescription.getAttribute("id"), prescriptionDose.getAttribute("id"), "dose");
 		
-		//create the prescription node and add a node label for groove.
-		Element prescriptionNode = doc.createElement("node")
-		doc.appendChild(prescriptionNode);
+		return prescription;
 		
-		Attr prescriptionNodeId = doc.createAttribute("id"); 
-		prescriptionNodeId.setValue("prescription"+rxNumber);
-		
-		
-		return null; 
 	}
-	
-	
 
 }
