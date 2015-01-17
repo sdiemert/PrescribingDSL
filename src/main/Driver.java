@@ -36,19 +36,7 @@ public class Driver {
 		
 		LinkedList<Prescription> p = list.getPrescription();
 		System.out.println("Prescription: "+p); 
-		
-		/*
-		PrescriptionTiming t = new PrescriptionTiming(1, 7, TimeUnit.DAY);
-		PrescriptionDose d = new PrescriptionDose(10, DoseUnit.MG);
-		Prescription p = new Prescription();
-		p.setTiming(t);
-		p.setDose(d);
-		
-		LinkedList<Prescription> ll = new LinkedList<Prescription>(); 
-		ll.add(p); 
-		*/
-		
-		GrooveXMLGenerator g = new GrooveXMLGenerator(); 
+        GrooveXMLGenerator g = new GrooveXMLGenerator(); 
 		
 		Document doc = g.generateXMLTree(p); 
 

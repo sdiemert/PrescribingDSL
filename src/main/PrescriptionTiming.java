@@ -1,6 +1,9 @@
 package main;
 
-public class PrescriptionTiming {
+import org.w3c.dom.Document;
+import org.w3c.dom.Element;
+
+public class PrescriptionTiming implements PrescriptionElement{
 	
 	private int frequency;
 	private int duration; 
@@ -68,5 +71,15 @@ public class PrescriptionTiming {
 	public String toString() {
 		return "PrescriptionTiming [frequency=" + frequency 
 				+ ", duration=" + duration + ", unit=" + unit + "]";
+	}
+
+	@Override
+	public Element toGrooveXML(Document doc, Element rootNode, int rxNumber) {
+        Element newNode = (Element)GrooveXMLGenerator.GrooveXMLGeneratorUtils.addNode(doc, rootNode, "prescriptionTiming"+rxNumber); 
+		GrooveXMLGenerator.GrooveXMLGeneratorUtils.addValueToNode(doc,  rootNode, newNode, "let:duration=\""+this.getDuration()+"\"");
+		GrooveXMLGenerator.GrooveXMLGeneratorUtils.addValueToNode(doc,  rootNode, newNode, "let:unit=\""+this.getUnit()+"\"");
+		GrooveXMLGenerator.GrooveXMLGeneratorUtils.addValueToNode(doc,  rootNode, newNode, "let:frequency=\""+this.getFrequency()+"\"");
+		GrooveXMLGenerator.GrooveXMLGeneratorUtils.addValueToNode(doc, rootNode, newNode, "type:Timing");
+		return newNode;
 	}
 }

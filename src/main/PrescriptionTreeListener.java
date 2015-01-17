@@ -33,7 +33,7 @@ public class PrescriptionTreeListener extends PrescriptionBaseListener{
 	 * There is no guarantee that it will be a complete prescription object.
 	 */
 	public LinkedList<Prescription> getPrescription(){
-		return this.scriptList;
+		return this.scriptList; 
 	}
 	
 	@Override
@@ -267,9 +267,13 @@ public class PrescriptionTreeListener extends PrescriptionBaseListener{
 			if(s == null){
 				throw new NullPointerException("null is not a valid string"); 
 			}
-			x = timeUnitMap.get(s.toLowerCase()); 
-			if(x == null){
-				throw new IndexOutOfBoundsException(s+" is an invalid TimeUnit string."); 
+			try{
+				x = TimeUnit.valueOf(s.toUpperCase()); 
+			}catch(IllegalArgumentException iae){
+				x = timeUnitMap.get(s.toLowerCase()); 
+                if(x == null){
+                	throw new IndexOutOfBoundsException(s+" is an invalid TimeUnit string."); 
+                }
 			}
 			return x; 
 		}

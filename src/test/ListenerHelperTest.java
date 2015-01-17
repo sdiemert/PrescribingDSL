@@ -141,13 +141,17 @@ public class ListenerHelperTest {
 	public void testNormalizeTimeUnitWithValidStringInput(){
 		try{
 			TimeUnit daily = PrescriptionTreeListener.ListenerHelper.normalizeTimeUnit("daily"); 
+			TimeUnit day = PrescriptionTreeListener.ListenerHelper.normalizeTimeUnit("day"); 
+			TimeUnit week = PrescriptionTreeListener.ListenerHelper.normalizeTimeUnit("week"); 
 			TimeUnit weekly = PrescriptionTreeListener.ListenerHelper.normalizeTimeUnit("weekly"); 
 			TimeUnit hourly = PrescriptionTreeListener.ListenerHelper.normalizeTimeUnit("hourly"); 
 			TimeUnit monthly = PrescriptionTreeListener.ListenerHelper.normalizeTimeUnit("MONTHLY"); 
 			TimeUnit yearly = PrescriptionTreeListener.ListenerHelper.normalizeTimeUnit("YEARLY"); 
 			
 			assert(daily == TimeUnit.DAY); 
+			assert(day == TimeUnit.DAY); 
 			assert(weekly == TimeUnit.WEEK); 
+			assert(week == TimeUnit.WEEK); 
 			assert(monthly == TimeUnit.MONTH); 
 			assert(hourly == TimeUnit.HOUR); 
 			assert(yearly == TimeUnit.YEAR); 

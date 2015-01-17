@@ -43,7 +43,7 @@ public class GrooveXMLGenerator {
 		Element previous = null; 
 		Element current  = null; 
 		for(Prescription p : scriptList){
-			current = p.toGrooveXMLTree(doc, graphRoot, i);
+			current = p.toGrooveXML(doc, graphRoot, i);
 			if(previous != null){
 				GrooveXMLGeneratorUtils.addEdgeNode(doc, graphRoot, previous.getAttribute("id"), current.getAttribute("id"), "THEN");
 			}
@@ -158,6 +158,11 @@ public class GrooveXMLGenerator {
 			addEdgeNode(doc, parent, nodeId, nodeId, value);
 		}
 		
+		/**
+		 * Prints out the XML tree that is held within the doc parameter.
+		 * @param doc - the main document which contains the XML tree
+		 * @throws TransformerException if the routine is unable to transform the XML tree to a string
+		 */
 		public static void printXML(Document doc) throws TransformerException{
 			TransformerFactory transformerFactory = TransformerFactory.newInstance();
 			Transformer transformer = transformerFactory.newTransformer();
