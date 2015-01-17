@@ -18,7 +18,7 @@ import org.w3c.dom.Node;
 
 import java.util.Date; 
 
-public class GrooveXMLGenerator {
+public class GrooveXMLGenerator implements XMLGenerator{
 	
 	private DocumentBuilderFactory docFactory;
 	private DocumentBuilder docBuilder; 
@@ -53,7 +53,7 @@ public class GrooveXMLGenerator {
 		return doc;
 	}
 	
-	public Element addVersionTag(Document doc, Element graphRoot){
+	private Element addVersionTag(Document doc, Element graphRoot){
 		Element versionTag = (Element)GrooveXMLGeneratorUtils.addTag(doc, graphRoot, "version");
 		versionTag.setAttribute("name", "$version");
 		Element versionString = (Element)GrooveXMLGeneratorUtils.addTag(doc, versionTag, "string");
@@ -61,13 +61,13 @@ public class GrooveXMLGenerator {
 		return versionTag; 
 	}
 	
-	public Element addGXLRoot(Document doc){
+	private Element addGXLRoot(Document doc){
 		Element gxlNode =(Element)GrooveXMLGeneratorUtils.addTag(doc, doc, "gxl");
 		gxlNode.setAttribute("xmlns", "http://www.gupro.de/GXL/gxl-1.0.dtd");
 		return gxlNode;
 	}
 	
-	public Element addGraphRoot(Document doc, Element gxlRoot){
+	private Element addGraphRoot(Document doc, Element gxlRoot){
 		Date d = new Date(); 
 		Element graphRoot = (Element)GrooveXMLGeneratorUtils.addTag(doc, gxlRoot, "graph");
 		graphRoot.setAttribute("role", "graph");
@@ -163,11 +163,11 @@ public class GrooveXMLGenerator {
 		 * @param doc - the main document which contains the XML tree
 		 * @throws TransformerException if the routine is unable to transform the XML tree to a string
 		 */
-		public static void printXML(Document doc) throws TransformerException{
+		public static void printXML(Document doc, File output) throws TransformerException{
 			TransformerFactory transformerFactory = TransformerFactory.newInstance();
 			Transformer transformer = transformerFactory.newTransformer();
 			DOMSource source = new DOMSource(doc);
-			StreamResult result =  new StreamResult(new File("/Applications/groove-5_3_6/grammars/inputTestGrammar.gps/test.gst"));
+			StreamResult result =  new StreamResult(output);
 			transformer.transform(source, result);
 			System.out.println("\n"); 
 		}

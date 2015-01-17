@@ -1,18 +1,9 @@
 package main;
 
+import java.io.File;
 import java.util.LinkedList;
-
-import javax.xml.parsers.DocumentBuilder;
-import javax.xml.parsers.DocumentBuilderFactory;
-import javax.xml.transform.Transformer;
-import javax.xml.transform.TransformerFactory;
-import javax.xml.transform.dom.DOMSource;
-import javax.xml.transform.stream.StreamResult;
-
 import org.w3c.dom.*;
-
 import antlr.prescription.*;
-
 import org.antlr.v4.runtime.*;
 import org.antlr.v4.runtime.tree.*;
 
@@ -40,7 +31,8 @@ public class Driver {
 		
 		Document doc = g.generateXMLTree(p); 
 
-		GrooveXMLGenerator.GrooveXMLGeneratorUtils.printXML(doc);
+		GrooveXMLGenerator.GrooveXMLGeneratorUtils.printXML(doc, new File("/Users/sdiemert/Documents/workspace/PrescribingDsl/groove/grammar.gps/inputGraph.gst"));
+		System.out.println("Groove XML output to file");
 	
 		System.out.println("\n================");
 		System.out.println("COMPLETED");

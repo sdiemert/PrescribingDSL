@@ -43,7 +43,7 @@ public class PrescriptionDose implements PrescriptionElement{
 	@Override
 	public Element toGrooveXML(Document doc, Element rootNode, int rxNumber) {
         Element prescriptionDose = (Element)GrooveXMLGenerator.GrooveXMLGeneratorUtils.addNode(doc, rootNode, "prescriptionDose"+rxNumber);
-		GrooveXMLGenerator.GrooveXMLGeneratorUtils.addValueToNode(doc,rootNode, prescriptionDose, "let:amount=\""+this.getAmount()+"\"");
+		GrooveXMLGenerator.GrooveXMLGeneratorUtils.addValueToNode(doc,rootNode, prescriptionDose, "let:amount="+this.getAmount());
 		GrooveXMLGenerator.GrooveXMLGeneratorUtils.addValueToNode(doc, rootNode, prescriptionDose, "let:unit=\""+this.getUnit()+"\"");
 		GrooveXMLGenerator.GrooveXMLGeneratorUtils.addValueToNode(doc, rootNode, prescriptionDose, "type:Dose");
 		return prescriptionDose;
