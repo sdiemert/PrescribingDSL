@@ -65,6 +65,18 @@ public class PrescriptionBaseListener implements PrescriptionListener {
 	 *
 	 * <p>The default implementation does nothing.</p>
 	 */
+	@Override public void enterSpecificTiming(@NotNull PrescriptionParser.SpecificTimingContext ctx) { }
+	/**
+	 * {@inheritDoc}
+	 *
+	 * <p>The default implementation does nothing.</p>
+	 */
+	@Override public void exitSpecificTiming(@NotNull PrescriptionParser.SpecificTimingContext ctx) { }
+	/**
+	 * {@inheritDoc}
+	 *
+	 * <p>The default implementation does nothing.</p>
+	 */
 	@Override public void enterExpr(@NotNull PrescriptionParser.ExprContext ctx) { }
 	/**
 	 * {@inheritDoc}
@@ -192,6 +204,18 @@ public class PrescriptionBaseListener implements PrescriptionListener {
 	 * <p>The default implementation does nothing.</p>
 	 */
 	@Override public void exitTiming(@NotNull PrescriptionParser.TimingContext ctx) { }
+	/**
+	 * {@inheritDoc}
+	 *
+	 * <p>The default implementation does nothing.</p>
+	 */
+	@Override public void enterInstant(@NotNull PrescriptionParser.InstantContext ctx) { }
+	/**
+	 * {@inheritDoc}
+	 *
+	 * <p>The default implementation does nothing.</p>
+	 */
+	@Override public void exitInstant(@NotNull PrescriptionParser.InstantContext ctx) { }
 	/**
 	 * {@inheritDoc}
 	 *

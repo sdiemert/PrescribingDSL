@@ -132,13 +132,37 @@ public class PrescriptionTreeListener extends PrescriptionBaseListener{
 	public void exitTiming(PrescriptionParser.TimingContext ctx){
 		System.out.println("exitTiming() ->"+ctx.getText()); 
 
-		//TODO: Added reconciling of duration and interval units. 
+		//If hours have not yet been specified we need to assign them
+		//based on the interval. 
+		if(this.currentTiming.getInstants().size() <= 0){
+			if(this.currentTiming.getFreqUnit() == TimeUnit.DAY){
+				//need to define min and max in terms of hours
+				ListenerHelper.generateInstants(this.currentTiming, 8, 22);
+			}else if(this.currentTiming.getFreqUnit() == TimeUnit.MONTH){
+				//define min and max in terms of day of month
+				ListenerHelper.generateInstants(this.currentTiming, 1, 28);
+			}else if(this.currentTiming.getFreqUnit() == TimeUnit.WEEK){
+				//define in terms of days of week (represented by numbers 1 through 7)
+				ListenerHelper.generateInstants(this.currentTiming, 1, 7);
+			}
+		}
 		
 		//at this point we assume that the entire timing object has been built. 
 		//commit the timing object to the prescription.
 
 		this.currentScript.setTiming(this.currentTiming);
 		
+	}
+	
+	@Override
+	public void exitInstant(PrescriptionParser.InstantContext ctx){
+		System.out.println("exitHour() ->"+ctx.getText());
+		try{
+			this.currentTiming.addInstant(Integer.parseInt(ctx.getText()));
+		}catch(Exception e){
+			System.out.println("Could not parse: "+ctx.getText()+" as interger"); 
+			e.printStackTrace();
+		}
 	}
 	
 	@Override 
@@ -260,6 +284,36 @@ public class PrescriptionTreeListener extends PrescriptionBaseListener{
                 x = numberMap.get(s);  //if this fails it will throw an exception
 			}
 			return x; 
+		}
+
+		/**
+		 * Generates instants for the @param currentTiming object based on the 
+		 * frequency and interval of the timing. It is an error if instants have 
+		 * already been assigned. 
+		 * 
+		 * @param currentTiming - the timing object to operate on.
+		 * @param rangeMin - the minimum number in the range (also the first instant) e.g. 8:00 
+		 * @param rangeMax - the maximum number to distribute the instants across e.g. 22:00 
+		 * @throws IllegalArgumentException if the timing object already has instants assigned. 
+		 */
+		public static void generateInstants(PrescriptionTiming currentTiming, int rangeMin, int rangeMax) throws IllegalArgumentException{
+
+			int quotient = 0; 
+			if(currentTiming.getInstants().size() >= 1){
+				throw new IllegalArgumentException("timing: "+currentTiming.toString()+" already has instant values assigned to it."); 
+			}
+			
+			if(rangeMax < rangeMin){
+				throw new IllegalArgumentException("minimum must be less than maximum"); 
+			}
+			
+			//This logic needs to be reviewed by domain expert...
+			
+			quotient = (rangeMax - rangeMin)/currentTiming.getFrequency(); 
+			
+			for(int i = 0; i < currentTiming.getFrequency(); i++){
+				currentTiming.addInstant(rangeMin+i*quotient);
+			}
 		}
 
 		public static TimeUnit normalizeTimeUnit(String s) throws NullPointerException, IndexOutOfBoundsException{

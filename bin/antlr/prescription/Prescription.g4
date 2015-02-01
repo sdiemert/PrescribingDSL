@@ -7,10 +7,10 @@ NUMBER  :   ('zero' | 'one' | 'two' |'three'|'four'|'five'|'six'|'seven'|'eight'
 TIMEUNIT:   ('hour'| 'day'| 'week'|'month'|'year')+;
 TIMEUNIT_PLURAL : TIMEUNIT's'+;
 
-UNIT 	:   ('mg' | 'g' | 'kg' | 'mcg' | 'ng') ;
+UNIT 	:   ('mg' | 'g' | 'kg' | 'mcg' | 'ng');
 
 INTERVAL_FREQ : ('once'|'twice'|'thrice');
-INTERVAL_MODIFIER : ('per' | 'times per' |'x' | 'times');
+INTERVAL_MODIFIER : ('per' |'times'| 'times per' |'x');
 INTERVAL_LENGTH : ('daily'|'weekly'|'monthly'|'yearly'|'annually');
 
 STRING	:   ('a'..'z'|'A'..'Z')+ ;
@@ -53,12 +53,19 @@ dose_amount: INT;
 dose_unit:	UNIT;
 
 timing : 
-        interval  'FOR'  duration 
-    |   interval
+        interval specificTiming 'FOR'  duration
+    |   interval specificTiming
+    |   interval 'FOR' duration 
+    | 	interval
 ;
 
+instant :  INT; 
+
+specificTiming : '('(instant',')*? instant')'; //(8, 12, 14)  
+
+
 interval:
-        frequency intervalLength
+        frequency intervalLength //once daily, twice daily... etc...
     |   frequency  INTERVAL_MODIFIER  intervalLength //5 per day, 5 times per day, 5xdaily, 
     | 	frequency //once, twice etc....
 ;
