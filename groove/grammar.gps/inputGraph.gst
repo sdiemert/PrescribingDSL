@@ -6,27 +6,32 @@
         </attr>
         <node id="n0">
             <attr name="layout">
-                <string>311 250 141 64</string>
+                <string>485 303 141 64</string>
             </attr>
         </node>
         <node id="n1">
             <attr name="layout">
-                <string>104 251 88 80</string>
+                <string>239 540 88 112</string>
             </attr>
         </node>
         <node id="n2">
             <attr name="layout">
-                <string>30 498 70 32</string>
+                <string>407 793 70 48</string>
             </attr>
         </node>
-        <node id="n3">
+        <node id="n6">
             <attr name="layout">
-                <string>158 498 70 32</string>
+                <string>563 679 70 48</string>
+            </attr>
+        </node>
+        <node id="n7">
+            <attr name="layout">
+                <string>740 235 82 64</string>
             </attr>
         </node>
         <node id="n4">
             <attr name="layout">
-                <string>560 253 82 64</string>
+                <string>236 819 78 48</string>
             </attr>
         </node>
         <edge from="n0" to="n0">
@@ -44,7 +49,7 @@
                 <string>let:medication = &quot;aspirin&quot;</string>
             </attr>
         </edge>
-        <edge from="n0" to="n4">
+        <edge from="n0" to="n7">
             <attr name="label">
                 <string>dose</string>
             </attr>
@@ -61,12 +66,22 @@
         </edge>
         <edge from="n1" to="n1">
             <attr name="label">
+                <string>let:count = 0</string>
+            </attr>
+        </edge>
+        <edge from="n1" to="n1">
+            <attr name="label">
                 <string>let:duration = 10</string>
             </attr>
         </edge>
         <edge from="n1" to="n1">
             <attr name="label">
-                <string>let:frequency = 2</string>
+                <string>let:frequency = 3</string>
+            </attr>
+        </edge>
+        <edge from="n1" to="n1">
+            <attr name="label">
+                <string>let:order = 0</string>
             </attr>
         </edge>
         <edge from="n1" to="n1">
@@ -74,7 +89,7 @@
                 <string>let:unit = &quot;DAY&quot;</string>
             </attr>
         </edge>
-        <edge from="n1" to="n3">
+        <edge from="n1" to="n6">
             <attr name="label">
                 <string>instant</string>
             </attr>
@@ -84,29 +99,54 @@
                 <string>instant</string>
             </attr>
         </edge>
-        <edge from="n2" to="n2">
+        <edge from="n1" to="n4">
             <attr name="label">
-                <string>let:instant = 1</string>
+                <string>instant</string>
             </attr>
         </edge>
-        <edge from="n3" to="n3">
+        <edge from="n2" to="n2">
+            <attr name="label">
+                <string>type:Instant</string>
+            </attr>
+        </edge>
+        <edge from="n2" to="n2">
             <attr name="label">
                 <string>let:instant = 2</string>
             </attr>
         </edge>
-        <edge from="n4" to="n4">
+        <edge from="n6" to="n6">
+            <attr name="label">
+                <string>type:Instant</string>
+            </attr>
+        </edge>
+        <edge from="n6" to="n6">
+            <attr name="label">
+                <string>let:instant = 6</string>
+            </attr>
+        </edge>
+        <edge from="n7" to="n7">
             <attr name="label">
                 <string>type:Dose</string>
             </attr>
         </edge>
-        <edge from="n4" to="n4">
+        <edge from="n7" to="n7">
             <attr name="label">
                 <string>let:amount = 81</string>
             </attr>
         </edge>
-        <edge from="n4" to="n4">
+        <edge from="n7" to="n7">
             <attr name="label">
                 <string>let:unit = &quot;MG&quot;</string>
+            </attr>
+        </edge>
+        <edge from="n4" to="n4">
+            <attr name="label">
+                <string>type:Instant</string>
+            </attr>
+        </edge>
+        <edge from="n4" to="n4">
+            <attr name="label">
+                <string>let:instant = 12</string>
             </attr>
         </edge>
     </graph>

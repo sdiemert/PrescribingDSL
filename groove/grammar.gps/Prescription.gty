@@ -6,22 +6,37 @@
         </attr>
         <node id="n0">
             <attr name="layout">
-                <string>230 238 81 16</string>
+                <string>350 189 118 48</string>
             </attr>
         </node>
         <node id="n1">
             <attr name="layout">
-                <string>144 392 33 16</string>
+                <string>123 376 74 48</string>
             </attr>
         </node>
         <node id="n2">
             <attr name="layout">
-                <string>364 370 48 16</string>
+                <string>394 395 88 80</string>
+            </attr>
+        </node>
+        <node id="n3">
+            <attr name="layout">
+                <string>398 547 70 32</string>
             </attr>
         </node>
         <edge from="n0" to="n0">
             <attr name="label">
                 <string>type:Prescription</string>
+            </attr>
+        </edge>
+        <edge from="n0" to="n0">
+            <attr name="label">
+                <string>string:action</string>
+            </attr>
+        </edge>
+        <edge from="n0" to="n0">
+            <attr name="label">
+                <string>string:medication</string>
             </attr>
         </edge>
         <edge from="n0" to="n1">
@@ -34,14 +49,80 @@
                 <string>timing</string>
             </attr>
         </edge>
+        <edge from="n0" to="n0">
+            <attr name="label">
+                <string>then</string>
+            </attr>
+            <attr name="layout">
+                <string>500 0 409 213 616 252 409 213 11</string>
+            </attr>
+        </edge>
         <edge from="n1" to="n1">
             <attr name="label">
                 <string>type:Dose</string>
             </attr>
         </edge>
+        <edge from="n1" to="n1">
+            <attr name="label">
+                <string>int:amount</string>
+            </attr>
+        </edge>
+        <edge from="n1" to="n1">
+            <attr name="label">
+                <string>string:unit</string>
+            </attr>
+        </edge>
         <edge from="n2" to="n2">
             <attr name="label">
                 <string>type:Timing</string>
+            </attr>
+        </edge>
+        <edge from="n2" to="n2">
+            <attr name="label">
+                <string>int:count</string>
+            </attr>
+        </edge>
+        <edge from="n2" to="n2">
+            <attr name="label">
+                <string>int:duration</string>
+            </attr>
+        </edge>
+        <edge from="n2" to="n2">
+            <attr name="label">
+                <string>int:frequency</string>
+            </attr>
+        </edge>
+        <edge from="n2" to="n2">
+            <attr name="label">
+                <string>int:order</string>
+            </attr>
+        </edge>
+        <edge from="n2" to="n2">
+            <attr name="label">
+                <string>string:unit</string>
+            </attr>
+        </edge>
+        <edge from="n2" to="n3">
+            <attr name="label">
+                <string>instant</string>
+            </attr>
+        </edge>
+        <edge from="n3" to="n3">
+            <attr name="label">
+                <string>type:Instant</string>
+            </attr>
+        </edge>
+        <edge from="n3" to="n3">
+            <attr name="label">
+                <string>int:instant</string>
+            </attr>
+        </edge>
+        <edge from="n3" to="n3">
+            <attr name="label">
+                <string>temp</string>
+            </attr>
+            <attr name="layout">
+                <string>500 0 433 563 592 604 433 563 11</string>
             </attr>
         </edge>
     </graph>

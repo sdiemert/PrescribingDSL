@@ -127,14 +127,15 @@ public class PrescriptionTiming implements PrescriptionElement{
 	public Element toGrooveXML(Document doc, Element rootNode, int rxNumber) {
         Element newNode = (Element)GrooveXMLGenerator.GrooveXMLGeneratorUtils.addNode(doc, rootNode, "prescriptionTiming"+rxNumber); 
 		GrooveXMLGenerator.GrooveXMLGeneratorUtils.addValueToNode(doc,  rootNode, newNode, "let:duration="+this.getDuration());
-		GrooveXMLGenerator.GrooveXMLGeneratorUtils.addValueToNode(doc,  rootNode, newNode, "let:unit=\""+this.getUnit()+"\"");
-		GrooveXMLGenerator.GrooveXMLGeneratorUtils.addValueToNode(doc,  rootNode, newNode, "let:frequency="+this.getFrequency());
+		GrooveXMLGenerator.GrooveXMLGeneratorUtils.addValueToNode(doc,  rootNode, newNode, "let:unit=\""+this.getUnit()+"\""); GrooveXMLGenerator.GrooveXMLGeneratorUtils.addValueToNode(doc,  rootNode, newNode, "let:frequency="+this.getFrequency());
 		GrooveXMLGenerator.GrooveXMLGeneratorUtils.addValueToNode(doc, rootNode, newNode, "type:Timing");
+		GrooveXMLGenerator.GrooveXMLGeneratorUtils.addValueToNode(doc, rootNode, newNode, "let:order=0");
 		
 		Element timeNode = null; 
 		for(Integer i : this.instants){
 			timeNode = (Element)GrooveXMLGenerator.GrooveXMLGeneratorUtils.addNode(doc, rootNode, "instant"+i); 
 			GrooveXMLGenerator.GrooveXMLGeneratorUtils.addValueToNode(doc,  rootNode, timeNode, "let:instant="+i);
+			GrooveXMLGenerator.GrooveXMLGeneratorUtils.addValueToNode(doc,  rootNode, timeNode, "type:Instant");
 			System.out.println(timeNode.getAttribute("id")); 
 			GrooveXMLGenerator.GrooveXMLGeneratorUtils.addEdgeNode(doc, rootNode, newNode.getAttribute("id"), timeNode.getAttribute("id"), "instant");
 		}
