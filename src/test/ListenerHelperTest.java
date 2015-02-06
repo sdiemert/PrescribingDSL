@@ -5,8 +5,6 @@ import main.PrescriptionTiming;
 import main.PrescriptionTreeListener;
 import main.TimeUnit;
 
-import java.lang.NoSuchFieldException; 
-
 import org.junit.After;
 import org.junit.Before;
 import org.junit.Test;
@@ -198,5 +196,72 @@ public class ListenerHelperTest {
 		assertEquals(t.getFreqUnit(), TimeUnit.DAY);
 		assertEquals(t.getDurationUnit(), TimeUnit.DAY);
 		
+	}
+	
+	@Test
+	/**
+	 * Tests generate instants with normal input. 
+	 * Expected that the PrescriptionTiming object will 
+	 * have instants generated inside of it. 
+	 */
+	public void testGenerateInstantsWithNormalInput(){
+		PrescriptionTiming t = new PrescriptionTiming(); 
+		t.setDuration(1);
+		t.setFrequency(3);
+		t.setFreqUnit(TimeUnit.DAY);;
+		//at this point the instants should not be set in t. 
+		PrescriptionTreeListener.ListenerHelper.generateInstants(t, 6, 22);
+		assertEquals(t.getInstants().size(), 3); 
+		
+	}
+	
+	@Test(expected=IllegalArgumentException.class)
+	/**
+	 * Tests generate instants with a lower range that is 
+	 * higher than the upper range. 
+	 * 
+	 * Expected to throw an IllegalArgumentException.
+	 */
+	public void testGenerateInstantsWithInvalidRange(){
+		PrescriptionTiming t = new PrescriptionTiming(); 
+		t.setDuration(1);
+		t.setFrequency(3);
+		t.setFreqUnit(TimeUnit.DAY);;
+		//at this point the instants should not be set in t. 
+		PrescriptionTreeListener.ListenerHelper.generateInstants(t, 22, 6);
+	}
+	
+	@Test(expected=IllegalArgumentException.class)
+	/**
+	 * Tests case were rangeMin and rangeMax are the same.
+	 * 
+	 * Expected an IllegalArgumentException. 
+	 */
+	public void testGenerateInstantsWithEqualRanges(){
+		PrescriptionTiming t = new PrescriptionTiming(); 
+		t.setDuration(1);
+		t.setFrequency(3);
+		t.setFreqUnit(TimeUnit.DAY);;
+		//at this point the instants should not be set in t. 
+		PrescriptionTreeListener.ListenerHelper.generateInstants(t, 6, 6);
+		
+	}
+
+	@Test(expected=IllegalArgumentException.class)
+	/**
+	 *  Try generating instants after the instants have already been set.
+	 *  
+	 *  Expected to throw an IllegalArgumentException.
+	 */
+	public void testGenerateInstantsInstantsPreSet(){
+		PrescriptionTiming t = new PrescriptionTiming(); 
+		t.addInstant(1);
+		t.addInstant(2);
+		t.addInstant(3);
+		t.setDuration(1);
+		t.setFrequency(3);
+		t.setFreqUnit(TimeUnit.DAY);;
+		//at this point the instants should not be set in t. 
+		PrescriptionTreeListener.ListenerHelper.generateInstants(t, 6, 20);
 	}
 }

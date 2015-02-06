@@ -11,17 +11,17 @@
         </node>
         <node id="n1">
             <attr name="layout">
-                <string>239 540 88 112</string>
+                <string>229 425 88 112</string>
             </attr>
         </node>
         <node id="n2">
             <attr name="layout">
-                <string>407 793 70 48</string>
+                <string>373 712 70 48</string>
             </attr>
         </node>
         <node id="n6">
             <attr name="layout">
-                <string>563 679 70 48</string>
+                <string>516 551 70 48</string>
             </attr>
         </node>
         <node id="n7">
@@ -31,7 +31,12 @@
         </node>
         <node id="n4">
             <attr name="layout">
-                <string>236 819 78 48</string>
+                <string>159 704 78 48</string>
+            </attr>
+        </node>
+        <node id="n3">
+            <attr name="layout">
+                <string>63 595 78 48</string>
             </attr>
         </node>
         <edge from="n0" to="n0">
@@ -49,14 +54,14 @@
                 <string>let:medication = &quot;aspirin&quot;</string>
             </attr>
         </edge>
-        <edge from="n0" to="n7">
-            <attr name="label">
-                <string>dose</string>
-            </attr>
-        </edge>
         <edge from="n0" to="n1">
             <attr name="label">
                 <string>timing</string>
+            </attr>
+        </edge>
+        <edge from="n0" to="n7">
+            <attr name="label">
+                <string>dose</string>
             </attr>
         </edge>
         <edge from="n1" to="n1">
@@ -71,7 +76,7 @@
         </edge>
         <edge from="n1" to="n1">
             <attr name="label">
-                <string>let:duration = 10</string>
+                <string>let:duration = 3</string>
             </attr>
         </edge>
         <edge from="n1" to="n1">
@@ -89,7 +94,7 @@
                 <string>let:unit = &quot;DAY&quot;</string>
             </attr>
         </edge>
-        <edge from="n1" to="n6">
+        <edge from="n1" to="n4">
             <attr name="label">
                 <string>instant</string>
             </attr>
@@ -99,7 +104,12 @@
                 <string>instant</string>
             </attr>
         </edge>
-        <edge from="n1" to="n4">
+        <edge from="n1" to="n6">
+            <attr name="label">
+                <string>instant</string>
+            </attr>
+        </edge>
+        <edge from="n1" to="n3">
             <attr name="label">
                 <string>instant</string>
             </attr>
@@ -147,6 +157,16 @@
         <edge from="n4" to="n4">
             <attr name="label">
                 <string>let:instant = 12</string>
+            </attr>
+        </edge>
+        <edge from="n3" to="n3">
+            <attr name="label">
+                <string>type:Instant</string>
+            </attr>
+        </edge>
+        <edge from="n3" to="n3">
+            <attr name="label">
+                <string>let:instant = 14</string>
             </attr>
         </edge>
     </graph>

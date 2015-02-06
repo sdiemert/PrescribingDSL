@@ -299,14 +299,14 @@ public class PrescriptionTreeListener extends PrescriptionBaseListener{
 		public static void generateInstants(PrescriptionTiming currentTiming, int rangeMin, int rangeMax) throws IllegalArgumentException{
 
 			int quotient = 0; 
-			if(currentTiming.getInstants().size() >= 1){
+			if(currentTiming.getInstants().size() > 0){
 				throw new IllegalArgumentException("timing: "+currentTiming.toString()+" already has instant values assigned to it."); 
 			}
 			
-			if(rangeMax < rangeMin){
+			if(rangeMax <= rangeMin){
 				throw new IllegalArgumentException("minimum must be less than maximum"); 
 			}
-			
+
 			//This logic needs to be reviewed by domain expert...
 			
 			quotient = (rangeMax - rangeMin)/currentTiming.getFrequency(); 
@@ -342,7 +342,6 @@ public class PrescriptionTreeListener extends PrescriptionBaseListener{
 			if(t.getFreqUnit() == t.getDurationUnit()){
 				//if they are the same we agree already, return.
 				t.setUnit(t.getFreqUnit());
-				System.out.println(t.getUnit()); 
 			}else{
 				//based on the interval unit we need to figure out hte duration in 
 				//the same units.
