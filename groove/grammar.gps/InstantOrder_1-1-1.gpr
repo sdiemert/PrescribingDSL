@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
 <gxl xmlns="http://www.gupro.de/GXL/gxl-1.0.dtd">
-    <graph role="rule" edgeids="false" edgemode="directed" id="InstantOrder_1-1">
+    <graph role="rule" edgeids="false" edgemode="directed" id="InstantOrder_1-1-1">
         <attr name="$version">
             <string>curly</string>
         </attr>
@@ -24,12 +24,12 @@
                 <string>type:Timing</string>
             </attr>
         </edge>
-        <edge from="n0" to="n1">
+        <edge from="n0" to="n2">
             <attr name="label">
                 <string>instant</string>
             </attr>
         </edge>
-        <edge from="n0" to="n2">
+        <edge from="n0" to="n1">
             <attr name="label">
                 <string>instant</string>
             </attr>
@@ -69,15 +69,15 @@
         </edge>
         <edge from="n2" to="n1">
             <attr name="label">
-                <string>new:temp</string>
+                <string>not:temp</string>
+            </attr>
+            <attr name="layout">
+                <string>500 0 242 425 392 511 513 417 11</string>
             </attr>
         </edge>
         <edge from="n2" to="n1">
             <attr name="label">
-                <string>not:temp</string>
-            </attr>
-            <attr name="layout">
-                <string>447 4 275 444 392 511 499 428 11</string>
+                <string>new:temp</string>
             </attr>
         </edge>
     </graph>

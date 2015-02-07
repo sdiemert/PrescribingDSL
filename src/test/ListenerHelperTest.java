@@ -206,9 +206,9 @@ public class ListenerHelperTest {
 	 */
 	public void testGenerateInstantsWithNormalInput(){
 		PrescriptionTiming t = new PrescriptionTiming(); 
+		t.setFreqUnit(TimeUnit.DAY);;
 		t.setDuration(1);
 		t.setFrequency(3);
-		t.setFreqUnit(TimeUnit.DAY);;
 		//at this point the instants should not be set in t. 
 		PrescriptionTreeListener.ListenerHelper.generateInstants(t, 6, 22);
 		assertEquals(t.getInstants().size(), 3); 
@@ -224,9 +224,9 @@ public class ListenerHelperTest {
 	 */
 	public void testGenerateInstantsWithInvalidRange(){
 		PrescriptionTiming t = new PrescriptionTiming(); 
+		t.setFreqUnit(TimeUnit.DAY);;
 		t.setDuration(1);
 		t.setFrequency(3);
-		t.setFreqUnit(TimeUnit.DAY);;
 		//at this point the instants should not be set in t. 
 		PrescriptionTreeListener.ListenerHelper.generateInstants(t, 22, 6);
 	}
@@ -239,9 +239,9 @@ public class ListenerHelperTest {
 	 */
 	public void testGenerateInstantsWithEqualRanges(){
 		PrescriptionTiming t = new PrescriptionTiming(); 
+		t.setFreqUnit(TimeUnit.DAY);;
 		t.setDuration(1);
 		t.setFrequency(3);
-		t.setFreqUnit(TimeUnit.DAY);;
 		//at this point the instants should not be set in t. 
 		PrescriptionTreeListener.ListenerHelper.generateInstants(t, 6, 6);
 		
@@ -255,12 +255,12 @@ public class ListenerHelperTest {
 	 */
 	public void testGenerateInstantsInstantsPreSet(){
 		PrescriptionTiming t = new PrescriptionTiming(); 
+		t.setFreqUnit(TimeUnit.DAY);;
 		t.addInstant(1);
 		t.addInstant(2);
 		t.addInstant(3);
 		t.setDuration(1);
 		t.setFrequency(3);
-		t.setFreqUnit(TimeUnit.DAY);;
 		//at this point the instants should not be set in t. 
 		PrescriptionTreeListener.ListenerHelper.generateInstants(t, 6, 20);
 	}

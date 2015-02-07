@@ -6,7 +6,7 @@
         </attr>
         <node id="n3">
             <attr name="layout">
-                <string>410 457 138 32</string>
+                <string>447 431 138 32</string>
             </attr>
         </node>
         <node id="n6">
@@ -31,12 +31,12 @@
         </node>
         <node id="n4">
             <attr name="layout">
-                <string>667 361 159 80</string>
+                <string>750 305 288 80</string>
             </attr>
         </node>
         <node id="n8">
             <attr name="layout">
-                <string>697 519 122 48</string>
+                <string>894 483 122 48</string>
             </attr>
         </node>
         <node id="n10">
@@ -86,17 +86,17 @@
         </edge>
         <edge from="n11" to="n11">
             <attr name="label">
-                <string>let:order = order+2</string>
-            </attr>
-        </edge>
-        <edge from="n11" to="n3">
-            <attr name="label">
-                <string>instant</string>
+                <string>let:order = int:order+1</string>
             </attr>
         </edge>
         <edge from="n11" to="n9">
             <attr name="label">
                 <string>del:instant</string>
+            </attr>
+        </edge>
+        <edge from="n11" to="n3">
+            <attr name="label">
+                <string>instant</string>
             </attr>
         </edge>
         <edge from="n9" to="n9">
@@ -191,7 +191,7 @@
         </edge>
         <edge from="n4" to="n4">
             <attr name="label">
-                <string>let:order = int:t1.order+1</string>
+                <string>let:order = int:t1.order</string>
             </attr>
         </edge>
         <edge from="n4" to="n4">
@@ -224,14 +224,14 @@
                 <string>type:Prescription</string>
             </attr>
         </edge>
-        <edge from="n10" to="n7">
-            <attr name="label">
-                <string>then</string>
-            </attr>
-        </edge>
         <edge from="n10" to="n6">
             <attr name="label">
                 <string>del:then</string>
+            </attr>
+        </edge>
+        <edge from="n10" to="n7">
+            <attr name="label">
+                <string>then</string>
             </attr>
         </edge>
     </graph>

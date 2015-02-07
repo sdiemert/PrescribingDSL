@@ -36,7 +36,7 @@
         </node>
         <node id="n3">
             <attr name="layout">
-                <string>63 595 78 48</string>
+                <string>85 589 78 48</string>
             </attr>
         </node>
         <edge from="n0" to="n0">
@@ -54,14 +54,14 @@
                 <string>let:medication = &quot;aspirin&quot;</string>
             </attr>
         </edge>
-        <edge from="n0" to="n1">
-            <attr name="label">
-                <string>timing</string>
-            </attr>
-        </edge>
         <edge from="n0" to="n7">
             <attr name="label">
                 <string>dose</string>
+            </attr>
+        </edge>
+        <edge from="n0" to="n1">
+            <attr name="label">
+                <string>timing</string>
             </attr>
         </edge>
         <edge from="n1" to="n1">
@@ -81,7 +81,7 @@
         </edge>
         <edge from="n1" to="n1">
             <attr name="label">
-                <string>let:frequency = 3</string>
+                <string>let:frequency = 4</string>
             </attr>
         </edge>
         <edge from="n1" to="n1">
@@ -99,12 +99,12 @@
                 <string>instant</string>
             </attr>
         </edge>
-        <edge from="n1" to="n2">
+        <edge from="n1" to="n6">
             <attr name="label">
                 <string>instant</string>
             </attr>
         </edge>
-        <edge from="n1" to="n6">
+        <edge from="n1" to="n2">
             <attr name="label">
                 <string>instant</string>
             </attr>

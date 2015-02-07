@@ -31,7 +31,7 @@
         </node>
         <node id="n4">
             <attr name="layout">
-                <string>713 176 159 80</string>
+                <string>713 168 159 96</string>
             </attr>
         </node>
         <node id="n8">
@@ -91,17 +91,17 @@
         </edge>
         <edge from="n11" to="n11">
             <attr name="label">
-                <string>let:order = order +1</string>
-            </attr>
-        </edge>
-        <edge from="n11" to="n3">
-            <attr name="label">
-                <string>instant</string>
+                <string>let:order = int:order+1</string>
             </attr>
         </edge>
         <edge from="n11" to="n9">
             <attr name="label">
                 <string>del:instant</string>
+            </attr>
+        </edge>
+        <edge from="n11" to="n3">
+            <attr name="label">
+                <string>instant</string>
             </attr>
         </edge>
         <edge from="n9" to="n9">
@@ -124,14 +124,14 @@
                 <string>test:bool:lt(int:i1.instant,int:i3.instant)</string>
             </attr>
         </edge>
-        <edge from="n9" to="n3">
-            <attr name="label">
-                <string>del:temp</string>
-            </attr>
-        </edge>
         <edge from="n9" to="n1">
             <attr name="label">
                 <string>temp</string>
+            </attr>
+        </edge>
+        <edge from="n9" to="n3">
+            <attr name="label">
+                <string>del:temp</string>
             </attr>
         </edge>
         <edge from="n7" to="n7">
@@ -164,7 +164,7 @@
                 <string>then</string>
             </attr>
             <attr name="layout">
-                <string>1000 -21 480 237 217 201 11</string>
+                <string>1000 -21 480 210 217 201 11</string>
             </attr>
         </edge>
         <edge from="n7" to="n4">
@@ -204,7 +204,7 @@
         </edge>
         <edge from="n4" to="n4">
             <attr name="label">
-                <string>let:order = int:t1.order+1</string>
+                <string>let:order = int:t1.order</string>
             </attr>
         </edge>
         <edge from="n4" to="n4">

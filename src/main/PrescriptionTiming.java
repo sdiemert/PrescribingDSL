@@ -59,6 +59,10 @@ public class PrescriptionTiming implements PrescriptionElement{
 	 * @throws ArrayStoreException if the value is already in the instants array.
 	 */
 	public void addInstant(int h) throws IllegalArgumentException, ArrayStoreException{
+		if(this.instants.size()+1 > this.frequency){
+			throw new IndexOutOfBoundsException("Frequency does not match number of instants provided."); 
+		}
+		
 		if(this.freqUnit == TimeUnit.DAY){
 			if(h > 23 || h < 0){ //check to make sure that hours are valid. 
 				throw new IllegalArgumentException("Hours must be between 0 and 23"); 
