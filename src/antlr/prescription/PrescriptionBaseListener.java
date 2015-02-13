@@ -89,6 +89,18 @@ public class PrescriptionBaseListener implements PrescriptionListener {
 	 *
 	 * <p>The default implementation does nothing.</p>
 	 */
+	@Override public void enterSpecificDose(@NotNull PrescriptionParser.SpecificDoseContext ctx) { }
+	/**
+	 * {@inheritDoc}
+	 *
+	 * <p>The default implementation does nothing.</p>
+	 */
+	@Override public void exitSpecificDose(@NotNull PrescriptionParser.SpecificDoseContext ctx) { }
+	/**
+	 * {@inheritDoc}
+	 *
+	 * <p>The default implementation does nothing.</p>
+	 */
 	@Override public void enterFrequency(@NotNull PrescriptionParser.FrequencyContext ctx) { }
 	/**
 	 * {@inheritDoc}

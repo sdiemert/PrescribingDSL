@@ -13,7 +13,7 @@ INTERVAL_FREQ : ('once'|'twice'|'thrice');
 INTERVAL_MODIFIER : ('per' |'times'| 'times per' |'x');
 INTERVAL_LENGTH : ('daily'|'weekly'|'monthly'|'yearly'|'annually');
 
-STRING	:   ('a'..'z'|'A'..'Z')+ ;
+STRING	:   ('a'..'z'|'A'..'Z'|'-')+ ;
 ID  	:   ('a'..'z'|'A'..'Z')+ ;
 
 
@@ -45,12 +45,13 @@ action :
     |   s=STRING 
 ;
 
-medication : s=STRING;
+medication : (STRING)+;
 
-dose: dose_amount u=dose_unit;
+dose: specificDose | dose_amount dose_unit;
 
 dose_amount: INT; 
 dose_unit:	UNIT;
+specificDose: '('(dose_amount dose_unit',')*? dose_amount dose_unit')';
 
 timing : 
         interval specificTiming 'FOR'  duration

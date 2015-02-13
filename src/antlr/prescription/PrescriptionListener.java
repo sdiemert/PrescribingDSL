@@ -69,6 +69,16 @@ public interface PrescriptionListener extends ParseTreeListener {
 	 */
 	void exitExpr(@NotNull PrescriptionParser.ExprContext ctx);
 	/**
+	 * Enter a parse tree produced by {@link PrescriptionParser#specificDose}.
+	 * @param ctx the parse tree
+	 */
+	void enterSpecificDose(@NotNull PrescriptionParser.SpecificDoseContext ctx);
+	/**
+	 * Exit a parse tree produced by {@link PrescriptionParser#specificDose}.
+	 * @param ctx the parse tree
+	 */
+	void exitSpecificDose(@NotNull PrescriptionParser.SpecificDoseContext ctx);
+	/**
 	 * Enter a parse tree produced by {@link PrescriptionParser#frequency}.
 	 * @param ctx the parse tree
 	 */

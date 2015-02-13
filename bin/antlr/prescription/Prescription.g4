@@ -45,7 +45,7 @@ action :
     |   s=STRING 
 ;
 
-medication : s=STRING;
+medication : (STRING)+;
 
 dose: dose_amount u=dose_unit;
 
