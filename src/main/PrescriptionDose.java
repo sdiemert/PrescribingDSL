@@ -5,7 +5,7 @@ import java.util.ArrayList;
 import org.w3c.dom.Document;
 import org.w3c.dom.Element;
 
-public class PrescriptionDose {
+public class PrescriptionDose implements PrescriptionElement{
 	private Dose tempDose = null; 
 	private ArrayList<Dose> doses = null; 
 	
@@ -23,6 +23,10 @@ public class PrescriptionDose {
 		super(); 
 		this.doses = new ArrayList<Dose>(); 
 		this.tempDose = null; 
+	}
+	
+	public ArrayList<Dose> getDoses(){
+		return this.doses; 
 	}
 	
 	public void setAmount(int a){
@@ -76,6 +80,15 @@ public class PrescriptionDose {
 			GrooveXMLGenerator.GrooveXMLGeneratorUtils.addEdgeNode(doc, rootNode, dosingElem.getAttribute("id"), doseElement.getAttribute("id"), "dose");
 		}
 		return dosingElem;
+	}
+
+	@Override
+	public Boolean sanityCheck() {
+		return true;
+	}
+
+	public void addDose(Dose dose) {
+		this.doses.add(dose); 
 	} 
 	
 	

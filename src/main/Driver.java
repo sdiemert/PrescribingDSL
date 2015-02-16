@@ -26,15 +26,28 @@ public class Driver {
 		walker.walk(list, tree);
 		
 		LinkedList<Prescription> p = list.getPrescription();
-		System.out.println("Prescription: "+p); 
-        GrooveXMLGenerator g = new GrooveXMLGenerator(); 
-		
-		Document doc = g.generateXMLTree(p); 
 
-		GrooveXMLGenerator.GrooveXMLGeneratorUtils.printXML(doc, new File("/Users/sdiemert/Documents/workspace/PrescribingDsl/groove/grammar.gps/inputGraph.gst"));
-		System.out.println("Groove XML output to file");
-	
-		System.out.println("\n================");
+		Boolean val = true; 
+		for(Prescription rx : p){
+			
+			rx.adjustTimingAndDose();
+			
+			if(!rx.sanityCheck()){
+				System.out.println("Error, could not validate prescription: "+rx.toString());
+				val = false; 
+			}
+		}
+		System.out.println("Prescription: "+p); 
+		if(val){
+			GrooveXMLGenerator g = new GrooveXMLGenerator(); 
+			Document doc = g.generateXMLTree(p); 
+			GrooveXMLGenerator.GrooveXMLGeneratorUtils.printXML(doc, new File("/Users/sdiemert/Documents/workspace/PrescribingDsl/groove/grammar.gps/inputGraph.gst"));
+			System.out.println("Groove XML output to file");
+		}else{
+			System.out.println("------------>Failed to generate Groove file"); 
+		}
+
+        System.out.println("\n================");
 		System.out.println("COMPLETED");
 	}
 }

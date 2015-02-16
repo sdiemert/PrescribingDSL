@@ -108,5 +108,35 @@ public class Prescription implements PrescriptionElement{
 		return prescription;
 		
 	}
+	
+	/**
+	 * Takes the doses and timings and compares them. 
+	 * If the number of doses is exactly 1, and the number of timings is more than 1
+	 * it will copy the dose for each timing, otherwise it leaves it untouched. 
+	 */
+	public void adjustTimingAndDose(){
+		if(this.timing.getInstants().size() != this.dose.getDoses().size()){
+			if(this.dose.getDoses().size() == 1 && this.timing.getInstants().size() > 1){//if there is only 1 dose we can copy it for all the timings.
+				for(int i = 1; i < this.timing.getInstants().size(); i++){
+					this.dose.addDose(this.dose.getDoses().get(0)); 
+				}
+			}
+		}
+	}
+
+	@Override
+	public Boolean sanityCheck() {
+
+		this.timing.sanityCheck(); 
+		this.dose.sanityCheck();
+		
+		//check that we have a matching number of doses for the number of times.
+		if(this.timing.getInstants().size() != this.dose.getDoses().size()){
+			return false; 
+		}
+		
+		System.out.println("passed sanity check"); 
+		return true;
+	}
 
 }

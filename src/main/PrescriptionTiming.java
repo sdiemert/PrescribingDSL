@@ -126,6 +126,10 @@ public class PrescriptionTiming implements PrescriptionElement{
 		return "PrescriptionTiming [frequency=" + frequency 
 				+ ", duration=" + duration + ", unit=" + unit + ", hours="+this.instants+"]";
 	}
+	
+	public Boolean sanityCheck(){
+		return true; 
+	}
 
 	@Override
 	public Element toGrooveXML(Document doc, Element rootNode, int rxNumber) {
@@ -146,7 +150,6 @@ public class PrescriptionTiming implements PrescriptionElement{
 			GrooveXMLGenerator.GrooveXMLGeneratorUtils.addEdgeNode(doc, rootNode, newNode.getAttribute("id"), timeNode.getAttribute("id"), "instant");
 			count++; 
 		}
-		
 		return newNode;
 	}
 }

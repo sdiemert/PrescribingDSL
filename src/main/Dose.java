@@ -42,5 +42,11 @@ public class Dose implements PrescriptionElement {
 		return null;
 	}
 
+	@Override
+	public Boolean sanityCheck() {
+		// TODO Auto-generated method stub
+		return true;
+	}
+
 
 }
