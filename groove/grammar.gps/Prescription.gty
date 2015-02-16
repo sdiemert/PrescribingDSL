@@ -6,22 +6,27 @@
         </attr>
         <node id="n0">
             <attr name="layout">
-                <string>350 189 118 48</string>
+                <string>340 189 118 48</string>
             </attr>
         </node>
         <node id="n1">
             <attr name="layout">
-                <string>123 376 74 48</string>
+                <string>172 392 74 48</string>
             </attr>
         </node>
         <node id="n2">
             <attr name="layout">
-                <string>394 395 88 80</string>
+                <string>394 387 88 96</string>
             </attr>
         </node>
         <node id="n3">
             <attr name="layout">
                 <string>398 547 70 32</string>
+            </attr>
+        </node>
+        <node id="n4">
+            <attr name="layout">
+                <string>136 303 47 16</string>
             </attr>
         </node>
         <edge from="n0" to="n0">
@@ -39,9 +44,12 @@
                 <string>string:medication</string>
             </attr>
         </edge>
-        <edge from="n0" to="n1">
+        <edge from="n0" to="n0">
             <attr name="label">
-                <string>dose</string>
+                <string>then</string>
+            </attr>
+            <attr name="layout">
+                <string>500 0 409 213 616 252 409 213 11</string>
             </attr>
         </edge>
         <edge from="n0" to="n2">
@@ -49,12 +57,9 @@
                 <string>timing</string>
             </attr>
         </edge>
-        <edge from="n0" to="n0">
+        <edge from="n0" to="n4">
             <attr name="label">
-                <string>then</string>
-            </attr>
-            <attr name="layout">
-                <string>500 0 409 213 616 252 409 213 11</string>
+                <string>dosing</string>
             </attr>
         </edge>
         <edge from="n1" to="n1">
@@ -65,6 +70,11 @@
         <edge from="n1" to="n1">
             <attr name="label">
                 <string>int:amount</string>
+            </attr>
+        </edge>
+        <edge from="n1" to="n1">
+            <attr name="label">
+                <string>int:n</string>
             </attr>
         </edge>
         <edge from="n1" to="n1">
@@ -123,6 +133,16 @@
             </attr>
             <attr name="layout">
                 <string>500 0 433 563 592 604 433 563 11</string>
+            </attr>
+        </edge>
+        <edge from="n4" to="n4">
+            <attr name="label">
+                <string>type:Dosing</string>
+            </attr>
+        </edge>
+        <edge from="n4" to="n1">
+            <attr name="label">
+                <string>dose</string>
             </attr>
         </edge>
     </graph>

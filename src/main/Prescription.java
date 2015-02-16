@@ -104,7 +104,7 @@ public class Prescription implements PrescriptionElement{
 		GrooveXMLGenerator.GrooveXMLGeneratorUtils.addValueToNode(doc, rootNode, prescription, "type:Prescription");
 		
 		GrooveXMLGenerator.GrooveXMLGeneratorUtils.addEdgeNode(doc, rootNode, prescription.getAttribute("id"), ((Element)this.timing.toGrooveXML(doc, rootNode, rxNumber)).getAttribute("id"), "timing");
-		GrooveXMLGenerator.GrooveXMLGeneratorUtils.addEdgeNode(doc, rootNode, prescription.getAttribute("id"), ((Element)this.dose.toGrooveXML(doc, rootNode, rxNumber)).getAttribute("id"), "dose");
+		GrooveXMLGenerator.GrooveXMLGeneratorUtils.addEdgeNode(doc, rootNode, prescription.getAttribute("id"), this.dose.toGrooveXML(doc, rootNode, rxNumber).getAttribute("id"), "dosing");
 		return prescription;
 		
 	}

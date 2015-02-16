@@ -1,11 +1,13 @@
 package main;
 
+import java.util.ArrayList;
+
 import org.w3c.dom.Document;
 import org.w3c.dom.Element;
 
-public class PrescriptionDose implements PrescriptionElement{
-	private int amount;
-	private DoseUnit unit;
+public class PrescriptionDose {
+	private Dose tempDose = null; 
+	private ArrayList<Dose> doses = null; 
 	
 	/**
 	 * @param amount : the number of units to give. Example 81 in "81 mg"
@@ -13,40 +15,67 @@ public class PrescriptionDose implements PrescriptionElement{
 	 */
 	public PrescriptionDose(int amount, DoseUnit unit) {
 		super();
-		this.amount = amount;
-		this.unit = unit;
+		this.doses = new ArrayList<Dose>(); 
+		this.tempDose = null; 
 	}
 	
 	public PrescriptionDose(){
 		super(); 
-		this.amount = 0; 
-		this.unit = null;
+		this.doses = new ArrayList<Dose>(); 
+		this.tempDose = null; 
 	}
-	public int getAmount() {
-		return amount;
+	
+	public void setAmount(int a){
+		if(this.tempDose == null){
+			this.tempDose = new Dose(); 
+			this.tempDose.setAmount(a);
+		}else if(this.tempDose.getAmount() == 0){
+			this.tempDose.setAmount(a); 
+			if(this.tempDose.getUnit() != null){
+				this.doses.add(this.tempDose);
+				this.tempDose = null;
+			}
+		}
 	}
-	public void setAmount(int amount) {
-		this.amount = amount;
-	}
-	public DoseUnit getUnit() {
-		return unit;
-	}
-	public void setUnit(DoseUnit unit) {
-		this.unit = unit;
+	
+	public void setUnit(DoseUnit u){
+		if(this.tempDose == null){
+			this.tempDose = new Dose(); 
+			this.tempDose.setUnit(u);
+		}else if(this.tempDose.getUnit() == null){
+			this.tempDose.setUnit(u); 
+			if(this.tempDose.getAmount() != 0){
+				this.doses.add(this.tempDose);
+				this.tempDose = null;
+			}
+		}
 	}
 
 	@Override
 	public String toString() {
-		return "PrescriptionDose [amount=" + amount + ", unit=" + unit + "]";
+		String s = "";
+		s ="PrescriptionDose ["; 
+		for(Dose d : this.doses){
+				s+="{amount=" + d.getAmount()+ ", unit=" + d.getUnit()+ "}, ";
+		}
+		s+="]"; 
+		return s; 
 	}
 
-	@Override
-	public Element toGrooveXML(Document doc, Element rootNode, int rxNumber) {
-        Element prescriptionDose = (Element)GrooveXMLGenerator.GrooveXMLGeneratorUtils.addNode(doc, rootNode, "prescriptionDose"+rxNumber);
-		GrooveXMLGenerator.GrooveXMLGeneratorUtils.addValueToNode(doc,rootNode, prescriptionDose, "let:amount="+this.getAmount());
-		GrooveXMLGenerator.GrooveXMLGeneratorUtils.addValueToNode(doc, rootNode, prescriptionDose, "let:unit=\""+this.getUnit()+"\"");
-		GrooveXMLGenerator.GrooveXMLGeneratorUtils.addValueToNode(doc, rootNode, prescriptionDose, "type:Dose");
-		return prescriptionDose;
+	public Element toGrooveXML(Document doc, Element rootNode, int rxNumber){
+		Element doseElement = null; 
+		Element dosingElem = (Element)GrooveXMLGenerator.GrooveXMLGeneratorUtils.addNode(doc, rootNode, "prescriptionDose"+rxNumber);
+		GrooveXMLGenerator.GrooveXMLGeneratorUtils.addValueToNode(doc, rootNode, dosingElem, "type:Dosing");
+
+		for(int i = 0; i < this.doses.size(); i++){
+			doseElement = (Element)GrooveXMLGenerator.GrooveXMLGeneratorUtils.addNode(doc, rootNode, "prescriptionDose"+rxNumber+i);
+			GrooveXMLGenerator.GrooveXMLGeneratorUtils.addValueToNode(doc,rootNode, doseElement, "let:amount="+this.doses.get(i).getAmount());
+			GrooveXMLGenerator.GrooveXMLGeneratorUtils.addValueToNode(doc, rootNode, doseElement, "let:unit=\""+this.doses.get(i).getUnit()+"\"");
+			GrooveXMLGenerator.GrooveXMLGeneratorUtils.addValueToNode(doc, rootNode, doseElement, "let:n="+Integer.toString(i));
+			GrooveXMLGenerator.GrooveXMLGeneratorUtils.addValueToNode(doc, rootNode, doseElement, "type:Dose");
+			GrooveXMLGenerator.GrooveXMLGeneratorUtils.addEdgeNode(doc, rootNode, dosingElem.getAttribute("id"), doseElement.getAttribute("id"), "dose");
+		}
+		return dosingElem;
 	} 
 	
 	
