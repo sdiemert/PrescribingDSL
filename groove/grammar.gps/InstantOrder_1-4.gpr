@@ -26,7 +26,7 @@
         </node>
         <node id="n7">
             <attr name="layout">
-                <string>616 316 178 48</string>
+                <string>670 315 178 48</string>
             </attr>
         </node>
         <node id="n4">
@@ -46,7 +46,7 @@
         </node>
         <node id="n1">
             <attr name="layout">
-                <string>389 666 138 48</string>
+                <string>400 614 138 48</string>
             </attr>
         </node>
         <node id="n2">
@@ -56,7 +56,7 @@
         </node>
         <node id="n5">
             <attr name="layout">
-                <string>395 100 61 16</string>
+                <string>385 92 80 32</string>
             </attr>
         </node>
         <node id="n10">
@@ -66,12 +66,7 @@
         </node>
         <node id="n12">
             <attr name="layout">
-                <string>694 23 134 80</string>
-            </attr>
-        </node>
-        <node id="n13">
-            <attr name="layout">
-                <string>530 80 8 16</string>
+                <string>694 31 134 64</string>
             </attr>
         </node>
         <edge from="n3" to="n3">
@@ -197,14 +192,14 @@
                 <string>1000 -21 705 340 442 331 11</string>
             </attr>
         </edge>
-        <edge from="n7" to="n4">
-            <attr name="label">
-                <string>timing</string>
-            </attr>
-        </edge>
         <edge from="n7" to="n10">
             <attr name="label">
                 <string>dosing</string>
+            </attr>
+        </edge>
+        <edge from="n7" to="n4">
+            <attr name="label">
+                <string>timing</string>
             </attr>
         </edge>
         <edge from="n4" to="n4">
@@ -324,12 +319,17 @@
         </edge>
         <edge from="n5" to="n5">
             <attr name="label">
+                <string>del:</string>
+            </attr>
+        </edge>
+        <edge from="n5" to="n5">
+            <attr name="label">
                 <string>type:Dose</string>
             </attr>
         </edge>
-        <edge from="n5" to="n13">
+        <edge from="n5" to="n5">
             <attr name="label">
-                <string>@</string>
+                <string>test:bool:eq(int:i1.n, int:d1.n)</string>
             </attr>
         </edge>
         <edge from="n10" to="n10">
@@ -364,22 +364,7 @@
         </edge>
         <edge from="n12" to="n12">
             <attr name="label">
-                <string>let:n = int:d1.n</string>
-            </attr>
-        </edge>
-        <edge from="n12" to="n12">
-            <attr name="label">
                 <string>let:unit = string:d1.unit</string>
-            </attr>
-        </edge>
-        <edge from="n12" to="n13">
-            <attr name="label">
-                <string>@</string>
-            </attr>
-        </edge>
-        <edge from="n13" to="n13">
-            <attr name="label">
-                <string>forall:</string>
             </attr>
         </edge>
     </graph>

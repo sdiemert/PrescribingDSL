@@ -137,12 +137,14 @@ public class PrescriptionTiming implements PrescriptionElement{
 		GrooveXMLGenerator.GrooveXMLGeneratorUtils.addValueToNode(doc, rootNode, newNode, "let:count=0");
 		
 		Element timeNode = null; 
+		int count = 0;
 		for(Integer i : this.instants){
 			timeNode = (Element)GrooveXMLGenerator.GrooveXMLGeneratorUtils.addNode(doc, rootNode, rxNumber+"instant"+i); 
 			GrooveXMLGenerator.GrooveXMLGeneratorUtils.addValueToNode(doc,  rootNode, timeNode, "let:instant="+i);
+			GrooveXMLGenerator.GrooveXMLGeneratorUtils.addValueToNode(doc,  rootNode, timeNode, "let:n="+count);
 			GrooveXMLGenerator.GrooveXMLGeneratorUtils.addValueToNode(doc,  rootNode, timeNode, "type:Instant");
-			System.out.println(timeNode.getAttribute("id")); 
 			GrooveXMLGenerator.GrooveXMLGeneratorUtils.addEdgeNode(doc, rootNode, newNode.getAttribute("id"), timeNode.getAttribute("id"), "instant");
+			count++; 
 		}
 		
 		return newNode;

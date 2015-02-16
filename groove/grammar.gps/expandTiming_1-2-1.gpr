@@ -44,7 +44,7 @@
         </node>
         <node id="n8">
             <attr name="layout">
-                <string>697 10 134 64</string>
+                <string>697 2 134 80</string>
             </attr>
         </node>
         <node id="n0">
@@ -157,24 +157,24 @@
                 <string>type:Prescription</string>
             </attr>
         </edge>
-        <edge from="n5" to="n4">
-            <attr name="label">
-                <string>del:then</string>
-            </attr>
-        </edge>
         <edge from="n5" to="n1">
             <attr name="label">
                 <string>new:then</string>
             </attr>
         </edge>
-        <edge from="n5" to="n2">
+        <edge from="n5" to="n4">
             <attr name="label">
-                <string>timing</string>
+                <string>del:then</string>
             </attr>
         </edge>
         <edge from="n5" to="n11">
             <attr name="label">
                 <string>dosing</string>
+            </attr>
+        </edge>
+        <edge from="n5" to="n2">
+            <attr name="label">
+                <string>timing</string>
             </attr>
         </edge>
         <edge from="n1" to="n1">
@@ -197,6 +197,11 @@
                 <string>let:medication = string:p0.medication</string>
             </attr>
         </edge>
+        <edge from="n1" to="n12">
+            <attr name="label">
+                <string>dosing</string>
+            </attr>
+        </edge>
         <edge from="n1" to="n4">
             <attr name="label">
                 <string>new:then</string>
@@ -205,11 +210,6 @@
         <edge from="n1" to="n6">
             <attr name="label">
                 <string>timing</string>
-            </attr>
-        </edge>
-        <edge from="n1" to="n12">
-            <attr name="label">
-                <string>dosing</string>
             </attr>
         </edge>
         <edge from="n7" to="n7">
@@ -240,6 +240,11 @@
         <edge from="n3" to="n3">
             <attr name="label">
                 <string>let:instant = int:i0.instant</string>
+            </attr>
+        </edge>
+        <edge from="n3" to="n3">
+            <attr name="label">
+                <string>let:n = int:i0.n</string>
             </attr>
         </edge>
         <edge from="n3" to="n9">

@@ -11,7 +11,7 @@
         </node>
         <node id="n1">
             <attr name="layout">
-                <string>172 392 74 48</string>
+                <string>172 384 74 64</string>
             </attr>
         </node>
         <node id="n2">
@@ -52,14 +52,14 @@
                 <string>500 0 409 213 616 252 409 213 11</string>
             </attr>
         </edge>
-        <edge from="n0" to="n2">
-            <attr name="label">
-                <string>timing</string>
-            </attr>
-        </edge>
         <edge from="n0" to="n4">
             <attr name="label">
                 <string>dosing</string>
+            </attr>
+        </edge>
+        <edge from="n0" to="n2">
+            <attr name="label">
+                <string>timing</string>
             </attr>
         </edge>
         <edge from="n1" to="n1">
@@ -125,6 +125,11 @@
         <edge from="n3" to="n3">
             <attr name="label">
                 <string>int:instant</string>
+            </attr>
+        </edge>
+        <edge from="n3" to="n3">
+            <attr name="label">
+                <string>int:n</string>
             </attr>
         </edge>
         <edge from="n3" to="n3">

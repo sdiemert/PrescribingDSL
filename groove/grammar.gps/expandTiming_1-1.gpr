@@ -44,7 +44,7 @@
         </node>
         <node id="n7">
             <attr name="layout">
-                <string>606 22 134 64</string>
+                <string>606 14 134 80</string>
             </attr>
         </node>
         <node id="n8">
@@ -230,6 +230,11 @@
         <edge from="n6" to="n6">
             <attr name="label">
                 <string>let:instant = int:i0.instant</string>
+            </attr>
+        </edge>
+        <edge from="n6" to="n6">
+            <attr name="label">
+                <string>let:n = int:i0.n</string>
             </attr>
         </edge>
         <edge from="n6" to="n5">

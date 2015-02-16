@@ -46,7 +46,7 @@
         </node>
         <node id="n0">
             <attr name="layout">
-                <string>777 86 134 80</string>
+                <string>777 72 134 64</string>
             </attr>
         </node>
         <node id="n1">
@@ -56,17 +56,12 @@
         </node>
         <node id="n2">
             <attr name="layout">
-                <string>250 251 75 16</string>
+                <string>244 364 75 16</string>
             </attr>
         </node>
         <node id="n5">
             <attr name="layout">
-                <string>271 122 61 16</string>
-            </attr>
-        </node>
-        <node id="n12">
-            <attr name="layout">
-                <string>552 120 8 16</string>
+                <string>238 246 80 32</string>
             </attr>
         </node>
         <edge from="n3" to="n3">
@@ -97,6 +92,11 @@
         <edge from="n6" to="n11">
             <attr name="label">
                 <string>timing</string>
+            </attr>
+        </edge>
+        <edge from="n6" to="n2">
+            <attr name="label">
+                <string>dosing</string>
             </attr>
         </edge>
         <edge from="n11" to="n11">
@@ -174,11 +174,6 @@
                 <string>let:medication = string:p1.medication</string>
             </attr>
         </edge>
-        <edge from="n7" to="n4">
-            <attr name="label">
-                <string>timing</string>
-            </attr>
-        </edge>
         <edge from="n7" to="n6">
             <attr name="label">
                 <string>then</string>
@@ -187,6 +182,11 @@
         <edge from="n7" to="n1">
             <attr name="label">
                 <string>dosing</string>
+            </attr>
+        </edge>
+        <edge from="n7" to="n4">
+            <attr name="label">
+                <string>timing</string>
             </attr>
         </edge>
         <edge from="n4" to="n4">
@@ -264,11 +264,6 @@
                 <string>del:then</string>
             </attr>
         </edge>
-        <edge from="n10" to="n2">
-            <attr name="label">
-                <string>dosing</string>
-            </attr>
-        </edge>
         <edge from="n0" to="n0">
             <attr name="label">
                 <string>new:</string>
@@ -286,17 +281,7 @@
         </edge>
         <edge from="n0" to="n0">
             <attr name="label">
-                <string>let:n = int:d1.n</string>
-            </attr>
-        </edge>
-        <edge from="n0" to="n0">
-            <attr name="label">
                 <string>let:unit = string:d1.unit</string>
-            </attr>
-        </edge>
-        <edge from="n0" to="n12">
-            <attr name="label">
-                <string>@</string>
             </attr>
         </edge>
         <edge from="n1" to="n1">
@@ -336,17 +321,17 @@
         </edge>
         <edge from="n5" to="n5">
             <attr name="label">
+                <string>del:</string>
+            </attr>
+        </edge>
+        <edge from="n5" to="n5">
+            <attr name="label">
                 <string>type:Dose</string>
             </attr>
         </edge>
-        <edge from="n5" to="n12">
+        <edge from="n5" to="n5">
             <attr name="label">
-                <string>@</string>
-            </attr>
-        </edge>
-        <edge from="n12" to="n12">
-            <attr name="label">
-                <string>forall:</string>
+                <string>test:bool:eq(int:i1.n, int:d1.n)</string>
             </attr>
         </edge>
     </graph>

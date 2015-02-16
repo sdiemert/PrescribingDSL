@@ -61,12 +61,7 @@
         </node>
         <node id="n5">
             <attr name="layout">
-                <string>406 89 61 16</string>
-            </attr>
-        </node>
-        <node id="n12">
-            <attr name="layout">
-                <string>581 88 8 16</string>
+                <string>396 81 80 32</string>
             </attr>
         </node>
         <edge from="n3" to="n3">
@@ -94,14 +89,14 @@
                 <string>type:Prescription</string>
             </attr>
         </edge>
-        <edge from="n6" to="n11">
-            <attr name="label">
-                <string>timing</string>
-            </attr>
-        </edge>
         <edge from="n6" to="n2">
             <attr name="label">
                 <string>dosing</string>
+            </attr>
+        </edge>
+        <edge from="n6" to="n11">
+            <attr name="label">
+                <string>timing</string>
             </attr>
         </edge>
         <edge from="n11" to="n11">
@@ -301,17 +296,7 @@
         </edge>
         <edge from="n1" to="n1">
             <attr name="label">
-                <string>let:n = int:d1.n</string>
-            </attr>
-        </edge>
-        <edge from="n1" to="n1">
-            <attr name="label">
                 <string>let:unit = string:d1.unit</string>
-            </attr>
-        </edge>
-        <edge from="n1" to="n12">
-            <attr name="label">
-                <string>@</string>
             </attr>
         </edge>
         <edge from="n2" to="n2">
@@ -331,17 +316,17 @@
         </edge>
         <edge from="n5" to="n5">
             <attr name="label">
+                <string>del:</string>
+            </attr>
+        </edge>
+        <edge from="n5" to="n5">
+            <attr name="label">
                 <string>type:Dose</string>
             </attr>
         </edge>
-        <edge from="n5" to="n12">
+        <edge from="n5" to="n5">
             <attr name="label">
-                <string>@</string>
-            </attr>
-        </edge>
-        <edge from="n12" to="n12">
-            <attr name="label">
-                <string>forall:</string>
+                <string>test:bool:eq(int:i1.n, int:d1.n)</string>
             </attr>
         </edge>
     </graph>
