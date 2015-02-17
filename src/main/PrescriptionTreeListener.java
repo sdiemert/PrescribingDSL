@@ -36,6 +36,39 @@ public class PrescriptionTreeListener extends PrescriptionBaseListener{
 		return this.scriptList; 
 	}
 	
+	/******************TITRATING****************************/
+	@Override
+	public void enterTitratingDose(PrescriptionParser.TitratingDoseContext ctx){
+		System.out.println("enterTitratingDose() -> "+ctx.getText());
+	}
+	
+	@Override
+	public void enterTitratingDirection(PrescriptionParser.TitratingDirectionContext ctx){
+		System.out.println("enterTitratingDirection() -> "+ctx.getText());
+	}
+	
+	@Override
+	public void enterTitratingStart(PrescriptionParser.TitratingStartContext ctx){
+		System.out.println("enterTitratingStart() -> "+ctx.getText());
+	}
+
+	@Override
+	public void enterTitratingStop(PrescriptionParser.TitratingStopContext ctx){
+		System.out.println("enterTitratingStop() -> "+ctx.getText());
+	}
+	
+	@Override
+	public void enterTitratingInterval(PrescriptionParser.TitratingIntervalContext ctx){
+		System.out.println("enterTitratingInterval() -> "+ctx.getText());
+	}
+	
+	@Override
+	public void enterTitratingChange(PrescriptionParser.TitratingChangeContext ctx){
+		System.out.println("enterTitratingChange() -> "+ctx.getText());
+	}
+
+	/******************END TITRATING****************************/
+	
 	@Override
 	public void enterMedication(PrescriptionParser.MedicationContext ctx){
 		System.out.println("enterMedication() -> "+ctx.getText());
@@ -56,13 +89,23 @@ public class PrescriptionTreeListener extends PrescriptionBaseListener{
 	@Override
 	public void enterDose_unit(PrescriptionParser.Dose_unitContext ctx){
 		System.out.println("enterDose_unit() -> "+ ctx.getText());
-		this.currentDose.setUnit(DoseUnit.valueOf(ctx.getText().toUpperCase()));
+		try {
+			this.currentDose.setUnit(DoseUnit.valueOf(ctx.getText().toUpperCase()));
+		} catch (Exception e) {
+			e.printStackTrace();
+		}
 	}
 
 	@Override 
-	public void enterDose_amount(PrescriptionParser.Dose_amountContext ctx){
+	public void enterDose_amount(PrescriptionParser.Dose_amountContext ctx) {
 		System.out.println("enterDose_amount() -> "+ Integer.parseInt(ctx.getText()));
-		this.currentDose.setAmount(Integer.parseInt(ctx.getText()));
+		try{
+			this.currentDose.setAmount(Integer.parseInt(ctx.getText()));
+		}catch(NumberFormatException nfe){
+			System.out.println(nfe.getStackTrace());
+		}catch(Exception e){
+			System.out.println(e.getStackTrace());
+		}
 	}
 	
 	@Override 
@@ -100,7 +143,6 @@ public class PrescriptionTreeListener extends PrescriptionBaseListener{
 		try {
 			this.currentTiming.setFreqUnit(ListenerHelper.normalizeTimeUnit(ctx.getText().toLowerCase()));
 		} catch (Exception e) {
-			// TODO Auto-generated catch block
 			e.printStackTrace();
 		}
 	}

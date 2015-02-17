@@ -17,30 +17,6 @@ public class PrescriptionBaseListener implements PrescriptionListener {
 	 *
 	 * <p>The default implementation does nothing.</p>
 	 */
-	@Override public void enterMedication(@NotNull PrescriptionParser.MedicationContext ctx) { }
-	/**
-	 * {@inheritDoc}
-	 *
-	 * <p>The default implementation does nothing.</p>
-	 */
-	@Override public void exitMedication(@NotNull PrescriptionParser.MedicationContext ctx) { }
-	/**
-	 * {@inheritDoc}
-	 *
-	 * <p>The default implementation does nothing.</p>
-	 */
-	@Override public void enterDuration_amount(@NotNull PrescriptionParser.Duration_amountContext ctx) { }
-	/**
-	 * {@inheritDoc}
-	 *
-	 * <p>The default implementation does nothing.</p>
-	 */
-	@Override public void exitDuration_amount(@NotNull PrescriptionParser.Duration_amountContext ctx) { }
-	/**
-	 * {@inheritDoc}
-	 *
-	 * <p>The default implementation does nothing.</p>
-	 */
 	@Override public void enterAtom(@NotNull PrescriptionParser.AtomContext ctx) { }
 	/**
 	 * {@inheritDoc}
@@ -65,18 +41,6 @@ public class PrescriptionBaseListener implements PrescriptionListener {
 	 *
 	 * <p>The default implementation does nothing.</p>
 	 */
-	@Override public void enterSpecificTiming(@NotNull PrescriptionParser.SpecificTimingContext ctx) { }
-	/**
-	 * {@inheritDoc}
-	 *
-	 * <p>The default implementation does nothing.</p>
-	 */
-	@Override public void exitSpecificTiming(@NotNull PrescriptionParser.SpecificTimingContext ctx) { }
-	/**
-	 * {@inheritDoc}
-	 *
-	 * <p>The default implementation does nothing.</p>
-	 */
 	@Override public void enterExpr(@NotNull PrescriptionParser.ExprContext ctx) { }
 	/**
 	 * {@inheritDoc}
@@ -84,18 +48,6 @@ public class PrescriptionBaseListener implements PrescriptionListener {
 	 * <p>The default implementation does nothing.</p>
 	 */
 	@Override public void exitExpr(@NotNull PrescriptionParser.ExprContext ctx) { }
-	/**
-	 * {@inheritDoc}
-	 *
-	 * <p>The default implementation does nothing.</p>
-	 */
-	@Override public void enterSpecificDose(@NotNull PrescriptionParser.SpecificDoseContext ctx) { }
-	/**
-	 * {@inheritDoc}
-	 *
-	 * <p>The default implementation does nothing.</p>
-	 */
-	@Override public void exitSpecificDose(@NotNull PrescriptionParser.SpecificDoseContext ctx) { }
 	/**
 	 * {@inheritDoc}
 	 *
@@ -113,13 +65,13 @@ public class PrescriptionBaseListener implements PrescriptionListener {
 	 *
 	 * <p>The default implementation does nothing.</p>
 	 */
-	@Override public void enterScript(@NotNull PrescriptionParser.ScriptContext ctx) { }
+	@Override public void enterDose_unit(@NotNull PrescriptionParser.Dose_unitContext ctx) { }
 	/**
 	 * {@inheritDoc}
 	 *
 	 * <p>The default implementation does nothing.</p>
 	 */
-	@Override public void exitScript(@NotNull PrescriptionParser.ScriptContext ctx) { }
+	@Override public void exitDose_unit(@NotNull PrescriptionParser.Dose_unitContext ctx) { }
 	/**
 	 * {@inheritDoc}
 	 *
@@ -137,18 +89,6 @@ public class PrescriptionBaseListener implements PrescriptionListener {
 	 *
 	 * <p>The default implementation does nothing.</p>
 	 */
-	@Override public void enterDose_unit(@NotNull PrescriptionParser.Dose_unitContext ctx) { }
-	/**
-	 * {@inheritDoc}
-	 *
-	 * <p>The default implementation does nothing.</p>
-	 */
-	@Override public void exitDose_unit(@NotNull PrescriptionParser.Dose_unitContext ctx) { }
-	/**
-	 * {@inheritDoc}
-	 *
-	 * <p>The default implementation does nothing.</p>
-	 */
 	@Override public void enterDuration_unit(@NotNull PrescriptionParser.Duration_unitContext ctx) { }
 	/**
 	 * {@inheritDoc}
@@ -156,30 +96,6 @@ public class PrescriptionBaseListener implements PrescriptionListener {
 	 * <p>The default implementation does nothing.</p>
 	 */
 	@Override public void exitDuration_unit(@NotNull PrescriptionParser.Duration_unitContext ctx) { }
-	/**
-	 * {@inheritDoc}
-	 *
-	 * <p>The default implementation does nothing.</p>
-	 */
-	@Override public void enterDuration(@NotNull PrescriptionParser.DurationContext ctx) { }
-	/**
-	 * {@inheritDoc}
-	 *
-	 * <p>The default implementation does nothing.</p>
-	 */
-	@Override public void exitDuration(@NotNull PrescriptionParser.DurationContext ctx) { }
-	/**
-	 * {@inheritDoc}
-	 *
-	 * <p>The default implementation does nothing.</p>
-	 */
-	@Override public void enterAssignment(@NotNull PrescriptionParser.AssignmentContext ctx) { }
-	/**
-	 * {@inheritDoc}
-	 *
-	 * <p>The default implementation does nothing.</p>
-	 */
-	@Override public void exitAssignment(@NotNull PrescriptionParser.AssignmentContext ctx) { }
 	/**
 	 * {@inheritDoc}
 	 *
@@ -197,13 +113,13 @@ public class PrescriptionBaseListener implements PrescriptionListener {
 	 *
 	 * <p>The default implementation does nothing.</p>
 	 */
-	@Override public void enterIntervalLength(@NotNull PrescriptionParser.IntervalLengthContext ctx) { }
+	@Override public void enterTitratingChange(@NotNull PrescriptionParser.TitratingChangeContext ctx) { }
 	/**
 	 * {@inheritDoc}
 	 *
 	 * <p>The default implementation does nothing.</p>
 	 */
-	@Override public void exitIntervalLength(@NotNull PrescriptionParser.IntervalLengthContext ctx) { }
+	@Override public void exitTitratingChange(@NotNull PrescriptionParser.TitratingChangeContext ctx) { }
 	/**
 	 * {@inheritDoc}
 	 *
@@ -228,6 +144,162 @@ public class PrescriptionBaseListener implements PrescriptionListener {
 	 * <p>The default implementation does nothing.</p>
 	 */
 	@Override public void exitInstant(@NotNull PrescriptionParser.InstantContext ctx) { }
+	/**
+	 * {@inheritDoc}
+	 *
+	 * <p>The default implementation does nothing.</p>
+	 */
+	@Override public void enterTitratingDirection(@NotNull PrescriptionParser.TitratingDirectionContext ctx) { }
+	/**
+	 * {@inheritDoc}
+	 *
+	 * <p>The default implementation does nothing.</p>
+	 */
+	@Override public void exitTitratingDirection(@NotNull PrescriptionParser.TitratingDirectionContext ctx) { }
+	/**
+	 * {@inheritDoc}
+	 *
+	 * <p>The default implementation does nothing.</p>
+	 */
+	@Override public void enterMedication(@NotNull PrescriptionParser.MedicationContext ctx) { }
+	/**
+	 * {@inheritDoc}
+	 *
+	 * <p>The default implementation does nothing.</p>
+	 */
+	@Override public void exitMedication(@NotNull PrescriptionParser.MedicationContext ctx) { }
+	/**
+	 * {@inheritDoc}
+	 *
+	 * <p>The default implementation does nothing.</p>
+	 */
+	@Override public void enterDuration_amount(@NotNull PrescriptionParser.Duration_amountContext ctx) { }
+	/**
+	 * {@inheritDoc}
+	 *
+	 * <p>The default implementation does nothing.</p>
+	 */
+	@Override public void exitDuration_amount(@NotNull PrescriptionParser.Duration_amountContext ctx) { }
+	/**
+	 * {@inheritDoc}
+	 *
+	 * <p>The default implementation does nothing.</p>
+	 */
+	@Override public void enterTitratingStop(@NotNull PrescriptionParser.TitratingStopContext ctx) { }
+	/**
+	 * {@inheritDoc}
+	 *
+	 * <p>The default implementation does nothing.</p>
+	 */
+	@Override public void exitTitratingStop(@NotNull PrescriptionParser.TitratingStopContext ctx) { }
+	/**
+	 * {@inheritDoc}
+	 *
+	 * <p>The default implementation does nothing.</p>
+	 */
+	@Override public void enterSpecificTiming(@NotNull PrescriptionParser.SpecificTimingContext ctx) { }
+	/**
+	 * {@inheritDoc}
+	 *
+	 * <p>The default implementation does nothing.</p>
+	 */
+	@Override public void exitSpecificTiming(@NotNull PrescriptionParser.SpecificTimingContext ctx) { }
+	/**
+	 * {@inheritDoc}
+	 *
+	 * <p>The default implementation does nothing.</p>
+	 */
+	@Override public void enterSpecificDose(@NotNull PrescriptionParser.SpecificDoseContext ctx) { }
+	/**
+	 * {@inheritDoc}
+	 *
+	 * <p>The default implementation does nothing.</p>
+	 */
+	@Override public void exitSpecificDose(@NotNull PrescriptionParser.SpecificDoseContext ctx) { }
+	/**
+	 * {@inheritDoc}
+	 *
+	 * <p>The default implementation does nothing.</p>
+	 */
+	@Override public void enterScript(@NotNull PrescriptionParser.ScriptContext ctx) { }
+	/**
+	 * {@inheritDoc}
+	 *
+	 * <p>The default implementation does nothing.</p>
+	 */
+	@Override public void exitScript(@NotNull PrescriptionParser.ScriptContext ctx) { }
+	/**
+	 * {@inheritDoc}
+	 *
+	 * <p>The default implementation does nothing.</p>
+	 */
+	@Override public void enterTitratingInterval(@NotNull PrescriptionParser.TitratingIntervalContext ctx) { }
+	/**
+	 * {@inheritDoc}
+	 *
+	 * <p>The default implementation does nothing.</p>
+	 */
+	@Override public void exitTitratingInterval(@NotNull PrescriptionParser.TitratingIntervalContext ctx) { }
+	/**
+	 * {@inheritDoc}
+	 *
+	 * <p>The default implementation does nothing.</p>
+	 */
+	@Override public void enterTitratingDose(@NotNull PrescriptionParser.TitratingDoseContext ctx) { }
+	/**
+	 * {@inheritDoc}
+	 *
+	 * <p>The default implementation does nothing.</p>
+	 */
+	@Override public void exitTitratingDose(@NotNull PrescriptionParser.TitratingDoseContext ctx) { }
+	/**
+	 * {@inheritDoc}
+	 *
+	 * <p>The default implementation does nothing.</p>
+	 */
+	@Override public void enterAssignment(@NotNull PrescriptionParser.AssignmentContext ctx) { }
+	/**
+	 * {@inheritDoc}
+	 *
+	 * <p>The default implementation does nothing.</p>
+	 */
+	@Override public void exitAssignment(@NotNull PrescriptionParser.AssignmentContext ctx) { }
+	/**
+	 * {@inheritDoc}
+	 *
+	 * <p>The default implementation does nothing.</p>
+	 */
+	@Override public void enterDuration(@NotNull PrescriptionParser.DurationContext ctx) { }
+	/**
+	 * {@inheritDoc}
+	 *
+	 * <p>The default implementation does nothing.</p>
+	 */
+	@Override public void exitDuration(@NotNull PrescriptionParser.DurationContext ctx) { }
+	/**
+	 * {@inheritDoc}
+	 *
+	 * <p>The default implementation does nothing.</p>
+	 */
+	@Override public void enterTitratingStart(@NotNull PrescriptionParser.TitratingStartContext ctx) { }
+	/**
+	 * {@inheritDoc}
+	 *
+	 * <p>The default implementation does nothing.</p>
+	 */
+	@Override public void exitTitratingStart(@NotNull PrescriptionParser.TitratingStartContext ctx) { }
+	/**
+	 * {@inheritDoc}
+	 *
+	 * <p>The default implementation does nothing.</p>
+	 */
+	@Override public void enterIntervalLength(@NotNull PrescriptionParser.IntervalLengthContext ctx) { }
+	/**
+	 * {@inheritDoc}
+	 *
+	 * <p>The default implementation does nothing.</p>
+	 */
+	@Override public void exitIntervalLength(@NotNull PrescriptionParser.IntervalLengthContext ctx) { }
 	/**
 	 * {@inheritDoc}
 	 *

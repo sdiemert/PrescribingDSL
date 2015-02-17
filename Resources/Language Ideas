@@ -24,3 +24,15 @@
 	
 
 expr: ACTION MEDICATION DOSE TIMING
+
+####Tapering: 
+
+take prednisone 50 mg twice daily (DECREASE BY 5 mg per day) FOR 10 days
+
+take prednisone 50 mg twice daily DECREASE BY 5 mg per day FOR 10 days
+
+take prednisone 50 mg twice daily FOR 10 days 
+    DECREASE BY 5 mg per day
+
+take prednisone 50 mg twice daily FOR 10 days
+    DECREASE BY 5 mg per day UNTIL 0 mg

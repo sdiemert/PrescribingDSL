@@ -47,11 +47,21 @@ action :
 
 medication : (STRING)+;
 
-dose: specificDose | dose_amount dose_unit;
+dose: titratingDose | specificDose | dose_amount dose_unit;
 
 dose_amount: INT; 
+
 dose_unit:	UNIT;
+
 specificDose: '('(dose_amount dose_unit',')*? dose_amount dose_unit')';
+
+titratingDose:  'TITRATE' titratingDirection  titratingStart titratingStop  titratingChange titratingInterval;
+
+titratingDirection: 'up'|'down';
+titratingStop: 'TO' dose_amount dose_unit; 
+titratingStart: 'FROM' dose_amount dose_unit; 
+titratingChange: 'BY' dose_amount dose_unit; 
+titratingInterval: 'per' duration_amount? duration_unit; //per 2 days, per 7 days, per 1 week
 
 timing : 
         interval specificTiming 'FOR'  duration

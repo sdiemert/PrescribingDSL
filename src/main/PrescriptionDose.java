@@ -8,6 +8,7 @@ import org.w3c.dom.Element;
 public class PrescriptionDose implements PrescriptionElement{
 	private Dose tempDose = null; 
 	private ArrayList<Dose> doses = null; 
+	private int change = 0;  //the amount to change the dose by per unit of time, used by tapering prescriptions
 	
 	/**
 	 * @param amount : the number of units to give. Example 81 in "81 mg"
@@ -16,40 +17,50 @@ public class PrescriptionDose implements PrescriptionElement{
 	public PrescriptionDose(int amount, DoseUnit unit) {
 		super();
 		this.doses = new ArrayList<Dose>(); 
+		this.doses.add(new Dose(amount, unit)); 
 		this.tempDose = null; 
+		this.change=0;
 	}
 	
 	public PrescriptionDose(){
 		super(); 
 		this.doses = new ArrayList<Dose>(); 
 		this.tempDose = null; 
+		this.change=0;
+	}
+
+	public PrescriptionDose(int change){
+		super(); 
+		this.doses = new ArrayList<Dose>(); 
+		this.tempDose = null; 
+		this.change=change;
 	}
 	
 	public ArrayList<Dose> getDoses(){
 		return this.doses; 
 	}
 	
-	public void setAmount(int a){
+	public void setAmount(int a) throws Exception{
 		if(this.tempDose == null){
 			this.tempDose = new Dose(); 
 			this.tempDose.setAmount(a);
 		}else if(this.tempDose.getAmount() == 0){
 			this.tempDose.setAmount(a); 
 			if(this.tempDose.getUnit() != null){
-				this.doses.add(this.tempDose);
+				this.addDose(this.tempDose);
 				this.tempDose = null;
 			}
 		}
 	}
 	
-	public void setUnit(DoseUnit u){
+	public void setUnit(DoseUnit u) throws Exception{
 		if(this.tempDose == null){
 			this.tempDose = new Dose(); 
 			this.tempDose.setUnit(u);
 		}else if(this.tempDose.getUnit() == null){
 			this.tempDose.setUnit(u); 
 			if(this.tempDose.getAmount() != 0){
-				this.doses.add(this.tempDose);
+				this.addDose(this.tempDose);
 				this.tempDose = null;
 			}
 		}
@@ -70,6 +81,7 @@ public class PrescriptionDose implements PrescriptionElement{
 		Element doseElement = null; 
 		Element dosingElem = (Element)GrooveXMLGenerator.GrooveXMLGeneratorUtils.addNode(doc, rootNode, "prescriptionDose"+rxNumber);
 		GrooveXMLGenerator.GrooveXMLGeneratorUtils.addValueToNode(doc, rootNode, dosingElem, "type:Dosing");
+		GrooveXMLGenerator.GrooveXMLGeneratorUtils.addValueToNode(doc, rootNode, dosingElem, "let:int:change="+this.change);
 
 		for(int i = 0; i < this.doses.size(); i++){
 			doseElement = (Element)GrooveXMLGenerator.GrooveXMLGeneratorUtils.addNode(doc, rootNode, "prescriptionDose"+rxNumber+i);
@@ -87,8 +99,12 @@ public class PrescriptionDose implements PrescriptionElement{
 		return true;
 	}
 
-	public void addDose(Dose dose) {
-		this.doses.add(dose); 
+	public void addDose(Dose dose) throws Exception{
+		if(this.change != 0 && (dose.getAmount() != this.doses.get(0).getAmount() || dose.getUnit() != this.doses.get(0).getUnit())){
+			throw new Exception("Cannot add varying doses if change is non-zero");
+		}else{
+			this.doses.add(dose); 
+		}
 	} 
 	
 	

@@ -21,7 +21,7 @@
         </node>
         <node id="n3">
             <attr name="layout">
-                <string>398 547 70 32</string>
+                <string>398 539 70 48</string>
             </attr>
         </node>
         <node id="n4">
@@ -44,12 +44,9 @@
                 <string>string:medication</string>
             </attr>
         </edge>
-        <edge from="n0" to="n0">
+        <edge from="n0" to="n2">
             <attr name="label">
-                <string>then</string>
-            </attr>
-            <attr name="layout">
-                <string>500 0 409 213 616 252 409 213 11</string>
+                <string>timing</string>
             </attr>
         </edge>
         <edge from="n0" to="n4">
@@ -57,9 +54,12 @@
                 <string>dosing</string>
             </attr>
         </edge>
-        <edge from="n0" to="n2">
+        <edge from="n0" to="n0">
             <attr name="label">
-                <string>timing</string>
+                <string>then</string>
+            </attr>
+            <attr name="layout">
+                <string>500 0 409 213 616 252 409 213 11</string>
             </attr>
         </edge>
         <edge from="n1" to="n1">
@@ -143,6 +143,11 @@
         <edge from="n4" to="n4">
             <attr name="label">
                 <string>type:Dosing</string>
+            </attr>
+        </edge>
+        <edge from="n4" to="n4">
+            <attr name="label">
+                <string>int:change</string>
             </attr>
         </edge>
         <edge from="n4" to="n1">
