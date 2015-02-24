@@ -22,5 +22,4 @@ public class FixedPrescriptionDose extends PrescriptionDose implements Prescript
 	public Boolean sanityCheck() {
 		return null;
 	}
-
 }
