@@ -38,14 +38,17 @@ public class Dose implements PrescriptionElement {
 
 	@Override
 	public Element toGrooveXML(Document doc, Element rootNode, int rxNumber) {
-		// TODO Auto-generated method stub
 		return null;
 	}
 
 	@Override
 	public Boolean sanityCheck() {
-		// TODO Auto-generated method stub
+		// TODO: make me check things. 
 		return true;
+	}
+	
+	public String toString(){
+		return "{ amount: "+this.amount+", unit: "+this.unit+" }";
 	}
 
 

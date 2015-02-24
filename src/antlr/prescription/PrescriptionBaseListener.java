@@ -41,6 +41,30 @@ public class PrescriptionBaseListener implements PrescriptionListener {
 	 *
 	 * <p>The default implementation does nothing.</p>
 	 */
+	@Override public void enterDoseAtom(@NotNull PrescriptionParser.DoseAtomContext ctx) { }
+	/**
+	 * {@inheritDoc}
+	 *
+	 * <p>The default implementation does nothing.</p>
+	 */
+	@Override public void exitDoseAtom(@NotNull PrescriptionParser.DoseAtomContext ctx) { }
+	/**
+	 * {@inheritDoc}
+	 *
+	 * <p>The default implementation does nothing.</p>
+	 */
+	@Override public void enterDoseAmount(@NotNull PrescriptionParser.DoseAmountContext ctx) { }
+	/**
+	 * {@inheritDoc}
+	 *
+	 * <p>The default implementation does nothing.</p>
+	 */
+	@Override public void exitDoseAmount(@NotNull PrescriptionParser.DoseAmountContext ctx) { }
+	/**
+	 * {@inheritDoc}
+	 *
+	 * <p>The default implementation does nothing.</p>
+	 */
 	@Override public void enterExpr(@NotNull PrescriptionParser.ExprContext ctx) { }
 	/**
 	 * {@inheritDoc}
@@ -65,18 +89,6 @@ public class PrescriptionBaseListener implements PrescriptionListener {
 	 *
 	 * <p>The default implementation does nothing.</p>
 	 */
-	@Override public void enterDose_unit(@NotNull PrescriptionParser.Dose_unitContext ctx) { }
-	/**
-	 * {@inheritDoc}
-	 *
-	 * <p>The default implementation does nothing.</p>
-	 */
-	@Override public void exitDose_unit(@NotNull PrescriptionParser.Dose_unitContext ctx) { }
-	/**
-	 * {@inheritDoc}
-	 *
-	 * <p>The default implementation does nothing.</p>
-	 */
 	@Override public void enterDose(@NotNull PrescriptionParser.DoseContext ctx) { }
 	/**
 	 * {@inheritDoc}
@@ -89,13 +101,13 @@ public class PrescriptionBaseListener implements PrescriptionListener {
 	 *
 	 * <p>The default implementation does nothing.</p>
 	 */
-	@Override public void enterDuration_unit(@NotNull PrescriptionParser.Duration_unitContext ctx) { }
+	@Override public void enterDurationUnit(@NotNull PrescriptionParser.DurationUnitContext ctx) { }
 	/**
 	 * {@inheritDoc}
 	 *
 	 * <p>The default implementation does nothing.</p>
 	 */
-	@Override public void exitDuration_unit(@NotNull PrescriptionParser.Duration_unitContext ctx) { }
+	@Override public void exitDurationUnit(@NotNull PrescriptionParser.DurationUnitContext ctx) { }
 	/**
 	 * {@inheritDoc}
 	 *
@@ -173,18 +185,6 @@ public class PrescriptionBaseListener implements PrescriptionListener {
 	 *
 	 * <p>The default implementation does nothing.</p>
 	 */
-	@Override public void enterDuration_amount(@NotNull PrescriptionParser.Duration_amountContext ctx) { }
-	/**
-	 * {@inheritDoc}
-	 *
-	 * <p>The default implementation does nothing.</p>
-	 */
-	@Override public void exitDuration_amount(@NotNull PrescriptionParser.Duration_amountContext ctx) { }
-	/**
-	 * {@inheritDoc}
-	 *
-	 * <p>The default implementation does nothing.</p>
-	 */
 	@Override public void enterTitratingStop(@NotNull PrescriptionParser.TitratingStopContext ctx) { }
 	/**
 	 * {@inheritDoc}
@@ -245,13 +245,13 @@ public class PrescriptionBaseListener implements PrescriptionListener {
 	 *
 	 * <p>The default implementation does nothing.</p>
 	 */
-	@Override public void enterTitratingDose(@NotNull PrescriptionParser.TitratingDoseContext ctx) { }
+	@Override public void enterDuration(@NotNull PrescriptionParser.DurationContext ctx) { }
 	/**
 	 * {@inheritDoc}
 	 *
 	 * <p>The default implementation does nothing.</p>
 	 */
-	@Override public void exitTitratingDose(@NotNull PrescriptionParser.TitratingDoseContext ctx) { }
+	@Override public void exitDuration(@NotNull PrescriptionParser.DurationContext ctx) { }
 	/**
 	 * {@inheritDoc}
 	 *
@@ -269,13 +269,25 @@ public class PrescriptionBaseListener implements PrescriptionListener {
 	 *
 	 * <p>The default implementation does nothing.</p>
 	 */
-	@Override public void enterDuration(@NotNull PrescriptionParser.DurationContext ctx) { }
+	@Override public void enterTitratingDose(@NotNull PrescriptionParser.TitratingDoseContext ctx) { }
 	/**
 	 * {@inheritDoc}
 	 *
 	 * <p>The default implementation does nothing.</p>
 	 */
-	@Override public void exitDuration(@NotNull PrescriptionParser.DurationContext ctx) { }
+	@Override public void exitTitratingDose(@NotNull PrescriptionParser.TitratingDoseContext ctx) { }
+	/**
+	 * {@inheritDoc}
+	 *
+	 * <p>The default implementation does nothing.</p>
+	 */
+	@Override public void enterDoseUnit(@NotNull PrescriptionParser.DoseUnitContext ctx) { }
+	/**
+	 * {@inheritDoc}
+	 *
+	 * <p>The default implementation does nothing.</p>
+	 */
+	@Override public void exitDoseUnit(@NotNull PrescriptionParser.DoseUnitContext ctx) { }
 	/**
 	 * {@inheritDoc}
 	 *
@@ -305,13 +317,25 @@ public class PrescriptionBaseListener implements PrescriptionListener {
 	 *
 	 * <p>The default implementation does nothing.</p>
 	 */
-	@Override public void enterDose_amount(@NotNull PrescriptionParser.Dose_amountContext ctx) { }
+	@Override public void enterFixedDose(@NotNull PrescriptionParser.FixedDoseContext ctx) { }
 	/**
 	 * {@inheritDoc}
 	 *
 	 * <p>The default implementation does nothing.</p>
 	 */
-	@Override public void exitDose_amount(@NotNull PrescriptionParser.Dose_amountContext ctx) { }
+	@Override public void exitFixedDose(@NotNull PrescriptionParser.FixedDoseContext ctx) { }
+	/**
+	 * {@inheritDoc}
+	 *
+	 * <p>The default implementation does nothing.</p>
+	 */
+	@Override public void enterDurationAmount(@NotNull PrescriptionParser.DurationAmountContext ctx) { }
+	/**
+	 * {@inheritDoc}
+	 *
+	 * <p>The default implementation does nothing.</p>
+	 */
+	@Override public void exitDurationAmount(@NotNull PrescriptionParser.DurationAmountContext ctx) { }
 
 	/**
 	 * {@inheritDoc}

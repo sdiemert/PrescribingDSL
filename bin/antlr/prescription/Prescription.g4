@@ -47,21 +47,24 @@ action :
 
 medication : (STRING)+;
 
-dose: titratingDose | specificDose | dose_amount dose_unit;
+dose: titratingDose | fixedDose; 
 
-dose_amount: INT; 
+fixedDose: specificDose | doseAtom;
 
-dose_unit:	UNIT;
+doseAtom: doseAmount doseUnit; 
+doseAmount: INT; 
 
-specificDose: '('(dose_amount dose_unit',')*? dose_amount dose_unit')';
+doseUnit:	UNIT;
+
+specificDose: '('(doseAtom',')*? doseAtom')';
 
 titratingDose:  'TITRATE' titratingDirection  titratingStart titratingStop  titratingChange titratingInterval;
 
 titratingDirection: 'up'|'down';
-titratingStop: 'TO' dose_amount dose_unit; 
-titratingStart: 'FROM' dose_amount dose_unit; 
-titratingChange: 'BY' dose_amount dose_unit; 
-titratingInterval: 'per' duration_amount? duration_unit; //per 2 days, per 7 days, per 1 week
+titratingStop: 'TO' doseAtom; 
+titratingStart: 'FROM' doseAtom; 
+titratingChange: 'BY' doseAtom; 
+titratingInterval: 'per' durationAmount? durationUnit; //per 2 days, per 7 days, per 1 week
 
 timing : 
         interval specificTiming 'FOR'  duration
@@ -83,7 +86,6 @@ interval:
 
 frequency: (INTERVAL_FREQ|INT|NUMBER) ;
 intervalLength:  (TIMEUNIT|INTERVAL_LENGTH|TIMEUNIT_PLURAL); //once daily, twice weekly etc...
-duration: n=duration_amount tu=duration_unit;
-duration_amount: (NUMBER|INT);
-duration_unit: (TIMEUNIT_PLURAL | TIMEUNIT);
+duration: n=durationAmount tu=durationUnit;
+durationAmount: (NUMBER|INT); durationUnit: (TIMEUNIT_PLURAL | TIMEUNIT);
 

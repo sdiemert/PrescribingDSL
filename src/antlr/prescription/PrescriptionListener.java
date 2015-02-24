@@ -29,6 +29,26 @@ public interface PrescriptionListener extends ParseTreeListener {
 	 */
 	void exitInterval(@NotNull PrescriptionParser.IntervalContext ctx);
 	/**
+	 * Enter a parse tree produced by {@link PrescriptionParser#doseAtom}.
+	 * @param ctx the parse tree
+	 */
+	void enterDoseAtom(@NotNull PrescriptionParser.DoseAtomContext ctx);
+	/**
+	 * Exit a parse tree produced by {@link PrescriptionParser#doseAtom}.
+	 * @param ctx the parse tree
+	 */
+	void exitDoseAtom(@NotNull PrescriptionParser.DoseAtomContext ctx);
+	/**
+	 * Enter a parse tree produced by {@link PrescriptionParser#doseAmount}.
+	 * @param ctx the parse tree
+	 */
+	void enterDoseAmount(@NotNull PrescriptionParser.DoseAmountContext ctx);
+	/**
+	 * Exit a parse tree produced by {@link PrescriptionParser#doseAmount}.
+	 * @param ctx the parse tree
+	 */
+	void exitDoseAmount(@NotNull PrescriptionParser.DoseAmountContext ctx);
+	/**
 	 * Enter a parse tree produced by {@link PrescriptionParser#expr}.
 	 * @param ctx the parse tree
 	 */
@@ -49,16 +69,6 @@ public interface PrescriptionListener extends ParseTreeListener {
 	 */
 	void exitFrequency(@NotNull PrescriptionParser.FrequencyContext ctx);
 	/**
-	 * Enter a parse tree produced by {@link PrescriptionParser#dose_unit}.
-	 * @param ctx the parse tree
-	 */
-	void enterDose_unit(@NotNull PrescriptionParser.Dose_unitContext ctx);
-	/**
-	 * Exit a parse tree produced by {@link PrescriptionParser#dose_unit}.
-	 * @param ctx the parse tree
-	 */
-	void exitDose_unit(@NotNull PrescriptionParser.Dose_unitContext ctx);
-	/**
 	 * Enter a parse tree produced by {@link PrescriptionParser#dose}.
 	 * @param ctx the parse tree
 	 */
@@ -69,15 +79,15 @@ public interface PrescriptionListener extends ParseTreeListener {
 	 */
 	void exitDose(@NotNull PrescriptionParser.DoseContext ctx);
 	/**
-	 * Enter a parse tree produced by {@link PrescriptionParser#duration_unit}.
+	 * Enter a parse tree produced by {@link PrescriptionParser#durationUnit}.
 	 * @param ctx the parse tree
 	 */
-	void enterDuration_unit(@NotNull PrescriptionParser.Duration_unitContext ctx);
+	void enterDurationUnit(@NotNull PrescriptionParser.DurationUnitContext ctx);
 	/**
-	 * Exit a parse tree produced by {@link PrescriptionParser#duration_unit}.
+	 * Exit a parse tree produced by {@link PrescriptionParser#durationUnit}.
 	 * @param ctx the parse tree
 	 */
-	void exitDuration_unit(@NotNull PrescriptionParser.Duration_unitContext ctx);
+	void exitDurationUnit(@NotNull PrescriptionParser.DurationUnitContext ctx);
 	/**
 	 * Enter a parse tree produced by {@link PrescriptionParser#action}.
 	 * @param ctx the parse tree
@@ -139,16 +149,6 @@ public interface PrescriptionListener extends ParseTreeListener {
 	 */
 	void exitMedication(@NotNull PrescriptionParser.MedicationContext ctx);
 	/**
-	 * Enter a parse tree produced by {@link PrescriptionParser#duration_amount}.
-	 * @param ctx the parse tree
-	 */
-	void enterDuration_amount(@NotNull PrescriptionParser.Duration_amountContext ctx);
-	/**
-	 * Exit a parse tree produced by {@link PrescriptionParser#duration_amount}.
-	 * @param ctx the parse tree
-	 */
-	void exitDuration_amount(@NotNull PrescriptionParser.Duration_amountContext ctx);
-	/**
 	 * Enter a parse tree produced by {@link PrescriptionParser#titratingStop}.
 	 * @param ctx the parse tree
 	 */
@@ -199,15 +199,15 @@ public interface PrescriptionListener extends ParseTreeListener {
 	 */
 	void exitTitratingInterval(@NotNull PrescriptionParser.TitratingIntervalContext ctx);
 	/**
-	 * Enter a parse tree produced by {@link PrescriptionParser#titratingDose}.
+	 * Enter a parse tree produced by {@link PrescriptionParser#duration}.
 	 * @param ctx the parse tree
 	 */
-	void enterTitratingDose(@NotNull PrescriptionParser.TitratingDoseContext ctx);
+	void enterDuration(@NotNull PrescriptionParser.DurationContext ctx);
 	/**
-	 * Exit a parse tree produced by {@link PrescriptionParser#titratingDose}.
+	 * Exit a parse tree produced by {@link PrescriptionParser#duration}.
 	 * @param ctx the parse tree
 	 */
-	void exitTitratingDose(@NotNull PrescriptionParser.TitratingDoseContext ctx);
+	void exitDuration(@NotNull PrescriptionParser.DurationContext ctx);
 	/**
 	 * Enter a parse tree produced by {@link PrescriptionParser#assignment}.
 	 * @param ctx the parse tree
@@ -219,15 +219,25 @@ public interface PrescriptionListener extends ParseTreeListener {
 	 */
 	void exitAssignment(@NotNull PrescriptionParser.AssignmentContext ctx);
 	/**
-	 * Enter a parse tree produced by {@link PrescriptionParser#duration}.
+	 * Enter a parse tree produced by {@link PrescriptionParser#titratingDose}.
 	 * @param ctx the parse tree
 	 */
-	void enterDuration(@NotNull PrescriptionParser.DurationContext ctx);
+	void enterTitratingDose(@NotNull PrescriptionParser.TitratingDoseContext ctx);
 	/**
-	 * Exit a parse tree produced by {@link PrescriptionParser#duration}.
+	 * Exit a parse tree produced by {@link PrescriptionParser#titratingDose}.
 	 * @param ctx the parse tree
 	 */
-	void exitDuration(@NotNull PrescriptionParser.DurationContext ctx);
+	void exitTitratingDose(@NotNull PrescriptionParser.TitratingDoseContext ctx);
+	/**
+	 * Enter a parse tree produced by {@link PrescriptionParser#doseUnit}.
+	 * @param ctx the parse tree
+	 */
+	void enterDoseUnit(@NotNull PrescriptionParser.DoseUnitContext ctx);
+	/**
+	 * Exit a parse tree produced by {@link PrescriptionParser#doseUnit}.
+	 * @param ctx the parse tree
+	 */
+	void exitDoseUnit(@NotNull PrescriptionParser.DoseUnitContext ctx);
 	/**
 	 * Enter a parse tree produced by {@link PrescriptionParser#titratingStart}.
 	 * @param ctx the parse tree
@@ -249,13 +259,23 @@ public interface PrescriptionListener extends ParseTreeListener {
 	 */
 	void exitIntervalLength(@NotNull PrescriptionParser.IntervalLengthContext ctx);
 	/**
-	 * Enter a parse tree produced by {@link PrescriptionParser#dose_amount}.
+	 * Enter a parse tree produced by {@link PrescriptionParser#fixedDose}.
 	 * @param ctx the parse tree
 	 */
-	void enterDose_amount(@NotNull PrescriptionParser.Dose_amountContext ctx);
+	void enterFixedDose(@NotNull PrescriptionParser.FixedDoseContext ctx);
 	/**
-	 * Exit a parse tree produced by {@link PrescriptionParser#dose_amount}.
+	 * Exit a parse tree produced by {@link PrescriptionParser#fixedDose}.
 	 * @param ctx the parse tree
 	 */
-	void exitDose_amount(@NotNull PrescriptionParser.Dose_amountContext ctx);
+	void exitFixedDose(@NotNull PrescriptionParser.FixedDoseContext ctx);
+	/**
+	 * Enter a parse tree produced by {@link PrescriptionParser#durationAmount}.
+	 * @param ctx the parse tree
+	 */
+	void enterDurationAmount(@NotNull PrescriptionParser.DurationAmountContext ctx);
+	/**
+	 * Exit a parse tree produced by {@link PrescriptionParser#durationAmount}.
+	 * @param ctx the parse tree
+	 */
+	void exitDurationAmount(@NotNull PrescriptionParser.DurationAmountContext ctx);
 }

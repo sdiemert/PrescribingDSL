@@ -15,6 +15,9 @@ public class PrescriptionTreeListener extends PrescriptionBaseListener{
 	private PrescriptionTiming currentTiming = null;
 	
 	
+	//TEMP VARIBLES:
+	private Dose tempDose = null; 
+	
 	/**
 	 * Creates an object that listens to callbacks fired by a tree walker. 
 	 * Builds a Prescription object which is accessible after the tree walk. 
@@ -36,10 +39,53 @@ public class PrescriptionTreeListener extends PrescriptionBaseListener{
 		return this.scriptList; 
 	}
 	
-	/******************TITRATING****************************/
+	@Override
+	public void enterMedication(PrescriptionParser.MedicationContext ctx){
+		System.out.println("enterMedication() -> "+ctx.getText());
+		this.currentScript.setMedication(ctx.getText());
+	}
+	
+	@Override
+	public void enterAction(PrescriptionParser.ActionContext ctx){
+		System.out.println("enterAction() -> "+ ctx.getText());
+		PrescriptionAction a = PrescriptionAction.valueOf(ctx.getText().toUpperCase()); 
+		System.out.println("Action: "+a); 
+		this.currentScript.setAction(a);
+	}
+	
+	/******************DOSING****************************/
+	
+	@Override 
+	public void enterDose(PrescriptionParser.DoseContext ctx){
+		System.out.println("enterDose() -> "+ctx.getText()); 
+	}
+
+	@Override 
+	public void exitDose(PrescriptionParser.DoseContext ctx){
+		System.out.println("exitDose() -> "+ctx.getText()); 
+		this.currentScript.setDose(this.currentDose);
+	}
+
+	@Override
+	public void enterFixedDose(PrescriptionParser.FixedDoseContext ctx){
+		System.out.println("enterFixedDose() -> "+ctx.getText());
+		this.currentDose = new FixedPrescriptionDose(); 
+	}
+
+	@Override
+	public void exitFixedDose(PrescriptionParser.FixedDoseContext ctx){
+		System.out.println("exitFixedDose() -> "+ctx.getText());
+	}
+	
 	@Override
 	public void enterTitratingDose(PrescriptionParser.TitratingDoseContext ctx){
 		System.out.println("enterTitratingDose() -> "+ctx.getText());
+		this.currentDose = new TitratingPrescriptionDose(); 
+	}
+	
+	@Override
+	public void exitTitratingDose(PrescriptionParser.TitratingDoseContext ctx){
+		System.out.println("exitTitratingDose() -> "+ctx.getText());
 	}
 	
 	@Override
@@ -67,54 +113,65 @@ public class PrescriptionTreeListener extends PrescriptionBaseListener{
 		System.out.println("enterTitratingChange() -> "+ctx.getText());
 	}
 
-	/******************END TITRATING****************************/
-	
 	@Override
-	public void enterMedication(PrescriptionParser.MedicationContext ctx){
-		System.out.println("enterMedication() -> "+ctx.getText());
-		
-		//do checking here for medicationt types etc....
-		
-		this.currentScript.setMedication(ctx.getText());
+	public void enterDoseAtom(PrescriptionParser.DoseAtomContext ctx){
+		System.out.println("enterDoseAtom() -> "+ ctx.getText());
+		this.tempDose = new Dose(); 
 	}
+
+	@Override
+	public void exitDoseAtom(PrescriptionParser.DoseAtomContext ctx){
+		System.out.println("exitDoseAtom() -> "+ ctx.getText());
+		if(this.tempDose.sanityCheck()){
+			this.currentDose.addDose(this.tempDose); 
+			this.tempDose = null; 
+		}else{
+			//TODO: Fail gracefully. 
+			System.out.println("ERROR: Could not parse doseAtom in exitDoseAtom with ctx: "+ctx.getText()); 
+		}
+		System.out.println("currentDose: "+currentDose); 
+	}	
 	
 	@Override
-	public void enterAction(PrescriptionParser.ActionContext ctx){
-		System.out.println("enterAction() -> "+ ctx.getText());
-		PrescriptionAction a = PrescriptionAction.valueOf(ctx.getText().toUpperCase()); 
-		System.out.println("Action: "+a); 
-		this.currentScript.setAction(a);
-	}
-	
-	@Override
-	public void enterDose_unit(PrescriptionParser.Dose_unitContext ctx){
-		System.out.println("enterDose_unit() -> "+ ctx.getText());
-		try {
-			this.currentDose.setUnit(DoseUnit.valueOf(ctx.getText().toUpperCase()));
-		} catch (Exception e) {
-			e.printStackTrace();
+	public void enterDoseUnit(PrescriptionParser.DoseUnitContext ctx){
+		System.out.println("enterDoseUnit() -> "+ ctx.getText());
+
+		if(this.tempDose != null){
+			try{
+				this.tempDose.setUnit(DoseUnit.valueOf(ctx.getText().toUpperCase()));
+			}catch(Exception e){
+				//TODO: Fail gracefully
+				e.printStackTrace();
+			}
+		}else{
+			//TODO: Fail gracefully
+			System.out.println("ERROR: could not parse doseUnit in enterDoseUnit with ctx: "+ctx.getText()); 
 		}
 	}
 
 	@Override 
-	public void enterDose_amount(PrescriptionParser.Dose_amountContext ctx) {
-		System.out.println("enterDose_amount() -> "+ Integer.parseInt(ctx.getText()));
-		try{
-			this.currentDose.setAmount(Integer.parseInt(ctx.getText()));
-		}catch(NumberFormatException nfe){
-			System.out.println(nfe.getStackTrace());
-		}catch(Exception e){
-			System.out.println(e.getStackTrace());
+	public void enterDoseAmount(PrescriptionParser.DoseAmountContext ctx) {
+		System.out.println("enterDoseAmount() -> "+ Integer.parseInt(ctx.getText()));
+		
+		if(this.tempDose != null){
+			try{
+				this.tempDose.setAmount(Integer.parseInt(ctx.getText()));
+			}catch (Exception e){
+				//TODO: Fail gracefully
+				e.printStackTrace();
+			}
+		}else{
+			//TODO: Fail gracefully
+			System.out.println("ERROR: could not parse doseAmount in enterDoseAmout with ctx: "+ctx.getText()); 
 		}
 	}
 	
-	@Override 
-	public void exitDose(PrescriptionParser.DoseContext ctx){
-		System.out.println("exitDose() -> "+this.currentDose); 
-		//perhaps add in handling for if the dose in not actually completed?
-		
-        this.currentScript.setDose(this.currentDose); 
+	@Override
+	public void enterSpecificDose(PrescriptionParser.SpecificDoseContext ctx){
+		System.out.println("enterSpecificDose() -> "+ Integer.parseInt(ctx.getText()));
 	}
+
+	/******************DOSING END****************************/
 
 	@Override
 	public void enterFrequency(PrescriptionParser.FrequencyContext ctx){
@@ -148,8 +205,8 @@ public class PrescriptionTreeListener extends PrescriptionBaseListener{
 	}
 
 	@Override 
-	public void enterDuration_amount(PrescriptionParser.Duration_amountContext ctx){
-		System.out.println("enterDuration_amount() -> "+ ctx.getText());
+	public void enterDurationAmount(PrescriptionParser.DurationAmountContext ctx){
+		System.out.println("enterDurationAmount() -> "+ ctx.getText());
         try{
 			this.currentTiming.setDuration(Integer.parseInt(ctx.getText()));
 		}catch(NumberFormatException e){
@@ -164,7 +221,7 @@ public class PrescriptionTreeListener extends PrescriptionBaseListener{
 	}
 
 	@Override 
-	public void enterDuration_unit(PrescriptionParser.Duration_unitContext ctx){
+	public void enterDurationUnit(PrescriptionParser.DurationUnitContext ctx){
 		System.out.println("enterDuration_unit() -> "+ ctx.getText());
 		
 		this.currentTiming.setDurationUnit(TimeUnit.valueOf(ListenerHelper.removePlural(ctx.getText().toUpperCase()))); 
@@ -188,12 +245,9 @@ public class PrescriptionTreeListener extends PrescriptionBaseListener{
 				ListenerHelper.generateInstants(this.currentTiming, 1, 7);
 			}
 		}
-		
 		//at this point we assume that the entire timing object has been built. 
 		//commit the timing object to the prescription.
-
 		this.currentScript.setTiming(this.currentTiming);
-		
 	}
 	
 	@Override
@@ -214,7 +268,7 @@ public class PrescriptionTreeListener extends PrescriptionBaseListener{
 		//when we enter a new atomic prescription context create the 
 		//supporting objects required to make them work.
 		this.currentScript = new Prescription(); 
-        this.currentDose = new PrescriptionDose(); 
+        this.currentDose = null;  //cannot create this yet as we don't know what kind of dosing we are dealing with. 
 		this.currentTiming = new PrescriptionTiming(); 
 	}
 	
