@@ -1350,8 +1350,6 @@ public class PrescriptionParser extends Parser {
 	}
 
 	public static class DurationContext extends ParserRuleContext {
-		public DurationAmountContext n;
-		public DurationUnitContext tu;
 		public DurationUnitContext durationUnit() {
 			return getRuleContext(DurationUnitContext.class,0);
 		}
@@ -1378,8 +1376,8 @@ public class PrescriptionParser extends Parser {
 		try {
 			enterOuterAlt(_localctx, 1);
 			{
-			setState(203); ((DurationContext)_localctx).n = durationAmount();
-			setState(204); ((DurationContext)_localctx).tu = durationUnit();
+			setState(203); durationAmount();
+			setState(204); durationUnit();
 			}
 		}
 		catch (RecognitionException re) {

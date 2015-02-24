@@ -54,39 +54,6 @@ public class Prescription implements PrescriptionElement{
 		return "Prescription [timing=" + timing + ", dose=" + dose
 				+ ", action=" + action + ", medication=" + medication + "]";
 	} 
-	
-	/*
-	 * <graph role="graph" edgeids="false" edgemode="directed" id="form_2-1">
-        <attr name="$version">
-            <string>curly</string>
-        </attr>
-        <node id="n0">
-            <attr name="layout">
-                <string>385 333 107 144</string>
-            </attr>
-        </node>
-        <node id="n1">
-            <attr name="layout">
-                <string>817 337 107 128</string>
-            </attr>
-        </node>
-        <edge from="n0" to="n0">
-            <attr name="label">
-                <string>type:ForPMA</string>
-            </attr>
-        </edge>
-        <edge from="n0" to="n0">
-            <attr name="label">
-                <string>let:day = 10</string>
-            </attr>
-        </edge>
-        <edge from="n0" to="n0">
-            <attr name="label">
-                <string>let:dose = &quot;81 MG&quot;</string>
-            </attr>
-        </edge>
-        ....
-	 */
 
 	/*
 	 * See http://www.mkyong.com/java/how-to-create-xml-file-in-java-dom/ 
@@ -139,8 +106,6 @@ public class Prescription implements PrescriptionElement{
 		if(this.timing.getInstants().size() != this.dose.getDoses().size()){
 			return false; 
 		}
-		
-		System.out.println("passed sanity check"); 
 		return true;
 	}
 

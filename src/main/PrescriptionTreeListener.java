@@ -10,13 +10,20 @@ import java.util.LinkedList;
 public class PrescriptionTreeListener extends PrescriptionBaseListener{
 
 	private LinkedList<Prescription> scriptList = null; 
-	private Prescription currentScript = null;
-	private PrescriptionDose currentDose = null;
-	private PrescriptionTiming currentTiming = null;
+	private Prescription currentScript 			= null;
+	private PrescriptionDose currentDose 		= null;
+	private PrescriptionTiming currentTiming 	= null;
 	
-	
-	//TEMP VARIBLES:
+	/* TEMP VARIBLES: */ 
 	private Dose tempDose = null; 
+	
+	//temp vars for handling titrating dose input
+	private Dose tempStartDose 			= null;
+	private Dose tempStopDose 			= null; 
+	private Dose tempChangeDose 		= null; 
+	private int tempTitratingDirection 	= 1; //1 is increasing, -1 is down. This variable is used as a multiplier on the tempChangeDose
+	private int tempDurationAmount 		= 0;
+	private TimeUnit tempDurationUnit 	= null; 
 	
 	/**
 	 * Creates an object that listens to callbacks fired by a tree walker. 
@@ -73,44 +80,53 @@ public class PrescriptionTreeListener extends PrescriptionBaseListener{
 	}
 
 	@Override
-	public void exitFixedDose(PrescriptionParser.FixedDoseContext ctx){
-		System.out.println("exitFixedDose() -> "+ctx.getText());
-	}
-	
-	@Override
 	public void enterTitratingDose(PrescriptionParser.TitratingDoseContext ctx){
 		System.out.println("enterTitratingDose() -> "+ctx.getText());
 		this.currentDose = new TitratingPrescriptionDose(); 
 	}
-	
+
 	@Override
 	public void exitTitratingDose(PrescriptionParser.TitratingDoseContext ctx){
 		System.out.println("exitTitratingDose() -> "+ctx.getText());
+		((TitratingPrescriptionDose)this.currentDose).setIntervalLength(this.tempDurationAmount);
+		((TitratingPrescriptionDose)this.currentDose).setIntervalTimeUnit(this.tempDurationUnit);
+		((TitratingPrescriptionDose)this.currentDose).setStartDose(this.tempStartDose);
+		((TitratingPrescriptionDose)this.currentDose).setStopDose(this.tempStopDose);
+		((TitratingPrescriptionDose)this.currentDose).setAmountChange(this.tempChangeDose);
+		this.currentDose.addDose(this.tempStartDose); 
 	}
 	
 	@Override
 	public void enterTitratingDirection(PrescriptionParser.TitratingDirectionContext ctx){
 		System.out.println("enterTitratingDirection() -> "+ctx.getText());
+		if(ctx.getText().toUpperCase().equals("UP")){
+			this.tempTitratingDirection = 1; 
+		}else if(ctx.getText().toUpperCase().equals("DOWN")){
+			this.tempTitratingDirection = -1; 
+		}else{
+			System.out.println("Cound not determine titrating direction based on input: "+ctx.getText()); 
+			//TODO: fail gracefully
+		}
 	}
 	
 	@Override
-	public void enterTitratingStart(PrescriptionParser.TitratingStartContext ctx){
-		System.out.println("enterTitratingStart() -> "+ctx.getText());
+	public void exitTitratingStart(PrescriptionParser.TitratingStartContext ctx){
+		System.out.println("exitTitratingStart() -> "+ctx.getText());
+		this.tempStartDose = this.tempDose; 
 	}
 
 	@Override
-	public void enterTitratingStop(PrescriptionParser.TitratingStopContext ctx){
-		System.out.println("enterTitratingStop() -> "+ctx.getText());
+	public void exitTitratingStop(PrescriptionParser.TitratingStopContext ctx){
+		System.out.println("exitTitratingStop() -> "+ctx.getText());
+		this.tempStopDose = this.tempDose; 
 	}
 	
 	@Override
-	public void enterTitratingInterval(PrescriptionParser.TitratingIntervalContext ctx){
-		System.out.println("enterTitratingInterval() -> "+ctx.getText());
-	}
-	
-	@Override
-	public void enterTitratingChange(PrescriptionParser.TitratingChangeContext ctx){
-		System.out.println("enterTitratingChange() -> "+ctx.getText());
+	public void exitTitratingChange(PrescriptionParser.TitratingChangeContext ctx){
+		System.out.println("exitTitratingChange() -> "+ctx.getText());
+		System.out.println(this.tempDose); 
+		this.tempChangeDose = this.tempDose; 
+		this.tempChangeDose.setAmount(this.tempChangeDose.getAmount()*this.tempTitratingDirection);
 	}
 
 	@Override
@@ -123,8 +139,11 @@ public class PrescriptionTreeListener extends PrescriptionBaseListener{
 	public void exitDoseAtom(PrescriptionParser.DoseAtomContext ctx){
 		System.out.println("exitDoseAtom() -> "+ ctx.getText());
 		if(this.tempDose.sanityCheck()){
-			this.currentDose.addDose(this.tempDose); 
-			this.tempDose = null; 
+			if(this.currentDose.getClass() == FixedPrescriptionDose.class){
+				this.currentDose.addDose(this.tempDose); 
+			}else if(this.currentDose.getClass() == TitratingPrescriptionDose.class){
+				//do nothing, we handle this later.
+			}
 		}else{
 			//TODO: Fail gracefully. 
 			System.out.println("ERROR: Could not parse doseAtom in exitDoseAtom with ctx: "+ctx.getText()); 
@@ -168,7 +187,7 @@ public class PrescriptionTreeListener extends PrescriptionBaseListener{
 	
 	@Override
 	public void enterSpecificDose(PrescriptionParser.SpecificDoseContext ctx){
-		System.out.println("enterSpecificDose() -> "+ Integer.parseInt(ctx.getText()));
+		System.out.println("enterSpecificDose() -> "+ ctx.getText());
 	}
 
 	/******************DOSING END****************************/
@@ -208,23 +227,30 @@ public class PrescriptionTreeListener extends PrescriptionBaseListener{
 	public void enterDurationAmount(PrescriptionParser.DurationAmountContext ctx){
 		System.out.println("enterDurationAmount() -> "+ ctx.getText());
         try{
-			this.currentTiming.setDuration(Integer.parseInt(ctx.getText()));
+        	this.tempDurationAmount = Integer.parseInt(ctx.getText()); 
 		}catch(NumberFormatException e){
 			//if we get to this point the frequency was a word like "once" or "three"
 			//need to match these against lookup table. 
 			try{
-                this.currentTiming.setDuration(ListenerHelper.lookUpIntegerFromString(ctx.getText().toLowerCase())); 
+				this.tempDurationAmount = ListenerHelper.lookUpIntegerFromString(ctx.getText().toLowerCase()); 
 			}catch(Exception ee){
-				
+				//TODO: Handle this error!
+				ee.printStackTrace(); 
 			}
 		}
+	}
+	
+	@Override
+	public void exitDuration(PrescriptionParser.DurationContext ctx){
+		System.out.println("exitDuration() -> "+ ctx.getText());
+		this.currentTiming.setDurationUnit(this.tempDurationUnit); 
+		this.currentTiming.setDuration(this.tempDurationAmount); 
 	}
 
 	@Override 
 	public void enterDurationUnit(PrescriptionParser.DurationUnitContext ctx){
-		System.out.println("enterDuration_unit() -> "+ ctx.getText());
-		
-		this.currentTiming.setDurationUnit(TimeUnit.valueOf(ListenerHelper.removePlural(ctx.getText().toUpperCase()))); 
+		System.out.println("enterDurationUnit() -> "+ ctx.getText());
+		this.tempDurationUnit = TimeUnit.valueOf(ListenerHelper.removePlural(ctx.getText().toUpperCase())); 
 	}
 	
 	@Override
@@ -280,6 +306,7 @@ public class PrescriptionTreeListener extends PrescriptionBaseListener{
 		//object in the list of prescriptions for reference later.
 		
 		this.currentTiming = ListenerHelper.reconileTimingUnits(this.currentTiming); 
+		this.currentScript.adjustTimingAndDose();
 		this.scriptList.add(this.currentScript); 
 		this.currentDose = null; 
 		this.currentTiming = null;

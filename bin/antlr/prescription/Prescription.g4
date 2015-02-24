@@ -86,6 +86,7 @@ interval:
 
 frequency: (INTERVAL_FREQ|INT|NUMBER) ;
 intervalLength:  (TIMEUNIT|INTERVAL_LENGTH|TIMEUNIT_PLURAL); //once daily, twice weekly etc...
-duration: n=durationAmount tu=durationUnit;
-durationAmount: (NUMBER|INT); durationUnit: (TIMEUNIT_PLURAL | TIMEUNIT);
+duration: durationAmount durationUnit;
+durationAmount: (NUMBER|INT); 
+durationUnit: (TIMEUNIT_PLURAL | TIMEUNIT);
 
