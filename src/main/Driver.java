@@ -29,9 +29,6 @@ public class Driver {
 
 		Boolean val = true; 
 		for(Prescription rx : p){
-			
-			rx.adjustTimingAndDose();
-			
 			if(!rx.sanityCheck()){
 				System.out.println("Error, could not validate prescription: "+rx.toString());
 				val = false; 
