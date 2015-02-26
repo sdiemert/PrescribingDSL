@@ -7,7 +7,7 @@ import org.w3c.dom.Element;
 
 public abstract class PrescriptionDose{
 	private Dose tempDose = null; 
-	private ArrayList<Dose> doses = null; 
+	protected ArrayList<Dose> doses = null; 
 	
 	/**
 	 * @param amount : the number of units to give. Example 81 in "81 mg"

@@ -26,17 +26,17 @@
         </node>
         <node id="n16">
             <attr name="layout">
-                <string>436 128 47 32</string>
+                <string>418 128 83 32</string>
             </attr>
         </node>
         <node id="n17">
             <attr name="layout">
-                <string>404 263 82 80</string>
+                <string>338 216 82 80</string>
             </attr>
         </node>
         <node id="n18">
             <attr name="layout">
-                <string>543 255 82 80</string>
+                <string>500 216 82 80</string>
             </attr>
         </node>
         <edge from="n0" to="n0">
@@ -54,14 +54,14 @@
                 <string>let:medication = &quot;aspirin&quot;</string>
             </attr>
         </edge>
-        <edge from="n0" to="n1">
-            <attr name="label">
-                <string>timing</string>
-            </attr>
-        </edge>
         <edge from="n0" to="n16">
             <attr name="label">
                 <string>dosing</string>
+            </attr>
+        </edge>
+        <edge from="n0" to="n1">
+            <attr name="label">
+                <string>timing</string>
             </attr>
         </edge>
         <edge from="n1" to="n1">
@@ -136,7 +136,7 @@
         </edge>
         <edge from="n16" to="n16">
             <attr name="label">
-                <string>type:Dosing</string>
+                <string>type:FixedDosing</string>
             </attr>
         </edge>
         <edge from="n16" to="n18">
@@ -176,7 +176,7 @@
         </edge>
         <edge from="n18" to="n18">
             <attr name="label">
-                <string>let:amount = 81</string>
+                <string>let:amount = 71</string>
             </attr>
         </edge>
         <edge from="n18" to="n18">

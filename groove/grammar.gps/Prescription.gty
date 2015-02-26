@@ -26,7 +26,17 @@
         </node>
         <node id="n4">
             <attr name="layout">
-                <string>136 303 47 16</string>
+                <string>167 197 47 16</string>
+            </attr>
+        </node>
+        <node id="n5">
+            <attr name="layout">
+                <string>36 72 106 32</string>
+            </attr>
+        </node>
+        <node id="n6">
+            <attr name="layout">
+                <string>12 330 83 16</string>
             </attr>
         </node>
         <edge from="n0" to="n0">
@@ -49,17 +59,17 @@
                 <string>timing</string>
             </attr>
         </edge>
-        <edge from="n0" to="n4">
-            <attr name="label">
-                <string>dosing</string>
-            </attr>
-        </edge>
         <edge from="n0" to="n0">
             <attr name="label">
                 <string>then</string>
             </attr>
             <attr name="layout">
                 <string>500 0 409 213 616 252 409 213 11</string>
+            </attr>
+        </edge>
+        <edge from="n0" to="n4">
+            <attr name="label">
+                <string>dosing</string>
             </attr>
         </edge>
         <edge from="n1" to="n1">
@@ -145,14 +155,34 @@
                 <string>type:Dosing</string>
             </attr>
         </edge>
-        <edge from="n4" to="n4">
+        <edge from="n4" to="n1">
+            <attr name="label">
+                <string>dose</string>
+            </attr>
+        </edge>
+        <edge from="n5" to="n5">
+            <attr name="label">
+                <string>type:TitratingDosing</string>
+            </attr>
+        </edge>
+        <edge from="n5" to="n5">
             <attr name="label">
                 <string>int:change</string>
             </attr>
         </edge>
-        <edge from="n4" to="n1">
+        <edge from="n5" to="n4">
             <attr name="label">
-                <string>dose</string>
+                <string>sub:</string>
+            </attr>
+        </edge>
+        <edge from="n6" to="n6">
+            <attr name="label">
+                <string>type:FixedDosing</string>
+            </attr>
+        </edge>
+        <edge from="n6" to="n4">
+            <attr name="label">
+                <string>sub:</string>
             </attr>
         </edge>
     </graph>

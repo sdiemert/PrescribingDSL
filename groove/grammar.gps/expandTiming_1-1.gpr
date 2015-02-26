@@ -34,7 +34,7 @@
         </node>
         <node id="n6">
             <attr name="layout">
-                <string>689 607 122 48</string>
+                <string>689 599 122 64</string>
             </attr>
         </node>
         <node id="n5">
@@ -44,7 +44,7 @@
         </node>
         <node id="n7">
             <attr name="layout">
-                <string>606 14 134 80</string>
+                <string>614 8 134 80</string>
             </attr>
         </node>
         <node id="n8">
@@ -152,14 +152,14 @@
                 <string>type:Prescription</string>
             </attr>
         </edge>
-        <edge from="n2" to="n9">
-            <attr name="label">
-                <string>not:then</string>
-            </attr>
-        </edge>
         <edge from="n2" to="n0">
             <attr name="label">
                 <string>timing</string>
+            </attr>
+        </edge>
+        <edge from="n2" to="n11">
+            <attr name="label">
+                <string>dosing</string>
             </attr>
         </edge>
         <edge from="n2" to="n3">
@@ -167,9 +167,9 @@
                 <string>then</string>
             </attr>
         </edge>
-        <edge from="n2" to="n11">
+        <edge from="n2" to="n9">
             <attr name="label">
-                <string>dosing</string>
+                <string>not:then</string>
             </attr>
         </edge>
         <edge from="n3" to="n3">
