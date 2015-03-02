@@ -31,7 +31,7 @@
         </node>
         <node id="n5">
             <attr name="layout">
-                <string>36 72 106 32</string>
+                <string>172 30 106 48</string>
             </attr>
         </node>
         <node id="n6">
@@ -54,11 +54,6 @@
                 <string>string:medication</string>
             </attr>
         </edge>
-        <edge from="n0" to="n2">
-            <attr name="label">
-                <string>timing</string>
-            </attr>
-        </edge>
         <edge from="n0" to="n0">
             <attr name="label">
                 <string>then</string>
@@ -70,6 +65,11 @@
         <edge from="n0" to="n4">
             <attr name="label">
                 <string>dosing</string>
+            </attr>
+        </edge>
+        <edge from="n0" to="n2">
+            <attr name="label">
+                <string>timing</string>
             </attr>
         </edge>
         <edge from="n1" to="n1">
@@ -168,6 +168,16 @@
         <edge from="n5" to="n5">
             <attr name="label">
                 <string>int:change</string>
+            </attr>
+        </edge>
+        <edge from="n5" to="n5">
+            <attr name="label">
+                <string>int:interval</string>
+            </attr>
+        </edge>
+        <edge from="n5" to="n5">
+            <attr name="label">
+                <string>string:intervalTimeUnit</string>
             </attr>
         </edge>
         <edge from="n5" to="n4">

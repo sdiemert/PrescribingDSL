@@ -51,7 +51,7 @@
         </node>
         <node id="n0">
             <attr name="layout">
-                <string>760 227 47 32</string>
+                <string>742 227 83 32</string>
             </attr>
         </node>
         <node id="n1">
@@ -94,14 +94,14 @@
                 <string>type:Prescription</string>
             </attr>
         </edge>
-        <edge from="n6" to="n11">
-            <attr name="label">
-                <string>timing</string>
-            </attr>
-        </edge>
         <edge from="n6" to="n2">
             <attr name="label">
                 <string>dosing</string>
+            </attr>
+        </edge>
+        <edge from="n6" to="n11">
+            <attr name="label">
+                <string>timing</string>
             </attr>
         </edge>
         <edge from="n11" to="n11">
@@ -124,14 +124,14 @@
                 <string>instant</string>
             </attr>
         </edge>
-        <edge from="n11" to="n3">
-            <attr name="label">
-                <string>instant</string>
-            </attr>
-        </edge>
         <edge from="n11" to="n9">
             <attr name="label">
                 <string>del:instant</string>
+            </attr>
+        </edge>
+        <edge from="n11" to="n3">
+            <attr name="label">
+                <string>instant</string>
             </attr>
         </edge>
         <edge from="n9" to="n9">
@@ -154,17 +154,17 @@
                 <string>test:bool:lt(int:i1.instant,int:i2.instant)</string>
             </attr>
         </edge>
+        <edge from="n9" to="n3">
+            <attr name="label">
+                <string>del:temp</string>
+            </attr>
+        </edge>
         <edge from="n9" to="n5">
             <attr name="label">
                 <string>del:temp</string>
             </attr>
             <attr name="layout">
                 <string>537 20 132 917 426 843 11</string>
-            </attr>
-        </edge>
-        <edge from="n9" to="n3">
-            <attr name="label">
-                <string>del:temp</string>
             </attr>
         </edge>
         <edge from="n5" to="n5">
@@ -207,9 +207,9 @@
                 <string>let:medication = string:p1.medication</string>
             </attr>
         </edge>
-        <edge from="n7" to="n6">
+        <edge from="n7" to="n4">
             <attr name="label">
-                <string>then</string>
+                <string>timing</string>
             </attr>
         </edge>
         <edge from="n7" to="n0">
@@ -217,9 +217,9 @@
                 <string>dosing</string>
             </attr>
         </edge>
-        <edge from="n7" to="n4">
+        <edge from="n7" to="n6">
             <attr name="label">
-                <string>timing</string>
+                <string>then</string>
             </attr>
         </edge>
         <edge from="n4" to="n4">
@@ -287,14 +287,14 @@
                 <string>type:Prescription</string>
             </attr>
         </edge>
-        <edge from="n10" to="n7">
-            <attr name="label">
-                <string>then</string>
-            </attr>
-        </edge>
         <edge from="n10" to="n6">
             <attr name="label">
                 <string>del:then</string>
+            </attr>
+        </edge>
+        <edge from="n10" to="n7">
+            <attr name="label">
+                <string>then</string>
             </attr>
         </edge>
         <edge from="n0" to="n0">
@@ -304,7 +304,7 @@
         </edge>
         <edge from="n0" to="n0">
             <attr name="label">
-                <string>type:Dosing</string>
+                <string>type:FixedDosing</string>
             </attr>
         </edge>
         <edge from="n0" to="n1">
@@ -334,7 +334,7 @@
         </edge>
         <edge from="n2" to="n2">
             <attr name="label">
-                <string>type:Dosing</string>
+                <string>type:FixedDosing</string>
             </attr>
         </edge>
         <edge from="n2" to="n12">

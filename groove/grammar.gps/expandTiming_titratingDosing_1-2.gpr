@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
 <gxl xmlns="http://www.gupro.de/GXL/gxl-1.0.dtd">
-    <graph role="rule" edgeids="false" edgemode="directed" id="expandTiming_1-2">
+    <graph role="rule" edgeids="false" edgemode="directed" id="expandTiming_titratingDosing_1-2">
         <attr name="priority">
             <string>2</string>
         </attr>
@@ -9,67 +9,67 @@
         </attr>
         <node id="n2">
             <attr name="layout">
-                <string>217 418 152 64</string>
+                <string>282 644 152 64</string>
             </attr>
         </node>
         <node id="n6">
             <attr name="layout">
-                <string>638 396 238 112</string>
+                <string>703 622 238 112</string>
             </attr>
         </node>
         <node id="n5">
             <attr name="layout">
-                <string>241 237 109 16</string>
+                <string>306 463 109 16</string>
             </attr>
         </node>
         <node id="n1">
             <attr name="layout">
-                <string>676 213 178 64</string>
+                <string>741 439 178 64</string>
             </attr>
         </node>
         <node id="n7">
             <attr name="layout">
-                <string>264 626 71 16</string>
+                <string>329 852 71 16</string>
             </attr>
         </node>
         <node id="n3">
             <attr name="layout">
-                <string>698 605 122 48</string>
+                <string>763 823 122 64</string>
             </attr>
         </node>
         <node id="n9">
             <attr name="layout">
-                <string>483 627 8 16</string>
+                <string>548 853 8 16</string>
             </attr>
         </node>
         <node id="n8">
             <attr name="layout">
-                <string>699 4 134 80</string>
+                <string>682 142 298 80</string>
             </attr>
         </node>
         <node id="n0">
             <attr name="layout">
-                <string>267 43 61 16</string>
+                <string>334 186 61 16</string>
             </attr>
         </node>
         <node id="n4">
             <attr name="layout">
-                <string>454 375 81 32</string>
+                <string>519 601 81 32</string>
             </attr>
         </node>
         <node id="n10">
             <attr name="layout">
-                <string>286 124 47 32</string>
+                <string>305 358 139 16</string>
             </attr>
         </node>
         <node id="n11">
             <attr name="layout">
-                <string>751 121 47 32</string>
+                <string>714 295 251 80</string>
             </attr>
         </node>
         <node id="n12">
             <attr name="layout">
-                <string>491 68 8 16</string>
+                <string>558 203 8 16</string>
             </attr>
         </node>
         <edge from="n2" to="n2">
@@ -152,11 +152,6 @@
                 <string>type:Prescription</string>
             </attr>
         </edge>
-        <edge from="n5" to="n1">
-            <attr name="label">
-                <string>new:then</string>
-            </attr>
-        </edge>
         <edge from="n5" to="n2">
             <attr name="label">
                 <string>timing</string>
@@ -165,6 +160,11 @@
         <edge from="n5" to="n10">
             <attr name="label">
                 <string>dosing</string>
+            </attr>
+        </edge>
+        <edge from="n5" to="n1">
+            <attr name="label">
+                <string>new:then</string>
             </attr>
         </edge>
         <edge from="n5" to="n4">
@@ -192,11 +192,6 @@
                 <string>let:medication = string:p0.medication</string>
             </attr>
         </edge>
-        <edge from="n1" to="n11">
-            <attr name="label">
-                <string>dosing</string>
-            </attr>
-        </edge>
         <edge from="n1" to="n6">
             <attr name="label">
                 <string>timing</string>
@@ -205,6 +200,11 @@
         <edge from="n1" to="n4">
             <attr name="label">
                 <string>new:then</string>
+            </attr>
+        </edge>
+        <edge from="n1" to="n11">
+            <attr name="label">
+                <string>dosing</string>
             </attr>
         </edge>
         <edge from="n7" to="n7">
@@ -264,7 +264,7 @@
         </edge>
         <edge from="n8" to="n8">
             <attr name="label">
-                <string>let:amount = int:d0.amount</string>
+                <string>let:amount = int:d0.amount+(int:td0.change*(int:t0.duration-1))</string>
             </attr>
         </edge>
         <edge from="n8" to="n8">
@@ -304,7 +304,12 @@
         </edge>
         <edge from="n10" to="n10">
             <attr name="label">
-                <string>type:Dosing</string>
+                <string>id:td0</string>
+            </attr>
+        </edge>
+        <edge from="n10" to="n10">
+            <attr name="label">
+                <string>type:TitratingDosing</string>
             </attr>
         </edge>
         <edge from="n10" to="n0">
@@ -319,7 +324,22 @@
         </edge>
         <edge from="n11" to="n11">
             <attr name="label">
-                <string>type:Dosing</string>
+                <string>type:TitratingDosing</string>
+            </attr>
+        </edge>
+        <edge from="n11" to="n11">
+            <attr name="label">
+                <string>let:change = int:td0.change</string>
+            </attr>
+        </edge>
+        <edge from="n11" to="n11">
+            <attr name="label">
+                <string>let:interval = int:td0.interval</string>
+            </attr>
+        </edge>
+        <edge from="n11" to="n11">
+            <attr name="label">
+                <string>let:intervalTimeUnit = string:td0.intervalTimeUnit</string>
             </attr>
         </edge>
         <edge from="n11" to="n8">

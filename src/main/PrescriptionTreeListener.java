@@ -124,9 +124,17 @@ public class PrescriptionTreeListener extends PrescriptionBaseListener{
 	@Override
 	public void exitTitratingChange(PrescriptionParser.TitratingChangeContext ctx){
 		System.out.println("exitTitratingChange() -> "+ctx.getText());
-		System.out.println(this.tempDose); 
 		this.tempChangeDose = this.tempDose; 
 		this.tempChangeDose.setAmount(this.tempChangeDose.getAmount()*this.tempTitratingDirection);
+	}
+	
+	@Override
+	public void exitTitratingInterval(PrescriptionParser.TitratingIntervalContext ctx){
+		System.out.println("exitTitratingInterval() -> "+ctx.getText());
+		if(this.tempDurationUnit != null && this.tempDurationAmount == 0){
+			this.tempDurationAmount = 1;
+		}
+		
 	}
 
 	@Override
