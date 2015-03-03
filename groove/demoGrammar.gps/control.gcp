@@ -1,0 +1,9 @@
+until (stop) {main();}
+
+function main(){
+	while(true){
+		try{addDose;}	
+		else try{addMedication;}
+		else {deleteMedication;}
+	}
+}

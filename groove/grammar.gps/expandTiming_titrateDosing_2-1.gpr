@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
 <gxl xmlns="http://www.gupro.de/GXL/gxl-1.0.dtd">
-    <graph role="rule" edgeids="false" edgemode="directed" id="expandTiming_titrateDosing_1-1">
+    <graph role="rule" edgeids="false" edgemode="directed" id="expandTiming_titrateDosing_2-1">
         <attr name="priority">
             <string>2</string>
         </attr>
@@ -44,7 +44,7 @@
         </node>
         <node id="n7">
             <attr name="layout">
-                <string>557 94 409 80</string>
+                <string>553 94 417 80</string>
             </attr>
         </node>
         <node id="n8">
@@ -64,12 +64,12 @@
         </node>
         <node id="n11">
             <attr name="layout">
-                <string>155 295 304 32</string>
+                <string>158 295 298 32</string>
             </attr>
         </node>
         <node id="n12">
             <attr name="layout">
-                <string>398 138 24 21</string>
+                <string>470 133 24 21</string>
             </attr>
         </node>
         <edge from="n0" to="n0">
@@ -157,11 +157,6 @@
                 <string>type:Prescription</string>
             </attr>
         </edge>
-        <edge from="n2" to="n3">
-            <attr name="label">
-                <string>then</string>
-            </attr>
-        </edge>
         <edge from="n2" to="n0">
             <attr name="label">
                 <string>timing</string>
@@ -175,6 +170,11 @@
         <edge from="n2" to="n9">
             <attr name="label">
                 <string>not:then</string>
+            </attr>
+        </edge>
+        <edge from="n2" to="n3">
+            <attr name="label">
+                <string>then</string>
             </attr>
         </edge>
         <edge from="n3" to="n3">
@@ -264,7 +264,7 @@
         </edge>
         <edge from="n7" to="n7">
             <attr name="label">
-                <string>let:amount = int:d0.amount + (((int:t0.duration-1)/td0.interval)*int:td0.change)</string>
+                <string>let:amount = int:d0.amount+(int:td0.change*((int:t0.duration-1)/td0.interval))</string>
             </attr>
         </edge>
         <edge from="n7" to="n7">
@@ -349,7 +349,7 @@
         </edge>
         <edge from="n11" to="n11">
             <attr name="label">
-                <string>test:int:eq(int:mod(t0.duration, int:td0.interval), 0)</string>
+                <string>test:int:neq(int:mod(t0.duration, int:td0.interval), 0)</string>
             </attr>
         </edge>
         <edge from="n11" to="n8">

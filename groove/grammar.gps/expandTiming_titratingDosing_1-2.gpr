@@ -14,7 +14,7 @@
         </node>
         <node id="n6">
             <attr name="layout">
-                <string>703 622 238 112</string>
+                <string>703 630 238 96</string>
             </attr>
         </node>
         <node id="n5">
@@ -44,7 +44,7 @@
         </node>
         <node id="n8">
             <attr name="layout">
-                <string>682 142 298 80</string>
+                <string>622 142 417 80</string>
             </attr>
         </node>
         <node id="n0">
@@ -59,7 +59,7 @@
         </node>
         <node id="n10">
             <attr name="layout">
-                <string>305 358 139 16</string>
+                <string>214 350 320 32</string>
             </attr>
         </node>
         <node id="n11">
@@ -105,6 +105,11 @@
         <edge from="n6" to="n6">
             <attr name="label">
                 <string>new:</string>
+            </attr>
+        </edge>
+        <edge from="n6" to="n6">
+            <attr name="label">
+                <string>id:t1</string>
             </attr>
         </edge>
         <edge from="n6" to="n6">
@@ -197,14 +202,14 @@
                 <string>timing</string>
             </attr>
         </edge>
-        <edge from="n1" to="n4">
-            <attr name="label">
-                <string>new:then</string>
-            </attr>
-        </edge>
         <edge from="n1" to="n11">
             <attr name="label">
                 <string>dosing</string>
+            </attr>
+        </edge>
+        <edge from="n1" to="n4">
+            <attr name="label">
+                <string>new:then</string>
             </attr>
         </edge>
         <edge from="n7" to="n7">
@@ -264,7 +269,7 @@
         </edge>
         <edge from="n8" to="n8">
             <attr name="label">
-                <string>let:amount = int:d0.amount+(int:td0.change*(int:t0.duration-1))</string>
+                <string>let:amount = int:d0.amount+(int:td0.change*((int:t0.duration-1)/td0.interval))</string>
             </attr>
         </edge>
         <edge from="n8" to="n8">
@@ -310,6 +315,11 @@
         <edge from="n10" to="n10">
             <attr name="label">
                 <string>type:TitratingDosing</string>
+            </attr>
+        </edge>
+        <edge from="n10" to="n10">
+            <attr name="label">
+                <string>test:int:eq(int:mod(t0.duration, int:td0.interval), 0)</string>
             </attr>
         </edge>
         <edge from="n10" to="n0">
