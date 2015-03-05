@@ -51,7 +51,7 @@
         </node>
         <node id="n0">
             <attr name="layout">
-                <string>742 227 83 32</string>
+                <string>760 227 47 32</string>
             </attr>
         </node>
         <node id="n1">
@@ -61,7 +61,7 @@
         </node>
         <node id="n2">
             <attr name="layout">
-                <string>391 257 47 32</string>
+                <string>373 257 83 32</string>
             </attr>
         </node>
         <node id="n12">
@@ -94,14 +94,14 @@
                 <string>type:Prescription</string>
             </attr>
         </edge>
-        <edge from="n6" to="n2">
-            <attr name="label">
-                <string>dosing</string>
-            </attr>
-        </edge>
         <edge from="n6" to="n11">
             <attr name="label">
                 <string>timing</string>
+            </attr>
+        </edge>
+        <edge from="n6" to="n2">
+            <attr name="label">
+                <string>dosing</string>
             </attr>
         </edge>
         <edge from="n11" to="n11">
@@ -207,9 +207,9 @@
                 <string>let:medication = string:p1.medication</string>
             </attr>
         </edge>
-        <edge from="n7" to="n4">
+        <edge from="n7" to="n6">
             <attr name="label">
-                <string>timing</string>
+                <string>then</string>
             </attr>
         </edge>
         <edge from="n7" to="n0">
@@ -217,9 +217,9 @@
                 <string>dosing</string>
             </attr>
         </edge>
-        <edge from="n7" to="n6">
+        <edge from="n7" to="n4">
             <attr name="label">
-                <string>then</string>
+                <string>timing</string>
             </attr>
         </edge>
         <edge from="n4" to="n4">
@@ -304,7 +304,7 @@
         </edge>
         <edge from="n0" to="n0">
             <attr name="label">
-                <string>type:FixedDosing</string>
+                <string>type:Dosing</string>
             </attr>
         </edge>
         <edge from="n0" to="n1">
@@ -334,7 +334,7 @@
         </edge>
         <edge from="n2" to="n2">
             <attr name="label">
-                <string>type:FixedDosing</string>
+                <string>type:Dosing</string>
             </attr>
         </edge>
         <edge from="n2" to="n12">

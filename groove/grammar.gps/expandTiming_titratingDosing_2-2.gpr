@@ -44,12 +44,12 @@
         </node>
         <node id="n8">
             <attr name="layout">
-                <string>764 142 134 80</string>
+                <string>769 118 134 80</string>
             </attr>
         </node>
         <node id="n0">
             <attr name="layout">
-                <string>334 186 61 16</string>
+                <string>329 176 61 16</string>
             </attr>
         </node>
         <node id="n4">
@@ -59,7 +59,7 @@
         </node>
         <node id="n10">
             <attr name="layout">
-                <string>238 350 271 32</string>
+                <string>283 350 181 32</string>
             </attr>
         </node>
         <node id="n11">
@@ -69,7 +69,7 @@
         </node>
         <node id="n12">
             <attr name="layout">
-                <string>558 203 8 16</string>
+                <string>557 175 8 16</string>
             </attr>
         </node>
         <node id="n13">
@@ -172,9 +172,9 @@
                 <string>dosing</string>
             </attr>
         </edge>
-        <edge from="n5" to="n4">
+        <edge from="n5" to="n1">
             <attr name="label">
-                <string>del:then</string>
+                <string>new:then</string>
             </attr>
         </edge>
         <edge from="n5" to="n2">
@@ -182,9 +182,9 @@
                 <string>timing</string>
             </attr>
         </edge>
-        <edge from="n5" to="n1">
+        <edge from="n5" to="n4">
             <attr name="label">
-                <string>new:then</string>
+                <string>del:then</string>
             </attr>
         </edge>
         <edge from="n1" to="n1">
@@ -207,14 +207,14 @@
                 <string>let:medication = string:p0.medication</string>
             </attr>
         </edge>
-        <edge from="n1" to="n11">
-            <attr name="label">
-                <string>dosing</string>
-            </attr>
-        </edge>
         <edge from="n1" to="n4">
             <attr name="label">
                 <string>new:then</string>
+            </attr>
+        </edge>
+        <edge from="n1" to="n11">
+            <attr name="label">
+                <string>dosing</string>
             </attr>
         </edge>
         <edge from="n1" to="n6">
@@ -279,17 +279,17 @@
         </edge>
         <edge from="n8" to="n8">
             <attr name="label">
-                <string>let:amount = int:d1.amount</string>
+                <string>let:amount = int:d0.amount</string>
             </attr>
         </edge>
         <edge from="n8" to="n8">
             <attr name="label">
-                <string>let:n = int:d1.n</string>
+                <string>let:n = int:d0.n</string>
             </attr>
         </edge>
         <edge from="n8" to="n8">
             <attr name="label">
-                <string>let:unit = string:d1.unit</string>
+                <string>let:unit = string:d0.unit</string>
             </attr>
         </edge>
         <edge from="n8" to="n12">
