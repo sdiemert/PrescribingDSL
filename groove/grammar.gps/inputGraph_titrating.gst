@@ -29,16 +29,6 @@
                 <string>601 124 90 80</string>
             </attr>
         </node>
-        <node id="n2">
-            <attr name="layout">
-                <string>389 59 70 64</string>
-            </attr>
-        </node>
-        <node id="n3">
-            <attr name="layout">
-                <string>839 144 90 80</string>
-            </attr>
-        </node>
         <edge from="n0" to="n0">
             <attr name="label">
                 <string>type:Prescription</string>
@@ -54,14 +44,14 @@
                 <string>let:medication = &quot;aspirin&quot;</string>
             </attr>
         </edge>
-        <edge from="n0" to="n1">
-            <attr name="label">
-                <string>timing</string>
-            </attr>
-        </edge>
         <edge from="n0" to="n9">
             <attr name="label">
                 <string>dosing</string>
+            </attr>
+        </edge>
+        <edge from="n0" to="n1">
+            <attr name="label">
+                <string>timing</string>
             </attr>
         </edge>
         <edge from="n1" to="n1">
@@ -76,7 +66,7 @@
         </edge>
         <edge from="n1" to="n1">
             <attr name="label">
-                <string>let:duration = 8</string>
+                <string>let:duration = 4</string>
             </attr>
         </edge>
         <edge from="n1" to="n1">
@@ -95,11 +85,6 @@
             </attr>
         </edge>
         <edge from="n1" to="n8">
-            <attr name="label">
-                <string>instant</string>
-            </attr>
-        </edge>
-        <edge from="n1" to="n2">
             <attr name="label">
                 <string>instant</string>
             </attr>
@@ -131,7 +116,7 @@
         </edge>
         <edge from="n9" to="n9">
             <attr name="label">
-                <string>let:interval = 2</string>
+                <string>let:interval = 1</string>
             </attr>
         </edge>
         <edge from="n9" to="n9">
@@ -140,11 +125,6 @@
             </attr>
         </edge>
         <edge from="n9" to="n10">
-            <attr name="label">
-                <string>dose</string>
-            </attr>
-        </edge>
-        <edge from="n9" to="n3">
             <attr name="label">
                 <string>dose</string>
             </attr>
@@ -165,41 +145,6 @@
             </attr>
         </edge>
         <edge from="n10" to="n10">
-            <attr name="label">
-                <string>let:unit = &quot;MG&quot;</string>
-            </attr>
-        </edge>
-        <edge from="n2" to="n2">
-            <attr name="label">
-                <string>type:Instant</string>
-            </attr>
-        </edge>
-        <edge from="n2" to="n2">
-            <attr name="label">
-                <string>let:instant = 1</string>
-            </attr>
-        </edge>
-        <edge from="n2" to="n2">
-            <attr name="label">
-                <string>let:n = 1</string>
-            </attr>
-        </edge>
-        <edge from="n3" to="n3">
-            <attr name="label">
-                <string>type:Dose</string>
-            </attr>
-        </edge>
-        <edge from="n3" to="n3">
-            <attr name="label">
-                <string>let:amount = 100</string>
-            </attr>
-        </edge>
-        <edge from="n3" to="n3">
-            <attr name="label">
-                <string>let:n = 1</string>
-            </attr>
-        </edge>
-        <edge from="n3" to="n3">
             <attr name="label">
                 <string>let:unit = &quot;MG&quot;</string>
             </attr>

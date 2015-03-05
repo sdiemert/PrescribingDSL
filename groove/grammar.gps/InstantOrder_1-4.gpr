@@ -1,6 +1,9 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
 <gxl xmlns="http://www.gupro.de/GXL/gxl-1.0.dtd">
     <graph role="rule" edgeids="false" edgemode="directed" id="InstantOrder_1-4">
+        <attr name="priority">
+            <string>1</string>
+        </attr>
         <attr name="$version">
             <string>curly</string>
         </attr>
@@ -51,7 +54,7 @@
         </node>
         <node id="n2">
             <attr name="layout">
-                <string>385 207 83 32</string>
+                <string>403 207 47 32</string>
             </attr>
         </node>
         <node id="n5">
@@ -119,14 +122,14 @@
                 <string>let:order = int:order+1</string>
             </attr>
         </edge>
-        <edge from="n11" to="n3">
-            <attr name="label">
-                <string>instant</string>
-            </attr>
-        </edge>
         <edge from="n11" to="n9">
             <attr name="label">
                 <string>del:instant</string>
+            </attr>
+        </edge>
+        <edge from="n11" to="n3">
+            <attr name="label">
+                <string>instant</string>
             </attr>
         </edge>
         <edge from="n9" to="n9">
@@ -149,14 +152,14 @@
                 <string>test:bool:lt(int:i1.instant,int:i3.instant)</string>
             </attr>
         </edge>
-        <edge from="n9" to="n1">
-            <attr name="label">
-                <string>temp</string>
-            </attr>
-        </edge>
         <edge from="n9" to="n3">
             <attr name="label">
                 <string>del:temp</string>
+            </attr>
+        </edge>
+        <edge from="n9" to="n1">
+            <attr name="label">
+                <string>temp</string>
             </attr>
         </edge>
         <edge from="n7" to="n7">
@@ -184,6 +187,14 @@
                 <string>let:medication = string:p1.medication</string>
             </attr>
         </edge>
+        <edge from="n7" to="n6">
+            <attr name="label">
+                <string>then</string>
+            </attr>
+            <attr name="layout">
+                <string>1000 -21 705 340 442 331 11</string>
+            </attr>
+        </edge>
         <edge from="n7" to="n10">
             <attr name="label">
                 <string>dosing</string>
@@ -192,14 +203,6 @@
         <edge from="n7" to="n4">
             <attr name="label">
                 <string>timing</string>
-            </attr>
-        </edge>
-        <edge from="n7" to="n6">
-            <attr name="label">
-                <string>then</string>
-            </attr>
-            <attr name="layout">
-                <string>1000 -21 705 340 442 331 11</string>
             </attr>
         </edge>
         <edge from="n4" to="n4">
@@ -260,6 +263,11 @@
         <edge from="n8" to="n8">
             <attr name="label">
                 <string>let:instant = int:i1.instant</string>
+            </attr>
+        </edge>
+        <edge from="n8" to="n8">
+            <attr name="label">
+                <string>let:n = int:i1.n</string>
             </attr>
         </edge>
         <edge from="n0" to="n0">

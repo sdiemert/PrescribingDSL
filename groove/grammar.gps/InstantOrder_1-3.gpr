@@ -1,6 +1,9 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
 <gxl xmlns="http://www.gupro.de/GXL/gxl-1.0.dtd">
     <graph role="rule" edgeids="false" edgemode="directed" id="InstantOrder_1-3">
+        <attr name="priority">
+            <string>1</string>
+        </attr>
         <attr name="$version">
             <string>curly</string>
         </attr>
@@ -89,14 +92,14 @@
                 <string>type:Prescription</string>
             </attr>
         </edge>
-        <edge from="n6" to="n11">
-            <attr name="label">
-                <string>timing</string>
-            </attr>
-        </edge>
         <edge from="n6" to="n2">
             <attr name="label">
                 <string>dosing</string>
+            </attr>
+        </edge>
+        <edge from="n6" to="n11">
+            <attr name="label">
+                <string>timing</string>
             </attr>
         </edge>
         <edge from="n11" to="n11">
@@ -174,6 +177,11 @@
                 <string>let:medication = string:p1.medication</string>
             </attr>
         </edge>
+        <edge from="n7" to="n1">
+            <attr name="label">
+                <string>dosing</string>
+            </attr>
+        </edge>
         <edge from="n7" to="n4">
             <attr name="label">
                 <string>timing</string>
@@ -182,11 +190,6 @@
         <edge from="n7" to="n6">
             <attr name="label">
                 <string>then</string>
-            </attr>
-        </edge>
-        <edge from="n7" to="n1">
-            <attr name="label">
-                <string>dosing</string>
             </attr>
         </edge>
         <edge from="n4" to="n4">
@@ -249,19 +252,24 @@
                 <string>let:instant = int:i1.instant</string>
             </attr>
         </edge>
+        <edge from="n8" to="n8">
+            <attr name="label">
+                <string>let:n = int:i1.n</string>
+            </attr>
+        </edge>
         <edge from="n10" to="n10">
             <attr name="label">
                 <string>type:Prescription</string>
             </attr>
         </edge>
-        <edge from="n10" to="n7">
-            <attr name="label">
-                <string>then</string>
-            </attr>
-        </edge>
         <edge from="n10" to="n6">
             <attr name="label">
                 <string>del:then</string>
+            </attr>
+        </edge>
+        <edge from="n10" to="n7">
+            <attr name="label">
+                <string>then</string>
             </attr>
         </edge>
         <edge from="n0" to="n0">

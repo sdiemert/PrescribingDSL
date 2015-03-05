@@ -1,6 +1,9 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
 <gxl xmlns="http://www.gupro.de/GXL/gxl-1.0.dtd">
     <graph role="rule" edgeids="false" edgemode="directed" id="InstantOrder_1-2">
+        <attr name="priority">
+            <string>1</string>
+        </attr>
         <attr name="$version">
             <string>curly</string>
         </attr>
@@ -61,7 +64,7 @@
         </node>
         <node id="n2">
             <attr name="layout">
-                <string>373 257 83 32</string>
+                <string>391 257 47 32</string>
             </attr>
         </node>
         <node id="n12">
@@ -119,14 +122,14 @@
                 <string>let:order = int:order+1</string>
             </attr>
         </edge>
-        <edge from="n11" to="n5">
-            <attr name="label">
-                <string>instant</string>
-            </attr>
-        </edge>
         <edge from="n11" to="n9">
             <attr name="label">
                 <string>del:instant</string>
+            </attr>
+        </edge>
+        <edge from="n11" to="n5">
+            <attr name="label">
+                <string>instant</string>
             </attr>
         </edge>
         <edge from="n11" to="n3">
@@ -280,6 +283,11 @@
         <edge from="n8" to="n8">
             <attr name="label">
                 <string>let:instant = int:i1.instant</string>
+            </attr>
+        </edge>
+        <edge from="n8" to="n8">
+            <attr name="label">
+                <string>let:n = int:i1.n</string>
             </attr>
         </edge>
         <edge from="n10" to="n10">
