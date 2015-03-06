@@ -1,9 +1,14 @@
 package main;
 
+import groove.explore.Generator;
+
 import java.io.File;
 import java.util.LinkedList;
+
 import org.w3c.dom.*;
+
 import antlr.prescription.*;
+
 import org.antlr.v4.runtime.*;
 import org.antlr.v4.runtime.tree.*;
 
@@ -43,6 +48,10 @@ public class Driver {
 		}else{
 			System.out.println("------------>Failed to generate Groove file"); 
 		}
+		
+		Generator g = new Generator();  
+		String[] input = {"-v","2","-r","1","-s", "random", "-f", "/Users/sdiemert/Desktop/grooveOutput#", "/Users/sdiemert/Documents/workspace/PrescribingDsl/groove/grammar.gps", "inputGraph"};
+		g.execute(input); 
 
         System.out.println("\n================");
 		System.out.println("COMPLETED");

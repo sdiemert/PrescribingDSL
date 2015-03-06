@@ -4,5 +4,30 @@
 	<classpathentry exported="true" kind="con" path="org.eclipse.jdt.launching.JRE_CONTAINER/org.eclipse.jdt.internal.debug.ui.launcher.StandardVMType/JavaSE-1.7"/>
 	<classpathentry kind="lib" path="lib/antlr-4.4-complete.jar"/>
 	<classpathentry kind="con" path="org.eclipse.jdt.junit.JUNIT_CONTAINER/4"/>
+	<classpathentry kind="lib" path="lib/antlr-3.4-complete.jar"/>
+	<classpathentry kind="lib" path="lib/args4j-2.0.26.jar"/>
+	<classpathentry kind="lib" path="lib/asm-4.0.jar"/>
+	<classpathentry kind="lib" path="lib/asm-analysis-4.0.jar"/>
+	<classpathentry kind="lib" path="lib/asm-commons-4.0.jar"/>
+	<classpathentry kind="lib" path="lib/asm-tree-4.0.jar"/>
+	<classpathentry kind="lib" path="lib/asm-util-4.0.jar"/>
+	<classpathentry kind="lib" path="lib/com.alexmerz.graphviz.jar"/>
+	<classpathentry kind="lib" path="lib/epsgraphics-1.2.jar"/>
+	<classpathentry kind="lib" path="lib/flamingo-7.2.jar"/>
+	<classpathentry kind="lib" path="lib/gnuprologjava-0.2.6.jar"/>
+	<classpathentry kind="lib" path="lib/groove-5_3_6.jar"/>
+	<classpathentry kind="lib" path="lib/groovy-2.0.5.jar"/>
+	<classpathentry kind="lib" path="lib/itextpdf-5.3.2.jar"/>
+	<classpathentry kind="lib" path="lib/jaxb-gxl-1_0.jar"/>
+	<classpathentry kind="lib" path="lib/jgoodies-common-1.2.0.jar"/>
+	<classpathentry kind="lib" path="lib/jgoodies-looks-2.4.1.jar"/>
+	<classpathentry kind="lib" path="lib/jgraph-5_13_0.jar"/>
+	<classpathentry kind="lib" path="lib/ltl2buchi-2010-12.jar"/>
+	<classpathentry kind="lib" path="lib/opencsv-2.3.jar"/>
+	<classpathentry kind="lib" path="lib/org.eclipse.jdt.annotation_1.1.0.v20140129-1625.jar"/>
+	<classpathentry kind="lib" path="lib/org.eclipse.jdt.annotation_2.0.0.v20140415-1436.jar"/>
+	<classpathentry kind="lib" path="lib/OSXAdapter.jar"/>
+	<classpathentry kind="lib" path="lib/rsyntaxtextarea.jar"/>
+	<classpathentry kind="lib" path="lib/swingfx.jar"/>
 	<classpathentry kind="output" path="bin"/>
 </classpath>
