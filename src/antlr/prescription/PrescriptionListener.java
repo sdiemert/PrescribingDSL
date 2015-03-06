@@ -59,6 +59,16 @@ public interface PrescriptionListener extends ParseTreeListener {
 	 */
 	void exitExpr(@NotNull PrescriptionParser.ExprContext ctx);
 	/**
+	 * Enter a parse tree produced by {@link PrescriptionParser#repeat}.
+	 * @param ctx the parse tree
+	 */
+	void enterRepeat(@NotNull PrescriptionParser.RepeatContext ctx);
+	/**
+	 * Exit a parse tree produced by {@link PrescriptionParser#repeat}.
+	 * @param ctx the parse tree
+	 */
+	void exitRepeat(@NotNull PrescriptionParser.RepeatContext ctx);
+	/**
 	 * Enter a parse tree produced by {@link PrescriptionParser#frequency}.
 	 * @param ctx the parse tree
 	 */
@@ -209,16 +219,6 @@ public interface PrescriptionListener extends ParseTreeListener {
 	 */
 	void exitDuration(@NotNull PrescriptionParser.DurationContext ctx);
 	/**
-	 * Enter a parse tree produced by {@link PrescriptionParser#assignment}.
-	 * @param ctx the parse tree
-	 */
-	void enterAssignment(@NotNull PrescriptionParser.AssignmentContext ctx);
-	/**
-	 * Exit a parse tree produced by {@link PrescriptionParser#assignment}.
-	 * @param ctx the parse tree
-	 */
-	void exitAssignment(@NotNull PrescriptionParser.AssignmentContext ctx);
-	/**
 	 * Enter a parse tree produced by {@link PrescriptionParser#titratingDose}.
 	 * @param ctx the parse tree
 	 */
@@ -238,6 +238,16 @@ public interface PrescriptionListener extends ParseTreeListener {
 	 * @param ctx the parse tree
 	 */
 	void exitDoseUnit(@NotNull PrescriptionParser.DoseUnitContext ctx);
+	/**
+	 * Enter a parse tree produced by {@link PrescriptionParser#repeatValue}.
+	 * @param ctx the parse tree
+	 */
+	void enterRepeatValue(@NotNull PrescriptionParser.RepeatValueContext ctx);
+	/**
+	 * Exit a parse tree produced by {@link PrescriptionParser#repeatValue}.
+	 * @param ctx the parse tree
+	 */
+	void exitRepeatValue(@NotNull PrescriptionParser.RepeatValueContext ctx);
 	/**
 	 * Enter a parse tree produced by {@link PrescriptionParser#titratingStart}.
 	 * @param ctx the parse tree

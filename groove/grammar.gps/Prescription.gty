@@ -56,6 +56,11 @@
         </edge>
         <edge from="n0" to="n0">
             <attr name="label">
+                <string>int:repeats</string>
+            </attr>
+        </edge>
+        <edge from="n0" to="n0">
+            <attr name="label">
                 <string>string:action</string>
             </attr>
         </edge>

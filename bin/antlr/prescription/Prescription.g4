@@ -24,24 +24,20 @@ WS  	:   (' '|'\t'|'\n'|'\r')+ {skip();} ;
 script : expr+; 
 
 expr :
-          expr 'THEN' expr
+         expr 'THEN' expr
         | atom
-		| assignment NEWLINE
         | expr NEWLINE
         | NEWLINE
 ;
 
-atom : a=action m=medication d=dose t=timing;
+repeat: 'REPEAT' repeatValue | repeatValue 'REPEATS'; 
 
-assignment: 
-	  'ACTION' ID '=' a=action
-	| 'DOSE' ID '=' d=dose
-	| 'MEDICATION' ID '=' m=medication
-	| 'TIMING' ID '=' t=timing
-;
+repeatValue: INT; 
+
+atom : action medication dose timing repeat?;
 
 action : 		
-        ID 	
+        D 	
     |   s=STRING 
 ;
 

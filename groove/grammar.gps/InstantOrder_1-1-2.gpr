@@ -2,7 +2,7 @@
 <gxl xmlns="http://www.gupro.de/GXL/gxl-1.0.dtd">
     <graph role="rule" edgeids="false" edgemode="directed" id="InstantOrder_1-1-2">
         <attr name="priority">
-            <string>2</string>
+            <string>4</string>
         </attr>
         <attr name="$version">
             <string>curly</string>
@@ -27,17 +27,17 @@
                 <string>351 610 138 32</string>
             </attr>
         </node>
+        <edge from="n0" to="n3">
+            <attr name="label">
+                <string>instant</string>
+            </attr>
+        </edge>
         <edge from="n0" to="n0">
             <attr name="label">
                 <string>type:Timing</string>
             </attr>
         </edge>
         <edge from="n0" to="n2">
-            <attr name="label">
-                <string>instant</string>
-            </attr>
-        </edge>
-        <edge from="n0" to="n3">
             <attr name="label">
                 <string>instant</string>
             </attr>
@@ -85,16 +85,6 @@
                 <string>476 -3 248 424 392 511 513 417 11</string>
             </attr>
         </edge>
-        <edge from="n2" to="n3">
-            <attr name="label">
-                <string>new:temp</string>
-            </attr>
-        </edge>
-        <edge from="n2" to="n3">
-            <attr name="label">
-                <string>not:temp</string>
-            </attr>
-        </edge>
         <edge from="n2" to="n1">
             <attr name="label">
                 <string>new:temp</string>
@@ -103,6 +93,16 @@
         <edge from="n2" to="n2">
             <attr name="label">
                 <string>test:bool:lt(int:i1.instant,int:i2.instant)</string>
+            </attr>
+        </edge>
+        <edge from="n2" to="n3">
+            <attr name="label">
+                <string>new:temp</string>
+            </attr>
+        </edge>
+        <edge from="n2" to="n3">
+            <attr name="label">
+                <string>not:temp</string>
             </attr>
         </edge>
         <edge from="n2" to="n1">
@@ -120,12 +120,12 @@
         </edge>
         <edge from="n3" to="n1">
             <attr name="label">
-                <string>new:temp</string>
+                <string>not:temp</string>
             </attr>
         </edge>
         <edge from="n3" to="n1">
             <attr name="label">
-                <string>not:temp</string>
+                <string>new:temp</string>
             </attr>
         </edge>
         <edge from="n3" to="n3">

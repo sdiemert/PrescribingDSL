@@ -2,7 +2,7 @@
 <gxl xmlns="http://www.gupro.de/GXL/gxl-1.0.dtd">
     <graph role="rule" edgeids="false" edgemode="directed" id="InstantOrder_1-1-1">
         <attr name="priority">
-            <string>1</string>
+            <string>2</string>
         </attr>
         <attr name="$version">
             <string>curly</string>
@@ -22,12 +22,12 @@
                 <string>173 409 138 32</string>
             </attr>
         </node>
-        <edge from="n0" to="n2">
+        <edge from="n0" to="n1">
             <attr name="label">
                 <string>instant</string>
             </attr>
         </edge>
-        <edge from="n0" to="n1">
+        <edge from="n0" to="n2">
             <attr name="label">
                 <string>instant</string>
             </attr>
@@ -57,9 +57,17 @@
                 <string>type:Instant</string>
             </attr>
         </edge>
-        <edge from="n2" to="n2">
+        <edge from="n2" to="n1">
             <attr name="label">
-                <string>test:bool:lt(int:i1.instant,int:i2.instant)</string>
+                <string>!=</string>
+            </attr>
+            <attr name="layout">
+                <string>500 0 242 425 384 381 513 417 11</string>
+            </attr>
+        </edge>
+        <edge from="n2" to="n1">
+            <attr name="label">
+                <string>new:temp</string>
             </attr>
         </edge>
         <edge from="n2" to="n1">
@@ -70,17 +78,9 @@
                 <string>500 0 242 425 392 511 513 417 11</string>
             </attr>
         </edge>
-        <edge from="n2" to="n1">
+        <edge from="n2" to="n2">
             <attr name="label">
-                <string>new:temp</string>
-            </attr>
-        </edge>
-        <edge from="n2" to="n1">
-            <attr name="label">
-                <string>!=</string>
-            </attr>
-            <attr name="layout">
-                <string>500 0 242 425 384 381 513 417 11</string>
+                <string>test:bool:lt(int:i1.instant,int:i2.instant)</string>
             </attr>
         </edge>
     </graph>

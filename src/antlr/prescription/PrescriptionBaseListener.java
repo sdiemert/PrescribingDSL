@@ -77,6 +77,18 @@ public class PrescriptionBaseListener implements PrescriptionListener {
 	 *
 	 * <p>The default implementation does nothing.</p>
 	 */
+	@Override public void enterRepeat(@NotNull PrescriptionParser.RepeatContext ctx) { }
+	/**
+	 * {@inheritDoc}
+	 *
+	 * <p>The default implementation does nothing.</p>
+	 */
+	@Override public void exitRepeat(@NotNull PrescriptionParser.RepeatContext ctx) { }
+	/**
+	 * {@inheritDoc}
+	 *
+	 * <p>The default implementation does nothing.</p>
+	 */
 	@Override public void enterFrequency(@NotNull PrescriptionParser.FrequencyContext ctx) { }
 	/**
 	 * {@inheritDoc}
@@ -257,18 +269,6 @@ public class PrescriptionBaseListener implements PrescriptionListener {
 	 *
 	 * <p>The default implementation does nothing.</p>
 	 */
-	@Override public void enterAssignment(@NotNull PrescriptionParser.AssignmentContext ctx) { }
-	/**
-	 * {@inheritDoc}
-	 *
-	 * <p>The default implementation does nothing.</p>
-	 */
-	@Override public void exitAssignment(@NotNull PrescriptionParser.AssignmentContext ctx) { }
-	/**
-	 * {@inheritDoc}
-	 *
-	 * <p>The default implementation does nothing.</p>
-	 */
 	@Override public void enterTitratingDose(@NotNull PrescriptionParser.TitratingDoseContext ctx) { }
 	/**
 	 * {@inheritDoc}
@@ -288,6 +288,18 @@ public class PrescriptionBaseListener implements PrescriptionListener {
 	 * <p>The default implementation does nothing.</p>
 	 */
 	@Override public void exitDoseUnit(@NotNull PrescriptionParser.DoseUnitContext ctx) { }
+	/**
+	 * {@inheritDoc}
+	 *
+	 * <p>The default implementation does nothing.</p>
+	 */
+	@Override public void enterRepeatValue(@NotNull PrescriptionParser.RepeatValueContext ctx) { }
+	/**
+	 * {@inheritDoc}
+	 *
+	 * <p>The default implementation does nothing.</p>
+	 */
+	@Override public void exitRepeatValue(@NotNull PrescriptionParser.RepeatValueContext ctx) { }
 	/**
 	 * {@inheritDoc}
 	 *

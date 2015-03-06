@@ -9,12 +9,14 @@ public class Prescription implements PrescriptionElement{
 	private PrescriptionDose dose;
 	private PrescriptionAction action; 
 	private String medication;
+	private int repeats;
 	
-	public Prescription(PrescriptionTiming timing, PrescriptionDose dose, PrescriptionAction action, String medication){
+	public Prescription(PrescriptionTiming timing, PrescriptionDose dose, PrescriptionAction action, String medication, int repeats){
 		this.timing = timing;
 		this.dose = dose;
 		this.action = action;
 		this.medication = medication; 
+		this.repeats = repeats; 
 	}
 	
 	public Prescription(){
@@ -68,6 +70,7 @@ public class Prescription implements PrescriptionElement{
 		Element prescription = (Element)GrooveXMLGenerator.GrooveXMLGeneratorUtils.addNode(doc, rootNode, "prescription"+rxNumber);		
 		GrooveXMLGenerator.GrooveXMLGeneratorUtils.addValueToNode(doc, rootNode, prescription, "let:medication=\""+this.medication+"\"");
 		GrooveXMLGenerator.GrooveXMLGeneratorUtils.addValueToNode(doc, rootNode, prescription, "let:action=\""+this.action.toString()+"\"");
+		GrooveXMLGenerator.GrooveXMLGeneratorUtils.addValueToNode(doc, rootNode, prescription, "let:repeats="+this.repeats);
 		GrooveXMLGenerator.GrooveXMLGeneratorUtils.addValueToNode(doc, rootNode, prescription, "type:Prescription");
 		
 		GrooveXMLGenerator.GrooveXMLGeneratorUtils.addEdgeNode(doc, rootNode, prescription.getAttribute("id"), ((Element)this.timing.toGrooveXML(doc, rootNode, rxNumber)).getAttribute("id"), "timing");
@@ -107,6 +110,10 @@ public class Prescription implements PrescriptionElement{
 			return false; 
 		}
 		return true;
+	}
+
+	public void setRepeats(int repeats) {
+		this.repeats = repeats;
 	}
 
 }

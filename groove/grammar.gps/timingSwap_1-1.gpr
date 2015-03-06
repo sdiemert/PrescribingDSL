@@ -2,7 +2,7 @@
 <gxl xmlns="http://www.gupro.de/GXL/gxl-1.0.dtd">
     <graph role="rule" edgeids="false" edgemode="directed" id="timingSwap_1-1">
         <attr name="priority">
-            <string>1</string>
+            <string>2</string>
         </attr>
         <attr name="$version">
             <string>curly</string>
@@ -72,11 +72,6 @@
                 <string>id:t1</string>
             </attr>
         </edge>
-        <edge from="n1" to="n6">
-            <attr name="label">
-                <string>not:instant</string>
-            </attr>
-        </edge>
         <edge from="n1" to="n2">
             <attr name="label">
                 <string>instant</string>
@@ -92,6 +87,11 @@
                 <string>type:Timing</string>
             </attr>
         </edge>
+        <edge from="n1" to="n6">
+            <attr name="label">
+                <string>not:instant</string>
+            </attr>
+        </edge>
         <edge from="n2" to="n2">
             <attr name="label">
                 <string>id:i1</string>
@@ -102,11 +102,6 @@
                 <string>type:Instant</string>
             </attr>
         </edge>
-        <edge from="n2" to="n6">
-            <attr name="label">
-                <string>!=</string>
-            </attr>
-        </edge>
         <edge from="n2" to="n2">
             <attr name="label">
                 <string>test:bool:gt(int:i1.instant, int:i2.instant)</string>
@@ -115,6 +110,11 @@
         <edge from="n2" to="n2">
             <attr name="label">
                 <string>let:instant = int:i2.instant</string>
+            </attr>
+        </edge>
+        <edge from="n2" to="n6">
+            <attr name="label">
+                <string>!=</string>
             </attr>
         </edge>
         <edge from="n3" to="n3">
@@ -137,6 +137,11 @@
                 <string>id:t2</string>
             </attr>
         </edge>
+        <edge from="n4" to="n4">
+            <attr name="label">
+                <string>type:Timing</string>
+            </attr>
+        </edge>
         <edge from="n4" to="n5">
             <attr name="label">
                 <string>instant</string>
@@ -147,24 +152,19 @@
                 <string>not:instant</string>
             </attr>
         </edge>
-        <edge from="n4" to="n4">
-            <attr name="label">
-                <string>type:Timing</string>
-            </attr>
-        </edge>
         <edge from="n5" to="n5">
             <attr name="label">
                 <string>id:i2</string>
             </attr>
         </edge>
-        <edge from="n5" to="n7">
-            <attr name="label">
-                <string>!=</string>
-            </attr>
-        </edge>
         <edge from="n5" to="n5">
             <attr name="label">
                 <string>let:instant = int:i1.instant</string>
+            </attr>
+        </edge>
+        <edge from="n5" to="n7">
+            <attr name="label">
+                <string>!=</string>
             </attr>
         </edge>
         <edge from="n5" to="n5">
