@@ -50,7 +50,7 @@ public class Driver {
 		}
 		
 		Generator g = new Generator();  
-		String[] input = {"-v","2","-r","1","-s", "random", "-f", "/Users/sdiemert/Desktop/grooveOutput#", "/Users/sdiemert/Documents/workspace/PrescribingDsl/groove/grammar.gps", "inputGraph"};
+		String[] input = {"-v","2","-r","1","-s", "random", "-f", "/Users/sdiemert/Documents/workspace/PrescribingDsl/groove/reconcil.gps/plan.gst", "/Users/sdiemert/Documents/workspace/PrescribingDsl/groove/grammar.gps", "inputGraph"};
 		g.execute(input); 
 
         System.out.println("\n================");

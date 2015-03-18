@@ -44,17 +44,17 @@
         </node>
         <node id="n10">
             <attr name="layout">
-                <string>208 398 81 32</string>
+                <string>208 406 81 16</string>
             </attr>
         </node>
         <node id="n0">
             <attr name="layout">
-                <string>763 180 47 32</string>
+                <string>763 188 47 16</string>
             </attr>
         </node>
         <node id="n1">
             <attr name="layout">
-                <string>716 65 134 64</string>
+                <string>716 73 134 48</string>
             </attr>
         </node>
         <node id="n5">
@@ -64,7 +64,7 @@
         </node>
         <node id="n2">
             <attr name="layout">
-                <string>436 182 47 32</string>
+                <string>436 190 47 16</string>
             </attr>
         </node>
         <edge from="n3" to="n3">
@@ -107,6 +107,16 @@
                 <string>id:t1</string>
             </attr>
         </edge>
+        <edge from="n11" to="n11">
+            <attr name="label">
+                <string>type:Timing</string>
+            </attr>
+        </edge>
+        <edge from="n11" to="n11">
+            <attr name="label">
+                <string>let:order = int:order</string>
+            </attr>
+        </edge>
         <edge from="n11" to="n3">
             <attr name="label">
                 <string>instant</string>
@@ -115,16 +125,6 @@
         <edge from="n11" to="n9">
             <attr name="label">
                 <string>del:instant</string>
-            </attr>
-        </edge>
-        <edge from="n11" to="n11">
-            <attr name="label">
-                <string>let:order = int:order+1</string>
-            </attr>
-        </edge>
-        <edge from="n11" to="n11">
-            <attr name="label">
-                <string>type:Timing</string>
             </attr>
         </edge>
         <edge from="n9" to="n9">
@@ -142,14 +142,14 @@
                 <string>type:Instant</string>
             </attr>
         </edge>
-        <edge from="n9" to="n3">
-            <attr name="label">
-                <string>del:temp</string>
-            </attr>
-        </edge>
         <edge from="n9" to="n9">
             <attr name="label">
                 <string>test:bool:lt(int:i1.instant,int:i3.instant)</string>
+            </attr>
+        </edge>
+        <edge from="n9" to="n3">
+            <attr name="label">
+                <string>del:temp</string>
             </attr>
         </edge>
         <edge from="n7" to="n7">
@@ -164,17 +164,12 @@
         </edge>
         <edge from="n7" to="n7">
             <attr name="label">
+                <string>type:Prescription</string>
+            </attr>
+        </edge>
+        <edge from="n7" to="n7">
+            <attr name="label">
                 <string>let:action = string:p1.action</string>
-            </attr>
-        </edge>
-        <edge from="n7" to="n0">
-            <attr name="label">
-                <string>dosing</string>
-            </attr>
-        </edge>
-        <edge from="n7" to="n4">
-            <attr name="label">
-                <string>timing</string>
             </attr>
         </edge>
         <edge from="n7" to="n7">
@@ -182,14 +177,19 @@
                 <string>let:medication = string:p1.medication</string>
             </attr>
         </edge>
-        <edge from="n7" to="n7">
-            <attr name="label">
-                <string>type:Prescription</string>
-            </attr>
-        </edge>
         <edge from="n7" to="n6">
             <attr name="label">
                 <string>then</string>
+            </attr>
+        </edge>
+        <edge from="n7" to="n4">
+            <attr name="label">
+                <string>timing</string>
+            </attr>
+        </edge>
+        <edge from="n7" to="n0">
+            <attr name="label">
+                <string>dosing</string>
             </attr>
         </edge>
         <edge from="n4" to="n4">
@@ -204,7 +204,7 @@
         </edge>
         <edge from="n4" to="n4">
             <attr name="label">
-                <string>let:duration = int:t1.duration</string>
+                <string>type:Timing</string>
             </attr>
         </edge>
         <edge from="n4" to="n4">
@@ -212,9 +212,14 @@
                 <string>let:count = int:t1.count</string>
             </attr>
         </edge>
-        <edge from="n4" to="n8">
+        <edge from="n4" to="n4">
             <attr name="label">
-                <string>instant</string>
+                <string>let:duration = int:t1.duration</string>
+            </attr>
+        </edge>
+        <edge from="n4" to="n4">
+            <attr name="label">
+                <string>let:frequency = int:t1.frequency</string>
             </attr>
         </edge>
         <edge from="n4" to="n4">
@@ -227,14 +232,9 @@
                 <string>let:unit = string:t1.unit</string>
             </attr>
         </edge>
-        <edge from="n4" to="n4">
+        <edge from="n4" to="n8">
             <attr name="label">
-                <string>type:Timing</string>
-            </attr>
-        </edge>
-        <edge from="n4" to="n4">
-            <attr name="label">
-                <string>let:frequency = int:t1.frequency</string>
+                <string>instant</string>
             </attr>
         </edge>
         <edge from="n8" to="n8">
@@ -262,14 +262,14 @@
                 <string>not:</string>
             </attr>
         </edge>
-        <edge from="n10" to="n6">
-            <attr name="label">
-                <string>not:then</string>
-            </attr>
-        </edge>
         <edge from="n10" to="n10">
             <attr name="label">
                 <string>type:Prescription</string>
+            </attr>
+        </edge>
+        <edge from="n10" to="n6">
+            <attr name="label">
+                <string>not:then</string>
             </attr>
         </edge>
         <edge from="n0" to="n0">
@@ -294,12 +294,12 @@
         </edge>
         <edge from="n1" to="n1">
             <attr name="label">
-                <string>let:amount = int:d1.amount</string>
+                <string>type:Dose</string>
             </attr>
         </edge>
         <edge from="n1" to="n1">
             <attr name="label">
-                <string>type:Dose</string>
+                <string>let:amount = int:d1.amount</string>
             </attr>
         </edge>
         <edge from="n1" to="n1">
@@ -319,12 +319,12 @@
         </edge>
         <edge from="n5" to="n5">
             <attr name="label">
-                <string>test:bool:eq(int:i1.n, int:d1.n)</string>
+                <string>type:Dose</string>
             </attr>
         </edge>
         <edge from="n5" to="n5">
             <attr name="label">
-                <string>type:Dose</string>
+                <string>test:bool:eq(int:i1.n, int:d1.n)</string>
             </attr>
         </edge>
         <edge from="n2" to="n2">

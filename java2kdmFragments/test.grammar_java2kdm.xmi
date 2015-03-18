@@ -1,0 +1,519 @@
+<?xml version="1.0" encoding="ASCII"?>
+<javaapplication:Java2File xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:javaapplication="http://www.eclipse.org/MoDisco/Java/Composition/0.1.incubation/javaApplication">
+  <file href="../PrescribingDsl_kdm.xmi#//@model.0/@inventoryElement.0/@inventoryElement.16/@inventoryElement.2/@inventoryElement.0/@inventoryElement.0"/>
+  <children xsi:type="javaapplication:JavaNodeSourceRegion" startLine="6" startPosition="35" endLine="6" endPosition="68">
+    <node href="../PrescribingDsl_java.xmi#//@compilationUnits.21/@imports.0"/>
+  </children>
+  <children xsi:type="javaapplication:JavaNodeSourceRegion" startLine="8" startPosition="70" endLine="8" endPosition="115">
+    <node href="../PrescribingDsl_java.xmi#//@compilationUnits.21/@imports.1"/>
+  </children>
+  <children xsi:type="javaapplication:JavaNodeSourceRegion" startLine="9" startPosition="116" endLine="9" endPosition="162">
+    <node href="../PrescribingDsl_java.xmi#//@compilationUnits.21/@imports.2"/>
+  </children>
+  <children xsi:type="javaapplication:JavaNodeSourceRegion" startLine="10" startPosition="163" endLine="10" endPosition="206">
+    <node href="../PrescribingDsl_java.xmi#//@compilationUnits.21/@imports.3"/>
+  </children>
+  <children xsi:type="javaapplication:JavaNodeSourceRegion" startLine="11" startPosition="207" endLine="11" endPosition="230">
+    <node href="../PrescribingDsl_java.xmi#//@compilationUnits.21/@imports.4"/>
+  </children>
+  <children xsi:type="javaapplication:JavaNodeSourceRegion" startLine="12" startPosition="231" endLine="12" endPosition="255">
+    <node href="../PrescribingDsl_java.xmi#//@compilationUnits.21/@imports.5"/>
+  </children>
+  <children xsi:type="javaapplication:JavaNodeSourceRegion" startLine="13" startPosition="256" endLine="13" endPosition="278">
+    <node href="../PrescribingDsl_java.xmi#//@compilationUnits.21/@imports.6"/>
+  </children>
+  <children xsi:type="javaapplication:JavaNodeSourceRegion" startLine="15" startPosition="280" endLine="15" endPosition="324">
+    <node href="../PrescribingDsl_java.xmi#//@compilationUnits.21/@imports.7"/>
+  </children>
+  <children xsi:type="javaapplication:JavaNodeSourceRegion" startLine="16" startPosition="325" endLine="16" endPosition="370">
+    <node href="../PrescribingDsl_java.xmi#//@compilationUnits.21/@imports.8"/>
+  </children>
+  <children xsi:type="javaapplication:JavaNodeSourceRegion" startLine="18" startPosition="372" endLine="21" endPosition="402">
+    <node href="../PrescribingDsl_java.xmi#//@ownedElements.2/@ownedPackages.0/@ownedElements.0/@comments.0"/>
+  </children>
+  <children xsi:type="javaapplication:JavaNodeSourceRegion" startLine="18" startPosition="372" endLine="73" endPosition="2186">
+    <node href="../PrescribingDsl_java.xmi#//@ownedElements.2/@ownedPackages.0/@ownedElements.0"/>
+  </children>
+  <children xsi:type="javaapplication:JavaNodeSourceRegion" startLine="19" startPosition="379" endLine="19" endPosition="395">
+    <node href="../PrescribingDsl_java.xmi#//@ownedElements.2/@ownedPackages.0/@ownedElements.0/@comments.0/@tags.0"/>
+  </children>
+  <children xsi:type="javaapplication:JavaNodeSourceRegion" startLine="19" startPosition="386" endLine="19" endPosition="395">
+    <node href="../PrescribingDsl_java.xmi#//@ownedElements.2/@ownedPackages.0/@ownedElements.0/@comments.0/@tags.0/@fragments.0"/>
+  </children>
+  <children xsi:type="javaapplication:JavaNodeSourceRegion" startLine="24" startPosition="433" endLine="30" endPosition="526">
+    <node href="../PrescribingDsl_java.xmi#//@ownedElements.2/@ownedPackages.0/@ownedElements.0/@bodyDeclarations.0"/>
+  </children>
+  <children xsi:type="javaapplication:JavaNodeSourceRegion" startLine="24" startPosition="433" endLine="26" endPosition="473">
+    <node href="../PrescribingDsl_java.xmi#//@ownedElements.2/@ownedPackages.0/@ownedElements.0/@bodyDeclarations.0/@comments.0"/>
+  </children>
+  <children xsi:type="javaapplication:JavaNodeSourceRegion" startLine="25" startPosition="441" endLine="25" endPosition="468">
+    <node href="../PrescribingDsl_java.xmi#//@ownedElements.2/@ownedPackages.0/@ownedElements.0/@bodyDeclarations.0/@comments.0/@tags.0"/>
+  </children>
+  <children xsi:type="javaapplication:JavaNodeSourceRegion" startLine="25" startPosition="449" endLine="25" endPosition="458">
+    <node href="../PrescribingDsl_java.xmi#//@ownedElements.2/@ownedPackages.0/@ownedElements.0/@bodyDeclarations.0/@comments.0/@tags.0/@fragments.0/@qualifier"/>
+  </children>
+  <children xsi:type="javaapplication:JavaNodeSourceRegion" startLine="25" startPosition="449" endLine="25" endPosition="453">
+    <node href="../PrescribingDsl_java.xmi#//@ownedElements.2/@ownedPackages.0/@ownedElements.0/@bodyDeclarations.0/@comments.0/@tags.0/@fragments.0/@qualifier/@qualifier"/>
+  </children>
+  <children xsi:type="javaapplication:JavaNodeSourceRegion" startLine="25" startPosition="449" endLine="25" endPosition="468">
+    <node href="../PrescribingDsl_java.xmi#//@ownedElements.2/@ownedPackages.0/@ownedElements.0/@bodyDeclarations.0/@comments.0/@tags.0/@fragments.0"/>
+  </children>
+  <children xsi:type="javaapplication:JavaNodeSourceRegion" startLine="25" startPosition="454" endLine="25" endPosition="458">
+    <node href="../PrescribingDsl_java.xmi#//@ownedElements.2/@ownedPackages.0/@ownedElements.0/@bodyDeclarations.0/@comments.0/@tags.0/@fragments.0/@qualifier"/>
+  </children>
+  <children xsi:type="javaapplication:JavaNodeSourceRegion" startLine="25" startPosition="459" endLine="25" endPosition="468">
+    <node href="../PrescribingDsl_java.xmi#//@ownedElements.2/@ownedPackages.0/@ownedElements.0/@bodyDeclarations.0/@comments.0/@tags.0/@fragments.0"/>
+  </children>
+  <children xsi:type="javaapplication:JavaNodeSourceRegion" startLine="27" startPosition="475" endLine="27" endPosition="482">
+    <node href="../PrescribingDsl_java.xmi#//@ownedElements.2/@ownedPackages.0/@ownedElements.0/@bodyDeclarations.0/@annotations.0"/>
+  </children>
+  <children xsi:type="javaapplication:JavaNodeSourceRegion" startLine="27" startPosition="476" endLine="27" endPosition="482">
+    <node href="../PrescribingDsl_java.xmi#//@ownedElements.2/@ownedPackages.0/@ownedElements.0/@bodyDeclarations.0/@annotations.0/@type"/>
+  </children>
+  <children xsi:type="javaapplication:JavaNodeSourceRegion" startLine="28" startPosition="491" endLine="28" endPosition="495">
+    <node href="../PrescribingDsl_java.xmi#//@ownedElements.2/@ownedPackages.0/@ownedElements.0/@bodyDeclarations.0/@returnType"/>
+  </children>
+  <children xsi:type="javaapplication:JavaNodeSourceRegion" startLine="28" startPosition="511" endLine="28" endPosition="520">
+    <node href="../PrescribingDsl_java.xmi#//@ownedElements.2/@ownedPackages.0/@ownedElements.0/@bodyDeclarations.0/@thrownExceptions.0"/>
+  </children>
+  <children xsi:type="javaapplication:JavaNodeSourceRegion" startLine="28" startPosition="521" endLine="30" endPosition="526">
+    <node href="../PrescribingDsl_java.xmi#//@ownedElements.2/@ownedPackages.0/@ownedElements.0/@bodyDeclarations.0/@body"/>
+  </children>
+  <children xsi:type="javaapplication:JavaNodeSourceRegion" startLine="32" startPosition="529" endLine="34" endPosition="569">
+    <node href="../PrescribingDsl_java.xmi#//@ownedElements.2/@ownedPackages.0/@ownedElements.0/@bodyDeclarations.1/@comments.0"/>
+  </children>
+  <children xsi:type="javaapplication:JavaNodeSourceRegion" startLine="32" startPosition="529" endLine="37" endPosition="623">
+    <node href="../PrescribingDsl_java.xmi#//@ownedElements.2/@ownedPackages.0/@ownedElements.0/@bodyDeclarations.1"/>
+  </children>
+  <children xsi:type="javaapplication:JavaNodeSourceRegion" startLine="33" startPosition="537" endLine="33" endPosition="564">
+    <node href="../PrescribingDsl_java.xmi#//@ownedElements.2/@ownedPackages.0/@ownedElements.0/@bodyDeclarations.1/@comments.0/@tags.0"/>
+  </children>
+  <children xsi:type="javaapplication:JavaNodeSourceRegion" startLine="33" startPosition="545" endLine="33" endPosition="549">
+    <node href="../PrescribingDsl_java.xmi#//@ownedElements.2/@ownedPackages.0/@ownedElements.0/@bodyDeclarations.1/@comments.0/@tags.0/@fragments.0/@qualifier/@qualifier"/>
+  </children>
+  <children xsi:type="javaapplication:JavaNodeSourceRegion" startLine="33" startPosition="545" endLine="33" endPosition="554">
+    <node href="../PrescribingDsl_java.xmi#//@ownedElements.2/@ownedPackages.0/@ownedElements.0/@bodyDeclarations.1/@comments.0/@tags.0/@fragments.0/@qualifier"/>
+  </children>
+  <children xsi:type="javaapplication:JavaNodeSourceRegion" startLine="33" startPosition="545" endLine="33" endPosition="564">
+    <node href="../PrescribingDsl_java.xmi#//@ownedElements.2/@ownedPackages.0/@ownedElements.0/@bodyDeclarations.1/@comments.0/@tags.0/@fragments.0"/>
+  </children>
+  <children xsi:type="javaapplication:JavaNodeSourceRegion" startLine="33" startPosition="550" endLine="33" endPosition="554">
+    <node href="../PrescribingDsl_java.xmi#//@ownedElements.2/@ownedPackages.0/@ownedElements.0/@bodyDeclarations.1/@comments.0/@tags.0/@fragments.0/@qualifier"/>
+  </children>
+  <children xsi:type="javaapplication:JavaNodeSourceRegion" startLine="33" startPosition="555" endLine="33" endPosition="564">
+    <node href="../PrescribingDsl_java.xmi#//@ownedElements.2/@ownedPackages.0/@ownedElements.0/@bodyDeclarations.1/@comments.0/@tags.0/@fragments.0"/>
+  </children>
+  <children xsi:type="javaapplication:JavaNodeSourceRegion" startLine="35" startPosition="571" endLine="35" endPosition="577">
+    <node href="../PrescribingDsl_java.xmi#//@ownedElements.2/@ownedPackages.0/@ownedElements.0/@bodyDeclarations.1/@annotations.0"/>
+  </children>
+  <children xsi:type="javaapplication:JavaNodeSourceRegion" startLine="35" startPosition="572" endLine="35" endPosition="577">
+    <node href="../PrescribingDsl_java.xmi#//@ownedElements.2/@ownedPackages.0/@ownedElements.0/@bodyDeclarations.1/@annotations.0/@type"/>
+  </children>
+  <children xsi:type="javaapplication:JavaNodeSourceRegion" startLine="36" startPosition="586" endLine="36" endPosition="590">
+    <node href="../PrescribingDsl_java.xmi#//@ownedElements.2/@ownedPackages.0/@ownedElements.0/@bodyDeclarations.1/@returnType"/>
+  </children>
+  <children xsi:type="javaapplication:JavaNodeSourceRegion" startLine="36" startPosition="609" endLine="36" endPosition="618">
+    <node href="../PrescribingDsl_java.xmi#//@ownedElements.2/@ownedPackages.0/@ownedElements.0/@bodyDeclarations.1/@thrownExceptions.0"/>
+  </children>
+  <children xsi:type="javaapplication:JavaNodeSourceRegion" startLine="36" startPosition="619" endLine="37" endPosition="623">
+    <node href="../PrescribingDsl_java.xmi#//@ownedElements.2/@ownedPackages.0/@ownedElements.0/@bodyDeclarations.1/@body"/>
+  </children>
+  <children xsi:type="javaapplication:JavaNodeSourceRegion" startLine="39" startPosition="626" endLine="39" endPosition="631">
+    <node href="../PrescribingDsl_java.xmi#//@ownedElements.2/@ownedPackages.0/@ownedElements.0/@bodyDeclarations.2/@annotations.0"/>
+  </children>
+  <children xsi:type="javaapplication:JavaNodeSourceRegion" startLine="39" startPosition="626" endLine="48" endPosition="1080">
+    <node href="../PrescribingDsl_java.xmi#//@ownedElements.2/@ownedPackages.0/@ownedElements.0/@bodyDeclarations.2"/>
+  </children>
+  <children xsi:type="javaapplication:JavaNodeSourceRegion" startLine="39" startPosition="627" endLine="39" endPosition="631">
+    <node href="../PrescribingDsl_java.xmi#//@ownedElements.2/@ownedPackages.0/@ownedElements.0/@bodyDeclarations.2/@annotations.0/@type"/>
+  </children>
+  <children xsi:type="javaapplication:JavaNodeSourceRegion" startLine="40" startPosition="640" endLine="40" endPosition="644">
+    <node href="../PrescribingDsl_java.xmi#//@ownedElements.2/@ownedPackages.0/@ownedElements.0/@bodyDeclarations.2/@returnType"/>
+  </children>
+  <children xsi:type="javaapplication:JavaNodeSourceRegion" startLine="40" startPosition="664" endLine="48" endPosition="1080">
+    <node href="../PrescribingDsl_java.xmi#//@ownedElements.2/@ownedPackages.0/@ownedElements.0/@bodyDeclarations.2/@body"/>
+  </children>
+  <children xsi:type="javaapplication:JavaNodeSourceRegion" startLine="41" startPosition="668" endLine="41" endPosition="685">
+    <node href="../PrescribingDsl_java.xmi#//@ownedElements.2/@ownedPackages.0/@ownedElements.0/@bodyDeclarations.2/@body/@statements.0/@type"/>
+  </children>
+  <children xsi:type="javaapplication:JavaNodeSourceRegion" startLine="41" startPosition="668" endLine="41" endPosition="773">
+    <node href="../PrescribingDsl_java.xmi#//@ownedElements.2/@ownedPackages.0/@ownedElements.0/@bodyDeclarations.2/@body/@statements.0"/>
+  </children>
+  <children xsi:type="javaapplication:JavaNodeSourceRegion" startLine="41" startPosition="668" endLine="41" endPosition="685">
+    <node href="../PrescribingDsl_java.xmi#//@ownedElements.2/@ownedPackages.0/@ownedElements.0/@bodyDeclarations.2/@body/@statements.0/@type"/>
+  </children>
+  <children xsi:type="javaapplication:JavaNodeSourceRegion" startLine="41" startPosition="686" endLine="41" endPosition="772">
+    <node href="../PrescribingDsl_java.xmi#//@ownedElements.2/@ownedPackages.0/@ownedElements.0/@bodyDeclarations.2/@body/@statements.0/@fragments.0"/>
+  </children>
+  <children xsi:type="javaapplication:JavaNodeSourceRegion" startLine="41" startPosition="694" endLine="41" endPosition="772">
+    <node href="../PrescribingDsl_java.xmi#//@ownedElements.2/@ownedPackages.0/@ownedElements.0/@bodyDeclarations.2/@body/@statements.0/@fragments.0/@initializer"/>
+  </children>
+  <children xsi:type="javaapplication:JavaNodeSourceRegion" startLine="41" startPosition="698" endLine="41" endPosition="715">
+    <node href="../PrescribingDsl_java.xmi#//@ownedElements.2/@ownedPackages.0/@ownedElements.0/@bodyDeclarations.2/@body/@statements.0/@fragments.0/@initializer/@type"/>
+  </children>
+  <children xsi:type="javaapplication:JavaNodeSourceRegion" startLine="41" startPosition="698" endLine="41" endPosition="715">
+    <node href="../PrescribingDsl_java.xmi#//@ownedElements.2/@ownedPackages.0/@ownedElements.0/@bodyDeclarations.2/@body/@statements.0/@fragments.0/@initializer/@type"/>
+  </children>
+  <children xsi:type="javaapplication:JavaNodeSourceRegion" startLine="41" startPosition="716" endLine="41" endPosition="771">
+    <node href="../PrescribingDsl_java.xmi#//@ownedElements.2/@ownedPackages.0/@ownedElements.0/@bodyDeclarations.2/@body/@statements.0/@fragments.0/@initializer/@arguments.0"/>
+  </children>
+  <children xsi:type="javaapplication:JavaNodeSourceRegion" startLine="41" startPosition="720" endLine="41" endPosition="736">
+    <node href="../PrescribingDsl_java.xmi#//@ownedElements.2/@ownedPackages.0/@ownedElements.0/@bodyDeclarations.2/@body/@statements.0/@fragments.0/@initializer/@arguments.0/@type"/>
+  </children>
+  <children xsi:type="javaapplication:JavaNodeSourceRegion" startLine="41" startPosition="720" endLine="41" endPosition="736">
+    <node href="../PrescribingDsl_java.xmi#//@ownedElements.2/@ownedPackages.0/@ownedElements.0/@bodyDeclarations.2/@body/@statements.0/@fragments.0/@initializer/@arguments.0/@type"/>
+  </children>
+  <children xsi:type="javaapplication:JavaNodeSourceRegion" startLine="41" startPosition="737" endLine="41" endPosition="770">
+    <node href="../PrescribingDsl_java.xmi#//@ownedElements.2/@ownedPackages.0/@ownedElements.0/@bodyDeclarations.2/@body/@statements.0/@fragments.0/@initializer/@arguments.0/@arguments.0"/>
+  </children>
+  <children xsi:type="javaapplication:JavaNodeSourceRegion" startLine="42" startPosition="776" endLine="42" endPosition="857">
+    <node href="../PrescribingDsl_java.xmi#//@ownedElements.2/@ownedPackages.0/@ownedElements.0/@bodyDeclarations.2/@body/@statements.1"/>
+  </children>
+  <children xsi:type="javaapplication:JavaNodeSourceRegion" startLine="42" startPosition="776" endLine="42" endPosition="794">
+    <node href="../PrescribingDsl_java.xmi#//@ownedElements.2/@ownedPackages.0/@ownedElements.0/@bodyDeclarations.2/@body/@statements.1/@type"/>
+  </children>
+  <children xsi:type="javaapplication:JavaNodeSourceRegion" startLine="42" startPosition="776" endLine="42" endPosition="794">
+    <node href="../PrescribingDsl_java.xmi#//@ownedElements.2/@ownedPackages.0/@ownedElements.0/@bodyDeclarations.2/@body/@statements.1/@type"/>
+  </children>
+  <children xsi:type="javaapplication:JavaNodeSourceRegion" startLine="42" startPosition="795" endLine="42" endPosition="856">
+    <node href="../PrescribingDsl_java.xmi#//@ownedElements.2/@ownedPackages.0/@ownedElements.0/@bodyDeclarations.2/@body/@statements.1/@fragments.0"/>
+  </children>
+  <children xsi:type="javaapplication:JavaNodeSourceRegion" startLine="42" startPosition="804" endLine="42" endPosition="856">
+    <node href="../PrescribingDsl_java.xmi#//@ownedElements.2/@ownedPackages.0/@ownedElements.0/@bodyDeclarations.2/@body/@statements.1/@fragments.0/@initializer"/>
+  </children>
+  <children xsi:type="javaapplication:JavaNodeSourceRegion" startLine="42" startPosition="808" endLine="42" endPosition="826">
+    <node href="../PrescribingDsl_java.xmi#//@ownedElements.2/@ownedPackages.0/@ownedElements.0/@bodyDeclarations.2/@body/@statements.1/@fragments.0/@initializer/@type"/>
+  </children>
+  <children xsi:type="javaapplication:JavaNodeSourceRegion" startLine="42" startPosition="808" endLine="42" endPosition="826">
+    <node href="../PrescribingDsl_java.xmi#//@ownedElements.2/@ownedPackages.0/@ownedElements.0/@bodyDeclarations.2/@body/@statements.1/@fragments.0/@initializer/@type"/>
+  </children>
+  <children xsi:type="javaapplication:JavaNodeSourceRegion" startLine="42" startPosition="827" endLine="42" endPosition="855">
+    <node href="../PrescribingDsl_java.xmi#//@ownedElements.2/@ownedPackages.0/@ownedElements.0/@bodyDeclarations.2/@body/@statements.1/@fragments.0/@initializer/@arguments.0"/>
+  </children>
+  <children xsi:type="javaapplication:JavaNodeSourceRegion" startLine="42" startPosition="831" endLine="42" endPosition="848">
+    <node href="../PrescribingDsl_java.xmi#//@ownedElements.2/@ownedPackages.0/@ownedElements.0/@bodyDeclarations.2/@body/@statements.1/@fragments.0/@initializer/@arguments.0/@type"/>
+  </children>
+  <children xsi:type="javaapplication:JavaNodeSourceRegion" startLine="42" startPosition="831" endLine="42" endPosition="848">
+    <node href="../PrescribingDsl_java.xmi#//@ownedElements.2/@ownedPackages.0/@ownedElements.0/@bodyDeclarations.2/@body/@statements.1/@fragments.0/@initializer/@arguments.0/@type"/>
+  </children>
+  <children xsi:type="javaapplication:JavaNodeSourceRegion" startLine="42" startPosition="849" endLine="42" endPosition="854">
+    <node href="../PrescribingDsl_java.xmi#//@ownedElements.2/@ownedPackages.0/@ownedElements.0/@bodyDeclarations.2/@body/@statements.1/@fragments.0/@initializer/@arguments.0/@arguments.0"/>
+  </children>
+  <children xsi:type="javaapplication:JavaNodeSourceRegion" startLine="43" startPosition="860" endLine="43" endPosition="869">
+    <node href="../PrescribingDsl_java.xmi#//@ownedElements.2/@ownedPackages.0/@ownedElements.0/@bodyDeclarations.2/@body/@statements.2/@type"/>
+  </children>
+  <children xsi:type="javaapplication:JavaNodeSourceRegion" startLine="43" startPosition="860" endLine="43" endPosition="893">
+    <node href="../PrescribingDsl_java.xmi#//@ownedElements.2/@ownedPackages.0/@ownedElements.0/@bodyDeclarations.2/@body/@statements.2"/>
+  </children>
+  <children xsi:type="javaapplication:JavaNodeSourceRegion" startLine="43" startPosition="860" endLine="43" endPosition="869">
+    <node href="../PrescribingDsl_java.xmi#//@ownedElements.2/@ownedPackages.0/@ownedElements.0/@bodyDeclarations.2/@body/@statements.2/@type"/>
+  </children>
+  <children xsi:type="javaapplication:JavaNodeSourceRegion" startLine="43" startPosition="870" endLine="43" endPosition="892">
+    <node href="../PrescribingDsl_java.xmi#//@ownedElements.2/@ownedPackages.0/@ownedElements.0/@bodyDeclarations.2/@body/@statements.2/@fragments.0"/>
+  </children>
+  <children xsi:type="javaapplication:JavaNodeSourceRegion" startLine="43" startPosition="877" endLine="43" endPosition="883">
+    <node href="../PrescribingDsl_java.xmi#//@ownedElements.2/@ownedPackages.0/@ownedElements.0/@bodyDeclarations.2/@body/@statements.2/@fragments.0/@initializer/@expression"/>
+  </children>
+  <children xsi:type="javaapplication:JavaNodeSourceRegion" startLine="43" startPosition="877" endLine="43" endPosition="892">
+    <node href="../PrescribingDsl_java.xmi#//@ownedElements.2/@ownedPackages.0/@ownedElements.0/@bodyDeclarations.2/@body/@statements.2/@fragments.0/@initializer"/>
+  </children>
+  <children xsi:type="javaapplication:JavaNodeSourceRegion" startLine="45" startPosition="899" endLine="45" endPosition="905">
+    <node href="../PrescribingDsl_java.xmi#//@ownedElements.2/@ownedPackages.0/@ownedElements.0/@bodyDeclarations.2/@body/@statements.3/@type"/>
+  </children>
+  <children xsi:type="javaapplication:JavaNodeSourceRegion" startLine="45" startPosition="899" endLine="45" endPosition="905">
+    <node href="../PrescribingDsl_java.xmi#//@ownedElements.2/@ownedPackages.0/@ownedElements.0/@bodyDeclarations.2/@body/@statements.3/@type"/>
+  </children>
+  <children xsi:type="javaapplication:JavaNodeSourceRegion" startLine="45" startPosition="899" endLine="45" endPosition="941">
+    <node href="../PrescribingDsl_java.xmi#//@ownedElements.2/@ownedPackages.0/@ownedElements.0/@bodyDeclarations.2/@body/@statements.3"/>
+  </children>
+  <children xsi:type="javaapplication:JavaNodeSourceRegion" startLine="45" startPosition="906" endLine="45" endPosition="940">
+    <node href="../PrescribingDsl_java.xmi#//@ownedElements.2/@ownedPackages.0/@ownedElements.0/@bodyDeclarations.2/@body/@statements.3/@fragments.0"/>
+  </children>
+  <children xsi:type="javaapplication:JavaNodeSourceRegion" startLine="45" startPosition="915" endLine="45" endPosition="940">
+    <node href="../PrescribingDsl_java.xmi#//@ownedElements.2/@ownedPackages.0/@ownedElements.0/@bodyDeclarations.2/@body/@statements.3/@fragments.0/@initializer"/>
+  </children>
+  <children xsi:type="javaapplication:JavaNodeSourceRegion" startLine="45" startPosition="915" endLine="45" endPosition="919">
+    <node href="../PrescribingDsl_java.xmi#//@ownedElements.2/@ownedPackages.0/@ownedElements.0/@bodyDeclarations.2/@body/@statements.3/@fragments.0/@initializer/@expression"/>
+  </children>
+  <children xsi:type="javaapplication:JavaNodeSourceRegion" startLine="45" startPosition="933" endLine="45" endPosition="939">
+    <node href="../PrescribingDsl_java.xmi#//@ownedElements.2/@ownedPackages.0/@ownedElements.0/@bodyDeclarations.2/@body/@statements.3/@fragments.0/@initializer/@arguments.0"/>
+  </children>
+  <children xsi:type="javaapplication:JavaNodeSourceRegion" startLine="47" startPosition="947" endLine="47" endPosition="1076">
+    <node href="../PrescribingDsl_java.xmi#//@ownedElements.2/@ownedPackages.0/@ownedElements.0/@bodyDeclarations.2/@body/@statements.4/@expression"/>
+  </children>
+  <children xsi:type="javaapplication:JavaNodeSourceRegion" startLine="47" startPosition="947" endLine="47" endPosition="1077">
+    <node href="../PrescribingDsl_java.xmi#//@ownedElements.2/@ownedPackages.0/@ownedElements.0/@bodyDeclarations.2/@body/@statements.4"/>
+  </children>
+  <children xsi:type="javaapplication:JavaNodeSourceRegion" startLine="47" startPosition="960" endLine="47" endPosition="966">
+    <node href="../PrescribingDsl_java.xmi#//@ownedElements.2/@ownedPackages.0/@ownedElements.0/@bodyDeclarations.2/@body/@statements.4/@expression/@arguments.0"/>
+  </children>
+  <children xsi:type="javaapplication:JavaNodeSourceRegion" startLine="47" startPosition="968" endLine="47" endPosition="1075">
+    <node href="../PrescribingDsl_java.xmi#//@ownedElements.2/@ownedPackages.0/@ownedElements.0/@bodyDeclarations.2/@body/@statements.4/@expression/@arguments.1"/>
+  </children>
+  <children xsi:type="javaapplication:JavaNodeSourceRegion" startLine="50" startPosition="1084" endLine="60" endPosition="1679">
+    <node href="../PrescribingDsl_java.xmi#//@ownedElements.2/@ownedPackages.0/@ownedElements.0/@bodyDeclarations.3"/>
+  </children>
+  <children xsi:type="javaapplication:JavaNodeSourceRegion" startLine="50" startPosition="1084" endLine="50" endPosition="1089">
+    <node href="../PrescribingDsl_java.xmi#//@ownedElements.2/@ownedPackages.0/@ownedElements.0/@bodyDeclarations.3/@annotations.0"/>
+  </children>
+  <children xsi:type="javaapplication:JavaNodeSourceRegion" startLine="50" startPosition="1085" endLine="50" endPosition="1089">
+    <node href="../PrescribingDsl_java.xmi#//@ownedElements.2/@ownedPackages.0/@ownedElements.0/@bodyDeclarations.3/@annotations.0/@type"/>
+  </children>
+  <children xsi:type="javaapplication:JavaNodeSourceRegion" startLine="51" startPosition="1098" endLine="51" endPosition="1102">
+    <node href="../PrescribingDsl_java.xmi#//@ownedElements.2/@ownedPackages.0/@ownedElements.0/@bodyDeclarations.3/@returnType"/>
+  </children>
+  <children xsi:type="javaapplication:JavaNodeSourceRegion" startLine="51" startPosition="1121" endLine="60" endPosition="1679">
+    <node href="../PrescribingDsl_java.xmi#//@ownedElements.2/@ownedPackages.0/@ownedElements.0/@bodyDeclarations.3/@body"/>
+  </children>
+  <children xsi:type="javaapplication:JavaNodeSourceRegion" startLine="52" startPosition="1125" endLine="52" endPosition="1267">
+    <node href="../PrescribingDsl_java.xmi#//@ownedElements.2/@ownedPackages.0/@ownedElements.0/@bodyDeclarations.3/@body/@statements.0"/>
+  </children>
+  <children xsi:type="javaapplication:JavaNodeSourceRegion" startLine="52" startPosition="1125" endLine="52" endPosition="1142">
+    <node href="../PrescribingDsl_java.xmi#//@ownedElements.2/@ownedPackages.0/@ownedElements.0/@bodyDeclarations.3/@body/@statements.0/@type"/>
+  </children>
+  <children xsi:type="javaapplication:JavaNodeSourceRegion" startLine="52" startPosition="1125" endLine="52" endPosition="1142">
+    <node href="../PrescribingDsl_java.xmi#//@ownedElements.2/@ownedPackages.0/@ownedElements.0/@bodyDeclarations.3/@body/@statements.0/@type"/>
+  </children>
+  <children xsi:type="javaapplication:JavaNodeSourceRegion" startLine="52" startPosition="1143" endLine="52" endPosition="1266">
+    <node href="../PrescribingDsl_java.xmi#//@ownedElements.2/@ownedPackages.0/@ownedElements.0/@bodyDeclarations.3/@body/@statements.0/@fragments.0"/>
+  </children>
+  <children xsi:type="javaapplication:JavaNodeSourceRegion" startLine="52" startPosition="1151" endLine="52" endPosition="1266">
+    <node href="../PrescribingDsl_java.xmi#//@ownedElements.2/@ownedPackages.0/@ownedElements.0/@bodyDeclarations.3/@body/@statements.0/@fragments.0/@initializer"/>
+  </children>
+  <children xsi:type="javaapplication:JavaNodeSourceRegion" startLine="52" startPosition="1155" endLine="52" endPosition="1172">
+    <node href="../PrescribingDsl_java.xmi#//@ownedElements.2/@ownedPackages.0/@ownedElements.0/@bodyDeclarations.3/@body/@statements.0/@fragments.0/@initializer/@type"/>
+  </children>
+  <children xsi:type="javaapplication:JavaNodeSourceRegion" startLine="52" startPosition="1155" endLine="52" endPosition="1172">
+    <node href="../PrescribingDsl_java.xmi#//@ownedElements.2/@ownedPackages.0/@ownedElements.0/@bodyDeclarations.3/@body/@statements.0/@fragments.0/@initializer/@type"/>
+  </children>
+  <children xsi:type="javaapplication:JavaNodeSourceRegion" startLine="52" startPosition="1173" endLine="52" endPosition="1265">
+    <node href="../PrescribingDsl_java.xmi#//@ownedElements.2/@ownedPackages.0/@ownedElements.0/@bodyDeclarations.3/@body/@statements.0/@fragments.0/@initializer/@arguments.0"/>
+  </children>
+  <children xsi:type="javaapplication:JavaNodeSourceRegion" startLine="52" startPosition="1177" endLine="52" endPosition="1193">
+    <node href="../PrescribingDsl_java.xmi#//@ownedElements.2/@ownedPackages.0/@ownedElements.0/@bodyDeclarations.3/@body/@statements.0/@fragments.0/@initializer/@arguments.0/@type"/>
+  </children>
+  <children xsi:type="javaapplication:JavaNodeSourceRegion" startLine="52" startPosition="1177" endLine="52" endPosition="1193">
+    <node href="../PrescribingDsl_java.xmi#//@ownedElements.2/@ownedPackages.0/@ownedElements.0/@bodyDeclarations.3/@body/@statements.0/@fragments.0/@initializer/@arguments.0/@type"/>
+  </children>
+  <children xsi:type="javaapplication:JavaNodeSourceRegion" startLine="52" startPosition="1194" endLine="52" endPosition="1264">
+    <node href="../PrescribingDsl_java.xmi#//@ownedElements.2/@ownedPackages.0/@ownedElements.0/@bodyDeclarations.3/@body/@statements.0/@fragments.0/@initializer/@arguments.0/@arguments.0"/>
+  </children>
+  <children xsi:type="javaapplication:JavaNodeSourceRegion" startLine="53" startPosition="1270" endLine="53" endPosition="1351">
+    <node href="../PrescribingDsl_java.xmi#//@ownedElements.2/@ownedPackages.0/@ownedElements.0/@bodyDeclarations.3/@body/@statements.1"/>
+  </children>
+  <children xsi:type="javaapplication:JavaNodeSourceRegion" startLine="53" startPosition="1270" endLine="53" endPosition="1288">
+    <node href="../PrescribingDsl_java.xmi#//@ownedElements.2/@ownedPackages.0/@ownedElements.0/@bodyDeclarations.3/@body/@statements.1/@type"/>
+  </children>
+  <children xsi:type="javaapplication:JavaNodeSourceRegion" startLine="53" startPosition="1270" endLine="53" endPosition="1288">
+    <node href="../PrescribingDsl_java.xmi#//@ownedElements.2/@ownedPackages.0/@ownedElements.0/@bodyDeclarations.3/@body/@statements.1/@type"/>
+  </children>
+  <children xsi:type="javaapplication:JavaNodeSourceRegion" startLine="53" startPosition="1289" endLine="53" endPosition="1350">
+    <node href="../PrescribingDsl_java.xmi#//@ownedElements.2/@ownedPackages.0/@ownedElements.0/@bodyDeclarations.3/@body/@statements.1/@fragments.0"/>
+  </children>
+  <children xsi:type="javaapplication:JavaNodeSourceRegion" startLine="53" startPosition="1298" endLine="53" endPosition="1350">
+    <node href="../PrescribingDsl_java.xmi#//@ownedElements.2/@ownedPackages.0/@ownedElements.0/@bodyDeclarations.3/@body/@statements.1/@fragments.0/@initializer"/>
+  </children>
+  <children xsi:type="javaapplication:JavaNodeSourceRegion" startLine="53" startPosition="1302" endLine="53" endPosition="1320">
+    <node href="../PrescribingDsl_java.xmi#//@ownedElements.2/@ownedPackages.0/@ownedElements.0/@bodyDeclarations.3/@body/@statements.1/@fragments.0/@initializer/@type"/>
+  </children>
+  <children xsi:type="javaapplication:JavaNodeSourceRegion" startLine="53" startPosition="1302" endLine="53" endPosition="1320">
+    <node href="../PrescribingDsl_java.xmi#//@ownedElements.2/@ownedPackages.0/@ownedElements.0/@bodyDeclarations.3/@body/@statements.1/@fragments.0/@initializer/@type"/>
+  </children>
+  <children xsi:type="javaapplication:JavaNodeSourceRegion" startLine="53" startPosition="1321" endLine="53" endPosition="1349">
+    <node href="../PrescribingDsl_java.xmi#//@ownedElements.2/@ownedPackages.0/@ownedElements.0/@bodyDeclarations.3/@body/@statements.1/@fragments.0/@initializer/@arguments.0"/>
+  </children>
+  <children xsi:type="javaapplication:JavaNodeSourceRegion" startLine="53" startPosition="1325" endLine="53" endPosition="1342">
+    <node href="../PrescribingDsl_java.xmi#//@ownedElements.2/@ownedPackages.0/@ownedElements.0/@bodyDeclarations.3/@body/@statements.1/@fragments.0/@initializer/@arguments.0/@type"/>
+  </children>
+  <children xsi:type="javaapplication:JavaNodeSourceRegion" startLine="53" startPosition="1325" endLine="53" endPosition="1342">
+    <node href="../PrescribingDsl_java.xmi#//@ownedElements.2/@ownedPackages.0/@ownedElements.0/@bodyDeclarations.3/@body/@statements.1/@fragments.0/@initializer/@arguments.0/@type"/>
+  </children>
+  <children xsi:type="javaapplication:JavaNodeSourceRegion" startLine="53" startPosition="1343" endLine="53" endPosition="1348">
+    <node href="../PrescribingDsl_java.xmi#//@ownedElements.2/@ownedPackages.0/@ownedElements.0/@bodyDeclarations.3/@body/@statements.1/@fragments.0/@initializer/@arguments.0/@arguments.0"/>
+  </children>
+  <children xsi:type="javaapplication:JavaNodeSourceRegion" startLine="54" startPosition="1354" endLine="54" endPosition="1387">
+    <node href="../PrescribingDsl_java.xmi#//@ownedElements.2/@ownedPackages.0/@ownedElements.0/@bodyDeclarations.3/@body/@statements.2"/>
+  </children>
+  <children xsi:type="javaapplication:JavaNodeSourceRegion" startLine="54" startPosition="1354" endLine="54" endPosition="1363">
+    <node href="../PrescribingDsl_java.xmi#//@ownedElements.2/@ownedPackages.0/@ownedElements.0/@bodyDeclarations.3/@body/@statements.2/@type"/>
+  </children>
+  <children xsi:type="javaapplication:JavaNodeSourceRegion" startLine="54" startPosition="1354" endLine="54" endPosition="1363">
+    <node href="../PrescribingDsl_java.xmi#//@ownedElements.2/@ownedPackages.0/@ownedElements.0/@bodyDeclarations.3/@body/@statements.2/@type"/>
+  </children>
+  <children xsi:type="javaapplication:JavaNodeSourceRegion" startLine="54" startPosition="1364" endLine="54" endPosition="1386">
+    <node href="../PrescribingDsl_java.xmi#//@ownedElements.2/@ownedPackages.0/@ownedElements.0/@bodyDeclarations.3/@body/@statements.2/@fragments.0"/>
+  </children>
+  <children xsi:type="javaapplication:JavaNodeSourceRegion" startLine="54" startPosition="1371" endLine="54" endPosition="1377">
+    <node href="../PrescribingDsl_java.xmi#//@ownedElements.2/@ownedPackages.0/@ownedElements.0/@bodyDeclarations.3/@body/@statements.2/@fragments.0/@initializer/@expression"/>
+  </children>
+  <children xsi:type="javaapplication:JavaNodeSourceRegion" startLine="54" startPosition="1371" endLine="54" endPosition="1386">
+    <node href="../PrescribingDsl_java.xmi#//@ownedElements.2/@ownedPackages.0/@ownedElements.0/@bodyDeclarations.3/@body/@statements.2/@fragments.0/@initializer"/>
+  </children>
+  <children xsi:type="javaapplication:JavaNodeSourceRegion" startLine="56" startPosition="1393" endLine="56" endPosition="1399">
+    <node href="../PrescribingDsl_java.xmi#//@ownedElements.2/@ownedPackages.0/@ownedElements.0/@bodyDeclarations.3/@body/@statements.3/@type"/>
+  </children>
+  <children xsi:type="javaapplication:JavaNodeSourceRegion" startLine="56" startPosition="1393" endLine="56" endPosition="1399">
+    <node href="../PrescribingDsl_java.xmi#//@ownedElements.2/@ownedPackages.0/@ownedElements.0/@bodyDeclarations.3/@body/@statements.3/@type"/>
+  </children>
+  <children xsi:type="javaapplication:JavaNodeSourceRegion" startLine="56" startPosition="1393" endLine="56" endPosition="1435">
+    <node href="../PrescribingDsl_java.xmi#//@ownedElements.2/@ownedPackages.0/@ownedElements.0/@bodyDeclarations.3/@body/@statements.3"/>
+  </children>
+  <children xsi:type="javaapplication:JavaNodeSourceRegion" startLine="56" startPosition="1400" endLine="56" endPosition="1434">
+    <node href="../PrescribingDsl_java.xmi#//@ownedElements.2/@ownedPackages.0/@ownedElements.0/@bodyDeclarations.3/@body/@statements.3/@fragments.0"/>
+  </children>
+  <children xsi:type="javaapplication:JavaNodeSourceRegion" startLine="56" startPosition="1409" endLine="56" endPosition="1413">
+    <node href="../PrescribingDsl_java.xmi#//@ownedElements.2/@ownedPackages.0/@ownedElements.0/@bodyDeclarations.3/@body/@statements.3/@fragments.0/@initializer/@expression"/>
+  </children>
+  <children xsi:type="javaapplication:JavaNodeSourceRegion" startLine="56" startPosition="1409" endLine="56" endPosition="1434">
+    <node href="../PrescribingDsl_java.xmi#//@ownedElements.2/@ownedPackages.0/@ownedElements.0/@bodyDeclarations.3/@body/@statements.3/@fragments.0/@initializer"/>
+  </children>
+  <children xsi:type="javaapplication:JavaNodeSourceRegion" startLine="56" startPosition="1427" endLine="56" endPosition="1433">
+    <node href="../PrescribingDsl_java.xmi#//@ownedElements.2/@ownedPackages.0/@ownedElements.0/@bodyDeclarations.3/@body/@statements.3/@fragments.0/@initializer/@arguments.0"/>
+  </children>
+  <children xsi:type="javaapplication:JavaNodeSourceRegion" startLine="58" startPosition="1441" endLine="59" endPosition="1676">
+    <node href="../PrescribingDsl_java.xmi#//@ownedElements.2/@ownedPackages.0/@ownedElements.0/@bodyDeclarations.3/@body/@statements.4"/>
+  </children>
+  <children xsi:type="javaapplication:JavaNodeSourceRegion" startLine="58" startPosition="1441" endLine="59" endPosition="1675">
+    <node href="../PrescribingDsl_java.xmi#//@ownedElements.2/@ownedPackages.0/@ownedElements.0/@bodyDeclarations.3/@body/@statements.4/@expression"/>
+  </children>
+  <children xsi:type="javaapplication:JavaNodeSourceRegion" startLine="58" startPosition="1454" endLine="58" endPosition="1460">
+    <node href="../PrescribingDsl_java.xmi#//@ownedElements.2/@ownedPackages.0/@ownedElements.0/@bodyDeclarations.3/@body/@statements.4/@expression/@arguments.0"/>
+  </children>
+  <children xsi:type="javaapplication:JavaNodeSourceRegion" startLine="59" startPosition="1467" endLine="59" endPosition="1674">
+    <node href="../PrescribingDsl_java.xmi#//@ownedElements.2/@ownedPackages.0/@ownedElements.0/@bodyDeclarations.3/@body/@statements.4/@expression/@arguments.1"/>
+  </children>
+  <children xsi:type="javaapplication:JavaNodeSourceRegion" startLine="62" startPosition="1683" endLine="72" endPosition="2184">
+    <node href="../PrescribingDsl_java.xmi#//@ownedElements.2/@ownedPackages.0/@ownedElements.0/@bodyDeclarations.4"/>
+  </children>
+  <children xsi:type="javaapplication:JavaNodeSourceRegion" startLine="62" startPosition="1683" endLine="62" endPosition="1688">
+    <node href="../PrescribingDsl_java.xmi#//@ownedElements.2/@ownedPackages.0/@ownedElements.0/@bodyDeclarations.4/@annotations.0"/>
+  </children>
+  <children xsi:type="javaapplication:JavaNodeSourceRegion" startLine="62" startPosition="1684" endLine="62" endPosition="1688">
+    <node href="../PrescribingDsl_java.xmi#//@ownedElements.2/@ownedPackages.0/@ownedElements.0/@bodyDeclarations.4/@annotations.0/@type"/>
+  </children>
+  <children xsi:type="javaapplication:JavaNodeSourceRegion" startLine="63" startPosition="1697" endLine="63" endPosition="1701">
+    <node href="../PrescribingDsl_java.xmi#//@ownedElements.2/@ownedPackages.0/@ownedElements.0/@bodyDeclarations.4/@returnType"/>
+  </children>
+  <children xsi:type="javaapplication:JavaNodeSourceRegion" startLine="63" startPosition="1720" endLine="72" endPosition="2184">
+    <node href="../PrescribingDsl_java.xmi#//@ownedElements.2/@ownedPackages.0/@ownedElements.0/@bodyDeclarations.4/@body"/>
+  </children>
+  <children xsi:type="javaapplication:JavaNodeSourceRegion" startLine="64" startPosition="1724" endLine="64" endPosition="1845">
+    <node href="../PrescribingDsl_java.xmi#//@ownedElements.2/@ownedPackages.0/@ownedElements.0/@bodyDeclarations.4/@body/@statements.0"/>
+  </children>
+  <children xsi:type="javaapplication:JavaNodeSourceRegion" startLine="64" startPosition="1724" endLine="64" endPosition="1741">
+    <node href="../PrescribingDsl_java.xmi#//@ownedElements.2/@ownedPackages.0/@ownedElements.0/@bodyDeclarations.4/@body/@statements.0/@type"/>
+  </children>
+  <children xsi:type="javaapplication:JavaNodeSourceRegion" startLine="64" startPosition="1724" endLine="64" endPosition="1741">
+    <node href="../PrescribingDsl_java.xmi#//@ownedElements.2/@ownedPackages.0/@ownedElements.0/@bodyDeclarations.4/@body/@statements.0/@type"/>
+  </children>
+  <children xsi:type="javaapplication:JavaNodeSourceRegion" startLine="64" startPosition="1742" endLine="64" endPosition="1844">
+    <node href="../PrescribingDsl_java.xmi#//@ownedElements.2/@ownedPackages.0/@ownedElements.0/@bodyDeclarations.4/@body/@statements.0/@fragments.0"/>
+  </children>
+  <children xsi:type="javaapplication:JavaNodeSourceRegion" startLine="64" startPosition="1750" endLine="64" endPosition="1844">
+    <node href="../PrescribingDsl_java.xmi#//@ownedElements.2/@ownedPackages.0/@ownedElements.0/@bodyDeclarations.4/@body/@statements.0/@fragments.0/@initializer"/>
+  </children>
+  <children xsi:type="javaapplication:JavaNodeSourceRegion" startLine="64" startPosition="1754" endLine="64" endPosition="1771">
+    <node href="../PrescribingDsl_java.xmi#//@ownedElements.2/@ownedPackages.0/@ownedElements.0/@bodyDeclarations.4/@body/@statements.0/@fragments.0/@initializer/@type"/>
+  </children>
+  <children xsi:type="javaapplication:JavaNodeSourceRegion" startLine="64" startPosition="1754" endLine="64" endPosition="1771">
+    <node href="../PrescribingDsl_java.xmi#//@ownedElements.2/@ownedPackages.0/@ownedElements.0/@bodyDeclarations.4/@body/@statements.0/@fragments.0/@initializer/@type"/>
+  </children>
+  <children xsi:type="javaapplication:JavaNodeSourceRegion" startLine="64" startPosition="1772" endLine="64" endPosition="1843">
+    <node href="../PrescribingDsl_java.xmi#//@ownedElements.2/@ownedPackages.0/@ownedElements.0/@bodyDeclarations.4/@body/@statements.0/@fragments.0/@initializer/@arguments.0"/>
+  </children>
+  <children xsi:type="javaapplication:JavaNodeSourceRegion" startLine="64" startPosition="1776" endLine="64" endPosition="1792">
+    <node href="../PrescribingDsl_java.xmi#//@ownedElements.2/@ownedPackages.0/@ownedElements.0/@bodyDeclarations.4/@body/@statements.0/@fragments.0/@initializer/@arguments.0/@type"/>
+  </children>
+  <children xsi:type="javaapplication:JavaNodeSourceRegion" startLine="64" startPosition="1776" endLine="64" endPosition="1792">
+    <node href="../PrescribingDsl_java.xmi#//@ownedElements.2/@ownedPackages.0/@ownedElements.0/@bodyDeclarations.4/@body/@statements.0/@fragments.0/@initializer/@arguments.0/@type"/>
+  </children>
+  <children xsi:type="javaapplication:JavaNodeSourceRegion" startLine="64" startPosition="1793" endLine="64" endPosition="1842">
+    <node href="../PrescribingDsl_java.xmi#//@ownedElements.2/@ownedPackages.0/@ownedElements.0/@bodyDeclarations.4/@body/@statements.0/@fragments.0/@initializer/@arguments.0/@arguments.0"/>
+  </children>
+  <children xsi:type="javaapplication:JavaNodeSourceRegion" startLine="65" startPosition="1848" endLine="65" endPosition="1929">
+    <node href="../PrescribingDsl_java.xmi#//@ownedElements.2/@ownedPackages.0/@ownedElements.0/@bodyDeclarations.4/@body/@statements.1"/>
+  </children>
+  <children xsi:type="javaapplication:JavaNodeSourceRegion" startLine="65" startPosition="1848" endLine="65" endPosition="1866">
+    <node href="../PrescribingDsl_java.xmi#//@ownedElements.2/@ownedPackages.0/@ownedElements.0/@bodyDeclarations.4/@body/@statements.1/@type"/>
+  </children>
+  <children xsi:type="javaapplication:JavaNodeSourceRegion" startLine="65" startPosition="1848" endLine="65" endPosition="1866">
+    <node href="../PrescribingDsl_java.xmi#//@ownedElements.2/@ownedPackages.0/@ownedElements.0/@bodyDeclarations.4/@body/@statements.1/@type"/>
+  </children>
+  <children xsi:type="javaapplication:JavaNodeSourceRegion" startLine="65" startPosition="1867" endLine="65" endPosition="1928">
+    <node href="../PrescribingDsl_java.xmi#//@ownedElements.2/@ownedPackages.0/@ownedElements.0/@bodyDeclarations.4/@body/@statements.1/@fragments.0"/>
+  </children>
+  <children xsi:type="javaapplication:JavaNodeSourceRegion" startLine="65" startPosition="1876" endLine="65" endPosition="1928">
+    <node href="../PrescribingDsl_java.xmi#//@ownedElements.2/@ownedPackages.0/@ownedElements.0/@bodyDeclarations.4/@body/@statements.1/@fragments.0/@initializer"/>
+  </children>
+  <children xsi:type="javaapplication:JavaNodeSourceRegion" startLine="65" startPosition="1880" endLine="65" endPosition="1898">
+    <node href="../PrescribingDsl_java.xmi#//@ownedElements.2/@ownedPackages.0/@ownedElements.0/@bodyDeclarations.4/@body/@statements.1/@fragments.0/@initializer/@type"/>
+  </children>
+  <children xsi:type="javaapplication:JavaNodeSourceRegion" startLine="65" startPosition="1880" endLine="65" endPosition="1898">
+    <node href="../PrescribingDsl_java.xmi#//@ownedElements.2/@ownedPackages.0/@ownedElements.0/@bodyDeclarations.4/@body/@statements.1/@fragments.0/@initializer/@type"/>
+  </children>
+  <children xsi:type="javaapplication:JavaNodeSourceRegion" startLine="65" startPosition="1899" endLine="65" endPosition="1927">
+    <node href="../PrescribingDsl_java.xmi#//@ownedElements.2/@ownedPackages.0/@ownedElements.0/@bodyDeclarations.4/@body/@statements.1/@fragments.0/@initializer/@arguments.0"/>
+  </children>
+  <children xsi:type="javaapplication:JavaNodeSourceRegion" startLine="65" startPosition="1903" endLine="65" endPosition="1920">
+    <node href="../PrescribingDsl_java.xmi#//@ownedElements.2/@ownedPackages.0/@ownedElements.0/@bodyDeclarations.4/@body/@statements.1/@fragments.0/@initializer/@arguments.0/@type"/>
+  </children>
+  <children xsi:type="javaapplication:JavaNodeSourceRegion" startLine="65" startPosition="1903" endLine="65" endPosition="1920">
+    <node href="../PrescribingDsl_java.xmi#//@ownedElements.2/@ownedPackages.0/@ownedElements.0/@bodyDeclarations.4/@body/@statements.1/@fragments.0/@initializer/@arguments.0/@type"/>
+  </children>
+  <children xsi:type="javaapplication:JavaNodeSourceRegion" startLine="65" startPosition="1921" endLine="65" endPosition="1926">
+    <node href="../PrescribingDsl_java.xmi#//@ownedElements.2/@ownedPackages.0/@ownedElements.0/@bodyDeclarations.4/@body/@statements.1/@fragments.0/@initializer/@arguments.0/@arguments.0"/>
+  </children>
+  <children xsi:type="javaapplication:JavaNodeSourceRegion" startLine="66" startPosition="1932" endLine="66" endPosition="1941">
+    <node href="../PrescribingDsl_java.xmi#//@ownedElements.2/@ownedPackages.0/@ownedElements.0/@bodyDeclarations.4/@body/@statements.2/@type"/>
+  </children>
+  <children xsi:type="javaapplication:JavaNodeSourceRegion" startLine="66" startPosition="1932" endLine="66" endPosition="1965">
+    <node href="../PrescribingDsl_java.xmi#//@ownedElements.2/@ownedPackages.0/@ownedElements.0/@bodyDeclarations.4/@body/@statements.2"/>
+  </children>
+  <children xsi:type="javaapplication:JavaNodeSourceRegion" startLine="66" startPosition="1932" endLine="66" endPosition="1941">
+    <node href="../PrescribingDsl_java.xmi#//@ownedElements.2/@ownedPackages.0/@ownedElements.0/@bodyDeclarations.4/@body/@statements.2/@type"/>
+  </children>
+  <children xsi:type="javaapplication:JavaNodeSourceRegion" startLine="66" startPosition="1942" endLine="66" endPosition="1964">
+    <node href="../PrescribingDsl_java.xmi#//@ownedElements.2/@ownedPackages.0/@ownedElements.0/@bodyDeclarations.4/@body/@statements.2/@fragments.0"/>
+  </children>
+  <children xsi:type="javaapplication:JavaNodeSourceRegion" startLine="66" startPosition="1949" endLine="66" endPosition="1955">
+    <node href="../PrescribingDsl_java.xmi#//@ownedElements.2/@ownedPackages.0/@ownedElements.0/@bodyDeclarations.4/@body/@statements.2/@fragments.0/@initializer/@expression"/>
+  </children>
+  <children xsi:type="javaapplication:JavaNodeSourceRegion" startLine="66" startPosition="1949" endLine="66" endPosition="1964">
+    <node href="../PrescribingDsl_java.xmi#//@ownedElements.2/@ownedPackages.0/@ownedElements.0/@bodyDeclarations.4/@body/@statements.2/@fragments.0/@initializer"/>
+  </children>
+  <children xsi:type="javaapplication:JavaNodeSourceRegion" startLine="68" startPosition="1971" endLine="68" endPosition="1977">
+    <node href="../PrescribingDsl_java.xmi#//@ownedElements.2/@ownedPackages.0/@ownedElements.0/@bodyDeclarations.4/@body/@statements.3/@type"/>
+  </children>
+  <children xsi:type="javaapplication:JavaNodeSourceRegion" startLine="68" startPosition="1971" endLine="68" endPosition="1977">
+    <node href="../PrescribingDsl_java.xmi#//@ownedElements.2/@ownedPackages.0/@ownedElements.0/@bodyDeclarations.4/@body/@statements.3/@type"/>
+  </children>
+  <children xsi:type="javaapplication:JavaNodeSourceRegion" startLine="68" startPosition="1971" endLine="68" endPosition="2013">
+    <node href="../PrescribingDsl_java.xmi#//@ownedElements.2/@ownedPackages.0/@ownedElements.0/@bodyDeclarations.4/@body/@statements.3"/>
+  </children>
+  <children xsi:type="javaapplication:JavaNodeSourceRegion" startLine="68" startPosition="1978" endLine="68" endPosition="2012">
+    <node href="../PrescribingDsl_java.xmi#//@ownedElements.2/@ownedPackages.0/@ownedElements.0/@bodyDeclarations.4/@body/@statements.3/@fragments.0"/>
+  </children>
+  <children xsi:type="javaapplication:JavaNodeSourceRegion" startLine="68" startPosition="1987" endLine="68" endPosition="1991">
+    <node href="../PrescribingDsl_java.xmi#//@ownedElements.2/@ownedPackages.0/@ownedElements.0/@bodyDeclarations.4/@body/@statements.3/@fragments.0/@initializer/@expression"/>
+  </children>
+  <children xsi:type="javaapplication:JavaNodeSourceRegion" startLine="68" startPosition="1987" endLine="68" endPosition="2012">
+    <node href="../PrescribingDsl_java.xmi#//@ownedElements.2/@ownedPackages.0/@ownedElements.0/@bodyDeclarations.4/@body/@statements.3/@fragments.0/@initializer"/>
+  </children>
+  <children xsi:type="javaapplication:JavaNodeSourceRegion" startLine="68" startPosition="2005" endLine="68" endPosition="2011">
+    <node href="../PrescribingDsl_java.xmi#//@ownedElements.2/@ownedPackages.0/@ownedElements.0/@bodyDeclarations.4/@body/@statements.3/@fragments.0/@initializer/@arguments.0"/>
+  </children>
+  <children xsi:type="javaapplication:JavaNodeSourceRegion" startLine="70" startPosition="2019" endLine="71" endPosition="2181">
+    <node href="../PrescribingDsl_java.xmi#//@ownedElements.2/@ownedPackages.0/@ownedElements.0/@bodyDeclarations.4/@body/@statements.4"/>
+  </children>
+  <children xsi:type="javaapplication:JavaNodeSourceRegion" startLine="70" startPosition="2019" endLine="71" endPosition="2180">
+    <node href="../PrescribingDsl_java.xmi#//@ownedElements.2/@ownedPackages.0/@ownedElements.0/@bodyDeclarations.4/@body/@statements.4/@expression"/>
+  </children>
+  <children xsi:type="javaapplication:JavaNodeSourceRegion" startLine="70" startPosition="2032" endLine="70" endPosition="2038">
+    <node href="../PrescribingDsl_java.xmi#//@ownedElements.2/@ownedPackages.0/@ownedElements.0/@bodyDeclarations.4/@body/@statements.4/@expression/@arguments.0"/>
+  </children>
+  <children xsi:type="javaapplication:JavaNodeSourceRegion" startLine="71" startPosition="2045" endLine="71" endPosition="2179">
+    <node href="../PrescribingDsl_java.xmi#//@ownedElements.2/@ownedPackages.0/@ownedElements.0/@bodyDeclarations.4/@body/@statements.4/@expression/@arguments.1"/>
+  </children>
+  <unit href="../PrescribingDsl_java.xmi#//@compilationUnits.21"/>
+  <parent href="Package2Directory_java2kdm.xmi#/3"/>
+</javaapplication:Java2File>
