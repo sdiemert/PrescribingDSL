@@ -8,6 +8,22 @@ Clinical Information Systems (CIS) are becoming increasingly prelvenet in our he
 ##Dependencies
 
 * GROOVE graph transformation engine, downloadable at: [http://groove.cs.utwente.nl/downloads/](http://groove.cs.utwente.nl/downloads/)
+  * This is also in the file tree for the project under Resources/groove/
 * ANTLR4 [http://www.antlr.org/](http://www.antlr.org/)
 
+##Running the GROOVE Graph Transformation Editor
 
+The GROOVE environment comes with several tools that can be of use: 
+
+* **groove_xx.jar** contains the main executable code for the GROOVE tool but just provides a programmatic API, running this from the commandline will have no effect as it is not an executable jar.  
+* **Simulator.jar** contains the the GUI for editing and simulating graph transformation systems.
+* **Generator.jar** a commandline tool for running simulations, much faster than running through the Simulator tool, use this for large simulator runs. 
+* **Imager.jar** a GUI for exporting images of GROOVE rules and graphs, useful for making pretty pictures for papers and theses. 
+
+Run these tools by invoking them from the commadnline: 
+
+`java -jar <NAME OF JAR> <OPTIONS>`
+
+For example, to run the simulator use: 
+
+`java -jar Simulator.jar`
