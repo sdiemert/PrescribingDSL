@@ -1,0 +1,123 @@
+##Prescription Language Examples
+
+###General Structure of Input
+
+The input is generally structured as: 
+
+`<ACTION> <MEDICATION> <DOSING> <TIMING>` 
+
+These must always occur in this order. The details of how these are broken down can be gleaned from examining the ANTLR4 grammar file. 
+
+###1. Basic I
+
+`take aspirin 81 mg once daily FOR 60 days`
+
+* Action: `take`
+* Medication: `aspirin`
+* Dosing: `81 mg`
+* Timing: `once daily FOR 10 days`
+
+###2. Basic II
+
+`take aspirin 81 mg twice daily FOR 60 days`
+
+* Action: `take`
+* Medication: `aspirin`
+* Dosing: `81 mg`
+* Timing: `twice daily FOR 60 days`
+
+###3. Basic III
+
+`take aspirin 81 mg 3 times daily FOR 60 days`
+
+* Action: `take`
+* Medication: `aspirin`
+* Dosing: `81 mg`
+* Timing: `3 times daily FOR 60 days`
+
+###4. Specific Time
+
+This describes taking 81 mg of aspirin at 8AM and again at 8PM.
+
+`take aspirin 81 mg twice daily (8, 20) FOR 10 days`
+
+* Action: `take`
+* Medication: `aspirin`
+* Dosing: `81 mg`
+* Timing: `twice daily (8, 20) FOR 10 days`
+
+If a specific timing is not specified the doses are spread out even throughout a 24 hour period. 
+
+###5. Specific Dose
+
+This example shows how dosing can vary in time. Since no times are specified, the doses are spread out across the 24 hour period. 
+
+`take aspirin (81 mg, 100 mg) twice daily FOR 10 days`.
+
+
+* Action: `take`
+* Medication: `aspirin`
+* Dosing: `(81 mg, 100 mg)`
+* Timing: `twice daily FOR 10 days`
+
+###6. Specific Dose and Time
+
+This shows how specific doses and times can be combined. At 8AM take 100 mg of aspirin, at 8PM take 200 mg of aspirin. 
+
+`take aspirin (100 mg, 200 mg) twice daily (8, 20) FOR 10 days`
+
+
+* Action: `take`
+* Medication: `aspirin`
+* Dosing: `(81 mg, 100 mg)`
+* Timing: `twice daily (8, 20) FOR 10 days`
+
+###7. Sequencing Several Instructions
+
+Several instructions can be sequenced together using the `THEN` keyword. 
+
+    take aspirin 81 mg twice daily FOR 10 days 
+        THEN take aspirin 100 mg for 20 days
+    
+* Action1: `take`
+* Medication1: `aspirin`
+* Dosing1: `81 mg`
+* Timing1: `twice daily FOR 10 days`
+
+
+* Action2: `take`
+* Medication2: `aspirin`
+* Dosing2: `100 mg`
+* Timing2: `twice daily FOR 20 days`
+
+
+###8. Concurrent Instructions
+
+***NOT IMPLEMENTED*** *This is my idea for an extensions of the language, but I left it out of scope for the thesis work. Might be interesting to mention though.* 
+
+We can specify actions to happen concurrently using the `AND` keyword. 
+    
+    take aspirin 81 mg twice daily FOR 10 days
+        AND take penicillin 100 mg once daily FOR 7 days
+    
+###9. Titrating Medications
+
+Titrating is the act of changing dose of medication at a constant rate over time. E.g. increase by 1 mg per day over 1 week. We can specify increasing or decreasing doses. 
+
+    take aspirin TITRATE down FROM 100 mg TO 10 mg BY 10 mg per day 
+        once daily FOR 10 days
+        
+* Action1: `take`
+* Medication1: `aspirin`
+* Dosing1: `TITRATE down FROM 100 mg TO 10 mg BY 10 mg per day`
+* Timing1: `once daily FOR 10 days`
+
+This can be expressed more verbosely as: 
+
+    take aspirin 100 mg once daily FOR 1 day 
+        THEN take aspirin 90 mg once daily FOR 1 day
+        THEN take aspirin 80 mg once daily FOR 1 day
+        ...
+        THEN take aspirin 10 mg once daily FOR 1 day
+ 
+
