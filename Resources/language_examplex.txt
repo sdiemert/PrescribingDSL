@@ -77,7 +77,7 @@ This shows how specific doses and times can be combined. At 8AM take 100 mg of a
 Several instructions can be sequenced together using the `THEN` keyword. 
 
     take aspirin 81 mg twice daily FOR 10 days 
-        THEN take aspirin 100 mg for 20 days
+        THEN take aspirin 100 mg twice daily FOR 20 days
     
 * Action1: `take`
 * Medication1: `aspirin`
@@ -104,7 +104,7 @@ We can specify actions to happen concurrently using the `AND` keyword.
 
 Titrating is the act of changing dose of medication at a constant rate over time. E.g. increase by 1 mg per day over 1 week. We can specify increasing or decreasing doses. 
 
-    take aspirin TITRATE down FROM 100 mg TO 10 mg BY 10 mg per day 
+    take aspirin TITRATE down FROM 100 mg TO 0 mg BY 10 mg per day 
         once daily FOR 10 days
         
 * Action1: `take`

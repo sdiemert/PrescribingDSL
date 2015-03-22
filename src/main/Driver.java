@@ -5,6 +5,8 @@ import groove.explore.Generator;
 import java.io.File;
 import java.util.LinkedList;
 
+import main.graphics.RxFrame;
+
 import org.w3c.dom.*;
 
 import antlr.prescription.*;
@@ -15,6 +17,19 @@ import org.antlr.v4.runtime.tree.*;
 public class Driver {
 
 	public static void main(String[] args) throws Exception{
+		//runConsole(); 
+		runGUI(); 
+	}
+	
+	public static void runGUI() throws Exception{
+
+		RxFrame frame = new RxFrame("RxManager");
+		
+		frame.setVisible(true);
+
+	}
+	
+	public static void runConsole() throws Exception{
 		System.out.println("Program Started");
 		System.out.println("================");
 		
@@ -55,6 +70,7 @@ public class Driver {
 
         System.out.println("\n================");
 		System.out.println("COMPLETED");
+
 	}
 }
  
