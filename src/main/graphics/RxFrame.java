@@ -13,6 +13,7 @@ import javax.swing.JButton;
 import javax.swing.JFrame;
 import javax.swing.JPanel;
 import javax.swing.JScrollPane;
+import javax.swing.JTextArea;
 import javax.swing.JTextPane;
 
 public class RxFrame extends JFrame {
@@ -44,10 +45,18 @@ public class RxFrame extends JFrame {
 		this.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		this.setSize(800, 800);
 	
+		Container contentPane = this.getContentPane(); 
+		contentPane.setLayout(new GridLayout(2, 0));
 		JPanel topPane = new JPanel(new GridBagLayout()); 
 		JPanel bottomPane = new JPanel(new GridLayout(1,0)); 
 		JPanel leftTopPane = new JPanel(new GridLayout(1, 0)); 
 		JPanel rightTopPane = new JPanel(new GridLayout(3, 1)); 
+
+	    JTextArea outputField = new JTextArea(20, 20); 
+	    outputField.setText("Output here...");
+	    outputField.setEditable(false);
+	    JScrollPane outputFieldScroll = new JScrollPane(outputField); 
+	    bottomPane.add(outputFieldScroll); 
 		 
 		//Prescription authoring area (top left)
 		JTextPane editor = new JTextPane(); 
@@ -60,7 +69,7 @@ public class RxFrame extends JFrame {
 	    
 	    //controls and buttons area (top right)
 	    JButton rxButton = new JButton("Go"); 
-	    rxButton.addActionListener(new RxActionListener(doc));
+	    rxButton.addActionListener(new RxActionListener(doc, outputField));
 	    rightTopPane.add(rxButton); 
 
 	    //Layout the top left and right components together.
@@ -74,9 +83,11 @@ public class RxFrame extends JFrame {
 		c.gridx = 1; 
 		c.gridy = 0; 
 	    topPane.add(rightTopPane); 
-
 	    
-	    this.add(topPane, BorderLayout.NORTH);
-	    this.add(bottomPane, BorderLayout.SOUTH);
+	    //add text in the bottom panel.
+	    
+	    
+	    this.add(topPane);
+	    this.add(bottomPane);
 	}
 }
