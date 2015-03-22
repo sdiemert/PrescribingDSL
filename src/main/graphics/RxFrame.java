@@ -10,10 +10,10 @@ import java.awt.GridLayout;
 import java.awt.HeadlessException;
 
 import javax.swing.JButton;
-import javax.swing.JEditorPane;
 import javax.swing.JFrame;
 import javax.swing.JPanel;
 import javax.swing.JScrollPane;
+import javax.swing.JTextPane;
 
 public class RxFrame extends JFrame {
 	Container container = null; 
@@ -37,6 +37,9 @@ public class RxFrame extends JFrame {
 		this.setUp(); 
 	}
 	
+	/**
+	 * Set up the JFrame's content and listeners. 
+	 */
 	private void setUp(){
 		this.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		this.setSize(800, 800);
@@ -47,7 +50,8 @@ public class RxFrame extends JFrame {
 		JPanel rightTopPane = new JPanel(new GridLayout(3, 1)); 
 		 
 		//Prescription authoring area (top left)
-		JEditorPane editor = new JEditorPane(); 
+		JTextPane editor = new JTextPane(); 
+		editor.setDocument(new RxDocument());
 		JScrollPane editorScroll = new JScrollPane(editor); 
 		editorScroll.setPreferredSize(new Dimension(700, 300));
 	    editorScroll.setMinimumSize(new Dimension(10, 10));
@@ -58,6 +62,7 @@ public class RxFrame extends JFrame {
 	    rightTopPane.add(new JButton("Click Me")); 
 	    rightTopPane.add(new JButton("Click Me")); 
 
+	    //Layout the top left and right components together.
 	    GridBagConstraints c = new GridBagConstraints(); 
 		c.fill = GridBagConstraints.BOTH; 
 		c.gridx = 0; 
@@ -71,7 +76,5 @@ public class RxFrame extends JFrame {
 
 	    this.add(topPane, BorderLayout.NORTH);
 	    this.add(bottomPane, BorderLayout.SOUTH);
-		
 	}
-
 }
