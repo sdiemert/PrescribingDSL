@@ -14,7 +14,6 @@ import javax.swing.text.BadLocationException;
 import javax.swing.text.DefaultStyledDocument;
 import javax.swing.text.StyleConstants;
 import javax.swing.text.StyleContext;
-import java.awt.color.*;
 
 public class RxDocument extends DefaultStyledDocument {
 
@@ -38,18 +37,36 @@ public class RxDocument extends DefaultStyledDocument {
 		super(c, styles);
 	}
 	
+	/**
+	 * Called everytime a chacter is entered into the text field. 
+	 * 
+	 * Must called super.insertString(...) or else it won't work.
+	 */
 	@Override
 	public void insertString(int offset, String str, AttributeSet a) throws BadLocationException{
 		super.insertString(offset, str, a);
 		styleText();
 	}
 	
+	/**
+	 * Called every time a character(s) is/are deleted from the text field
+	 * Must call super.remove(...) or else it wont't work. 
+	 */
 	@Override
 	public void remove(int offset, int len) throws BadLocationException{
 		super.remove(offset, len);
 		styleText(); 
 	}
 
+	/**
+	 * This loops through the text and changes the attributes of words
+	 * depending on whether they match the keywords.
+	 * 
+	 * The words to match on are hardcoded in, they should be pulled
+	 * from the grammar, but are not. 
+	 * 
+	 * @throws BadLocationException
+	 */
 	private void styleText() throws BadLocationException {
 		int wordStart = -1; 
 		int i = 0; 
@@ -73,5 +90,4 @@ public class RxDocument extends DefaultStyledDocument {
 			}
 		}
 	}
-
 }
