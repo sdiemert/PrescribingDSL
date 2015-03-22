@@ -51,16 +51,17 @@ public class RxFrame extends JFrame {
 		 
 		//Prescription authoring area (top left)
 		JTextPane editor = new JTextPane(); 
-		editor.setDocument(new RxDocument());
+		RxDocument doc = new RxDocument(); 
+		editor.setDocument(doc); 
 		JScrollPane editorScroll = new JScrollPane(editor); 
 		editorScroll.setPreferredSize(new Dimension(700, 300));
 	    editorScroll.setMinimumSize(new Dimension(10, 10));
 	    leftTopPane.add(editorScroll); 
 	    
 	    //controls and buttons area (top right)
-	    rightTopPane.add(new JButton("Click Me")); 
-	    rightTopPane.add(new JButton("Click Me")); 
-	    rightTopPane.add(new JButton("Click Me")); 
+	    JButton rxButton = new JButton("Go"); 
+	    rxButton.addActionListener(new RxActionListener(doc));
+	    rightTopPane.add(rxButton); 
 
 	    //Layout the top left and right components together.
 	    GridBagConstraints c = new GridBagConstraints(); 
@@ -74,6 +75,7 @@ public class RxFrame extends JFrame {
 		c.gridy = 0; 
 	    topPane.add(rightTopPane); 
 
+	    
 	    this.add(topPane, BorderLayout.NORTH);
 	    this.add(bottomPane, BorderLayout.SOUTH);
 	}
