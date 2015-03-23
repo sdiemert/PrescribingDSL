@@ -63,8 +63,8 @@ public class RxFrame extends JFrame {
 		RxDocument doc = new RxDocument(); 
 		editor.setDocument(doc); 
 		JScrollPane editorScroll = new JScrollPane(editor); 
-		editorScroll.setPreferredSize(new Dimension(700, 300));
-	    editorScroll.setMinimumSize(new Dimension(10, 10));
+		editorScroll.setPreferredSize(new Dimension(500, 100));
+	    editorScroll.setMinimumSize(new Dimension(1, 10));
 	    leftTopPane.add(editorScroll); 
 	    
 	    //controls and buttons area (top right)

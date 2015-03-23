@@ -1,3 +1,8 @@
+/* The main file for the PrescribingDSL prototype tool. 
+ * This either starts a GUI or runs from the console depending
+ * on how it is run.  
+ */
+
 package main;
 
 import groove.explore.Generator;
