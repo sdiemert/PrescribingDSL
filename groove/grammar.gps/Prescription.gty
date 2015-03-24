@@ -6,27 +6,27 @@
         </attr>
         <node id="n0">
             <attr name="layout">
-                <string>430 167 118 64</string>
+                <string>373 109 118 64</string>
             </attr>
         </node>
         <node id="n2">
             <attr name="layout">
-                <string>451 307 88 112</string>
+                <string>399 267 88 112</string>
             </attr>
         </node>
         <node id="n3">
             <attr name="layout">
-                <string>494 548 70 48</string>
+                <string>418 452 70 48</string>
             </attr>
         </node>
         <node id="n4">
             <attr name="layout">
-                <string>67 149 74 64</string>
+                <string>138 117 74 64</string>
             </attr>
         </node>
         <node id="n5">
             <attr name="layout">
-                <string>35 333 152 64</string>
+                <string>96 287 152 64</string>
             </attr>
         </node>
         <edge from="n0" to="n0">
@@ -49,28 +49,36 @@
                 <string>string:medication</string>
             </attr>
         </edge>
-        <edge from="n0" to="n2">
+        <edge from="n0" to="n0">
             <attr name="label">
-                <string>in=[1]1</string>
+                <string>and</string>
             </attr>
             <attr name="layout">
-                <string>666 -1 482 192 466 425 11</string>
+                <string>500 0 489 199 688 263 489 199 11</string>
             </attr>
         </edge>
-        <edge from="n0" to="n2">
+        <edge from="n0" to="n0">
             <attr name="label">
-                <string>out=[1]1</string>
+                <string>in=[0]1</string>
             </attr>
             <attr name="layout">
-                <string>666 -1 482 192 466 425 11</string>
+                <string>500 0 489 199 688 263 489 199 11</string>
             </attr>
         </edge>
-        <edge from="n0" to="n2">
+        <edge from="n0" to="n0">
             <attr name="label">
-                <string>timing</string>
+                <string>out=[0]1</string>
             </attr>
             <attr name="layout">
-                <string>666 -1 482 192 466 425 11</string>
+                <string>500 0 489 199 688 263 489 199 11</string>
+            </attr>
+        </edge>
+        <edge from="n0" to="n0">
+            <attr name="label">
+                <string>then</string>
+            </attr>
+            <attr name="layout">
+                <string>500 0 489 199 688 263 489 199 11</string>
             </attr>
         </edge>
         <edge from="n0" to="n4">
@@ -88,36 +96,28 @@
                 <string>out=[1]*</string>
             </attr>
         </edge>
-        <edge from="n0" to="n0">
+        <edge from="n0" to="n2">
             <attr name="label">
-                <string>and</string>
+                <string>in=[1]1</string>
             </attr>
             <attr name="layout">
-                <string>500 1 482 192 666 66 482 192 11</string>
+                <string>666 -1 482 192 495 363 11</string>
             </attr>
         </edge>
-        <edge from="n0" to="n0">
+        <edge from="n0" to="n2">
             <attr name="label">
-                <string>in=[0]1</string>
+                <string>out=[1]1</string>
             </attr>
             <attr name="layout">
-                <string>500 0 489 199 688 263 688 263 11</string>
+                <string>666 -1 482 192 495 363 11</string>
             </attr>
         </edge>
-        <edge from="n0" to="n0">
+        <edge from="n0" to="n2">
             <attr name="label">
-                <string>out=[0]1</string>
+                <string>timing</string>
             </attr>
             <attr name="layout">
-                <string>500 0 489 199 688 263 688 263 11</string>
-            </attr>
-        </edge>
-        <edge from="n0" to="n0">
-            <attr name="label">
-                <string>then</string>
-            </attr>
-            <attr name="layout">
-                <string>500 0 489 199 688 263 688 263 11</string>
+                <string>666 -1 482 192 495 363 11</string>
             </attr>
         </edge>
         <edge from="n2" to="n2">
@@ -190,7 +190,7 @@
                 <string>temp</string>
             </attr>
             <attr name="layout">
-                <string>500 4 478 598 592 604 478 598 11</string>
+                <string>500 4 529 572 592 604 529 572 11</string>
             </attr>
         </edge>
         <edge from="n4" to="n4">
