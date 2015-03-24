@@ -23,25 +23,27 @@ public class TitratingPrescriptionDose extends PrescriptionDose implements Presc
 
 	@Override
 	public Element toGrooveXML(Document doc, Element rootNode, int rxNumber, Element parent) {
-		Element newNode = (Element)GrooveXMLGenerator.GrooveXMLGeneratorUtils.addNode(doc, rootNode, "prescriptionDose"); 
-		GrooveXMLGenerator.GrooveXMLGeneratorUtils.addValueToNode(doc,  rootNode, newNode, "type:TitratingDosing");
-		GrooveXMLGenerator.GrooveXMLGeneratorUtils.addValueToNode(doc,  rootNode, newNode, "let:change="+this.amountChange.getAmount()); 
-		GrooveXMLGenerator.GrooveXMLGeneratorUtils.addValueToNode(doc,  rootNode, newNode, "let:interval="+this.intervalLength); 
-		GrooveXMLGenerator.GrooveXMLGeneratorUtils.addValueToNode(doc,  rootNode, newNode, "let:intervalTimeUnit=\""+this.intervalTimeUnit+"\""); 
-		
 		Element doseNode = null; 
+		Element titratingNode = null; 
 		
 		int count = 0; 
 		for(Dose d : this.doses){
-			doseNode = (Element)GrooveXMLGenerator.GrooveXMLGeneratorUtils.addNode(doc, rootNode, "dose"+rxNumber+"_"+count);
-			GrooveXMLGenerator.GrooveXMLGeneratorUtils.addValueToNode(doc, rootNode, doseNode, "type:Dose");
+			doseNode = (Element)GrooveXMLGenerator.GrooveXMLGeneratorUtils.addNode(doc, rootNode, "dosing"+rxNumber+"_"+count);
+			GrooveXMLGenerator.GrooveXMLGeneratorUtils.addValueToNode(doc, rootNode, doseNode, "type:Dosing");
 			GrooveXMLGenerator.GrooveXMLGeneratorUtils.addValueToNode(doc, rootNode, doseNode, "let:amount="+d.getAmount());
 			GrooveXMLGenerator.GrooveXMLGeneratorUtils.addValueToNode(doc, rootNode, doseNode, "let:unit=\""+d.getUnit()+"\"");
 			GrooveXMLGenerator.GrooveXMLGeneratorUtils.addValueToNode(doc, rootNode, doseNode, "let:n="+count);
-			GrooveXMLGenerator.GrooveXMLGeneratorUtils.addEdgeNode(doc, rootNode, newNode.getAttribute("id"), doseNode.getAttribute("id"), "dose");
+			GrooveXMLGenerator.GrooveXMLGeneratorUtils.addEdgeNode(doc, rootNode, parent.getAttribute("id"), doseNode.getAttribute("id"), "dosing");
+
+			titratingNode = (Element)GrooveXMLGenerator.GrooveXMLGeneratorUtils.addNode(doc, rootNode, "titratingDosing"+rxNumber+"_"+count); 
+			GrooveXMLGenerator.GrooveXMLGeneratorUtils.addValueToNode(doc,  rootNode, titratingNode, "type:TitratingDosing");
+			GrooveXMLGenerator.GrooveXMLGeneratorUtils.addValueToNode(doc,  rootNode, titratingNode, "let:change="+this.amountChange.getAmount()); 
+			GrooveXMLGenerator.GrooveXMLGeneratorUtils.addValueToNode(doc,  rootNode, titratingNode, "let:interval="+this.intervalLength); 
+			GrooveXMLGenerator.GrooveXMLGeneratorUtils.addValueToNode(doc,  rootNode, titratingNode, "let:intervalTimeUnit=\""+this.intervalTimeUnit+"\""); 
+			GrooveXMLGenerator.GrooveXMLGeneratorUtils.addEdgeNode(doc, rootNode, doseNode.getAttribute("id"), titratingNode.getAttribute("id"), "titrating");
 			count++; 
 		}
-		return newNode; 
+		return null; 
 	}
 
 	@Override

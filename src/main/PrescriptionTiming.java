@@ -140,7 +140,7 @@ public class PrescriptionTiming implements PrescriptionElement{
 		GrooveXMLGenerator.GrooveXMLGeneratorUtils.addValueToNode(doc, rootNode, newNode, "type:Timing");
 		GrooveXMLGenerator.GrooveXMLGeneratorUtils.addValueToNode(doc, rootNode, newNode, "let:order=0");
 		GrooveXMLGenerator.GrooveXMLGeneratorUtils.addValueToNode(doc, rootNode, newNode, "let:count=0");
-		GrooveXMLGenerator.GrooveXMLGeneratorUtils.addValueToNode(doc, rootNode, newNode, "let:offset=0");
+		GrooveXMLGenerator.GrooveXMLGeneratorUtils.addValueToNode(doc, rootNode, newNode, "let:offset="+rxNumber*this.getFrequency()*this.getDuration());
 		
 		Element timeNode = null; 
 		int count = 0;
