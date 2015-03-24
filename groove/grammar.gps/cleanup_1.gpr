@@ -9,14 +9,9 @@
                 <string>352 90 81 16</string>
             </attr>
         </node>
-        <node id="n1">
-            <attr name="layout">
-                <string>665 132 47 16</string>
-            </attr>
-        </node>
         <node id="n2">
             <attr name="layout">
-                <string>621 269 33 16</string>
+                <string>614 269 47 16</string>
             </attr>
         </node>
         <node id="n3">
@@ -64,39 +59,19 @@
                 <string>type:Prescription</string>
             </attr>
         </edge>
-        <edge from="n0" to="n2">
-            <attr name="label">
-                <string>new:dose</string>
-            </attr>
-        </edge>
-        <edge from="n0" to="n1">
-            <attr name="label">
-                <string>dosing</string>
-            </attr>
-        </edge>
         <edge from="n0" to="n3">
             <attr name="label">
                 <string>timing</string>
             </attr>
         </edge>
-        <edge from="n1" to="n1">
+        <edge from="n0" to="n2">
             <attr name="label">
-                <string>del:</string>
-            </attr>
-        </edge>
-        <edge from="n1" to="n1">
-            <attr name="label">
-                <string>type:Dosing</string>
-            </attr>
-        </edge>
-        <edge from="n1" to="n2">
-            <attr name="label">
-                <string>dose</string>
+                <string>dosing</string>
             </attr>
         </edge>
         <edge from="n2" to="n2">
             <attr name="label">
-                <string>type:Dose</string>
+                <string>type:Dosing</string>
             </attr>
         </edge>
         <edge from="n2" to="n9">
@@ -109,9 +84,9 @@
                 <string>type:Timing</string>
             </attr>
         </edge>
-        <edge from="n3" to="n5">
+        <edge from="n3" to="n4">
             <attr name="label">
-                <string>del:frequency</string>
+                <string>instant</string>
             </attr>
         </edge>
         <edge from="n3" to="n6">
@@ -119,9 +94,9 @@
                 <string>del:duration</string>
             </attr>
         </edge>
-        <edge from="n3" to="n4">
+        <edge from="n3" to="n5">
             <attr name="label">
-                <string>instant</string>
+                <string>del:frequency</string>
             </attr>
         </edge>
         <edge from="n3" to="n10">

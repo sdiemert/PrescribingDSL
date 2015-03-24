@@ -9,62 +9,57 @@
         </attr>
         <node id="n0">
             <attr name="layout">
-                <string>95 319 109 48</string>
+                <string>403 385 109 48</string>
             </attr>
         </node>
         <node id="n1">
             <attr name="layout">
-                <string>107 463 73 16</string>
+                <string>415 529 73 16</string>
             </attr>
         </node>
         <node id="n2">
             <attr name="layout">
-                <string>88 201 111 16</string>
+                <string>410 266 75 16</string>
             </attr>
         </node>
         <node id="n3">
             <attr name="layout">
-                <string>111 620 63 16</string>
-            </attr>
-        </node>
-        <node id="n4">
-            <attr name="layout">
-                <string>122 94 53 16</string>
+                <string>419 686 63 16</string>
             </attr>
         </node>
         <node id="n5">
             <attr name="layout">
-                <string>374 296 178 80</string>
+                <string>682 362 178 80</string>
             </attr>
         </node>
         <node id="n6">
             <attr name="layout">
-                <string>440 192 47 32</string>
+                <string>702 215 134 80</string>
             </attr>
         </node>
         <node id="n7">
             <attr name="layout">
-                <string>383 426 159 112</string>
+                <string>691 492 159 112</string>
             </attr>
         </node>
         <node id="n8">
             <attr name="layout">
-                <string>401 602 114 48</string>
+                <string>709 668 114 48</string>
             </attr>
         </node>
         <node id="n9">
             <attr name="layout">
-                <string>275 617 8 16</string>
-            </attr>
-        </node>
-        <node id="n10">
-            <attr name="layout">
-                <string>406 57 126 80</string>
+                <string>583 683 8 16</string>
             </attr>
         </node>
         <node id="n11">
             <attr name="layout">
-                <string>276 102 8 16</string>
+                <string>595 260 8 16</string>
+            </attr>
+        </node>
+        <node id="n4">
+            <attr name="layout">
+                <string>401 90 106 32</string>
             </attr>
         </node>
         <edge from="n0" to="n0">
@@ -119,12 +114,17 @@
         </edge>
         <edge from="n2" to="n2">
             <attr name="label">
-                <string>type:FixedDosing</string>
+                <string>type:Dosing</string>
             </attr>
         </edge>
         <edge from="n2" to="n4">
             <attr name="label">
-                <string>dose</string>
+                <string>titrating</string>
+            </attr>
+        </edge>
+        <edge from="n2" to="n11">
+            <attr name="label">
+                <string>@</string>
             </attr>
         </edge>
         <edge from="n3" to="n3">
@@ -138,21 +138,6 @@
             </attr>
         </edge>
         <edge from="n3" to="n9">
-            <attr name="label">
-                <string>@</string>
-            </attr>
-        </edge>
-        <edge from="n4" to="n4">
-            <attr name="label">
-                <string>id:d</string>
-            </attr>
-        </edge>
-        <edge from="n4" to="n4">
-            <attr name="label">
-                <string>type:Dose</string>
-            </attr>
-        </edge>
-        <edge from="n4" to="n11">
             <attr name="label">
                 <string>@</string>
             </attr>
@@ -182,6 +167,11 @@
                 <string>let:repeats = p0.repeats-1</string>
             </attr>
         </edge>
+        <edge from="n5" to="n7">
+            <attr name="label">
+                <string>timing</string>
+            </attr>
+        </edge>
         <edge from="n5" to="n0">
             <attr name="label">
                 <string>then</string>
@@ -192,11 +182,6 @@
                 <string>dosing</string>
             </attr>
         </edge>
-        <edge from="n5" to="n7">
-            <attr name="label">
-                <string>timing</string>
-            </attr>
-        </edge>
         <edge from="n6" to="n6">
             <attr name="label">
                 <string>new:</string>
@@ -204,12 +189,27 @@
         </edge>
         <edge from="n6" to="n6">
             <attr name="label">
-                <string>type:FixedDosing</string>
+                <string>type:Dosing</string>
             </attr>
         </edge>
-        <edge from="n6" to="n10">
+        <edge from="n6" to="n6">
             <attr name="label">
-                <string>dose</string>
+                <string>let:amount = int:d0.amount</string>
+            </attr>
+        </edge>
+        <edge from="n6" to="n6">
+            <attr name="label">
+                <string>let:n = int:d0.n</string>
+            </attr>
+        </edge>
+        <edge from="n6" to="n6">
+            <attr name="label">
+                <string>let:unit = string:d0.unit</string>
+            </attr>
+        </edge>
+        <edge from="n6" to="n11">
+            <attr name="label">
+                <string>@</string>
             </attr>
         </edge>
         <edge from="n7" to="n7">
@@ -277,39 +277,24 @@
                 <string>forall:</string>
             </attr>
         </edge>
-        <edge from="n10" to="n10">
-            <attr name="label">
-                <string>new:</string>
-            </attr>
-        </edge>
-        <edge from="n10" to="n10">
-            <attr name="label">
-                <string>type:Dose</string>
-            </attr>
-        </edge>
-        <edge from="n10" to="n10">
-            <attr name="label">
-                <string>let:amount = int:d.amount</string>
-            </attr>
-        </edge>
-        <edge from="n10" to="n10">
-            <attr name="label">
-                <string>let:n = int:d.n</string>
-            </attr>
-        </edge>
-        <edge from="n10" to="n10">
-            <attr name="label">
-                <string>let:unit = string:d.unit</string>
-            </attr>
-        </edge>
-        <edge from="n10" to="n11">
-            <attr name="label">
-                <string>@</string>
-            </attr>
-        </edge>
         <edge from="n11" to="n11">
             <attr name="label">
-                <string>forall:</string>
+                <string>forallx:</string>
+            </attr>
+        </edge>
+        <edge from="n4" to="n4">
+            <attr name="label">
+                <string>not:</string>
+            </attr>
+        </edge>
+        <edge from="n4" to="n4">
+            <attr name="label">
+                <string>type:TitratingDosing</string>
+            </attr>
+        </edge>
+        <edge from="n4" to="n11">
+            <attr name="label">
+                <string>@</string>
             </attr>
         </edge>
     </graph>
