@@ -6,42 +6,42 @@
         </attr>
         <node id="n0">
             <attr name="layout">
-                <string>571 351 141 64</string>
+                <string>531 442 141 80</string>
             </attr>
         </node>
         <node id="n1">
             <attr name="layout">
-                <string>891 320 90 64</string>
+                <string>891 312 90 80</string>
             </attr>
         </node>
         <node id="n2">
             <attr name="layout">
-                <string>537 192 88 96</string>
+                <string>537 184 88 112</string>
             </attr>
         </node>
         <node id="n3">
             <attr name="layout">
-                <string>314 63 78 48</string>
+                <string>314 55 78 64</string>
             </attr>
         </node>
         <node id="n4">
             <attr name="layout">
-                <string>543 77 78 48</string>
+                <string>543 69 78 64</string>
             </attr>
         </node>
         <node id="n5">
             <attr name="layout">
-                <string>894 459 90 64</string>
+                <string>894 451 90 80</string>
             </attr>
         </node>
         <node id="n6">
             <attr name="layout">
-                <string>708 119 78 48</string>
+                <string>708 111 78 64</string>
             </attr>
         </node>
         <node id="n7">
             <attr name="layout">
-                <string>755 528 82 64</string>
+                <string>755 520 82 80</string>
             </attr>
         </node>
         <edge from="n0" to="n0">
@@ -61,10 +61,15 @@
         </edge>
         <edge from="n0" to="n0">
             <attr name="label">
-                <string>let:repeats = 0</string>
+                <string>let:repeats = 1</string>
             </attr>
         </edge>
         <edge from="n0" to="n1">
+            <attr name="label">
+                <string>dosing</string>
+            </attr>
+        </edge>
+        <edge from="n0" to="n7">
             <attr name="label">
                 <string>dosing</string>
             </attr>
@@ -75,11 +80,6 @@
             </attr>
         </edge>
         <edge from="n0" to="n5">
-            <attr name="label">
-                <string>dosing</string>
-            </attr>
-        </edge>
-        <edge from="n0" to="n7">
             <attr name="label">
                 <string>dosing</string>
             </attr>
@@ -126,6 +126,11 @@
         </edge>
         <edge from="n2" to="n2">
             <attr name="label">
+                <string>let:offset = 0</string>
+            </attr>
+        </edge>
+        <edge from="n2" to="n2">
+            <attr name="label">
                 <string>let:order = 0</string>
             </attr>
         </edge>
@@ -134,12 +139,12 @@
                 <string>let:unit = &quot;day&quot;</string>
             </attr>
         </edge>
-        <edge from="n2" to="n3">
+        <edge from="n2" to="n4">
             <attr name="label">
                 <string>instant</string>
             </attr>
         </edge>
-        <edge from="n2" to="n4">
+        <edge from="n2" to="n3">
             <attr name="label">
                 <string>instant</string>
             </attr>

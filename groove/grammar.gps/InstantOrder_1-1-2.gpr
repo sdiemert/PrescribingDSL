@@ -14,7 +14,7 @@
         </node>
         <node id="n1">
             <attr name="layout">
-                <string>478 409 71 16</string>
+                <string>598 399 71 16</string>
             </attr>
         </node>
         <node id="n2">
@@ -24,20 +24,20 @@
         </node>
         <node id="n3">
             <attr name="layout">
-                <string>351 610 138 32</string>
+                <string>385 768 138 32</string>
             </attr>
         </node>
-        <edge from="n0" to="n3">
-            <attr name="label">
-                <string>instant</string>
-            </attr>
-        </edge>
         <edge from="n0" to="n0">
             <attr name="label">
                 <string>type:Timing</string>
             </attr>
         </edge>
         <edge from="n0" to="n2">
+            <attr name="label">
+                <string>instant</string>
+            </attr>
+        </edge>
+        <edge from="n0" to="n3">
             <attr name="label">
                 <string>instant</string>
             </attr>
@@ -52,14 +52,14 @@
                 <string>id:i2</string>
             </attr>
         </edge>
-        <edge from="n1" to="n3">
-            <attr name="label">
-                <string>!=</string>
-            </attr>
-        </edge>
         <edge from="n1" to="n1">
             <attr name="label">
                 <string>type:Instant</string>
+            </attr>
+        </edge>
+        <edge from="n1" to="n3">
+            <attr name="label">
+                <string>!=</string>
             </attr>
         </edge>
         <edge from="n2" to="n2">
@@ -67,27 +67,9 @@
                 <string>id:i1</string>
             </attr>
         </edge>
-        <edge from="n2" to="n3">
-            <attr name="label">
-                <string>!=</string>
-            </attr>
-        </edge>
         <edge from="n2" to="n2">
             <attr name="label">
                 <string>type:Instant</string>
-            </attr>
-        </edge>
-        <edge from="n2" to="n1">
-            <attr name="label">
-                <string>not:temp</string>
-            </attr>
-            <attr name="layout">
-                <string>476 -3 248 424 392 511 513 417 11</string>
-            </attr>
-        </edge>
-        <edge from="n2" to="n1">
-            <attr name="label">
-                <string>new:temp</string>
             </attr>
         </edge>
         <edge from="n2" to="n2">
@@ -95,14 +77,22 @@
                 <string>test:bool:lt(int:i1.instant,int:i2.instant)</string>
             </attr>
         </edge>
+        <edge from="n2" to="n1">
+            <attr name="label">
+                <string>not:temp</string>
+            </attr>
+            <attr name="layout">
+                <string>476 -3 322 436 464 460 598 418 11</string>
+            </attr>
+        </edge>
         <edge from="n2" to="n3">
             <attr name="label">
                 <string>new:temp</string>
             </attr>
         </edge>
-        <edge from="n2" to="n3">
+        <edge from="n2" to="n1">
             <attr name="label">
-                <string>not:temp</string>
+                <string>new:temp</string>
             </attr>
         </edge>
         <edge from="n2" to="n1">
@@ -113,19 +103,19 @@
                 <string>500 0 242 425 384 381 513 417 11</string>
             </attr>
         </edge>
-        <edge from="n3" to="n3">
-            <attr name="label">
-                <string>id:i3</string>
-            </attr>
-        </edge>
-        <edge from="n3" to="n1">
+        <edge from="n2" to="n3">
             <attr name="label">
                 <string>not:temp</string>
             </attr>
         </edge>
-        <edge from="n3" to="n1">
+        <edge from="n2" to="n3">
             <attr name="label">
-                <string>new:temp</string>
+                <string>!=</string>
+            </attr>
+        </edge>
+        <edge from="n3" to="n3">
+            <attr name="label">
+                <string>id:i3</string>
             </attr>
         </edge>
         <edge from="n3" to="n3">
@@ -136,6 +126,16 @@
         <edge from="n3" to="n3">
             <attr name="label">
                 <string>test:bool:lt(int:i2.instant, int:i3.instant)</string>
+            </attr>
+        </edge>
+        <edge from="n3" to="n1">
+            <attr name="label">
+                <string>new:temp</string>
+            </attr>
+        </edge>
+        <edge from="n3" to="n1">
+            <attr name="label">
+                <string>not:temp</string>
             </attr>
         </edge>
     </graph>

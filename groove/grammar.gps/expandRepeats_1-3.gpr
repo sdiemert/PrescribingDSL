@@ -14,7 +14,7 @@
         </node>
         <node id="n1">
             <attr name="layout">
-                <string>620 638 73 16</string>
+                <string>522 630 268 32</string>
             </attr>
         </node>
         <node id="n2">
@@ -64,7 +64,7 @@
         </node>
         <node id="n11">
             <attr name="layout">
-                <string>792 352 8 16</string>
+                <string>784 349 24 21</string>
             </attr>
         </node>
         <edge from="n0" to="n0">
@@ -105,6 +105,11 @@
         <edge from="n1" to="n1">
             <attr name="label">
                 <string>type:Timing</string>
+            </attr>
+        </edge>
+        <edge from="n1" to="n1">
+            <attr name="label">
+                <string>let:offset = int:p0.repeats*(frequency*duration)</string>
             </attr>
         </edge>
         <edge from="n1" to="n3">
@@ -152,14 +157,14 @@
                 <string>type:Dosing</string>
             </attr>
         </edge>
-        <edge from="n4" to="n11">
-            <attr name="label">
-                <string>@</string>
-            </attr>
-        </edge>
         <edge from="n4" to="n2">
             <attr name="label">
                 <string>titrating</string>
+            </attr>
+        </edge>
+        <edge from="n4" to="n11">
+            <attr name="label">
+                <string>@</string>
             </attr>
         </edge>
         <edge from="n5" to="n5">
@@ -192,14 +197,14 @@
                 <string>then</string>
             </attr>
         </edge>
-        <edge from="n5" to="n7">
-            <attr name="label">
-                <string>timing</string>
-            </attr>
-        </edge>
         <edge from="n5" to="n10">
             <attr name="label">
                 <string>dosing</string>
+            </attr>
+        </edge>
+        <edge from="n5" to="n7">
+            <attr name="label">
+                <string>timing</string>
             </attr>
         </edge>
         <edge from="n6" to="n6">
@@ -334,7 +339,7 @@
         </edge>
         <edge from="n11" to="n11">
             <attr name="label">
-                <string>forall:</string>
+                <string>forallx:</string>
             </attr>
         </edge>
     </graph>

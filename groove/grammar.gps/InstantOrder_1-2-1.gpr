@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
 <gxl xmlns="http://www.gupro.de/GXL/gxl-1.0.dtd">
-    <graph role="rule" edgeids="false" edgemode="directed" id="InstantOrder_1-2">
+    <graph role="rule" edgeids="false" edgemode="directed" id="InstantOrder_1-2-1">
         <attr name="priority">
             <string>2</string>
         </attr>
@@ -9,7 +9,7 @@
         </attr>
         <node id="n3">
             <attr name="layout">
-                <string>559 971 138 32</string>
+                <string>502 807 138 32</string>
             </attr>
         </node>
         <node id="n6">
@@ -19,17 +19,17 @@
         </node>
         <node id="n11">
             <attr name="layout">
-                <string>376 638 114 32</string>
+                <string>369 478 114 32</string>
             </attr>
         </node>
         <node id="n9">
             <attr name="layout">
-                <string>63 901 138 32</string>
+                <string>140 733 138 32</string>
             </attr>
         </node>
         <node id="n5">
             <attr name="layout">
-                <string>391 835 71 16</string>
+                <string>379 679 71 16</string>
             </attr>
         </node>
         <node id="n7">
@@ -39,7 +39,7 @@
         </node>
         <node id="n4">
             <attr name="layout">
-                <string>702 530 159 96</string>
+                <string>702 538 159 80</string>
             </attr>
         </node>
         <node id="n8">
@@ -49,7 +49,7 @@
         </node>
         <node id="n10">
             <attr name="layout">
-                <string>556 473 81 32</string>
+                <string>171 352 81 32</string>
             </attr>
         </node>
         <node id="n1">
@@ -277,17 +277,17 @@
         </edge>
         <edge from="n10" to="n10">
             <attr name="label">
-                <string>type:Prescription</string>
+                <string>not:</string>
             </attr>
         </edge>
-        <edge from="n10" to="n7">
+        <edge from="n10" to="n10">
             <attr name="label">
-                <string>then</string>
+                <string>type:Prescription</string>
             </attr>
         </edge>
         <edge from="n10" to="n6">
             <attr name="label">
-                <string>del:then</string>
+                <string>not:then</string>
             </attr>
         </edge>
         <edge from="n1" to="n1">

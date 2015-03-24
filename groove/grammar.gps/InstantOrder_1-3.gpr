@@ -19,7 +19,7 @@
         </node>
         <node id="n11">
             <attr name="layout">
-                <string>450 453 88 32</string>
+                <string>437 453 114 32</string>
             </attr>
         </node>
         <node id="n9">
@@ -39,17 +39,17 @@
         </node>
         <node id="n8">
             <attr name="layout">
-                <string>789 603 122 48</string>
+                <string>789 595 122 64</string>
             </attr>
         </node>
         <node id="n10">
             <attr name="layout">
-                <string>442 279 81 16</string>
+                <string>442 271 81 32</string>
             </attr>
         </node>
         <node id="n0">
             <attr name="layout">
-                <string>775 175 134 48</string>
+                <string>775 167 134 64</string>
             </attr>
         </node>
         <node id="n5">
@@ -167,6 +167,11 @@
                 <string>let:medication = string:p1.medication</string>
             </attr>
         </edge>
+        <edge from="n7" to="n0">
+            <attr name="label">
+                <string>dosing</string>
+            </attr>
+        </edge>
         <edge from="n7" to="n6">
             <attr name="label">
                 <string>then</string>
@@ -175,11 +180,6 @@
         <edge from="n7" to="n4">
             <attr name="label">
                 <string>timing</string>
-            </attr>
-        </edge>
-        <edge from="n7" to="n0">
-            <attr name="label">
-                <string>dosing</string>
             </attr>
         </edge>
         <edge from="n4" to="n4">
@@ -195,11 +195,6 @@
         <edge from="n4" to="n4">
             <attr name="label">
                 <string>type:Timing</string>
-            </attr>
-        </edge>
-        <edge from="n4" to="n4">
-            <attr name="label">
-                <string>let:count = int:t1.count</string>
             </attr>
         </edge>
         <edge from="n4" to="n4">
@@ -252,14 +247,14 @@
                 <string>type:Prescription</string>
             </attr>
         </edge>
-        <edge from="n10" to="n7">
-            <attr name="label">
-                <string>then</string>
-            </attr>
-        </edge>
         <edge from="n10" to="n6">
             <attr name="label">
                 <string>del:then</string>
+            </attr>
+        </edge>
+        <edge from="n10" to="n7">
+            <attr name="label">
+                <string>then</string>
             </attr>
         </edge>
         <edge from="n0" to="n0">

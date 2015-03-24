@@ -14,7 +14,7 @@
         </node>
         <node id="n1">
             <attr name="layout">
-                <string>646 520 238 96</string>
+                <string>532 520 465 96</string>
             </attr>
         </node>
         <node id="n2">
@@ -134,7 +134,7 @@
         </edge>
         <edge from="n1" to="n1">
             <attr name="label">
-                <string>let:order = int:mul(int:t0.frequency,int:sub(int:t0.duration,1))</string>
+                <string>let:order = int:t0.offset+int:mul(int:t0.frequency,int:sub(int:t0.duration,1))</string>
             </attr>
         </edge>
         <edge from="n1" to="n1">
@@ -162,11 +162,6 @@
                 <string>timing</string>
             </attr>
         </edge>
-        <edge from="n2" to="n9">
-            <attr name="label">
-                <string>not:then</string>
-            </attr>
-        </edge>
         <edge from="n2" to="n3">
             <attr name="label">
                 <string>then</string>
@@ -175,6 +170,11 @@
         <edge from="n2" to="n8">
             <attr name="label">
                 <string>dosing</string>
+            </attr>
+        </edge>
+        <edge from="n2" to="n9">
+            <attr name="label">
+                <string>not:then</string>
             </attr>
         </edge>
         <edge from="n3" to="n3">
@@ -197,14 +197,14 @@
                 <string>let:medication = string:p0.medication</string>
             </attr>
         </edge>
-        <edge from="n3" to="n1">
-            <attr name="label">
-                <string>timing</string>
-            </attr>
-        </edge>
         <edge from="n3" to="n7">
             <attr name="label">
                 <string>dosing</string>
+            </attr>
+        </edge>
+        <edge from="n3" to="n1">
+            <attr name="label">
+                <string>timing</string>
             </attr>
         </edge>
         <edge from="n4" to="n4">

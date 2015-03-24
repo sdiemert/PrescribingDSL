@@ -11,7 +11,7 @@
         </node>
         <node id="n2">
             <attr name="layout">
-                <string>422 377 88 96</string>
+                <string>422 369 88 112</string>
             </attr>
         </node>
         <node id="n3">
@@ -54,7 +54,7 @@
                 <string>in=[1]1</string>
             </attr>
             <attr name="layout">
-                <string>666 -1 466 227 466 374 11</string>
+                <string>666 -1 482 192 466 425 11</string>
             </attr>
         </edge>
         <edge from="n0" to="n2">
@@ -62,7 +62,7 @@
                 <string>out=[1]1</string>
             </attr>
             <attr name="layout">
-                <string>666 -1 466 227 466 374 11</string>
+                <string>666 -1 482 192 466 425 11</string>
             </attr>
         </edge>
         <edge from="n0" to="n2">
@@ -70,7 +70,7 @@
                 <string>timing</string>
             </attr>
             <attr name="layout">
-                <string>666 -1 466 227 466 374 11</string>
+                <string>666 -1 482 192 466 425 11</string>
             </attr>
         </edge>
         <edge from="n0" to="n4">
@@ -90,10 +90,18 @@
         </edge>
         <edge from="n0" to="n0">
             <attr name="label">
+                <string>and</string>
+            </attr>
+            <attr name="layout">
+                <string>500 1 482 192 666 66 482 192 11</string>
+            </attr>
+        </edge>
+        <edge from="n0" to="n0">
+            <attr name="label">
                 <string>in=[0]1</string>
             </attr>
             <attr name="layout">
-                <string>500 1 533 157 666 66 533 157 11</string>
+                <string>500 1 482 192 666 66 482 192 11</string>
             </attr>
         </edge>
         <edge from="n0" to="n0">
@@ -101,7 +109,7 @@
                 <string>out=[0]1</string>
             </attr>
             <attr name="layout">
-                <string>500 1 533 157 666 66 533 157 11</string>
+                <string>500 1 482 192 666 66 482 192 11</string>
             </attr>
         </edge>
         <edge from="n0" to="n0">
@@ -109,15 +117,7 @@
                 <string>then</string>
             </attr>
             <attr name="layout">
-                <string>500 4 546 220 616 252 546 220 11</string>
-            </attr>
-        </edge>
-        <edge from="n0" to="n0">
-            <attr name="label">
-                <string>and</string>
-            </attr>
-            <attr name="layout">
-                <string>500 1 533 157 666 66 533 157 11</string>
+                <string>500 1 482 192 666 66 482 192 11</string>
             </attr>
         </edge>
         <edge from="n2" to="n2">
@@ -138,6 +138,11 @@
         <edge from="n2" to="n2">
             <attr name="label">
                 <string>int:frequency</string>
+            </attr>
+        </edge>
+        <edge from="n2" to="n2">
+            <attr name="label">
+                <string>int:offset</string>
             </attr>
         </edge>
         <edge from="n2" to="n2">
@@ -185,7 +190,7 @@
                 <string>temp</string>
             </attr>
             <attr name="layout">
-                <string>500 -7 518 546 592 604 518 546 11</string>
+                <string>500 4 478 598 592 604 478 598 11</string>
             </attr>
         </edge>
         <edge from="n4" to="n4">
