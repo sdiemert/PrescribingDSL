@@ -21,7 +21,9 @@ public class RxDocument extends DefaultStyledDocument {
 	
 	//highlight text for keywords.
     final AttributeSet blueAttr = cont.addAttribute(cont.getEmptySet(), StyleConstants.Foreground, Color.BLUE);
+    final AttributeSet redAttr = cont.addAttribute(cont.getEmptySet(), StyleConstants.Foreground, Color.RED);
     final AttributeSet boldBlueAttr = cont.addAttribute(blueAttr, StyleConstants.Bold, true);
+    final AttributeSet boldRedAttr = cont.addAttribute(redAttr, StyleConstants.Bold, true);
 
     //normal text
     final AttributeSet blackAttr = cont.addAttribute(cont.getEmptySet(), StyleConstants.Foreground, Color.BLACK);
@@ -80,6 +82,8 @@ public class RxDocument extends DefaultStyledDocument {
 			}else if(text.substring(i,i+1).matches("\\W")){
 				if(currentWord.matches("REPEAT|FOR|TITRATE|BY|TO|FROM")){
 					this.setCharacterAttributes(wordStart, i-wordStart, boldBlueAttr, true);
+				}else if(currentWord.matches("THEN|AND")){
+					this.setCharacterAttributes(wordStart, i-wordStart, boldRedAttr, true);
 				}else{
 					this.setCharacterAttributes(wordStart, i-wordStart, blackAttr, true);
 				}

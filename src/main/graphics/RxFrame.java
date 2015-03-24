@@ -42,6 +42,7 @@ public class RxFrame extends JFrame {
 	 * Set up the JFrame's content and listeners. 
 	 */
 	private void setUp(){
+		
 		this.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		this.setSize(800, 800);
 	

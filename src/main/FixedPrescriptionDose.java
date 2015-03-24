@@ -15,7 +15,7 @@ public class FixedPrescriptionDose extends PrescriptionDose implements Prescript
 
 	@Override
 	public Element toGrooveXML(Document doc, Element rootNode, int rxNumber) {
-		Element newNode = (Element)GrooveXMLGenerator.GrooveXMLGeneratorUtils.addNode(doc, rootNode, "prescriptionDose"); 
+		Element newNode = (Element)GrooveXMLGenerator.GrooveXMLGeneratorUtils.addNode(doc, rootNode, "prescriptionDose"+rxNumber); 
 		GrooveXMLGenerator.GrooveXMLGeneratorUtils.addValueToNode(doc,  rootNode, newNode, "type:FixedDosing");
 		
 		Element doseNode = null; 
