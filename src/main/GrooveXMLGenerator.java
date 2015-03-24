@@ -43,7 +43,7 @@ public class GrooveXMLGenerator implements XMLGenerator{
 		Element previous = null; 
 		Element current  = null; 
 		for(Prescription p : scriptList){
-			current = p.toGrooveXML(doc, graphRoot, i);
+			current = p.toGrooveXML(doc, graphRoot, i, null);
 			if(previous != null){
 				GrooveXMLGeneratorUtils.addEdgeNode(doc, graphRoot, previous.getAttribute("id"), current.getAttribute("id"), "then");
 			}

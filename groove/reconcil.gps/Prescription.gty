@@ -6,57 +6,32 @@
         </attr>
         <node id="n0">
             <attr name="layout">
-                <string>316 206 118 80</string>
-            </attr>
-        </node>
-        <node id="n1">
-            <attr name="layout">
-                <string>371 34 74 64</string>
+                <string>430 167 118 64</string>
             </attr>
         </node>
         <node id="n2">
             <attr name="layout">
-                <string>394 387 88 96</string>
+                <string>451 307 88 112</string>
             </attr>
         </node>
         <node id="n3">
             <attr name="layout">
-                <string>398 539 70 48</string>
+                <string>456 498 70 48</string>
             </attr>
         </node>
         <node id="n4">
             <attr name="layout">
-                <string>167 197 47 16</string>
+                <string>67 149 74 64</string>
             </attr>
         </node>
         <node id="n5">
             <attr name="layout">
-                <string>148 367 152 64</string>
-            </attr>
-        </node>
-        <node id="n6">
-            <attr name="layout">
-                <string>21 401 83 16</string>
-            </attr>
-        </node>
-        <node id="n7">
-            <attr name="layout">
-                <string>515 50 81 32</string>
-            </attr>
-        </node>
-        <node id="n8">
-            <attr name="layout">
-                <string>673 50 130 80</string>
+                <string>35 333 152 64</string>
             </attr>
         </node>
         <edge from="n0" to="n0">
             <attr name="label">
                 <string>type:Prescription</string>
-            </attr>
-        </edge>
-        <edge from="n0" to="n0">
-            <attr name="label">
-                <string>flag:trace</string>
             </attr>
         </edge>
         <edge from="n0" to="n0">
@@ -74,14 +49,28 @@
                 <string>string:medication</string>
             </attr>
         </edge>
-        <edge from="n0" to="n1">
+        <edge from="n0" to="n0">
             <attr name="label">
-                <string>dose</string>
+                <string>and</string>
+            </attr>
+            <attr name="layout">
+                <string>500 0 489 199 688 263 489 199 11</string>
             </attr>
         </edge>
-        <edge from="n0" to="n8">
+        <edge from="n0" to="n0">
             <attr name="label">
-                <string>medication</string>
+                <string>in=[0]1</string>
+            </attr>
+            <attr name="layout">
+                <string>500 0 489 199 688 263 489 199 11</string>
+            </attr>
+        </edge>
+        <edge from="n0" to="n0">
+            <attr name="label">
+                <string>out=[0]1</string>
+            </attr>
+            <attr name="layout">
+                <string>500 0 489 199 688 263 489 199 11</string>
             </attr>
         </edge>
         <edge from="n0" to="n0">
@@ -89,7 +78,7 @@
                 <string>then</string>
             </attr>
             <attr name="layout">
-                <string>500 0 409 213 616 252 409 213 11</string>
+                <string>500 0 489 199 688 263 489 199 11</string>
             </attr>
         </edge>
         <edge from="n0" to="n4">
@@ -97,42 +86,38 @@
                 <string>dosing</string>
             </attr>
         </edge>
+        <edge from="n0" to="n4">
+            <attr name="label">
+                <string>in=[1]1</string>
+            </attr>
+        </edge>
+        <edge from="n0" to="n4">
+            <attr name="label">
+                <string>out=[1]*</string>
+            </attr>
+        </edge>
+        <edge from="n0" to="n2">
+            <attr name="label">
+                <string>in=[1]1</string>
+            </attr>
+            <attr name="layout">
+                <string>666 -1 482 192 495 363 11</string>
+            </attr>
+        </edge>
+        <edge from="n0" to="n2">
+            <attr name="label">
+                <string>out=[1]1</string>
+            </attr>
+            <attr name="layout">
+                <string>666 -1 482 192 495 363 11</string>
+            </attr>
+        </edge>
         <edge from="n0" to="n2">
             <attr name="label">
                 <string>timing</string>
             </attr>
-        </edge>
-        <edge from="n0" to="n7">
-            <attr name="label">
-                <string>action</string>
-            </attr>
-        </edge>
-        <edge from="n0" to="n0">
-            <attr name="label">
-                <string>match</string>
-            </attr>
             <attr name="layout">
-                <string>500 0 375 246 736 427 375 246 11</string>
-            </attr>
-        </edge>
-        <edge from="n1" to="n1">
-            <attr name="label">
-                <string>type:Dose</string>
-            </attr>
-        </edge>
-        <edge from="n1" to="n1">
-            <attr name="label">
-                <string>int:amount</string>
-            </attr>
-        </edge>
-        <edge from="n1" to="n1">
-            <attr name="label">
-                <string>int:n</string>
-            </attr>
-        </edge>
-        <edge from="n1" to="n1">
-            <attr name="label">
-                <string>string:unit</string>
+                <string>666 -1 482 192 495 363 11</string>
             </attr>
         </edge>
         <edge from="n2" to="n2">
@@ -157,6 +142,11 @@
         </edge>
         <edge from="n2" to="n2">
             <attr name="label">
+                <string>int:offset</string>
+            </attr>
+        </edge>
+        <edge from="n2" to="n2">
+            <attr name="label">
                 <string>int:order</string>
             </attr>
         </edge>
@@ -167,7 +157,17 @@
         </edge>
         <edge from="n2" to="n3">
             <attr name="label">
+                <string>in=[1]1</string>
+            </attr>
+        </edge>
+        <edge from="n2" to="n3">
+            <attr name="label">
                 <string>instant</string>
+            </attr>
+        </edge>
+        <edge from="n2" to="n3">
+            <attr name="label">
+                <string>out=[0]*</string>
             </attr>
         </edge>
         <edge from="n3" to="n3">
@@ -190,7 +190,7 @@
                 <string>temp</string>
             </attr>
             <attr name="layout">
-                <string>500 0 433 563 592 604 433 563 11</string>
+                <string>500 4 529 572 592 604 529 572 11</string>
             </attr>
         </edge>
         <edge from="n4" to="n4">
@@ -198,9 +198,34 @@
                 <string>type:Dosing</string>
             </attr>
         </edge>
-        <edge from="n4" to="n1">
+        <edge from="n4" to="n4">
             <attr name="label">
-                <string>dose</string>
+                <string>int:amount</string>
+            </attr>
+        </edge>
+        <edge from="n4" to="n4">
+            <attr name="label">
+                <string>int:n</string>
+            </attr>
+        </edge>
+        <edge from="n4" to="n4">
+            <attr name="label">
+                <string>string:unit</string>
+            </attr>
+        </edge>
+        <edge from="n4" to="n5">
+            <attr name="label">
+                <string>in=[1]1</string>
+            </attr>
+        </edge>
+        <edge from="n4" to="n5">
+            <attr name="label">
+                <string>out=[0]1</string>
+            </attr>
+        </edge>
+        <edge from="n4" to="n5">
+            <attr name="label">
+                <string>titrating</string>
             </attr>
         </edge>
         <edge from="n5" to="n5">
@@ -221,56 +246,6 @@
         <edge from="n5" to="n5">
             <attr name="label">
                 <string>string:intervalTimeUnit</string>
-            </attr>
-        </edge>
-        <edge from="n5" to="n4">
-            <attr name="label">
-                <string>sub:</string>
-            </attr>
-        </edge>
-        <edge from="n6" to="n6">
-            <attr name="label">
-                <string>type:FixedDosing</string>
-            </attr>
-        </edge>
-        <edge from="n6" to="n4">
-            <attr name="label">
-                <string>sub:</string>
-            </attr>
-        </edge>
-        <edge from="n7" to="n7">
-            <attr name="label">
-                <string>type:Action</string>
-            </attr>
-        </edge>
-        <edge from="n7" to="n7">
-            <attr name="label">
-                <string>string:value</string>
-            </attr>
-        </edge>
-        <edge from="n8" to="n8">
-            <attr name="label">
-                <string>type:Medication</string>
-            </attr>
-        </edge>
-        <edge from="n8" to="n8">
-            <attr name="label">
-                <string>string:brandName</string>
-            </attr>
-        </edge>
-        <edge from="n8" to="n8">
-            <attr name="label">
-                <string>string:form</string>
-            </attr>
-        </edge>
-        <edge from="n8" to="n8">
-            <attr name="label">
-                <string>string:genericName</string>
-            </attr>
-        </edge>
-        <edge from="n8" to="n8">
-            <attr name="label">
-                <string>string:route</string>
             </attr>
         </edge>
     </graph>

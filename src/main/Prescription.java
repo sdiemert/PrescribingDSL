@@ -101,15 +101,18 @@ public class Prescription implements PrescriptionElement{
 	 * See http://www.mkyong.com/java/how-to-create-xml-file-in-java-dom/ 
 	 * for a good example of building XML DOM trees using the w3c interface.
 	 */
-	public Element toGrooveXML(Document doc, Element rootNode, int rxNumber){
+	public Element toGrooveXML(Document doc, Element rootNode, int rxNumber, Element parent){
         Element prescription = (Element)GrooveXMLGenerator.GrooveXMLGeneratorUtils.addNode(doc, rootNode, "prescription"+rxNumber);		
 		GrooveXMLGenerator.GrooveXMLGeneratorUtils.addValueToNode(doc, rootNode, prescription, "let:medication=\""+this.medication+"\"");
 		GrooveXMLGenerator.GrooveXMLGeneratorUtils.addValueToNode(doc, rootNode, prescription, "let:action=\""+this.action.toString()+"\"");
 		GrooveXMLGenerator.GrooveXMLGeneratorUtils.addValueToNode(doc, rootNode, prescription, "let:repeats="+this.repeats);
 		GrooveXMLGenerator.GrooveXMLGeneratorUtils.addValueToNode(doc, rootNode, prescription, "type:Prescription");
 		
-		GrooveXMLGenerator.GrooveXMLGeneratorUtils.addEdgeNode(doc, rootNode, prescription.getAttribute("id"), ((Element)this.timing.toGrooveXML(doc, rootNode, rxNumber)).getAttribute("id"), "timing");
-		GrooveXMLGenerator.GrooveXMLGeneratorUtils.addEdgeNode(doc, rootNode, prescription.getAttribute("id"), this.dose.toGrooveXML(doc, rootNode, rxNumber).getAttribute("id"), "dosing");
+		GrooveXMLGenerator.GrooveXMLGeneratorUtils.addEdgeNode(doc, rootNode, prescription.getAttribute("id"), ((Element)this.timing.toGrooveXML(doc, rootNode, rxNumber, prescription)).getAttribute("id"), "timing");
+		this.dose.toGrooveXML(doc, rootNode, rxNumber, prescription);  //just need to call this, it will generate the edges for us. 
+
+		//GrooveXMLGenerator.GrooveXMLGeneratorUtils.addEdgeNode(doc, rootNode, prescription.getAttribute("id"), this.dose.toGrooveXML(doc, rootNode, rxNumber, prescription).getAttribute("id"), "dosing");
+
 		return prescription;
 	}
 	

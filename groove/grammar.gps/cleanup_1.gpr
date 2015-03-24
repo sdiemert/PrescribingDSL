@@ -6,42 +6,42 @@
         </attr>
         <node id="n0">
             <attr name="layout">
-                <string>352 90 81 16</string>
+                <string>352 82 81 32</string>
             </attr>
         </node>
         <node id="n2">
             <attr name="layout">
-                <string>614 269 47 16</string>
+                <string>614 261 47 32</string>
             </attr>
         </node>
         <node id="n3">
             <attr name="layout">
-                <string>145 228 48 16</string>
+                <string>145 220 48 32</string>
             </attr>
         </node>
         <node id="n4">
             <attr name="layout">
-                <string>332 298 47 16</string>
+                <string>332 290 47 32</string>
             </attr>
         </node>
         <node id="n5">
             <attr name="layout">
-                <string>175 355 18 16</string>
+                <string>175 347 18 32</string>
             </attr>
         </node>
         <node id="n6">
             <attr name="layout">
-                <string>170 117 18 16</string>
+                <string>170 109 18 32</string>
             </attr>
         </node>
         <node id="n8">
             <attr name="layout">
-                <string>442 297 18 16</string>
+                <string>442 289 18 32</string>
             </attr>
         </node>
         <node id="n9">
             <attr name="layout">
-                <string>633 392 18 16</string>
+                <string>633 384 18 32</string>
             </attr>
         </node>
         <node id="n11">
@@ -51,7 +51,7 @@
         </node>
         <node id="n10">
             <attr name="layout">
-                <string>55 347 18 16</string>
+                <string>52 339 24 32</string>
             </attr>
         </node>
         <edge from="n0" to="n0">
@@ -59,14 +59,14 @@
                 <string>type:Prescription</string>
             </attr>
         </edge>
-        <edge from="n0" to="n3">
-            <attr name="label">
-                <string>timing</string>
-            </attr>
-        </edge>
         <edge from="n0" to="n2">
             <attr name="label">
                 <string>dosing</string>
+            </attr>
+        </edge>
+        <edge from="n0" to="n3">
+            <attr name="label">
+                <string>timing</string>
             </attr>
         </edge>
         <edge from="n2" to="n2">

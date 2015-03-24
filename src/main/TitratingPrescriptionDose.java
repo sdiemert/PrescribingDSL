@@ -22,7 +22,7 @@ public class TitratingPrescriptionDose extends PrescriptionDose implements Presc
 	public TitratingPrescriptionDose() {super();}
 
 	@Override
-	public Element toGrooveXML(Document doc, Element rootNode, int rxNumber) {
+	public Element toGrooveXML(Document doc, Element rootNode, int rxNumber, Element parent) {
 		Element newNode = (Element)GrooveXMLGenerator.GrooveXMLGeneratorUtils.addNode(doc, rootNode, "prescriptionDose"); 
 		GrooveXMLGenerator.GrooveXMLGeneratorUtils.addValueToNode(doc,  rootNode, newNode, "type:TitratingDosing");
 		GrooveXMLGenerator.GrooveXMLGeneratorUtils.addValueToNode(doc,  rootNode, newNode, "let:change="+this.amountChange.getAmount()); 

@@ -37,7 +37,7 @@ public class Dose implements PrescriptionElement {
 	}
 
 	@Override
-	public Element toGrooveXML(Document doc, Element rootNode, int rxNumber) {
+	public Element toGrooveXML(Document doc, Element rootNode, int rxNumber, Element parent) {
 		return null;
 	}
 

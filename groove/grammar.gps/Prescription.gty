@@ -6,17 +6,17 @@
         </attr>
         <node id="n0">
             <attr name="layout">
-                <string>423 160 118 64</string>
+                <string>430 167 118 64</string>
             </attr>
         </node>
         <node id="n2">
             <attr name="layout">
-                <string>422 369 88 112</string>
+                <string>451 307 88 112</string>
             </attr>
         </node>
         <node id="n3">
             <attr name="layout">
-                <string>443 574 70 48</string>
+                <string>494 548 70 48</string>
             </attr>
         </node>
         <node id="n4">
@@ -101,7 +101,7 @@
                 <string>in=[0]1</string>
             </attr>
             <attr name="layout">
-                <string>500 1 482 192 666 66 482 192 11</string>
+                <string>500 0 489 199 688 263 688 263 11</string>
             </attr>
         </edge>
         <edge from="n0" to="n0">
@@ -109,7 +109,7 @@
                 <string>out=[0]1</string>
             </attr>
             <attr name="layout">
-                <string>500 1 482 192 666 66 482 192 11</string>
+                <string>500 0 489 199 688 263 688 263 11</string>
             </attr>
         </edge>
         <edge from="n0" to="n0">
@@ -117,7 +117,7 @@
                 <string>then</string>
             </attr>
             <attr name="layout">
-                <string>500 1 482 192 666 66 482 192 11</string>
+                <string>500 0 489 199 688 263 688 263 11</string>
             </attr>
         </edge>
         <edge from="n2" to="n2">
