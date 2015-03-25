@@ -14,7 +14,7 @@
         </node>
         <node id="n6">
             <attr name="layout">
-                <string>703 630 238 96</string>
+                <string>667 630 310 96</string>
             </attr>
         </node>
         <node id="n5">
@@ -59,12 +59,12 @@
         </node>
         <node id="n10">
             <attr name="layout">
-                <string>119 98 187 32</string>
+                <string>237 188 187 32</string>
             </attr>
         </node>
         <node id="n11">
             <attr name="layout">
-                <string>582 120 251 80</string>
+                <string>614 114 251 80</string>
             </attr>
         </node>
         <node id="n12">
@@ -157,24 +157,24 @@
                 <string>type:Prescription</string>
             </attr>
         </edge>
-        <edge from="n5" to="n2">
-            <attr name="label">
-                <string>timing</string>
-            </attr>
-        </edge>
         <edge from="n5" to="n1">
             <attr name="label">
                 <string>new:then</string>
             </attr>
         </edge>
-        <edge from="n5" to="n0">
-            <attr name="label">
-                <string>dosing</string>
-            </attr>
-        </edge>
         <edge from="n5" to="n4">
             <attr name="label">
                 <string>del:then</string>
+            </attr>
+        </edge>
+        <edge from="n5" to="n2">
+            <attr name="label">
+                <string>timing</string>
+            </attr>
+        </edge>
+        <edge from="n5" to="n0">
+            <attr name="label">
+                <string>dosing</string>
             </attr>
         </edge>
         <edge from="n1" to="n1">
@@ -197,14 +197,14 @@
                 <string>let:medication = string:p0.medication</string>
             </attr>
         </edge>
-        <edge from="n1" to="n8">
-            <attr name="label">
-                <string>dosing</string>
-            </attr>
-        </edge>
         <edge from="n1" to="n4">
             <attr name="label">
                 <string>new:then</string>
+            </attr>
+        </edge>
+        <edge from="n1" to="n8">
+            <attr name="label">
+                <string>dosing</string>
             </attr>
         </edge>
         <edge from="n1" to="n6">
