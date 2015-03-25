@@ -31,7 +31,7 @@
         </node>
         <node id="n7">
             <attr name="layout">
-                <string>601 434 59 32</string>
+                <string>595 447 59 32</string>
             </attr>
         </node>
         <node id="n2">
@@ -41,7 +41,17 @@
         </node>
         <node id="n3">
             <attr name="layout">
-                <string>707 439 121 16</string>
+                <string>696 446 121 16</string>
+            </attr>
+        </node>
+        <node id="n8">
+            <attr name="layout">
+                <string>637 136 94 48</string>
+            </attr>
+        </node>
+        <node id="n9">
+            <attr name="layout">
+                <string>400 419 94 48</string>
             </attr>
         </node>
         <edge from="n0" to="n0">
@@ -69,7 +79,7 @@
                 <string>and</string>
             </attr>
             <attr name="layout">
-                <string>500 -2 496 127 626 99 496 127 11</string>
+                <string>500 0 432 321 182 298 432 321 11</string>
             </attr>
         </edge>
         <edge from="n0" to="n0">
@@ -77,7 +87,7 @@
                 <string>in=[0]1</string>
             </attr>
             <attr name="layout">
-                <string>500 0 432 321 182 298 182 298 11</string>
+                <string>500 0 432 321 182 298 432 321 11</string>
             </attr>
         </edge>
         <edge from="n0" to="n0">
@@ -85,12 +95,7 @@
                 <string>out=[0]1</string>
             </attr>
             <attr name="layout">
-                <string>500 0 432 321 182 298 182 298 11</string>
-            </attr>
-        </edge>
-        <edge from="n0" to="n1">
-            <attr name="label">
-                <string>timing</string>
+                <string>500 0 432 321 182 298 432 321 11</string>
             </attr>
         </edge>
         <edge from="n0" to="n0">
@@ -98,7 +103,12 @@
                 <string>then</string>
             </attr>
             <attr name="layout">
-                <string>500 0 432 321 182 298 182 298 11</string>
+                <string>500 0 432 321 182 298 432 321 11</string>
+            </attr>
+        </edge>
+        <edge from="n0" to="n1">
+            <attr name="label">
+                <string>timing</string>
             </attr>
         </edge>
         <edge from="n4" to="n4">
@@ -171,14 +181,39 @@
                 <string>string:unit</string>
             </attr>
         </edge>
-        <edge from="n1" to="n6">
+        <edge from="n1" to="n7">
             <attr name="label">
-                <string>reference</string>
+                <string>in=[1]1</string>
             </attr>
         </edge>
         <edge from="n1" to="n7">
             <attr name="label">
                 <string>instant</string>
+            </attr>
+        </edge>
+        <edge from="n1" to="n7">
+            <attr name="label">
+                <string>out=[1]*</string>
+            </attr>
+        </edge>
+        <edge from="n1" to="n8">
+            <attr name="label">
+                <string>private</string>
+            </attr>
+        </edge>
+        <edge from="n1" to="n6">
+            <attr name="label">
+                <string>in=[1]1</string>
+            </attr>
+        </edge>
+        <edge from="n1" to="n6">
+            <attr name="label">
+                <string>out=[1]1</string>
+            </attr>
+        </edge>
+        <edge from="n1" to="n6">
+            <attr name="label">
+                <string>reference</string>
             </attr>
         </edge>
         <edge from="n6" to="n6">
@@ -201,14 +236,14 @@
                 <string>int:value</string>
             </attr>
         </edge>
+        <edge from="n7" to="n9">
+            <attr name="label">
+                <string>private</string>
+            </attr>
+        </edge>
         <edge from="n2" to="n2">
             <attr name="label">
                 <string>type:AtomicInstant</string>
-            </attr>
-        </edge>
-        <edge from="n2" to="n7">
-            <attr name="label">
-                <string>sub:</string>
             </attr>
         </edge>
         <edge from="n2" to="n4">
@@ -216,7 +251,7 @@
                 <string>dosing</string>
             </attr>
             <attr name="layout">
-                <string>587 0 575 536 386 536 11</string>
+                <string>587 0 626 540 386 536 11</string>
             </attr>
         </edge>
         <edge from="n2" to="n4">
@@ -224,7 +259,7 @@
                 <string>in=[1]1</string>
             </attr>
             <attr name="layout">
-                <string>587 0 575 536 386 536 11</string>
+                <string>587 0 626 540 386 536 11</string>
             </attr>
         </edge>
         <edge from="n2" to="n4">
@@ -232,7 +267,12 @@
                 <string>out=[0]1</string>
             </attr>
             <attr name="layout">
-                <string>587 0 575 536 386 536 11</string>
+                <string>587 0 626 540 386 536 11</string>
+            </attr>
+        </edge>
+        <edge from="n2" to="n7">
+            <attr name="label">
+                <string>sub:</string>
             </attr>
         </edge>
         <edge from="n3" to="n3">
@@ -248,6 +288,44 @@
         <edge from="n3" to="n1">
             <attr name="label">
                 <string>specify</string>
+            </attr>
+        </edge>
+        <edge from="n8" to="n8">
+            <attr name="label">
+                <string>type:TimerPrivate</string>
+            </attr>
+        </edge>
+        <edge from="n8" to="n8">
+            <attr name="label">
+                <string>int:expandDst</string>
+            </attr>
+        </edge>
+        <edge from="n8" to="n8">
+            <attr name="label">
+                <string>int:expandSrc</string>
+            </attr>
+        </edge>
+        <edge from="n9" to="n9">
+            <attr name="label">
+                <string>type:InstantPrivate</string>
+            </attr>
+        </edge>
+        <edge from="n9" to="n9">
+            <attr name="label">
+                <string>int:expandDst</string>
+            </attr>
+        </edge>
+        <edge from="n9" to="n9">
+            <attr name="label">
+                <string>int:expandSrc</string>
+            </attr>
+        </edge>
+        <edge from="n9" to="n9">
+            <attr name="label">
+                <string>link</string>
+            </attr>
+            <attr name="layout">
+                <string>500 0 447 443 279 448 279 448 11</string>
             </attr>
         </edge>
     </graph>
