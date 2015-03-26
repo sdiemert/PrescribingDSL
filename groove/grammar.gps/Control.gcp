@@ -1,0 +1,37 @@
+while (runCondition){main();}
+
+function main(){
+	expandDurations();
+	expandTimeFrames();
+}
+
+function expandDurations(){
+	while(durationCondition){
+		try{expandDuration_month_1;}
+		try{expandDuration_week_1;}
+		try{expandDuration_day_1;}
+		try{expandDuration_hour_1;}
+	}	
+}
+
+function expandTimeFrames(){
+	while(compoundTimeFrameCondition){
+		expandCompoundTimeFrames();
+	}
+	while(atomicTimeFrameCondition){
+		expandAtomicTimeFrames();
+	}
+}
+
+function expandAtomicTimeFrames(){
+	try{expandTimeFrame_Atomic_day_1;}
+	try{expandTimeFrame_Atomic_hour_1;}
+	try{expandTimeFrame_Atomic_week_1;}
+	try{expandTimeFrame_Atomic_month_1;}
+}
+
+function expandCompoundTimeFrames(){
+	try{expandTimeFrame_Compound_month_1;}
+	try{expandTimeFrame_Compound_week_1;}
+	try{expandTimeFrame_Compound_day_1;}	
+}

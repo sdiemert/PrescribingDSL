@@ -41,10 +41,7 @@
         </node>
         <edge from="n0" to="n0">
             <attr name="label">
-                <string>in=[0]1</string>
-            </attr>
-            <attr name="layout">
-                <string>293 -67 411 331 397 440 411 331 12</string>
+                <string>type:Prescription</string>
             </attr>
         </edge>
         <edge from="n0" to="n0">
@@ -54,22 +51,17 @@
         </edge>
         <edge from="n0" to="n0">
             <attr name="label">
-                <string>string:start</string>
-            </attr>
-        </edge>
-        <edge from="n0" to="n1">
-            <attr name="label">
-                <string>out=[1]1</string>
+                <string>int:repeats</string>
             </attr>
         </edge>
         <edge from="n0" to="n0">
             <attr name="label">
-                <string>type:Prescription</string>
+                <string>int:start</string>
             </attr>
         </edge>
-        <edge from="n0" to="n1">
+        <edge from="n0" to="n0">
             <attr name="label">
-                <string>in=[0]1</string>
+                <string>string:action</string>
             </attr>
         </edge>
         <edge from="n0" to="n0">
@@ -79,17 +71,10 @@
         </edge>
         <edge from="n0" to="n0">
             <attr name="label">
-                <string>int:repeats</string>
+                <string>in=[0]1</string>
             </attr>
-        </edge>
-        <edge from="n0" to="n1">
-            <attr name="label">
-                <string>timing</string>
-            </attr>
-        </edge>
-        <edge from="n0" to="n0">
-            <attr name="label">
-                <string>string:action</string>
+            <attr name="layout">
+                <string>293 -67 411 331 397 440 411 331 12</string>
             </attr>
         </edge>
         <edge from="n0" to="n0">
@@ -108,6 +93,21 @@
                 <string>293 -67 411 331 397 440 411 331 12</string>
             </attr>
         </edge>
+        <edge from="n0" to="n1">
+            <attr name="label">
+                <string>in=[0]1</string>
+            </attr>
+        </edge>
+        <edge from="n0" to="n1">
+            <attr name="label">
+                <string>out=[1]1</string>
+            </attr>
+        </edge>
+        <edge from="n0" to="n1">
+            <attr name="label">
+                <string>timing</string>
+            </attr>
+        </edge>
         <edge from="n4" to="n4">
             <attr name="label">
                 <string>type:Dosing</string>
@@ -118,9 +118,9 @@
                 <string>int:amount</string>
             </attr>
         </edge>
-        <edge from="n4" to="n5">
+        <edge from="n4" to="n4">
             <attr name="label">
-                <string>out=[0]1</string>
+                <string>string:unit</string>
             </attr>
         </edge>
         <edge from="n4" to="n5">
@@ -130,22 +130,12 @@
         </edge>
         <edge from="n4" to="n5">
             <attr name="label">
+                <string>out=[0]1</string>
+            </attr>
+        </edge>
+        <edge from="n4" to="n5">
+            <attr name="label">
                 <string>titrate</string>
-            </attr>
-        </edge>
-        <edge from="n4" to="n4">
-            <attr name="label">
-                <string>string:unit</string>
-            </attr>
-        </edge>
-        <edge from="n5" to="n5">
-            <attr name="label">
-                <string>string:dunit</string>
-            </attr>
-        </edge>
-        <edge from="n5" to="n5">
-            <attr name="label">
-                <string>int:dstep</string>
             </attr>
         </edge>
         <edge from="n5" to="n5">
@@ -155,7 +145,7 @@
         </edge>
         <edge from="n5" to="n5">
             <attr name="label">
-                <string>string:tunit</string>
+                <string>int:dstep</string>
             </attr>
         </edge>
         <edge from="n5" to="n5">
@@ -163,9 +153,19 @@
                 <string>int:tstep</string>
             </attr>
         </edge>
+        <edge from="n5" to="n5">
+            <attr name="label">
+                <string>string:dunit</string>
+            </attr>
+        </edge>
+        <edge from="n5" to="n5">
+            <attr name="label">
+                <string>string:tunit</string>
+            </attr>
+        </edge>
         <edge from="n1" to="n1">
             <attr name="label">
-                <string>string:frame</string>
+                <string>type:TimeFrame</string>
             </attr>
         </edge>
         <edge from="n1" to="n1">
@@ -175,20 +175,12 @@
         </edge>
         <edge from="n1" to="n1">
             <attr name="label">
-                <string>type:TimeFrame</string>
+                <string>string:frame</string>
             </attr>
         </edge>
         <edge from="n1" to="n7">
             <attr name="label">
                 <string>in=[1]1</string>
-            </attr>
-            <attr name="layout">
-                <string>448 12 618 316 788 310 11</string>
-            </attr>
-        </edge>
-        <edge from="n1" to="n7">
-            <attr name="label">
-                <string>point</string>
             </attr>
             <attr name="layout">
                 <string>448 12 618 316 788 310 11</string>
@@ -202,9 +194,12 @@
                 <string>448 12 618 316 788 310 11</string>
             </attr>
         </edge>
-        <edge from="n7" to="n7">
+        <edge from="n1" to="n7">
             <attr name="label">
-                <string>int:value</string>
+                <string>point</string>
+            </attr>
+            <attr name="layout">
+                <string>448 12 618 316 788 310 11</string>
             </attr>
         </edge>
         <edge from="n7" to="n7">
@@ -212,30 +207,14 @@
                 <string>type:TimePoint</string>
             </attr>
         </edge>
+        <edge from="n7" to="n7">
+            <attr name="label">
+                <string>int:value</string>
+            </attr>
+        </edge>
         <edge from="n2" to="n2">
             <attr name="label">
                 <string>type:AtomicPoint</string>
-            </attr>
-        </edge>
-        <edge from="n2" to="n4">
-            <attr name="label">
-                <string>in=[1]1</string>
-            </attr>
-            <attr name="layout">
-                <string>587 0 771 446 957 428 11</string>
-            </attr>
-        </edge>
-        <edge from="n2" to="n7">
-            <attr name="label">
-                <string>sub:</string>
-            </attr>
-        </edge>
-        <edge from="n2" to="n4">
-            <attr name="label">
-                <string>out=[1]1</string>
-            </attr>
-            <attr name="layout">
-                <string>587 0 771 446 957 428 11</string>
             </attr>
         </edge>
         <edge from="n2" to="n4">
@@ -246,14 +225,35 @@
                 <string>587 0 771 446 957 428 11</string>
             </attr>
         </edge>
-        <edge from="n3" to="n1">
+        <edge from="n2" to="n4">
             <attr name="label">
                 <string>in=[1]1</string>
+            </attr>
+            <attr name="layout">
+                <string>587 0 771 446 957 428 11</string>
+            </attr>
+        </edge>
+        <edge from="n2" to="n4">
+            <attr name="label">
+                <string>out=[1]1</string>
+            </attr>
+            <attr name="layout">
+                <string>587 0 771 446 957 428 11</string>
+            </attr>
+        </edge>
+        <edge from="n2" to="n7">
+            <attr name="label">
+                <string>sub:</string>
             </attr>
         </edge>
         <edge from="n3" to="n3">
             <attr name="label">
                 <string>type:CompoundPoint</string>
+            </attr>
+        </edge>
+        <edge from="n3" to="n1">
+            <attr name="label">
+                <string>in=[1]1</string>
             </attr>
         </edge>
         <edge from="n3" to="n1">
