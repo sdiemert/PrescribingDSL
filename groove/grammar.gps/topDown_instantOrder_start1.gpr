@@ -1,62 +1,55 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
 <gxl xmlns="http://www.gupro.de/GXL/gxl-1.0.dtd">
-    <graph role="rule" edgeids="false" edgemode="directed" id="orderInstant_Compound_propogate_21">
+    <graph role="rule" edgeids="false" edgemode="directed" id="topDown_instantOrder_start1">
+        <attr name="priority">
+            <string>1</string>
+        </attr>
         <attr name="$version">
             <string>curly</string>
         </attr>
         <node id="n0">
             <attr name="layout">
-                <string>317 184 148 16</string>
+                <string>359 232 81 32</string>
             </attr>
         </node>
         <node id="n1">
             <attr name="layout">
-                <string>272 83 73 16</string>
+                <string>382 351 48 32</string>
             </attr>
         </node>
         <node id="n2">
             <attr name="layout">
-                <string>353 284 81 16</string>
+                <string>166 454 121 32</string>
             </attr>
         </node>
         <node id="n3">
             <attr name="layout">
-                <string>107 526 148 32</string>
+                <string>506 442 121 32</string>
             </attr>
         </node>
         <node id="n4">
             <attr name="layout">
-                <string>403 543 148 16</string>
+                <string>638 216 81 32</string>
             </attr>
         </node>
         <node id="n5">
             <attr name="layout">
-                <string>65 182 121 48</string>
+                <string>643 346 48 32</string>
             </attr>
         </node>
         <node id="n6">
             <attr name="layout">
-                <string>68 390 93 48</string>
+                <string>265 101 81 32</string>
             </attr>
         </node>
         <edge from="n0" to="n0">
             <attr name="label">
-                <string>id:c0</string>
+                <string>type:Prescription</string>
             </attr>
         </edge>
-        <edge from="n0" to="n0">
+        <edge from="n0" to="n1">
             <attr name="label">
-                <string>type:CompoundInstant</string>
-            </attr>
-        </edge>
-        <edge from="n0" to="n2">
-            <attr name="label">
-                <string>specify</string>
-            </attr>
-        </edge>
-        <edge from="n1" to="n1">
-            <attr name="label">
-                <string>id:t0</string>
+                <string>timing</string>
             </attr>
         </edge>
         <edge from="n1" to="n1">
@@ -64,39 +57,19 @@
                 <string>type:Timing</string>
             </attr>
         </edge>
-        <edge from="n1" to="n0">
-            <attr name="label">
-                <string>instant</string>
-            </attr>
-        </edge>
-        <edge from="n1" to="n5">
-            <attr name="label">
-                <string>instant</string>
-            </attr>
-        </edge>
-        <edge from="n2" to="n2">
-            <attr name="label">
-                <string>id:t00</string>
-            </attr>
-        </edge>
-        <edge from="n2" to="n2">
-            <attr name="label">
-                <string>type:Timing</string>
-            </attr>
-        </edge>
-        <edge from="n2" to="n4">
-            <attr name="label">
-                <string>instant</string>
-            </attr>
-        </edge>
-        <edge from="n2" to="n3">
+        <edge from="n1" to="n3">
             <attr name="label">
                 <string>del:instant</string>
             </attr>
         </edge>
-        <edge from="n3" to="n3">
+        <edge from="n1" to="n2">
             <attr name="label">
-                <string>id:a0</string>
+                <string>instant</string>
+            </attr>
+        </edge>
+        <edge from="n2" to="n2">
+            <attr name="label">
+                <string>type:CompoundInstant</string>
             </attr>
         </edge>
         <edge from="n3" to="n3">
@@ -104,64 +77,62 @@
                 <string>type:CompoundInstant</string>
             </attr>
         </edge>
-        <edge from="n3" to="n3">
-            <attr name="label">
-                <string>test:int:a0.value&gt;=int:a1.value</string>
-            </attr>
-        </edge>
-        <edge from="n4" to="n4">
-            <attr name="label">
-                <string>id:a1</string>
-            </attr>
-        </edge>
-        <edge from="n4" to="n4">
-            <attr name="label">
-                <string>type:CompoundInstant</string>
-            </attr>
-        </edge>
-        <edge from="n4" to="n3">
+        <edge from="n3" to="n2">
             <attr name="label">
                 <string>!=</string>
             </attr>
         </edge>
+        <edge from="n4" to="n4">
+            <attr name="label">
+                <string>new:</string>
+            </attr>
+        </edge>
+        <edge from="n4" to="n4">
+            <attr name="label">
+                <string>type:Prescription</string>
+            </attr>
+        </edge>
+        <edge from="n4" to="n5">
+            <attr name="label">
+                <string>timing</string>
+            </attr>
+        </edge>
+        <edge from="n4" to="n0">
+            <attr name="label">
+                <string>then</string>
+            </attr>
+            <attr name="layout">
+                <string>489 -1 628 248 445 248 11</string>
+            </attr>
+        </edge>
         <edge from="n5" to="n5">
             <attr name="label">
                 <string>new:</string>
             </attr>
         </edge>
         <edge from="n5" to="n5">
-            <attr name="label">
-                <string>type:CompoundInstant</string>
-            </attr>
-        </edge>
-        <edge from="n5" to="n5">
-            <attr name="label">
-                <string>let:value = int:c0.value</string>
-            </attr>
-        </edge>
-        <edge from="n5" to="n6">
-            <attr name="label">
-                <string>specify</string>
-            </attr>
-        </edge>
-        <edge from="n6" to="n6">
-            <attr name="label">
-                <string>new:</string>
-            </attr>
-        </edge>
-        <edge from="n6" to="n6">
             <attr name="label">
                 <string>type:Timing</string>
             </attr>
         </edge>
-        <edge from="n6" to="n6">
-            <attr name="label">
-                <string>let:unit = string:t00.unit</string>
-            </attr>
-        </edge>
-        <edge from="n6" to="n3">
+        <edge from="n5" to="n3">
             <attr name="label">
                 <string>instant</string>
+            </attr>
+        </edge>
+        <edge from="n6" to="n6">
+            <attr name="label">
+                <string>not:</string>
+            </attr>
+        </edge>
+        <edge from="n6" to="n6">
+            <attr name="label">
+                <string>type:Prescription</string>
+            </attr>
+        </edge>
+        <edge from="n6" to="n0">
+            <attr name="label">
+                <string>then</string>
             </attr>
         </edge>
     </graph>

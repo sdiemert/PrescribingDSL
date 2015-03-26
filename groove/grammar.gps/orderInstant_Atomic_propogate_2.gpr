@@ -1,9 +1,6 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
 <gxl xmlns="http://www.gupro.de/GXL/gxl-1.0.dtd">
     <graph role="rule" edgeids="false" edgemode="directed" id="orderInstant_Atomic_propogate_2">
-        <attr name="priority">
-            <string>2</string>
-        </attr>
         <attr name="$version">
             <string>curly</string>
         </attr>
@@ -34,17 +31,17 @@
         </node>
         <node id="n5">
             <attr name="layout">
-                <string>622 142 121 48</string>
+                <string>592 99 121 48</string>
             </attr>
         </node>
         <node id="n6">
             <attr name="layout">
-                <string>672 236 93 48</string>
+                <string>603 219 93 48</string>
             </attr>
         </node>
         <node id="n7">
             <attr name="layout">
-                <string>677 342 103 48</string>
+                <string>601 329 103 48</string>
             </attr>
         </node>
         <node id="n8">
@@ -62,21 +59,6 @@
                 <string>681 474 134 64</string>
             </attr>
         </node>
-        <node id="n11">
-            <attr name="layout">
-                <string>111 281 24 32</string>
-            </attr>
-        </node>
-        <node id="n12">
-            <attr name="layout">
-                <string>512 432 94 32</string>
-            </attr>
-        </node>
-        <node id="n13">
-            <attr name="layout">
-                <string>448 259 94 32</string>
-            </attr>
-        </node>
         <edge from="n0" to="n0">
             <attr name="label">
                 <string>id:c0</string>
@@ -90,11 +72,6 @@
         <edge from="n0" to="n2">
             <attr name="label">
                 <string>specify</string>
-            </attr>
-        </edge>
-        <edge from="n0" to="n13">
-            <attr name="label">
-                <string>private</string>
             </attr>
         </edge>
         <edge from="n1" to="n1">
@@ -135,11 +112,6 @@
         <edge from="n2" to="n3">
             <attr name="label">
                 <string>instant</string>
-            </attr>
-        </edge>
-        <edge from="n2" to="n11">
-            <attr name="label">
-                <string>del:frequency</string>
             </attr>
         </edge>
         <edge from="n3" to="n3">
@@ -205,11 +177,6 @@
         <edge from="n5" to="n6">
             <attr name="label">
                 <string>specify</string>
-            </attr>
-        </edge>
-        <edge from="n5" to="n12">
-            <attr name="label">
-                <string>private</string>
             </attr>
         </edge>
         <edge from="n6" to="n6">
@@ -290,36 +257,6 @@
         <edge from="n10" to="n10">
             <attr name="label">
                 <string>let:unit = string:d0.unit</string>
-            </attr>
-        </edge>
-        <edge from="n11" to="n11">
-            <attr name="label">
-                <string>int:</string>
-            </attr>
-        </edge>
-        <edge from="n12" to="n12">
-            <attr name="label">
-                <string>new:</string>
-            </attr>
-        </edge>
-        <edge from="n12" to="n12">
-            <attr name="label">
-                <string>type:InstantPrivate</string>
-            </attr>
-        </edge>
-        <edge from="n12" to="n13">
-            <attr name="label">
-                <string>next</string>
-            </attr>
-        </edge>
-        <edge from="n13" to="n13">
-            <attr name="label">
-                <string>new:</string>
-            </attr>
-        </edge>
-        <edge from="n13" to="n13">
-            <attr name="label">
-                <string>type:InstantPrivate</string>
             </attr>
         </edge>
     </graph>
