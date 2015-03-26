@@ -47,6 +47,16 @@
                 <string>135 182 81 32</string>
             </attr>
         </node>
+        <node id="n8">
+            <attr name="layout">
+                <string>347 589 94 32</string>
+            </attr>
+        </node>
+        <node id="n9">
+            <attr name="layout">
+                <string>595 587 94 32</string>
+            </attr>
+        </node>
         <edge from="n0" to="n0">
             <attr name="label">
                 <string>type:Prescription</string>
@@ -82,6 +92,11 @@
                 <string>type:CompoundInstant</string>
             </attr>
         </edge>
+        <edge from="n2" to="n8">
+            <attr name="label">
+                <string>private</string>
+            </attr>
+        </edge>
         <edge from="n3" to="n3">
             <attr name="label">
                 <string>type:CompoundInstant</string>
@@ -90,6 +105,11 @@
         <edge from="n3" to="n2">
             <attr name="label">
                 <string>!=</string>
+            </attr>
+        </edge>
+        <edge from="n3" to="n9">
+            <attr name="label">
+                <string>private</string>
             </attr>
         </edge>
         <edge from="n4" to="n4">
@@ -153,6 +173,21 @@
         <edge from="n7" to="n7">
             <attr name="label">
                 <string>type:Prescription</string>
+            </attr>
+        </edge>
+        <edge from="n8" to="n8">
+            <attr name="label">
+                <string>type:InstantPrivate</string>
+            </attr>
+        </edge>
+        <edge from="n9" to="n9">
+            <attr name="label">
+                <string>type:InstantPrivate</string>
+            </attr>
+        </edge>
+        <edge from="n9" to="n8">
+            <attr name="label">
+                <string>link</string>
             </attr>
         </edge>
     </graph>
