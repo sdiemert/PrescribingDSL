@@ -41,7 +41,7 @@
         </node>
         <node id="n7">
             <attr name="layout">
-                <string>753 540 90 48</string>
+                <string>753 532 90 64</string>
             </attr>
         </node>
         <node id="n8">
@@ -136,6 +136,11 @@
         </edge>
         <edge from="n3" to="n3">
             <attr name="label">
+                <string>let:frequency = 1</string>
+            </attr>
+        </edge>
+        <edge from="n3" to="n3">
+            <attr name="label">
                 <string>let:unit = &quot;DAY&quot;</string>
             </attr>
         </edge>
@@ -177,6 +182,11 @@
         <edge from="n7" to="n7">
             <attr name="label">
                 <string>type:Timing</string>
+            </attr>
+        </edge>
+        <edge from="n7" to="n7">
+            <attr name="label">
+                <string>let:frequency = 1</string>
             </attr>
         </edge>
         <edge from="n7" to="n7">
