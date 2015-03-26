@@ -3,3 +3,13 @@
 .project/
 
 groove/grammar.gps/inputGraph_1-2.gst
+
+groove/grammar.gps/inputGraph_1-1.gst
+
+groove/grammar.gps/expandCompound_Propogate.gpr
+
+groove/grammar.gps/expandTiming_Compound.gpr
+
+groove/grammar.gps/expandCompound_Terminate.gpr
+
+groove/grammar.gps/expandTiming_Atomic.gpr
