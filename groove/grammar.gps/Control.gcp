@@ -1,6 +1,7 @@
 while (runCondition){main();}
 
 function main(){
+	expandRepeats();
 	expandDurations();
 	expandTimeFrames();
 }
@@ -34,4 +35,12 @@ function expandCompoundTimeFrames(){
 	try{expandTimeFrame_Compound_month_1;}
 	try{expandTimeFrame_Compound_week_1;}
 	try{expandTimeFrame_Compound_day_1;}	
+}
+
+function expandRepeats(){
+	while(repeatCondition){
+		try{expandRepeats_month;}
+		try{expandRepeats_week;}
+		try{expandRepeats_day;}
+	}
 }

@@ -1,12 +1,12 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
 <gxl xmlns="http://www.gupro.de/GXL/gxl-1.0.dtd">
-    <graph role="graph" edgeids="false" edgemode="directed" id="inputGraph_2">
+    <graph role="graph" edgeids="false" edgemode="directed" id="inputGraph_3">
         <attr name="$version">
             <string>curly</string>
         </attr>
         <node id="n0">
             <attr name="layout">
-                <string>1013 8 149 112</string>
+                <string>131 8 149 112</string>
             </attr>
         </node>
         <node id="n1">
@@ -101,7 +101,7 @@
         </edge>
         <edge from="n0" to="n0">
             <attr name="label">
-                <string>let:repeats = 0</string>
+                <string>let:repeats = 4</string>
             </attr>
         </edge>
         <edge from="n0" to="n0">
