@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
 <gxl xmlns="http://www.gupro.de/GXL/gxl-1.0.dtd">
-    <graph role="type" edgeids="false" edgemode="directed" id="Prescription">
+    <graph role="type" edgeids="false" edgemode="directed" id="RxGraphModel">
         <attr name="$version">
             <string>curly</string>
         </attr>
@@ -41,7 +41,10 @@
         </node>
         <edge from="n0" to="n0">
             <attr name="label">
-                <string>type:Prescription</string>
+                <string>in=[0]1</string>
+            </attr>
+            <attr name="layout">
+                <string>293 -67 411 331 397 440 411 331 12</string>
             </attr>
         </edge>
         <edge from="n0" to="n0">
@@ -51,12 +54,22 @@
         </edge>
         <edge from="n0" to="n0">
             <attr name="label">
-                <string>int:repeats</string>
+                <string>string:start</string>
+            </attr>
+        </edge>
+        <edge from="n0" to="n1">
+            <attr name="label">
+                <string>out=[1]1</string>
             </attr>
         </edge>
         <edge from="n0" to="n0">
             <attr name="label">
-                <string>string:action</string>
+                <string>type:Prescription</string>
+            </attr>
+        </edge>
+        <edge from="n0" to="n1">
+            <attr name="label">
+                <string>in=[0]1</string>
             </attr>
         </edge>
         <edge from="n0" to="n0">
@@ -66,17 +79,7 @@
         </edge>
         <edge from="n0" to="n0">
             <attr name="label">
-                <string>string:start</string>
-            </attr>
-        </edge>
-        <edge from="n0" to="n1">
-            <attr name="label">
-                <string>in=[0]1</string>
-            </attr>
-        </edge>
-        <edge from="n0" to="n1">
-            <attr name="label">
-                <string>out=[1]1</string>
+                <string>int:repeats</string>
             </attr>
         </edge>
         <edge from="n0" to="n1">
@@ -86,10 +89,7 @@
         </edge>
         <edge from="n0" to="n0">
             <attr name="label">
-                <string>in=[0]1</string>
-            </attr>
-            <attr name="layout">
-                <string>293 -67 397 382 397 440 397 382 12</string>
+                <string>string:action</string>
             </attr>
         </edge>
         <edge from="n0" to="n0">
@@ -97,7 +97,7 @@
                 <string>out=[0]1</string>
             </attr>
             <attr name="layout">
-                <string>293 -67 397 382 397 440 397 382 12</string>
+                <string>293 -67 411 331 397 440 411 331 12</string>
             </attr>
         </edge>
         <edge from="n0" to="n0">
@@ -105,7 +105,7 @@
                 <string>then</string>
             </attr>
             <attr name="layout">
-                <string>293 -67 397 382 397 440 397 382 12</string>
+                <string>293 -67 411 331 397 440 411 331 12</string>
             </attr>
         </edge>
         <edge from="n4" to="n4">
@@ -118,9 +118,9 @@
                 <string>int:amount</string>
             </attr>
         </edge>
-        <edge from="n4" to="n4">
+        <edge from="n4" to="n5">
             <attr name="label">
-                <string>string:unit</string>
+                <string>out=[0]1</string>
             </attr>
         </edge>
         <edge from="n4" to="n5">
@@ -130,27 +130,12 @@
         </edge>
         <edge from="n4" to="n5">
             <attr name="label">
-                <string>out=[0]1</string>
-            </attr>
-        </edge>
-        <edge from="n4" to="n5">
-            <attr name="label">
                 <string>titrate</string>
             </attr>
         </edge>
-        <edge from="n5" to="n5">
+        <edge from="n4" to="n4">
             <attr name="label">
-                <string>type:Titrate</string>
-            </attr>
-        </edge>
-        <edge from="n5" to="n5">
-            <attr name="label">
-                <string>int:dstep</string>
-            </attr>
-        </edge>
-        <edge from="n5" to="n5">
-            <attr name="label">
-                <string>int:tstep</string>
+                <string>string:unit</string>
             </attr>
         </edge>
         <edge from="n5" to="n5">
@@ -160,12 +145,27 @@
         </edge>
         <edge from="n5" to="n5">
             <attr name="label">
+                <string>int:dstep</string>
+            </attr>
+        </edge>
+        <edge from="n5" to="n5">
+            <attr name="label">
+                <string>type:Titrate</string>
+            </attr>
+        </edge>
+        <edge from="n5" to="n5">
+            <attr name="label">
                 <string>string:tunit</string>
+            </attr>
+        </edge>
+        <edge from="n5" to="n5">
+            <attr name="label">
+                <string>int:tstep</string>
             </attr>
         </edge>
         <edge from="n1" to="n1">
             <attr name="label">
-                <string>type:TimeFrame</string>
+                <string>string:frame</string>
             </attr>
         </edge>
         <edge from="n1" to="n1">
@@ -175,7 +175,7 @@
         </edge>
         <edge from="n1" to="n1">
             <attr name="label">
-                <string>string:frame</string>
+                <string>type:TimeFrame</string>
             </attr>
         </edge>
         <edge from="n1" to="n7">
@@ -183,15 +183,7 @@
                 <string>in=[1]1</string>
             </attr>
             <attr name="layout">
-                <string>448 12 667 310 749 310 11</string>
-            </attr>
-        </edge>
-        <edge from="n1" to="n7">
-            <attr name="label">
-                <string>out=[0]*</string>
-            </attr>
-            <attr name="layout">
-                <string>448 12 667 310 749 310 11</string>
+                <string>448 12 618 316 788 310 11</string>
             </attr>
         </edge>
         <edge from="n1" to="n7">
@@ -199,17 +191,25 @@
                 <string>point</string>
             </attr>
             <attr name="layout">
-                <string>448 12 667 310 749 310 11</string>
+                <string>448 12 618 316 788 310 11</string>
             </attr>
         </edge>
-        <edge from="n7" to="n7">
+        <edge from="n1" to="n7">
             <attr name="label">
-                <string>type:TimePoint</string>
+                <string>out=[0]*</string>
+            </attr>
+            <attr name="layout">
+                <string>448 12 618 316 788 310 11</string>
             </attr>
         </edge>
         <edge from="n7" to="n7">
             <attr name="label">
                 <string>int:value</string>
+            </attr>
+        </edge>
+        <edge from="n7" to="n7">
+            <attr name="label">
+                <string>type:TimePoint</string>
             </attr>
         </edge>
         <edge from="n2" to="n2">
@@ -219,23 +219,7 @@
         </edge>
         <edge from="n2" to="n4">
             <attr name="label">
-                <string>dosing</string>
-            </attr>
-            <attr name="layout">
-                <string>587 0 771 446 957 428 11</string>
-            </attr>
-        </edge>
-        <edge from="n2" to="n4">
-            <attr name="label">
                 <string>in=[1]1</string>
-            </attr>
-            <attr name="layout">
-                <string>587 0 771 446 957 428 11</string>
-            </attr>
-        </edge>
-        <edge from="n2" to="n4">
-            <attr name="label">
-                <string>out=[1]1</string>
             </attr>
             <attr name="layout">
                 <string>587 0 771 446 957 428 11</string>
@@ -246,14 +230,30 @@
                 <string>sub:</string>
             </attr>
         </edge>
-        <edge from="n3" to="n3">
+        <edge from="n2" to="n4">
             <attr name="label">
-                <string>type:CompoundPoint</string>
+                <string>out=[1]1</string>
+            </attr>
+            <attr name="layout">
+                <string>587 0 771 446 957 428 11</string>
+            </attr>
+        </edge>
+        <edge from="n2" to="n4">
+            <attr name="label">
+                <string>dosing</string>
+            </attr>
+            <attr name="layout">
+                <string>587 0 771 446 957 428 11</string>
             </attr>
         </edge>
         <edge from="n3" to="n1">
             <attr name="label">
                 <string>in=[1]1</string>
+            </attr>
+        </edge>
+        <edge from="n3" to="n3">
+            <attr name="label">
+                <string>type:CompoundPoint</string>
             </attr>
         </edge>
         <edge from="n3" to="n1">
