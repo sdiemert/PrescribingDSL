@@ -1,6 +1,7 @@
 while (runCondition){main();}
 
 function main(){
+	createPlan;
 	expandRepeats();
 	expandDurations();
 	expandTimeFrames();

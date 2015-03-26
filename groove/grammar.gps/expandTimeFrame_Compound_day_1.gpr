@@ -31,7 +31,7 @@
         </node>
         <node id="n5">
             <attr name="layout">
-                <string>589 273 8 16</string>
+                <string>581 270 24 21</string>
             </attr>
         </node>
         <edge from="n0" to="n0">
@@ -54,9 +54,9 @@
                 <string>test:string:eq(frame, &quot;DAY&quot;)</string>
             </attr>
         </edge>
-        <edge from="n0" to="n2">
+        <edge from="n0" to="n3">
             <attr name="label">
-                <string>point</string>
+                <string>!=</string>
             </attr>
         </edge>
         <edge from="n0" to="n5">
@@ -64,9 +64,9 @@
                 <string>@</string>
             </attr>
         </edge>
-        <edge from="n0" to="n3">
+        <edge from="n0" to="n2">
             <attr name="label">
-                <string>!=</string>
+                <string>point</string>
             </attr>
         </edge>
         <edge from="n1" to="n1">
@@ -149,14 +149,14 @@
                 <string>let:start = int:p0.start+(cp0.value*3600)</string>
             </attr>
         </edge>
-        <edge from="n4" to="n5">
-            <attr name="label">
-                <string>@</string>
-            </attr>
-        </edge>
         <edge from="n4" to="n3">
             <attr name="label">
                 <string>timing</string>
+            </attr>
+        </edge>
+        <edge from="n4" to="n5">
+            <attr name="label">
+                <string>@</string>
             </attr>
         </edge>
         <edge from="n5" to="n5">

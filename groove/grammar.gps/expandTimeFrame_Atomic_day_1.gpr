@@ -34,6 +34,11 @@
                 <string>359 324 24 21</string>
             </attr>
         </node>
+        <node id="n6">
+            <attr name="layout">
+                <string>918 311 29 32</string>
+            </attr>
+        </node>
         <edge from="n0" to="n0">
             <attr name="label">
                 <string>id:p0</string>
@@ -49,14 +54,14 @@
                 <string>type:Prescription</string>
             </attr>
         </edge>
-        <edge from="n0" to="n1">
-            <attr name="label">
-                <string>timing</string>
-            </attr>
-        </edge>
         <edge from="n0" to="n5">
             <attr name="label">
                 <string>@</string>
+            </attr>
+        </edge>
+        <edge from="n0" to="n1">
+            <attr name="label">
+                <string>timing</string>
             </attr>
         </edge>
         <edge from="n1" to="n1">
@@ -79,14 +84,14 @@
                 <string>test:string:eq(frame, &quot;DAY&quot;)</string>
             </attr>
         </edge>
-        <edge from="n1" to="n2">
-            <attr name="label">
-                <string>point</string>
-            </attr>
-        </edge>
         <edge from="n1" to="n5">
             <attr name="label">
                 <string>@</string>
+            </attr>
+        </edge>
+        <edge from="n1" to="n2">
+            <attr name="label">
+                <string>point</string>
             </attr>
         </edge>
         <edge from="n2" to="n2">
@@ -104,14 +109,14 @@
                 <string>type:AtomicPoint</string>
             </attr>
         </edge>
-        <edge from="n2" to="n3">
-            <attr name="label">
-                <string>dosing</string>
-            </attr>
-        </edge>
         <edge from="n2" to="n5">
             <attr name="label">
                 <string>@</string>
+            </attr>
+        </edge>
+        <edge from="n2" to="n3">
+            <attr name="label">
+                <string>dosing</string>
             </attr>
         </edge>
         <edge from="n3" to="n3">
@@ -182,6 +187,16 @@
         <edge from="n5" to="n5">
             <attr name="label">
                 <string>forallx:</string>
+            </attr>
+        </edge>
+        <edge from="n6" to="n6">
+            <attr name="label">
+                <string>type:Plan</string>
+            </attr>
+        </edge>
+        <edge from="n6" to="n4">
+            <attr name="label">
+                <string>apma</string>
             </attr>
         </edge>
     </graph>

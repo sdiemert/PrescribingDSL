@@ -11,7 +11,7 @@
         </node>
         <node id="n1">
             <attr name="layout">
-                <string>145 213 111 32</string>
+                <string>139 213 123 32</string>
             </attr>
         </node>
         <node id="n2">
@@ -26,12 +26,17 @@
         </node>
         <node id="n4">
             <attr name="layout">
-                <string>428 224 267 128</string>
+                <string>418 180 267 128</string>
             </attr>
         </node>
         <node id="n5">
             <attr name="layout">
-                <string>359 324 24 21</string>
+                <string>326 265 24 21</string>
+            </attr>
+        </node>
+        <node id="n6">
+            <attr name="layout">
+                <string>813 253 29 32</string>
             </attr>
         </node>
         <edge from="n0" to="n0">
@@ -182,6 +187,16 @@
         <edge from="n5" to="n5">
             <attr name="label">
                 <string>forallx:</string>
+            </attr>
+        </edge>
+        <edge from="n6" to="n6">
+            <attr name="label">
+                <string>type:Plan</string>
+            </attr>
+        </edge>
+        <edge from="n6" to="n4">
+            <attr name="label">
+                <string>apma</string>
             </attr>
         </edge>
     </graph>
