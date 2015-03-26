@@ -1,3 +1,5 @@
 *.class
 .classpath/
 .project/
+
+groove/grammar.gps/inputGraph_1-2.gst
