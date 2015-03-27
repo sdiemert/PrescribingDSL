@@ -2,9 +2,16 @@ while (runCondition){main();}
 
 function main(){
 	createPlan;
+	expandTitrate();
 	expandRepeats();
 	expandDurations();
 	expandTimeFrames();
+}
+
+function expandTitrate(){
+	while(titrateCondition){
+		try{expandTitrate_day_1;}
+	}
 }
 
 function expandDurations(){
@@ -21,7 +28,12 @@ function expandTimeFrames(){
 		expandCompoundTimeFrames();
 	}
 	while(atomicTimeFrameCondition){
-		expandAtomicTimeFrames();
+		if(titrateCondition2){
+			expandAtomicTimeFramesWithTitrate();
+		}else{
+			expandAtomicTimeFrames();
+		}
+		
 	}
 }
 
@@ -30,6 +42,12 @@ function expandAtomicTimeFrames(){
 	try{expandTimeFrame_Atomic_hour_1;}
 	try{expandTimeFrame_Atomic_week_1;}
 	try{expandTimeFrame_Atomic_month_1;}
+}
+
+function expandAtomicTimeFramesWithTitrate(){
+	try{expandTimeFrame_Atomic_day_titrate_1;}
+	try{expandTimeFrame_Atomic_day_titrate_2;}
+	try{cleanTitrate_1;}
 }
 
 function expandCompoundTimeFrames(){

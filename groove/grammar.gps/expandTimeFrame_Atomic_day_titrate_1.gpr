@@ -1,47 +1,42 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
 <gxl xmlns="http://www.gupro.de/GXL/gxl-1.0.dtd">
-    <graph role="rule" edgeids="false" edgemode="directed" id="expandTimeFrame_Atomic_week_1">
+    <graph role="rule" edgeids="false" edgemode="directed" id="expandTimeFrame_Atomic_day_titrate_1">
         <attr name="$version">
             <string>curly</string>
         </attr>
         <node id="n0">
             <attr name="layout">
-                <string>144 139 109 16</string>
+                <string>136 112 109 16</string>
             </attr>
         </node>
         <node id="n1">
             <attr name="layout">
-                <string>147 213 107 32</string>
+                <string>149 196 106 32</string>
             </attr>
         </node>
         <node id="n2">
             <attr name="layout">
-                <string>143 302 116 16</string>
+                <string>143 284 116 16</string>
             </attr>
         </node>
         <node id="n3">
             <attr name="layout">
-                <string>166 390 75 16</string>
+                <string>109 355 188 32</string>
             </attr>
         </node>
         <node id="n4">
             <attr name="layout">
-                <string>432 224 259 128</string>
-            </attr>
-        </node>
-        <node id="n5">
-            <attr name="layout">
-                <string>359 324 24 21</string>
+                <string>436 254 243 128</string>
             </attr>
         </node>
         <node id="n6">
             <attr name="layout">
-                <string>891 269 29 32</string>
+                <string>879 311 29 32</string>
             </attr>
         </node>
         <node id="n7">
             <attr name="layout">
-                <string>177 483 45 32</string>
+                <string>146 449 126 48</string>
             </attr>
         </node>
         <edge from="n0" to="n0">
@@ -59,11 +54,6 @@
                 <string>type:Prescription</string>
             </attr>
         </edge>
-        <edge from="n0" to="n5">
-            <attr name="label">
-                <string>@</string>
-            </attr>
-        </edge>
         <edge from="n0" to="n1">
             <attr name="label">
                 <string>timing</string>
@@ -76,27 +66,17 @@
         </edge>
         <edge from="n1" to="n1">
             <attr name="label">
-                <string>del:</string>
-            </attr>
-        </edge>
-        <edge from="n1" to="n1">
-            <attr name="label">
                 <string>type:TimeFrame</string>
             </attr>
         </edge>
         <edge from="n1" to="n1">
             <attr name="label">
-                <string>test:string:eq(frame, &quot;WEEK&quot;)</string>
+                <string>test:string:eq(frame, &quot;DAY&quot;)</string>
             </attr>
         </edge>
         <edge from="n1" to="n2">
             <attr name="label">
                 <string>point</string>
-            </attr>
-        </edge>
-        <edge from="n1" to="n5">
-            <attr name="label">
-                <string>@</string>
             </attr>
         </edge>
         <edge from="n2" to="n2">
@@ -106,17 +86,7 @@
         </edge>
         <edge from="n2" to="n2">
             <attr name="label">
-                <string>del:</string>
-            </attr>
-        </edge>
-        <edge from="n2" to="n2">
-            <attr name="label">
                 <string>type:AtomicPoint</string>
-            </attr>
-        </edge>
-        <edge from="n2" to="n5">
-            <attr name="label">
-                <string>@</string>
             </attr>
         </edge>
         <edge from="n2" to="n3">
@@ -131,17 +101,12 @@
         </edge>
         <edge from="n3" to="n3">
             <attr name="label">
-                <string>del:</string>
+                <string>type:Dosing</string>
             </attr>
         </edge>
         <edge from="n3" to="n3">
             <attr name="label">
-                <string>type:Dosing</string>
-            </attr>
-        </edge>
-        <edge from="n3" to="n5">
-            <attr name="label">
-                <string>@</string>
+                <string>let:amount = int:amount+int:t0.dstep</string>
             </attr>
         </edge>
         <edge from="n3" to="n7">
@@ -166,7 +131,7 @@
         </edge>
         <edge from="n4" to="n4">
             <attr name="label">
-                <string>let:doseAmount = int:d0.amount</string>
+                <string>let:doseAmount = int:d0.amount+int:t0.dstep</string>
             </attr>
         </edge>
         <edge from="n4" to="n4">
@@ -181,22 +146,12 @@
         </edge>
         <edge from="n4" to="n4">
             <attr name="label">
-                <string>let:startTime = int:p0.start+604800*int:ap0.value</string>
+                <string>let:startTime = int:p0.start+3600*int:ap0.value</string>
             </attr>
         </edge>
         <edge from="n4" to="n4">
             <attr name="label">
                 <string>let:stopTime = -1</string>
-            </attr>
-        </edge>
-        <edge from="n4" to="n5">
-            <attr name="label">
-                <string>@</string>
-            </attr>
-        </edge>
-        <edge from="n5" to="n5">
-            <attr name="label">
-                <string>forallx:</string>
             </attr>
         </edge>
         <edge from="n6" to="n6">
@@ -211,7 +166,7 @@
         </edge>
         <edge from="n7" to="n7">
             <attr name="label">
-                <string>not:</string>
+                <string>id:t0</string>
             </attr>
         </edge>
         <edge from="n7" to="n7">
@@ -219,9 +174,14 @@
                 <string>type:Titrate</string>
             </attr>
         </edge>
-        <edge from="n7" to="n5">
+        <edge from="n7" to="n7">
             <attr name="label">
-                <string>@</string>
+                <string>test:int:eq(0,int:mod(int:p0.start, int:tstep))</string>
+            </attr>
+        </edge>
+        <edge from="n7" to="n7">
+            <attr name="label">
+                <string>test:string:eq(tunit,&quot;SECOND&quot;)</string>
             </attr>
         </edge>
     </graph>
