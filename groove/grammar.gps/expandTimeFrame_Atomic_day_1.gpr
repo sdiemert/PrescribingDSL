@@ -26,7 +26,7 @@
         </node>
         <node id="n4">
             <attr name="layout">
-                <string>475 254 243 128</string>
+                <string>437 255 243 128</string>
             </attr>
         </node>
         <node id="n5">
@@ -41,7 +41,7 @@
         </node>
         <node id="n7">
             <attr name="layout">
-                <string>192 481 45 32</string>
+                <string>174 481 45 32</string>
             </attr>
         </node>
         <edge from="n0" to="n0">
@@ -89,14 +89,14 @@
                 <string>test:string:eq(frame, &quot;DAY&quot;)</string>
             </attr>
         </edge>
-        <edge from="n1" to="n5">
-            <attr name="label">
-                <string>@</string>
-            </attr>
-        </edge>
         <edge from="n1" to="n2">
             <attr name="label">
                 <string>point</string>
+            </attr>
+        </edge>
+        <edge from="n1" to="n5">
+            <attr name="label">
+                <string>@</string>
             </attr>
         </edge>
         <edge from="n2" to="n2">
@@ -114,14 +114,14 @@
                 <string>type:AtomicPoint</string>
             </attr>
         </edge>
-        <edge from="n2" to="n5">
-            <attr name="label">
-                <string>@</string>
-            </attr>
-        </edge>
         <edge from="n2" to="n3">
             <attr name="label">
                 <string>dosing</string>
+            </attr>
+        </edge>
+        <edge from="n2" to="n5">
+            <attr name="label">
+                <string>@</string>
             </attr>
         </edge>
         <edge from="n3" to="n3">
@@ -139,14 +139,14 @@
                 <string>type:Dosing</string>
             </attr>
         </edge>
-        <edge from="n3" to="n5">
-            <attr name="label">
-                <string>@</string>
-            </attr>
-        </edge>
         <edge from="n3" to="n7">
             <attr name="label">
                 <string>titrate</string>
+            </attr>
+        </edge>
+        <edge from="n3" to="n5">
+            <attr name="label">
+                <string>@</string>
             </attr>
         </edge>
         <edge from="n4" to="n4">

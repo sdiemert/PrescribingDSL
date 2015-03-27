@@ -35,6 +35,11 @@ function expandTimeFrames(){
 	
 	while(atomicTimeFrameCondition){
 		if(titrateCondition2){
+
+			while(titrateCondition3){
+				try{orderPrescriptions_titrate_1;}
+			}
+		
 			expandAtomicTimeFramesWithTitrate();
 		}else{
 			expandAtomicTimeFrames();

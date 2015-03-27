@@ -31,12 +31,17 @@
         </node>
         <node id="n6">
             <attr name="layout">
-                <string>879 311 29 32</string>
+                <string>879 305 29 32</string>
             </attr>
         </node>
         <node id="n7">
             <attr name="layout">
-                <string>148 449 121 48</string>
+                <string>99 449 218 48</string>
+            </attr>
+        </node>
+        <node id="n5">
+            <attr name="layout">
+                <string>388 68 81 32</string>
             </attr>
         </node>
         <edge from="n0" to="n0">
@@ -171,12 +176,27 @@
         </edge>
         <edge from="n7" to="n7">
             <attr name="label">
-                <string>test:int:neq(0,int:mod(int:p0.start, int:tstep))</string>
+                <string>test:bool:or(int:neq(0,int:mod(int:p0.start, int:tstep)), int:eq(int:p0.start, 0))</string>
             </attr>
         </edge>
         <edge from="n7" to="n7">
             <attr name="label">
                 <string>test:string:eq(tunit,&quot;SECOND&quot;)</string>
+            </attr>
+        </edge>
+        <edge from="n5" to="n5">
+            <attr name="label">
+                <string>not:</string>
+            </attr>
+        </edge>
+        <edge from="n5" to="n5">
+            <attr name="label">
+                <string>type:Prescription</string>
+            </attr>
+        </edge>
+        <edge from="n5" to="n0">
+            <attr name="label">
+                <string>then</string>
             </attr>
         </edge>
     </graph>
