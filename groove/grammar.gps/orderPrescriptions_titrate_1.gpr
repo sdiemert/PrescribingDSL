@@ -6,7 +6,7 @@
         </attr>
         <node id="n0">
             <attr name="layout">
-                <string>269 262 109 16</string>
+                <string>266 254 116 32</string>
             </attr>
         </node>
         <node id="n1">
@@ -60,6 +60,14 @@
             </attr>
             <attr name="layout">
                 <string>500 0 340 259 448 188 560 255 11</string>
+            </attr>
+        </edge>
+        <edge from="n0" to="n1">
+            <attr name="label">
+                <string>not:then</string>
+            </attr>
+            <attr name="layout">
+                <string>500 0 375 289 447 315 549 277 11</string>
             </attr>
         </edge>
         <edge from="n1" to="n1">

@@ -26,7 +26,7 @@
         </node>
         <node id="n4">
             <attr name="layout">
-                <string>437 222 243 128</string>
+                <string>429 222 259 128</string>
             </attr>
         </node>
         <node id="n5">
@@ -59,14 +59,14 @@
                 <string>type:Prescription</string>
             </attr>
         </edge>
-        <edge from="n0" to="n1">
-            <attr name="label">
-                <string>timing</string>
-            </attr>
-        </edge>
         <edge from="n0" to="n5">
             <attr name="label">
                 <string>@</string>
+            </attr>
+        </edge>
+        <edge from="n0" to="n1">
+            <attr name="label">
+                <string>timing</string>
             </attr>
         </edge>
         <edge from="n1" to="n1">
@@ -89,14 +89,14 @@
                 <string>test:string:eq(frame, &quot;HOUR&quot;)</string>
             </attr>
         </edge>
-        <edge from="n1" to="n5">
-            <attr name="label">
-                <string>@</string>
-            </attr>
-        </edge>
         <edge from="n1" to="n2">
             <attr name="label">
                 <string>point</string>
+            </attr>
+        </edge>
+        <edge from="n1" to="n5">
+            <attr name="label">
+                <string>@</string>
             </attr>
         </edge>
         <edge from="n2" to="n2">
@@ -181,12 +181,12 @@
         </edge>
         <edge from="n4" to="n4">
             <attr name="label">
-                <string>let:startTime = int:p0.start+3600*int:ap0.value</string>
+                <string>let:startTime = int:p0.start+60*int:ap0.value-60</string>
             </attr>
         </edge>
         <edge from="n4" to="n4">
             <attr name="label">
-                <string>let:stopTime = -1</string>
+                <string>let:stopTime = int:p0.start+60*(int:ap0.value+1)</string>
             </attr>
         </edge>
         <edge from="n4" to="n5">

@@ -26,7 +26,7 @@
         </node>
         <node id="n4">
             <attr name="layout">
-                <string>432 224 259 128</string>
+                <string>419 224 284 128</string>
             </attr>
         </node>
         <node id="n5">
@@ -139,14 +139,14 @@
                 <string>type:Dosing</string>
             </attr>
         </edge>
-        <edge from="n3" to="n5">
-            <attr name="label">
-                <string>@</string>
-            </attr>
-        </edge>
         <edge from="n3" to="n7">
             <attr name="label">
                 <string>titrate</string>
+            </attr>
+        </edge>
+        <edge from="n3" to="n5">
+            <attr name="label">
+                <string>@</string>
             </attr>
         </edge>
         <edge from="n4" to="n4">
@@ -181,12 +181,12 @@
         </edge>
         <edge from="n4" to="n4">
             <attr name="label">
-                <string>let:startTime = int:p0.start+604800*int:ap0.value</string>
+                <string>let:startTime = int:p0.start+86400*int:ap0.value-86400</string>
             </attr>
         </edge>
         <edge from="n4" to="n4">
             <attr name="label">
-                <string>let:stopTime = -1</string>
+                <string>let:stopTime = int:p0.start+86400*(int:ap0.value+1)</string>
             </attr>
         </edge>
         <edge from="n4" to="n5">

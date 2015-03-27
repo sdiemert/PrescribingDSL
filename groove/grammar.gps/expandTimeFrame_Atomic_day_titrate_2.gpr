@@ -146,12 +146,12 @@
         </edge>
         <edge from="n4" to="n4">
             <attr name="label">
-                <string>let:startTime = int:p0.start+3600*int:ap0.value</string>
+                <string>let:startTime = int:p0.start+3600*int:ap0.value - 3600</string>
             </attr>
         </edge>
         <edge from="n4" to="n4">
             <attr name="label">
-                <string>let:stopTime = -1</string>
+                <string>let:stopTime = int:p0.start+3600*(int:ap0.value+1)</string>
             </attr>
         </edge>
         <edge from="n6" to="n6">
