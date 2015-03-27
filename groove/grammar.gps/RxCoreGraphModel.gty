@@ -11,7 +11,7 @@
         </node>
         <node id="n1">
             <attr name="layout">
-                <string>74 95 29 16</string>
+                <string>110 93 29 16</string>
             </attr>
         </node>
         <edge from="n0" to="n0">
@@ -54,9 +54,24 @@
                 <string>type:Plan</string>
             </attr>
         </edge>
+        <edge from="n1" to="n1">
+            <attr name="label">
+                <string>int:patientID</string>
+            </attr>
+        </edge>
         <edge from="n1" to="n0">
             <attr name="label">
                 <string>apma</string>
+            </attr>
+        </edge>
+        <edge from="n1" to="n0">
+            <attr name="label">
+                <string>in=[0]*</string>
+            </attr>
+        </edge>
+        <edge from="n1" to="n0">
+            <attr name="label">
+                <string>out=[1]1</string>
             </attr>
         </edge>
     </graph>
