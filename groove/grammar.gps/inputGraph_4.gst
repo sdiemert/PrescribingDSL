@@ -11,7 +11,7 @@
         </node>
         <node id="n1">
             <attr name="layout">
-                <string>587 466 91 48</string>
+                <string>587 458 91 64</string>
             </attr>
         </node>
         <node id="n2">
@@ -72,6 +72,11 @@
         <edge from="n1" to="n1">
             <attr name="label">
                 <string>let:frame = string:&quot;DAY&quot;</string>
+            </attr>
+        </edge>
+        <edge from="n1" to="n1">
+            <attr name="label">
+                <string>let:frequency = 2</string>
             </attr>
         </edge>
         <edge from="n1" to="n2">

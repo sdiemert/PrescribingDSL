@@ -3,10 +3,19 @@ while (runCondition){main();}
 function main(){
 	checkConstraints();
 	createPlan;
+	expandThen();
 	expandTitrate();
 	expandRepeats();
 	expandDurations();
 	expandTimeFrames();
+}
+
+function expandThen(){
+	while(thenCondition){
+		try{expandThen_day;}
+		try{expandThen_week;}
+		try{expandThen_month;}
+	}
 }
 
 function checkConstraints(){
