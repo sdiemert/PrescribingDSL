@@ -36,7 +36,7 @@
         </node>
         <node id="n6">
             <attr name="layout">
-                <string>712 327 97 48</string>
+                <string>712 319 97 64</string>
             </attr>
         </node>
         <node id="n7">
@@ -51,7 +51,7 @@
         </node>
         <node id="n9">
             <attr name="layout">
-                <string>557 77 113 48</string>
+                <string>557 69 113 64</string>
             </attr>
         </node>
         <node id="n10">
@@ -66,7 +66,7 @@
         </node>
         <node id="n12">
             <attr name="layout">
-                <string>276 351 97 48</string>
+                <string>276 343 97 64</string>
             </attr>
         </node>
         <node id="n13">
@@ -122,6 +122,11 @@
         <edge from="n1" to="n1">
             <attr name="label">
                 <string>let:frame = string:&quot;DAY&quot;</string>
+            </attr>
+        </edge>
+        <edge from="n1" to="n1">
+            <attr name="label">
+                <string>let:frequency = 2</string>
             </attr>
         </edge>
         <edge from="n1" to="n2">
@@ -204,12 +209,17 @@
                 <string>let:frame = &quot;WEEK&quot;</string>
             </attr>
         </edge>
-        <edge from="n6" to="n7">
+        <edge from="n6" to="n6">
+            <attr name="label">
+                <string>let:frequency = 2</string>
+            </attr>
+        </edge>
+        <edge from="n6" to="n8">
             <attr name="label">
                 <string>point</string>
             </attr>
         </edge>
-        <edge from="n6" to="n8">
+        <edge from="n6" to="n7">
             <attr name="label">
                 <string>point</string>
             </attr>
@@ -254,12 +264,17 @@
                 <string>let:frame = &quot;MONTH&quot;</string>
             </attr>
         </edge>
-        <edge from="n9" to="n10">
+        <edge from="n9" to="n9">
+            <attr name="label">
+                <string>let:frequency = 2</string>
+            </attr>
+        </edge>
+        <edge from="n9" to="n11">
             <attr name="label">
                 <string>point</string>
             </attr>
         </edge>
-        <edge from="n9" to="n11">
+        <edge from="n9" to="n10">
             <attr name="label">
                 <string>point</string>
             </attr>
@@ -302,6 +317,11 @@
         <edge from="n12" to="n12">
             <attr name="label">
                 <string>let:frame = &quot;WEEK&quot;</string>
+            </attr>
+        </edge>
+        <edge from="n12" to="n12">
+            <attr name="label">
+                <string>let:frequency = 1</string>
             </attr>
         </edge>
         <edge from="n12" to="n13">
