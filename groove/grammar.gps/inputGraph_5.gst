@@ -29,6 +29,16 @@
                 <string>776 662 85 96</string>
             </attr>
         </node>
+        <node id="n5">
+            <attr name="layout">
+                <string>333 572 81 48</string>
+            </attr>
+        </node>
+        <node id="n6">
+            <attr name="layout">
+                <string>319 695 82 64</string>
+            </attr>
+        </node>
         <edge from="n0" to="n0">
             <attr name="label">
                 <string>type:Prescription</string>
@@ -75,6 +85,11 @@
             </attr>
         </edge>
         <edge from="n1" to="n2">
+            <attr name="label">
+                <string>point</string>
+            </attr>
+        </edge>
+        <edge from="n1" to="n5">
             <attr name="label">
                 <string>point</string>
             </attr>
@@ -137,6 +152,36 @@
         <edge from="n4" to="n4">
             <attr name="label">
                 <string>let:tunit = &quot;DAY&quot;</string>
+            </attr>
+        </edge>
+        <edge from="n5" to="n5">
+            <attr name="label">
+                <string>type:AtomicPoint</string>
+            </attr>
+        </edge>
+        <edge from="n5" to="n5">
+            <attr name="label">
+                <string>let:value = 20</string>
+            </attr>
+        </edge>
+        <edge from="n5" to="n6">
+            <attr name="label">
+                <string>dosing</string>
+            </attr>
+        </edge>
+        <edge from="n6" to="n6">
+            <attr name="label">
+                <string>type:Dosing</string>
+            </attr>
+        </edge>
+        <edge from="n6" to="n6">
+            <attr name="label">
+                <string>let:amount = 20</string>
+            </attr>
+        </edge>
+        <edge from="n6" to="n6">
+            <attr name="label">
+                <string>let:unit = &quot;MG&quot;</string>
             </attr>
         </edge>
     </graph>

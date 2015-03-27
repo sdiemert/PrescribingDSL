@@ -27,6 +27,12 @@ function expandTimeFrames(){
 	while(compoundTimeFrameCondition){
 		expandCompoundTimeFrames();
 	}
+
+	while(multipleAtomicEventsCondition){
+		try{copyAtomicEvents_1;}
+		try{copyAtomicEvents_2;}
+	}
+	
 	while(atomicTimeFrameCondition){
 		if(titrateCondition2){
 			expandAtomicTimeFramesWithTitrate();
