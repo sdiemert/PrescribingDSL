@@ -6,17 +6,27 @@
         </attr>
         <node id="n0">
             <attr name="layout">
-                <string>427 406 76 32</string>
+                <string>394 334 142 48</string>
             </attr>
         </node>
         <node id="n1">
             <attr name="layout">
-                <string>504 596 68 32</string>
+                <string>433 509 68 32</string>
+            </attr>
+        </node>
+        <node id="n5">
+            <attr name="layout">
+                <string>582 439 32 16</string>
             </attr>
         </node>
         <edge from="n0" to="n0">
             <attr name="label">
                 <string>type:TimeFrame</string>
+            </attr>
+        </edge>
+        <edge from="n0" to="n0">
+            <attr name="label">
+                <string>test:int:neq(int:fa.count, frequency)</string>
             </attr>
         </edge>
         <edge from="n0" to="n1">
@@ -27,6 +37,21 @@
         <edge from="n1" to="n1">
             <attr name="label">
                 <string>type:TimePoint</string>
+            </attr>
+        </edge>
+        <edge from="n1" to="n5">
+            <attr name="label">
+                <string>@</string>
+            </attr>
+        </edge>
+        <edge from="n5" to="n5">
+            <attr name="label">
+                <string>forall:</string>
+            </attr>
+        </edge>
+        <edge from="n5" to="n5">
+            <attr name="label">
+                <string>id:fa</string>
             </attr>
         </edge>
     </graph>

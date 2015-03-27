@@ -1,11 +1,21 @@
 while (runCondition){main();}
 
 function main(){
+	checkConstraints();
 	createPlan;
 	expandTitrate();
 	expandRepeats();
 	expandDurations();
 	expandTimeFrames();
+}
+
+function checkConstraints(){
+	if(check_frequency){
+		try{	
+			failureRule_frequencyMismatch;
+			failureExit;
+		}
+	}
 }
 
 function expandTitrate(){

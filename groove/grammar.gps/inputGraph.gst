@@ -11,7 +11,7 @@
         </node>
         <node id="n1">
             <attr name="layout">
-                <string>361 210 91 48</string>
+                <string>361 202 91 64</string>
             </attr>
         </node>
         <node id="n2">

@@ -84,12 +84,17 @@
                 <string>let:frame = string:&quot;DAY&quot;</string>
             </attr>
         </edge>
-        <edge from="n1" to="n2">
+        <edge from="n1" to="n1">
+            <attr name="label">
+                <string>let:frequency = 2</string>
+            </attr>
+        </edge>
+        <edge from="n1" to="n5">
             <attr name="label">
                 <string>point</string>
             </attr>
         </edge>
-        <edge from="n1" to="n5">
+        <edge from="n1" to="n2">
             <attr name="label">
                 <string>point</string>
             </attr>
