@@ -11,17 +11,17 @@
         </node>
         <node id="n1">
             <attr name="layout">
-                <string>181 139 109 16</string>
+                <string>111 117 109 16</string>
             </attr>
         </node>
         <node id="n2">
             <attr name="layout">
-                <string>171 359 143 16</string>
+                <string>89 360 143 16</string>
             </attr>
         </node>
         <node id="n3">
             <attr name="layout">
-                <string>95 463 76 32</string>
+                <string>121 464 76 32</string>
             </attr>
         </node>
         <node id="n4">
@@ -44,19 +44,14 @@
                 <string>del:</string>
             </attr>
         </edge>
-        <edge from="n0" to="n5">
+        <edge from="n0" to="n0">
             <attr name="label">
-                <string>@</string>
+                <string>type:TimeFrame</string>
             </attr>
         </edge>
         <edge from="n0" to="n0">
             <attr name="label">
                 <string>test:string:eq(frame, &quot;DAY&quot;)</string>
-            </attr>
-        </edge>
-        <edge from="n0" to="n0">
-            <attr name="label">
-                <string>type:TimeFrame</string>
             </attr>
         </edge>
         <edge from="n0" to="n2">
@@ -67,6 +62,14 @@
         <edge from="n0" to="n3">
             <attr name="label">
                 <string>!=</string>
+            </attr>
+            <attr name="layout">
+                <string>499 0 138 283 36 375 156 461 11</string>
+            </attr>
+        </edge>
+        <edge from="n0" to="n5">
+            <attr name="label">
+                <string>@</string>
             </attr>
         </edge>
         <edge from="n1" to="n1">
@@ -109,14 +112,14 @@
                 <string>type:CompoundPoint</string>
             </attr>
         </edge>
-        <edge from="n2" to="n5">
-            <attr name="label">
-                <string>@</string>
-            </attr>
-        </edge>
         <edge from="n2" to="n3">
             <attr name="label">
                 <string>timing</string>
+            </attr>
+        </edge>
+        <edge from="n2" to="n5">
+            <attr name="label">
+                <string>@</string>
             </attr>
         </edge>
         <edge from="n3" to="n3">
@@ -131,22 +134,7 @@
         </edge>
         <edge from="n4" to="n4">
             <attr name="label">
-                <string>let:start = int:p0.start+(cp0.value*3600)</string>
-            </attr>
-        </edge>
-        <edge from="n4" to="n4">
-            <attr name="label">
                 <string>type:Prescription</string>
-            </attr>
-        </edge>
-        <edge from="n4" to="n5">
-            <attr name="label">
-                <string>@</string>
-            </attr>
-        </edge>
-        <edge from="n4" to="n3">
-            <attr name="label">
-                <string>timing</string>
             </attr>
         </edge>
         <edge from="n4" to="n4">
@@ -157,6 +145,21 @@
         <edge from="n4" to="n4">
             <attr name="label">
                 <string>let:medication = string:p0.medication</string>
+            </attr>
+        </edge>
+        <edge from="n4" to="n4">
+            <attr name="label">
+                <string>let:start = int:p0.start+(cp0.value*3600)</string>
+            </attr>
+        </edge>
+        <edge from="n4" to="n5">
+            <attr name="label">
+                <string>@</string>
+            </attr>
+        </edge>
+        <edge from="n4" to="n3">
+            <attr name="label">
+                <string>timing</string>
             </attr>
         </edge>
         <edge from="n5" to="n5">

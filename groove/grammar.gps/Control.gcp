@@ -25,6 +25,12 @@ function checkConstraints(){
 			failureExit;
 		}
 	}
+	if(check_TimePointValues){
+		try{	
+			failureRule_duplicateTimePoint;
+			failureExit;
+		}
+	}
 }
 
 function expandTitrate(){

@@ -253,12 +253,12 @@
         </edge>
         <edge from="n3" to="n1">
             <attr name="label">
-                <string>in=[1]1</string>
+                <string>in=[0]*</string>
             </attr>
         </edge>
         <edge from="n3" to="n1">
             <attr name="label">
-                <string>out=[0]*</string>
+                <string>out=[1]1</string>
             </attr>
         </edge>
         <edge from="n3" to="n1">
