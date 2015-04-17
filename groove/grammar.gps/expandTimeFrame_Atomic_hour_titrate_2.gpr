@@ -26,22 +26,22 @@
         </node>
         <node id="n4">
             <attr name="layout">
-                <string>444 254 227 128</string>
+                <string>301 208 260 128</string>
             </attr>
         </node>
         <node id="n6">
             <attr name="layout">
-                <string>879 305 29 32</string>
+                <string>416 391 29 32</string>
             </attr>
         </node>
         <node id="n7">
             <attr name="layout">
-                <string>99 449 218 48</string>
+                <string>99 428 218 48</string>
             </attr>
         </node>
         <node id="n5">
             <attr name="layout">
-                <string>388 68 81 32</string>
+                <string>336 100 81 32</string>
             </attr>
         </node>
         <edge from="n0" to="n0">
@@ -112,6 +112,9 @@
         <edge from="n3" to="n7">
             <attr name="label">
                 <string>titrate</string>
+            </attr>
+            <attr name="layout">
+                <string>419 5 208 382 208 425 11</string>
             </attr>
         </edge>
         <edge from="n4" to="n4">

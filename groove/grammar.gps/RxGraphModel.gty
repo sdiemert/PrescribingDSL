@@ -6,37 +6,37 @@
         </attr>
         <node id="n0">
             <attr name="layout">
-                <string>352 283 118 96</string>
+                <string>434 432 118 96</string>
             </attr>
         </node>
         <node id="n4">
             <attr name="layout">
-                <string>920 404 74 48</string>
+                <string>1002 553 74 48</string>
             </attr>
         </node>
         <node id="n5">
             <attr name="layout">
-                <string>912 243 81 80</string>
+                <string>994 392 81 80</string>
             </attr>
         </node>
         <node id="n1">
             <attr name="layout">
-                <string>574 292 88 48</string>
+                <string>656 441 88 48</string>
             </attr>
         </node>
         <node id="n7">
             <attr name="layout">
-                <string>754 294 68 32</string>
+                <string>836 443 68 32</string>
             </attr>
         </node>
         <node id="n2">
             <attr name="layout">
-                <string>750 438 81 16</string>
+                <string>832 587 81 16</string>
             </attr>
         </node>
         <node id="n3">
             <attr name="layout">
-                <string>568 439 108 16</string>
+                <string>650 588 108 16</string>
             </attr>
         </node>
         <edge from="n0" to="n0">
@@ -69,30 +69,6 @@
                 <string>string:medication</string>
             </attr>
         </edge>
-        <edge from="n0" to="n0">
-            <attr name="label">
-                <string>in=[0]1</string>
-            </attr>
-            <attr name="layout">
-                <string>293 -67 411 331 397 440 411 331 12</string>
-            </attr>
-        </edge>
-        <edge from="n0" to="n0">
-            <attr name="label">
-                <string>out=[0]1</string>
-            </attr>
-            <attr name="layout">
-                <string>293 -67 411 331 397 440 411 331 12</string>
-            </attr>
-        </edge>
-        <edge from="n0" to="n0">
-            <attr name="label">
-                <string>then</string>
-            </attr>
-            <attr name="layout">
-                <string>293 -67 411 331 397 440 411 331 12</string>
-            </attr>
-        </edge>
         <edge from="n0" to="n1">
             <attr name="label">
                 <string>in=[0]1</string>
@@ -106,6 +82,30 @@
         <edge from="n0" to="n1">
             <attr name="label">
                 <string>timing</string>
+            </attr>
+        </edge>
+        <edge from="n0" to="n0">
+            <attr name="label">
+                <string>in=[0]1</string>
+            </attr>
+            <attr name="layout">
+                <string>293 -67 493 480 479 589 493 480 12</string>
+            </attr>
+        </edge>
+        <edge from="n0" to="n0">
+            <attr name="label">
+                <string>out=[0]1</string>
+            </attr>
+            <attr name="layout">
+                <string>293 -67 493 480 479 589 493 480 12</string>
+            </attr>
+        </edge>
+        <edge from="n0" to="n0">
+            <attr name="label">
+                <string>then</string>
+            </attr>
+            <attr name="layout">
+                <string>293 -67 493 480 479 589 493 480 12</string>
             </attr>
         </edge>
         <edge from="n4" to="n4">
@@ -183,7 +183,7 @@
                 <string>in=[1]1</string>
             </attr>
             <attr name="layout">
-                <string>448 12 618 316 788 310 11</string>
+                <string>448 12 700 465 870 459 11</string>
             </attr>
         </edge>
         <edge from="n1" to="n7">
@@ -191,7 +191,7 @@
                 <string>out=[0]*</string>
             </attr>
             <attr name="layout">
-                <string>448 12 618 316 788 310 11</string>
+                <string>448 12 700 465 870 459 11</string>
             </attr>
         </edge>
         <edge from="n1" to="n7">
@@ -199,7 +199,7 @@
                 <string>point</string>
             </attr>
             <attr name="layout">
-                <string>448 12 618 316 788 310 11</string>
+                <string>448 12 700 465 870 459 11</string>
             </attr>
         </edge>
         <edge from="n7" to="n7">
@@ -217,12 +217,17 @@
                 <string>type:AtomicPoint</string>
             </attr>
         </edge>
+        <edge from="n2" to="n7">
+            <attr name="label">
+                <string>sub:</string>
+            </attr>
+        </edge>
         <edge from="n2" to="n4">
             <attr name="label">
                 <string>dosing</string>
             </attr>
             <attr name="layout">
-                <string>587 0 771 446 957 428 11</string>
+                <string>587 0 872 595 1039 577 11</string>
             </attr>
         </edge>
         <edge from="n2" to="n4">
@@ -230,7 +235,7 @@
                 <string>in=[1]1</string>
             </attr>
             <attr name="layout">
-                <string>587 0 771 446 957 428 11</string>
+                <string>587 0 872 595 1039 577 11</string>
             </attr>
         </edge>
         <edge from="n2" to="n4">
@@ -238,12 +243,7 @@
                 <string>out=[1]1</string>
             </attr>
             <attr name="layout">
-                <string>587 0 771 446 957 428 11</string>
-            </attr>
-        </edge>
-        <edge from="n2" to="n7">
-            <attr name="label">
-                <string>sub:</string>
+                <string>587 0 872 595 1039 577 11</string>
             </attr>
         </edge>
         <edge from="n3" to="n3">

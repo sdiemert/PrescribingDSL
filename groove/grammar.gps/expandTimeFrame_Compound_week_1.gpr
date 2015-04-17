@@ -6,32 +6,32 @@
         </attr>
         <node id="n0">
             <attr name="layout">
-                <string>351 255 107 32</string>
+                <string>60 153 107 32</string>
             </attr>
         </node>
         <node id="n1">
             <attr name="layout">
-                <string>407 155 109 16</string>
+                <string>69 94 109 16</string>
             </attr>
         </node>
         <node id="n2">
             <attr name="layout">
-                <string>397 375 143 16</string>
+                <string>45 266 143 16</string>
             </attr>
         </node>
         <node id="n3">
             <attr name="layout">
-                <string>432 469 76 32</string>
+                <string>79 336 76 32</string>
             </attr>
         </node>
         <node id="n4">
             <attr name="layout">
-                <string>818 232 220 80</string>
+                <string>292 138 220 80</string>
             </attr>
         </node>
         <node id="n5">
             <attr name="layout">
-                <string>589 273 8 16</string>
+                <string>222 170 24 21</string>
             </attr>
         </node>
         <edge from="n0" to="n0">
@@ -54,14 +54,14 @@
                 <string>test:string:eq(frame, &quot;WEEK&quot;)</string>
             </attr>
         </edge>
-        <edge from="n0" to="n2">
-            <attr name="label">
-                <string>point</string>
-            </attr>
-        </edge>
         <edge from="n0" to="n5">
             <attr name="label">
                 <string>@</string>
+            </attr>
+        </edge>
+        <edge from="n0" to="n2">
+            <attr name="label">
+                <string>point</string>
             </attr>
         </edge>
         <edge from="n0" to="n3">
@@ -69,7 +69,7 @@
                 <string>!=</string>
             </attr>
             <attr name="layout">
-                <string>461 6 448 311 309 372 442 466 11</string>
+                <string>461 6 113 169 18 270 179 383 11</string>
             </attr>
         </edge>
         <edge from="n1" to="n1">
@@ -87,14 +87,14 @@
                 <string>type:Prescription</string>
             </attr>
         </edge>
-        <edge from="n1" to="n0">
-            <attr name="label">
-                <string>timing</string>
-            </attr>
-        </edge>
         <edge from="n1" to="n5">
             <attr name="label">
                 <string>@</string>
+            </attr>
+        </edge>
+        <edge from="n1" to="n0">
+            <attr name="label">
+                <string>timing</string>
             </attr>
         </edge>
         <edge from="n2" to="n2">
@@ -112,14 +112,14 @@
                 <string>type:CompoundPoint</string>
             </attr>
         </edge>
-        <edge from="n2" to="n3">
-            <attr name="label">
-                <string>timing</string>
-            </attr>
-        </edge>
         <edge from="n2" to="n5">
             <attr name="label">
                 <string>@</string>
+            </attr>
+        </edge>
+        <edge from="n2" to="n3">
+            <attr name="label">
+                <string>timing</string>
             </attr>
         </edge>
         <edge from="n3" to="n3">

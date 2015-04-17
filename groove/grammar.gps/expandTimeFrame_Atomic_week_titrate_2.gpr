@@ -26,22 +26,22 @@
         </node>
         <node id="n4">
             <attr name="layout">
-                <string>432 254 251 128</string>
+                <string>291 169 307 128</string>
             </attr>
         </node>
         <node id="n6">
             <attr name="layout">
-                <string>879 305 29 32</string>
+                <string>447 100 29 32</string>
             </attr>
         </node>
         <node id="n7">
             <attr name="layout">
-                <string>99 449 218 48</string>
+                <string>316 344 218 48</string>
             </attr>
         </node>
         <node id="n5">
             <attr name="layout">
-                <string>388 68 81 32</string>
+                <string>328 102 81 32</string>
             </attr>
         </node>
         <edge from="n0" to="n0">

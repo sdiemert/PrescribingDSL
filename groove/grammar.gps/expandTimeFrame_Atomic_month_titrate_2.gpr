@@ -21,27 +21,27 @@
         </node>
         <node id="n3">
             <attr name="layout">
-                <string>166 363 75 16</string>
+                <string>167 378 75 16</string>
             </attr>
         </node>
         <node id="n4">
             <attr name="layout">
-                <string>396 254 323 128</string>
+                <string>301 223 323 128</string>
             </attr>
         </node>
         <node id="n6">
             <attr name="layout">
-                <string>879 305 29 32</string>
+                <string>484 141 29 32</string>
             </attr>
         </node>
         <node id="n7">
             <attr name="layout">
-                <string>99 449 218 48</string>
+                <string>361 372 218 48</string>
             </attr>
         </node>
         <node id="n5">
             <attr name="layout">
-                <string>388 68 81 32</string>
+                <string>330 104 81 32</string>
             </attr>
         </node>
         <edge from="n0" to="n0">

@@ -1,13 +1,28 @@
 while (runCondition){main();}
 
 function main(){
-	checkConstraints();
+
+	//Static Semanitc Validation
+	checkConstraints();  
 	createPlan;
+
+	//Time Unrolling
 	expandThen();
 	expandTitrate();
 	expandRepeats();
 	expandDurations();
 	expandTimeFrames();
+
+	//Plan Completion
+	completePlan();
+}
+
+function completePlan(){
+	alap plan_completion_1; 
+	while(apma_then_condition){
+		try{plan_completion_2;} 
+		try{plan_completion_3;}
+	}
 }
 
 function expandThen(){

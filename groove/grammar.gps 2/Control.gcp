@@ -1,0 +1,101 @@
+while (runCondition){main();}
+
+function main(){
+	checkConstraints();
+	createPlan;
+	expandThen();
+	expandTitrate();
+	expandRepeats();
+	expandDurations();
+	expandTimeFrames();
+}
+
+function expandThen(){
+	while(thenCondition){
+		try{expandThen_day;}
+		try{expandThen_week;}
+		try{expandThen_month;}
+	}
+}
+
+function checkConstraints(){
+	if(check_frequency){
+		try{	
+			failureRule_frequencyMismatch;
+			failureExit;
+		}
+	}
+	if(check_TimePointValues){
+		try{	
+			failureRule_duplicateTimePoint;
+			failureExit;
+		}
+	}
+}
+
+function expandTitrate(){
+	while(titrateCondition){
+		try{expandTitrate_day_1;}
+	}
+}
+
+function expandDurations(){
+	while(durationCondition){
+		try{expandDuration_month_1;}
+		try{expandDuration_week_1;}
+		try{expandDuration_day_1;}
+		try{expandDuration_hour_1;}
+	}	
+}
+
+function expandTimeFrames(){
+	while(compoundTimeFrameCondition){
+		expandCompoundTimeFrames();
+	}
+
+	while(multipleAtomicEventsCondition){
+		try{copyAtomicEvents_1;}
+		try{copyAtomicEvents_2;}
+	}
+	
+	while(atomicTimeFrameCondition){
+		if(titrateCondition2){
+
+			while(titrateCondition3){
+				try{orderPrescriptions_titrate_1;}
+			}
+		
+			expandAtomicTimeFramesWithTitrate();
+		}else{
+			expandAtomicTimeFrames();
+		}
+		
+	}
+}
+
+function expandAtomicTimeFrames(){
+	try{expandTimeFrame_Atomic_day_1;}
+	try{expandTimeFrame_Atomic_hour_1;}
+	try{expandTimeFrame_Atomic_week_1;}
+	try{expandTimeFrame_Atomic_month_1;}
+}
+
+function expandAtomicTimeFramesWithTitrate(){
+	try{expandTimeFrame_Atomic_day_titrate_1;}
+	try{expandTimeFrame_Atomic_day_titrate_2;}
+	try{cleanTitrate_1;}
+}
+
+function expandCompoundTimeFrames(){
+	try{expandTimeFrame_Compound_month_1;}
+	try{expandTimeFrame_Compound_week_1;}
+	try{expandTimeFrame_Compound_day_1;}	
+}
+
+function expandRepeats(){
+	while(repeatCondition){
+		try{expandRepeats_month;}
+		try{expandRepeats_week;}
+		try{expandRepeats_day;}
+	}
+}

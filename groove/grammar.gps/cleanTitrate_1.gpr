@@ -6,27 +6,27 @@
         </attr>
         <node id="n0">
             <attr name="layout">
-                <string>73 203 76 32</string>
+                <string>221 85 76 32</string>
             </attr>
         </node>
         <node id="n1">
             <attr name="layout">
-                <string>77 100 81 32</string>
+                <string>46 85 81 32</string>
             </attr>
         </node>
         <node id="n2">
             <attr name="layout">
-                <string>69 306 81 32</string>
+                <string>377 88 81 32</string>
             </attr>
         </node>
         <node id="n3">
             <attr name="layout">
-                <string>86 397 47 32</string>
+                <string>534 89 47 32</string>
             </attr>
         </node>
         <node id="n4">
             <attr name="layout">
-                <string>87 504 45 32</string>
+                <string>655 89 45 32</string>
             </attr>
         </node>
         <edge from="n0" to="n0">
@@ -42,6 +42,9 @@
         <edge from="n0" to="n2">
             <attr name="label">
                 <string>point</string>
+            </attr>
+            <attr name="layout">
+                <string>410 -1 302 98 375 98 11</string>
             </attr>
         </edge>
         <edge from="n1" to="n1">

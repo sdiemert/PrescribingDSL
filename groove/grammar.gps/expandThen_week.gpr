@@ -11,12 +11,12 @@
         </node>
         <node id="n1">
             <attr name="layout">
-                <string>421 238 178 32</string>
+                <string>323 235 178 32</string>
             </attr>
         </node>
         <node id="n2">
             <attr name="layout">
-                <string>122 374 107 32</string>
+                <string>147 313 107 32</string>
             </attr>
         </node>
         <edge from="n0" to="n0">

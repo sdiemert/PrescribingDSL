@@ -26,22 +26,22 @@
         </node>
         <node id="n4">
             <attr name="layout">
-                <string>429 222 259 128</string>
+                <string>400 217 260 128</string>
             </attr>
         </node>
         <node id="n5">
             <attr name="layout">
-                <string>347 275 24 21</string>
+                <string>322 274 24 21</string>
             </attr>
         </node>
         <node id="n6">
             <attr name="layout">
-                <string>835 357 29 32</string>
+                <string>516 140 29 32</string>
             </attr>
         </node>
         <node id="n7">
             <attr name="layout">
-                <string>182 504 45 32</string>
+                <string>314 386 45 32</string>
             </attr>
         </node>
         <edge from="n0" to="n0">
@@ -89,14 +89,14 @@
                 <string>test:string:eq(frame, &quot;HOUR&quot;)</string>
             </attr>
         </edge>
-        <edge from="n1" to="n2">
-            <attr name="label">
-                <string>point</string>
-            </attr>
-        </edge>
         <edge from="n1" to="n5">
             <attr name="label">
                 <string>@</string>
+            </attr>
+        </edge>
+        <edge from="n1" to="n2">
+            <attr name="label">
+                <string>point</string>
             </attr>
         </edge>
         <edge from="n2" to="n2">
@@ -114,14 +114,14 @@
                 <string>type:AtomicPoint</string>
             </attr>
         </edge>
-        <edge from="n2" to="n5">
-            <attr name="label">
-                <string>@</string>
-            </attr>
-        </edge>
         <edge from="n2" to="n3">
             <attr name="label">
                 <string>dosing</string>
+            </attr>
+        </edge>
+        <edge from="n2" to="n5">
+            <attr name="label">
+                <string>@</string>
             </attr>
         </edge>
         <edge from="n3" to="n3">

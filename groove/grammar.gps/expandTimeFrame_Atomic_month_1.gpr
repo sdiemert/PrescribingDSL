@@ -6,42 +6,42 @@
         </attr>
         <node id="n0">
             <attr name="layout">
-                <string>144 139 109 16</string>
+                <string>105 128 109 16</string>
             </attr>
         </node>
         <node id="n1">
             <attr name="layout">
-                <string>139 213 123 32</string>
+                <string>100 202 123 32</string>
             </attr>
         </node>
         <node id="n2">
             <attr name="layout">
-                <string>143 302 116 16</string>
+                <string>104 291 116 16</string>
             </attr>
         </node>
         <node id="n3">
             <attr name="layout">
-                <string>166 390 75 16</string>
+                <string>127 379 75 16</string>
             </attr>
         </node>
         <node id="n4">
             <attr name="layout">
-                <string>390 180 323 128</string>
+                <string>351 169 323 128</string>
             </attr>
         </node>
         <node id="n5">
             <attr name="layout">
-                <string>326 265 24 21</string>
+                <string>287 254 24 21</string>
             </attr>
         </node>
         <node id="n6">
             <attr name="layout">
-                <string>813 253 29 32</string>
+                <string>260 124 29 32</string>
             </attr>
         </node>
         <node id="n7">
             <attr name="layout">
-                <string>207 492 45 32</string>
+                <string>281 367 45 32</string>
             </attr>
         </node>
         <edge from="n0" to="n0">
@@ -59,14 +59,14 @@
                 <string>type:Prescription</string>
             </attr>
         </edge>
-        <edge from="n0" to="n5">
-            <attr name="label">
-                <string>@</string>
-            </attr>
-        </edge>
         <edge from="n0" to="n1">
             <attr name="label">
                 <string>timing</string>
+            </attr>
+        </edge>
+        <edge from="n0" to="n5">
+            <attr name="label">
+                <string>@</string>
             </attr>
         </edge>
         <edge from="n1" to="n1">
@@ -114,14 +114,14 @@
                 <string>type:AtomicPoint</string>
             </attr>
         </edge>
-        <edge from="n2" to="n5">
-            <attr name="label">
-                <string>@</string>
-            </attr>
-        </edge>
         <edge from="n2" to="n3">
             <attr name="label">
                 <string>dosing</string>
+            </attr>
+        </edge>
+        <edge from="n2" to="n5">
+            <attr name="label">
+                <string>@</string>
             </attr>
         </edge>
         <edge from="n3" to="n3">
@@ -139,14 +139,14 @@
                 <string>type:Dosing</string>
             </attr>
         </edge>
-        <edge from="n3" to="n5">
-            <attr name="label">
-                <string>@</string>
-            </attr>
-        </edge>
         <edge from="n3" to="n7">
             <attr name="label">
                 <string>titrate</string>
+            </attr>
+        </edge>
+        <edge from="n3" to="n5">
+            <attr name="label">
+                <string>@</string>
             </attr>
         </edge>
         <edge from="n4" to="n4">

@@ -6,57 +6,57 @@
         </attr>
         <node id="n0">
             <attr name="layout">
-                <string>470 220 109 16</string>
+                <string>54 240 109 16</string>
             </attr>
         </node>
         <node id="n1">
             <attr name="layout">
-                <string>479 317 106 16</string>
+                <string>237 236 106 16</string>
             </attr>
         </node>
         <node id="n2">
             <attr name="layout">
-                <string>342 410 116 16</string>
+                <string>414 283 116 16</string>
             </attr>
         </node>
         <node id="n3">
             <attr name="layout">
-                <string>560 416 116 16</string>
+                <string>408 167 116 16</string>
             </attr>
         </node>
         <node id="n4">
             <attr name="layout">
-                <string>796 152 178 80</string>
+                <string>24 26 178 80</string>
             </attr>
         </node>
         <node id="n5">
             <attr name="layout">
-                <string>822 305 112 48</string>
+                <string>287 41 112 48</string>
             </attr>
         </node>
         <node id="n6">
             <attr name="layout">
-                <string>821 430 111 48</string>
+                <string>476 39 111 48</string>
             </attr>
         </node>
         <node id="n7">
             <attr name="layout">
-                <string>555 540 75 16</string>
+                <string>609 166 75 16</string>
             </attr>
         </node>
         <node id="n8">
             <attr name="layout">
-                <string>564 641 45 32</string>
+                <string>625 270 45 32</string>
             </attr>
         </node>
         <node id="n9">
             <attr name="layout">
-                <string>811 548 134 64</string>
+                <string>664 30 134 64</string>
             </attr>
         </node>
         <node id="n10">
             <attr name="layout">
-                <string>660 227 24 21</string>
+                <string>88 167 24 21</string>
             </attr>
         </node>
         <edge from="n0" to="n0">
@@ -89,12 +89,12 @@
                 <string>type:TimeFrame</string>
             </attr>
         </edge>
-        <edge from="n1" to="n2">
+        <edge from="n1" to="n3">
             <attr name="label">
                 <string>point</string>
             </attr>
         </edge>
-        <edge from="n1" to="n3">
+        <edge from="n1" to="n2">
             <attr name="label">
                 <string>point</string>
             </attr>
@@ -159,14 +159,14 @@
                 <string>let:start = int:p0.start</string>
             </attr>
         </edge>
-        <edge from="n4" to="n5">
-            <attr name="label">
-                <string>timing</string>
-            </attr>
-        </edge>
         <edge from="n4" to="n10">
             <attr name="label">
                 <string>@</string>
+            </attr>
+        </edge>
+        <edge from="n4" to="n5">
+            <attr name="label">
+                <string>timing</string>
             </attr>
         </edge>
         <edge from="n5" to="n5">

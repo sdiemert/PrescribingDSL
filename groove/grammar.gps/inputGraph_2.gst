@@ -6,7 +6,7 @@
         </attr>
         <node id="n0">
             <attr name="layout">
-                <string>842 8 149 112</string>
+                <string>116 55 149 112</string>
             </attr>
         </node>
         <node id="n1">
@@ -214,12 +214,12 @@
                 <string>let:frequency = 2</string>
             </attr>
         </edge>
-        <edge from="n6" to="n7">
+        <edge from="n6" to="n8">
             <attr name="label">
                 <string>point</string>
             </attr>
         </edge>
-        <edge from="n6" to="n8">
+        <edge from="n6" to="n7">
             <attr name="label">
                 <string>point</string>
             </attr>
@@ -269,12 +269,12 @@
                 <string>let:frequency = 2</string>
             </attr>
         </edge>
-        <edge from="n9" to="n10">
+        <edge from="n9" to="n11">
             <attr name="label">
                 <string>point</string>
             </attr>
         </edge>
-        <edge from="n9" to="n11">
+        <edge from="n9" to="n10">
             <attr name="label">
                 <string>point</string>
             </attr>

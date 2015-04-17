@@ -6,12 +6,12 @@
         </attr>
         <node id="n0">
             <attr name="layout">
-                <string>275 43 118 112</string>
+                <string>444 352 118 112</string>
             </attr>
         </node>
         <node id="n1">
             <attr name="layout">
-                <string>110 93 29 16</string>
+                <string>251 386 84 48</string>
             </attr>
         </node>
         <edge from="n0" to="n0">
@@ -49,9 +49,22 @@
                 <string>string:medication</string>
             </attr>
         </edge>
+        <edge from="n0" to="n0">
+            <attr name="label">
+                <string>then</string>
+            </attr>
+            <attr name="layout">
+                <string>500 0 503 408 681 390 681 390 11</string>
+            </attr>
+        </edge>
         <edge from="n1" to="n1">
             <attr name="label">
                 <string>type:Plan</string>
+            </attr>
+        </edge>
+        <edge from="n1" to="n1">
+            <attr name="label">
+                <string>int:RxID</string>
             </attr>
         </edge>
         <edge from="n1" to="n1">

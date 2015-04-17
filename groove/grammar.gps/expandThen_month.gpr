@@ -11,12 +11,12 @@
         </node>
         <node id="n1">
             <attr name="layout">
-                <string>417 238 186 32</string>
+                <string>345 236 186 32</string>
             </attr>
         </node>
         <node id="n2">
             <attr name="layout">
-                <string>114 374 123 32</string>
+                <string>139 323 123 32</string>
             </attr>
         </node>
         <edge from="n0" to="n0">
@@ -29,14 +29,14 @@
                 <string>type:Prescription</string>
             </attr>
         </edge>
-        <edge from="n0" to="n1">
-            <attr name="label">
-                <string>del:then</string>
-            </attr>
-        </edge>
         <edge from="n0" to="n2">
             <attr name="label">
                 <string>timing</string>
+            </attr>
+        </edge>
+        <edge from="n0" to="n1">
+            <attr name="label">
+                <string>del:then</string>
             </attr>
         </edge>
         <edge from="n1" to="n1">

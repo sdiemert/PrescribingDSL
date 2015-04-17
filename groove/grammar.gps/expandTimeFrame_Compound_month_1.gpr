@@ -6,32 +6,32 @@
         </attr>
         <node id="n0">
             <attr name="layout">
-                <string>210 245 123 32</string>
+                <string>120 168 123 32</string>
             </attr>
         </node>
         <node id="n1">
             <attr name="layout">
-                <string>403 139 109 16</string>
+                <string>125 99 109 16</string>
             </attr>
         </node>
         <node id="n2">
             <attr name="layout">
-                <string>374 320 143 16</string>
+                <string>115 272 143 16</string>
             </attr>
         </node>
         <node id="n3">
             <attr name="layout">
-                <string>432 469 76 32</string>
+                <string>365 261 76 32</string>
             </attr>
         </node>
         <node id="n4">
             <attr name="layout">
-                <string>726 236 228 80</string>
+                <string>407 117 228 80</string>
             </attr>
         </node>
         <node id="n5">
             <attr name="layout">
-                <string>581 270 24 21</string>
+                <string>307 158 24 21</string>
             </attr>
         </node>
         <edge from="n0" to="n0">
@@ -54,14 +54,17 @@
                 <string>test:string:eq(frame, &quot;MONTH&quot;)</string>
             </attr>
         </edge>
-        <edge from="n0" to="n2">
-            <attr name="label">
-                <string>point</string>
-            </attr>
-        </edge>
         <edge from="n0" to="n5">
             <attr name="label">
                 <string>@</string>
+            </attr>
+            <attr name="layout">
+                <string>0 -45 181 184 319 168 11</string>
+            </attr>
+        </edge>
+        <edge from="n0" to="n2">
+            <attr name="label">
+                <string>point</string>
             </attr>
         </edge>
         <edge from="n0" to="n3">
@@ -93,6 +96,9 @@
             <attr name="label">
                 <string>@</string>
             </attr>
+            <attr name="layout">
+                <string>733 32 179 107 319 168 11</string>
+            </attr>
         </edge>
         <edge from="n2" to="n2">
             <attr name="label">
@@ -109,14 +115,14 @@
                 <string>type:CompoundPoint</string>
             </attr>
         </edge>
-        <edge from="n2" to="n3">
-            <attr name="label">
-                <string>timing</string>
-            </attr>
-        </edge>
         <edge from="n2" to="n5">
             <attr name="label">
                 <string>@</string>
+            </attr>
+        </edge>
+        <edge from="n2" to="n3">
+            <attr name="label">
+                <string>timing</string>
             </attr>
         </edge>
         <edge from="n3" to="n3">
